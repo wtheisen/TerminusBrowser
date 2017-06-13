@@ -211,6 +211,7 @@ def main():
         return listbox, (endTime - startTime), len(titles)
 
     def getThread(board, threadNum):
+        startTime = time.time()
         comments = getJSONThread('https://a.4cdn.org' + board + 'thread/', '4chan', threadNum)
 
         global currentThreadWidgets
@@ -226,10 +227,12 @@ def main():
 
         currentThreadWidgets = temp
 
+        endTime = time.time()
+
         listbox_content = test
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
-        return listbox
+        return listbox, (endTime - startTime), len(comments)
 
     def displayBoard(button):
         global currentBoard
@@ -246,7 +249,7 @@ def main():
         frame = urwid.Frame(urwid.AttrWrap(catalogue, 'body'), header=header)
 
         infoString = urwid.AttrWrap(urwid.Text('Board: ' + button.get_label()), 'header')
-        timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 'ms', 'right'), 'header')
+        timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 's', 'right'), 'header')
         footerWidget = urwid.Columns([infoString, timeString])
         frame.footer = footerWidget
 
@@ -260,10 +263,15 @@ def main():
         global currentBoardWidget
         global currentBoard
 
-        listbox = getThread(currentBoard, currentThread)
+        listbox, parseTime, itemCount = getThread(currentBoard, currentThread)
         thread = urwid.Overlay(listbox, currentBoardWidget, 'center', ('relative', 60), 'middle', ('relative', 95))
         frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=header)
-        frame.footer = urwid.AttrWrap(urwid.Text('Board: ' + currentBoard + ', Thread: ' + button.get_label()), 'header')
+
+        infoString = urwid.AttrWrap(urwid.Text('Board: ' + currentBoard + ', Thread: ' + button.get_label()), 'header')
+        timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 's', 'right'), 'header')
+        footerWidget = urwid.Columns([infoString, timeString])
+
+        frame.footer = footerWidget
 
         urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled, pop_ups=True).run()
 
