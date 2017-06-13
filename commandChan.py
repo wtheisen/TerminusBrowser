@@ -64,7 +64,7 @@ def main():
         return listbox
 
     def displayBoard(button):
-        global currentBoard 
+        global currentBoard
         currentBoard = button.get_label()
         global level
         level = 1
@@ -81,7 +81,7 @@ def main():
         urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled).run()
 
     def displayThread(button):
-        global currentThread 
+        global currentThread
         currentThread = button.get_label()
         global level
         level = 2
