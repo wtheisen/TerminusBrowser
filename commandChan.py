@@ -1,4 +1,4 @@
-import sys, urwid
+import sys, urwid, time
 
 import requests, json, collections, re
 from bs4 import BeautifulSoup
@@ -171,6 +171,8 @@ currentThread = ''
 currentThreadWidgets = None
 currentThreadOPNumber = None
 
+watchedThreads = []
+
 level = 0
 
 ################################################################################
@@ -179,8 +181,14 @@ def main():
 
     header = urwid.AttrWrap(urwid.Text('CommandChan'), 'header')
 
+    def threadWatcherWidget():
+        global watchedThreads
+        watcherWidget = urwid.Pile(watchedThreads)
+
+
     def getBoard(board):
         '''returns the board widget'''
+        startTime = time.time()
         titles = getJSONCatalog('https://a.4cdn.org' + board + 'catalog.json')
 
         test = []
@@ -193,12 +201,14 @@ def main():
             threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
             test.append(urwid.LineBox(urwid.Pile(threadList)))
 
+        endTime = time.time()
+
         MEOW = urwid.GridFlow(test, 30, 2, 2, 'center')
         listbox_content = [MEOW]
 
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
-        return listbox
+        return listbox, (endTime - startTime), len(titles)
 
     def getThread(board, threadNum):
         comments = getJSONThread('https://a.4cdn.org' + board + 'thread/', '4chan', threadNum)
@@ -227,14 +237,18 @@ def main():
         global level
         level = 1
 
-        temp = getBoard(button.get_label())
+        temp, parseTime, itemCount = getBoard(button.get_label())
 
         global currentBoardWidget
         currentBoardWidget = temp
 
         catalogue = urwid.Overlay(temp, test, 'center', ('relative', 90), 'middle', ('relative', 95))
         frame = urwid.Frame(urwid.AttrWrap(catalogue, 'body'), header=header)
-        frame.footer = urwid.AttrWrap(urwid.Text('Board: ' + button.get_label()), 'header')
+
+        infoString = urwid.AttrWrap(urwid.Text('Board: ' + button.get_label()), 'header')
+        timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 'ms', 'right'), 'header')
+        footerWidget = urwid.Columns([infoString, timeString])
+        frame.footer = footerWidget
 
         urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled, pop_ups=True).run()
 
@@ -268,7 +282,10 @@ def main():
     boardListWidget = frame
 
     def unhandled(key):
-        if key == 'q' and level == 0:
+        if key == 's' and (level == 1 or level == 2):
+            # add the currently focused thread to the thread watcher
+            pass
+        elif key == 'q' and level == 0:
             sys.exit()
         elif key =='q' and level == 1:
             global level

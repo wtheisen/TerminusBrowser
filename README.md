@@ -20,6 +20,7 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 ### TODO List
 
 - [] Board and Thread fetch information in the footer
+- [] Filtering options on all pages
 - [] Display comment replies in the info bar at the top of the comment
 - [X] Quotes of OP have the (OP) designator
 - [] Save threads to a custom hotkey menu
@@ -33,7 +34,8 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 
 Known Bugs
 ------
-| Cause                                              | Effect                  |
-|:--------------------------------------------------:|:-----------------------:|
-| Posts get incorrectly flagged as containing images | Program fatally crashes |
-| Cross Thread Links                                 | Program fatally crashes |
+| Cause                                              | Effect                       |
+|:--------------------------------------------------:|:----------------------------:|
+| Posts get incorrectly flagged as containing images | Program fatally crashes      |
+| Cross Thread Links                                 | Program fatally crashes      |
+| Unknown                                            | Image links aren't displayed |
