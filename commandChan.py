@@ -243,9 +243,9 @@ def main():
         temp, parseTime, itemCount = getBoard(button.get_label())
 
         global currentBoardWidget
-        currentBoardWidget = temp
+        currentBoardWidget = urwid.LineBox(urwid.Pile([temp]))
 
-        catalogue = urwid.Overlay(temp, test, 'center', ('relative', 90), 'middle', ('relative', 95))
+        catalogue = urwid.Overlay(urwid.LineBox(urwid.Pile([temp])), test, 'center', ('relative', 90), 'middle', ('relative', 95))
         frame = urwid.Frame(urwid.AttrWrap(catalogue, 'body'), header=header)
 
         infoString = urwid.AttrWrap(urwid.Text('Board: ' + button.get_label()), 'header')
@@ -264,7 +264,7 @@ def main():
         global currentBoard
 
         listbox, parseTime, itemCount = getThread(currentBoard, currentThread)
-        thread = urwid.Overlay(listbox, currentBoardWidget, 'center', ('relative', 60), 'middle', ('relative', 95))
+        thread = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), currentBoardWidget, 'center', ('relative', 60), 'middle', ('relative', 95))
         frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=header)
 
         infoString = urwid.AttrWrap(urwid.Text('Board: ' + currentBoard + ', Thread: ' + button.get_label()), 'header')
