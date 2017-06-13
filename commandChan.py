@@ -19,7 +19,6 @@ class QuotePreview(urwid.WidgetWrap):
         fill = urwid.Filler(urwid.Pile([currentThreadWidgets[cleanQuoteNumber], close_button]))
         self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
 
-
 class QuoteButton(urwid.PopUpLauncher):
     def __init__(self, quoteNumber):
         self.quoteNumber = quoteNumber
@@ -34,8 +33,6 @@ class QuoteButton(urwid.PopUpLauncher):
     def get_pop_up_parameters(self):
         global currentThreadWidgets
         return {'left':0, 'top':1, 'overlay_width':128, 'overlay_height':12}
-
-################################################################################
 
 ######################### CATALOG PARSERS ######################################
 
@@ -259,8 +256,6 @@ def main():
     boardButtons = []
     for board in boards:
         boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, displayBoard), 'center')))
-
-    boardButtons.append(QuoteButton('33'))
 
     buttonGrid = urwid.GridFlow(boardButtons, 12, 2, 2, 'center')
     listbox_content = [buttonGrid]
