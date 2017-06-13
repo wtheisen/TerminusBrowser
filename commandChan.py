@@ -61,20 +61,47 @@ def getJSONThread(url, chan, threadNumber):
         return parseFourThread(data)
 
 def parseFourThread(data):
+    print("parsing 4chan thread")
     comments = collections.OrderedDict()
     posts = data["posts"]
-
-    global currentThreadOPNumber
-    currentThreadOPNumber = posts[0]["no"]
-
     for post in posts:
         try:
-            comments[str(post["no"]) + '   ' + post["now"]] = post["com"]
+            imageBool = post['filename']
+            try:
+                comments[post["no"]] = post["com"] + '::' + 'image'
+            except:
+                comments[post["no"]] = '::image'
         except:
-            comments[str(post["no"]) + '   ' + post["now"]] = ''
+            try:
+                comments[post["no"]] = post["com"]
+            except:
+                comments[post["no"]] = ''
     return comments
 
-def commentTagParser(postNum, comment):
+def getImageUrls(url, board):
+
+    def load(url):
+        req = requests.get(url)
+        return str(req.content)
+
+    thread_link = url
+    page = BeautifulSoup(load(thread_link), "lxml")
+    extensionList = ('.jpg', '.jpeg', '.png', '.gif', '.webm')
+    images = []
+
+    print('getting images from ' + url)
+    for img in page.find_all('a', href=True):
+        if board in str(img) and 'i.4cdn.org' in str(img):
+            tagList = str(img).split('"')
+            # print(tagList)
+            for tag in tagList:
+                if board in str(tag):
+                    if any(extension in tag for extension in extensionList):
+                        images.append(str(tag))
+
+    return images
+
+def commentTagParser(postNum, comment, imageURL=None):
     soup = BeautifulSoup(comment, "html.parser")
     tags = [str(tag) for tag in soup.find_all()]
     contents = []
@@ -110,6 +137,7 @@ def commentTagParser(postNum, comment):
             item = item.replace('&quot;', '"')
             item = item.replace('&amp;', '&')
             item = item.replace('&gt;', '>')
+            item = item.replace('&lt;', '<')
 
             if str(currentThreadOPNumber) == item[2:]:
                 item += '(OP)'
@@ -124,6 +152,7 @@ def commentTagParser(postNum, comment):
             item = item.replace('&quot;', '"')
             item = item.replace('&amp;', '&')
             item = item.replace('&gt;', '>')
+            item = item.replace('&lt;', '<')
 
             contents.append(urwid.AttrWrap(urwid.Text(item), 'greenText'))
             comment = False
@@ -133,6 +162,8 @@ def commentTagParser(postNum, comment):
             item = item.replace('&#039;', "'")
             item = item.replace('&quot;', '"')
             item = item.replace('&amp;', '&')
+            item = item.replace('&gt;', '>')
+            item = item.replace('&lt;', '<')
 
             if not codeBlock:
                 contents.append(urwid.Text(item))
@@ -141,7 +172,11 @@ def commentTagParser(postNum, comment):
 
     contents.append(urwid.Divider())
     contents.append(urwid.Divider('-'))
-    contents.append(urwid.Text('img: '))
+
+    if imageURL:
+        contents.append(urwid.Text('img: ' + str(imageURL)))
+    else:
+        contents.append(urwid.Text('img: '))
 
     return urwid.Pile(contents)
 
@@ -220,8 +255,31 @@ def main():
 
         temp = {}
 
+        def deDup(seq):
+            seen = set()
+            seen_add = seen.add
+            return [x for x in seq if not (x in seen or seen_add(x))]
+
+        images = getImageUrls('http://boards.4chan.org' + board + 'thread/' + str(threadNum), board)
+        images = [ img for img in images if "s" not in img ]
+        images = deDup(images)
+        for i in range(0, len(images)):
+            images[i] = 'http:' + images[i]
+
         for num, comment in comments.items():
-            commentWidget = urwid.LineBox(commentTagParser(num, comment))
+            comment = comment.split('::')
+
+            try:
+                hasImage = comment[1]
+                comment = comment[0]
+                commentWidget = urwid.LineBox(commentTagParser(num, comment, images.pop(0)))
+            except:
+                if comment == 'image':
+                    commentWidget = urwid.LineBox(commentTagParser(num, '', images.pop(0)))
+                else:
+                    comment = comment[0]
+                    commentWidget = urwid.LineBox(commentTagParser(num, comment))
+
             test.append(commentWidget)
             temp[str(num).split()[0]] = commentWidget
 
