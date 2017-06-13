@@ -15,7 +15,8 @@ class QuotePreview(urwid.WidgetWrap):
         global currentThreadWidgets
         close_button = urwid.Button("Hide")
         urwid.connect_signal(close_button, 'click', lambda button:self._emit("close"))
-        fill = urwid.Filler(urwid.Pile([currentThreadWidgets[str(quoteNumber)[2:]], close_button]))
+        cleanQuoteNumber = re.sub("[^0-9]", "", str(quoteNumber))
+        fill = urwid.Filler(urwid.Pile([currentThreadWidgets[cleanQuoteNumber], close_button]))
         self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
 
 
@@ -65,6 +66,10 @@ def getJSONThread(url, chan, threadNumber):
 def parseFourThread(data):
     comments = collections.OrderedDict()
     posts = data["posts"]
+
+    global currentThreadOPNumber
+    currentThreadOPNumber = posts[0]["no"]
+
     for post in posts:
         try:
             comments[str(post["no"]) + '   ' + post["now"]] = post["com"]
@@ -76,6 +81,8 @@ def commentTagParser(postNum, comment):
     soup = BeautifulSoup(comment, "html.parser")
     tags = [str(tag) for tag in soup.find_all()]
     contents = []
+
+    global currentThreadOPNumber
 
     test = re.split('<|>', comment)
 
@@ -106,6 +113,9 @@ def commentTagParser(postNum, comment):
             item = item.replace('&quot;', '"')
             item = item.replace('&amp;', '&')
             item = item.replace('&gt;', '>')
+
+            if str(currentThreadOPNumber) == item[2:]:
+                item += '(OP)'
 
             contents.append(urwid.AttrWrap(QuoteButton(item), 'quote'))
             quote = False
@@ -162,6 +172,7 @@ currentBoardWidget = None
 
 currentThread = ''
 currentThreadWidgets = None
+currentThreadOPNumber = None
 
 level = 0
 
@@ -207,11 +218,6 @@ def main():
             temp[str(num).split()[0]] = commentWidget
 
         currentThreadWidgets = temp
-
-        # f = open('log.txt', 'w')
-        # for num, widget in comments.items():
-        #     f.write('number: ' + num + '\n')
-        # f.close()
 
         listbox_content = test
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))

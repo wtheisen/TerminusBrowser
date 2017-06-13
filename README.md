@@ -6,7 +6,7 @@ CLI curses 4chan browser
 
 Created out of a desire to browse 4chan at work.
 This is a terminal browsing application for [4chan](https://www.4chan.org/).
-Built using the [urwid](https://github.com/urwid/urwid/) library for python it uses the [4chan JSON API](https://github.com/4chan/4chan-API).
+Built using the [urwid](https://github.com/urwid/urwid/) library for python, it uses the [4chan JSON API](https://github.com/4chan/4chan-API).
 
 ### Screenshots
 
@@ -21,7 +21,7 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python it u
 
 - [] Board and Thread fetch information in the footer
 - [] Display comment replies in the info bar at the top of the comment
-- [] Quotes of OP have the (OP) designator
+- [X] Quotes of OP have the (OP) designator
 - [] Save threads to a custom hotkey menu
 - [X] Interacting with Quotes displays a preview of said Quote
     - [] Size of preview depends on size of quote being previewed
