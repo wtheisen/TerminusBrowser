@@ -1,7 +1,7 @@
 # commandChan
-
-CLI curses 4chan browser
 ======
+
+# CLI curses 4chan browser
 
 
 Created out of a desire to browse 4chan at work.
@@ -33,10 +33,10 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 - [] Posting from the client
 
 
-Known Bugs
+Bugs List
 ------
-| Cause                                              | Effect                       |
-|:--------------------------------------------------:|:----------------------------:|
-| Posts get incorrectly flagged as containing images | Program fatally crashes      |
-| Cross Thread Links                                 | Program fatally crashes      |
-| Unknown                                            | Image links aren't displayed |
+| Cause                                              | Effect                       | Fix
+|:--------------------------------------------------:|:----------------------------:|:--------------------------------:|
+| Posts get incorrectly flagged as containing images | Program fatally crashes      |                                  |
+| Cross Thread Links                                 | Program fatally crashes      |                                  |
+| Unknown                                            | Image links aren't displayed | The code got deleted somehow...? |
