@@ -11,12 +11,12 @@ def getJSONCatalog(url):
         return parseFourCatalog(data)
 
 def parseFourCatalog(data):
-    titles = {}
+    titles = collections.OrderedDict()
     for i in range(0, 10):
         page = data[i]
         threadsList = page["threads"]
         for j in range(0, len(threadsList)):
-            titles[threadsList[j]["semantic_url"]] = str(threadsList[j]["no"])
+            titles[threadsList[j]["semantic_url"]] = str(threadsList[j]["no"]) + '::' + str(threadsList[j]["replies"]) + '::' + str(threadsList[j]["images"])
     return titles
 
 ########################### THREAD PARSERS #####################################

@@ -36,8 +36,11 @@ def main():
 
         for title, number in titles.items():
             title = title.replace('-', ' ')
-            threadButton = urwid.Button(str(number), displayThread)
-            test.append(urwid.LineBox(urwid.Pile([threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider()])))
+            items = str(number).split('::')
+            threadButton = urwid.Button(str(items[0]), displayThread)
+            threadInfo = urwid.Text('Replies: ' + str(items[1]) + ' Images: ' + str(items[2]))
+            threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
+            test.append(urwid.LineBox(urwid.Pile(threadList)))
 
         MEOW = urwid.GridFlow(test, 30, 2, 2, 'center')
         listbox_content = [MEOW]
