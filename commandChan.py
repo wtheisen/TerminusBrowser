@@ -9,7 +9,6 @@ import urwid.web_display
 ################################################################################
 
 class QuotePreview(urwid.WidgetWrap):
-    """A dialog that appears with nothing but a close button """
     signals = ['close']
     def __init__(self, quoteNumber):
         global currentThreadWidgets
@@ -31,7 +30,6 @@ class QuoteButton(urwid.PopUpLauncher):
         return pop_up
 
     def get_pop_up_parameters(self):
-        global currentThreadWidgets
         return {'left':0, 'top':1, 'overlay_width':128, 'overlay_height':12}
 
 ######################### CATALOG PARSERS ######################################
@@ -40,8 +38,7 @@ def getJSONCatalog(url):
     response = requests.get(url)
     data = response.json()
 
-    if "4cdn" in url:
-        return parseFourCatalog(data)
+    return parseFourCatalog(data)
 
 def parseFourCatalog(data):
     titles = collections.OrderedDict()
@@ -55,10 +52,9 @@ def parseFourCatalog(data):
 ########################### THREAD PARSERS #####################################
 
 def getJSONThread(url, chan, threadNumber):
-    if "4chan" in chan:
-        response = requests.get(url + str(threadNumber) + '.json')
-        data = response.json()
-        return parseFourThread(data)
+    response = requests.get(url + str(threadNumber) + '.json')
+    data = response.json()
+    return parseFourThread(data)
 
 def parseFourThread(data):
     comments = collections.OrderedDict()

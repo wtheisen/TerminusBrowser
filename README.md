@@ -10,11 +10,11 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 
 ### Screenshots
 
-![alt](./screenshots/boardIndex.png?raw=true "Board Index")
+![Board Index](./screenshots/boardIndex.png?raw=true "Board Index")
 
-![alt](./screenshots/boardView.png?raw=true "Board View")
+![Board View](./screenshots/boardView.png?raw=true "Board View")
 
-![alt](./screenshots/threadView.png?raw=true "Thread View")
+![Thread View](./screenshots/threadView.png?raw=true "Thread View")
 
 
 ### TODO List
@@ -40,3 +40,5 @@ Bugs List
 | Posts get incorrectly flagged as containing images | Program fatally crashes      |                                  |
 | Cross Thread Links                                 | Program fatally crashes      |                                  |
 | Unknown                                            | Image links aren't displayed | The code got deleted somehow...? |
+
+If you wish to contribute or know more please feel free to contact me!
