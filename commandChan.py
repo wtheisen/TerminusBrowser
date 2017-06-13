@@ -61,7 +61,6 @@ def getJSONThread(url, chan, threadNumber):
         return parseFourThread(data)
 
 def parseFourThread(data):
-    print("parsing 4chan thread")
     comments = collections.OrderedDict()
     posts = data["posts"]
     for post in posts:
@@ -89,11 +88,9 @@ def getImageUrls(url, board):
     extensionList = ('.jpg', '.jpeg', '.png', '.gif', '.webm')
     images = []
 
-    print('getting images from ' + url)
     for img in page.find_all('a', href=True):
         if board in str(img) and 'i.4cdn.org' in str(img):
             tagList = str(img).split('"')
-            # print(tagList)
             for tag in tagList:
                 if board in str(tag):
                     if any(extension in tag for extension in extensionList):

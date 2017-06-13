@@ -19,7 +19,7 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 
 ### TODO List
 
-- [] Display images links on posts
+- [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
 - [] Filtering options on all pages with information in the footer
 - [] Display comment replies in the info bar at the top of the comment
