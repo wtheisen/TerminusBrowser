@@ -1,6 +1,4 @@
-<p align="center">
-    # commandChan - a terminal 4chan browser
-</p>
+# commandChan - a terminal 4chan browser
 
 1. [Introduction](#introduction)
 2. [Screenshots](#screenshots)
