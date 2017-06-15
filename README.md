@@ -1,10 +1,8 @@
-# commandChan
-
-# CLI curses 4chan browser
+# commandChan - a termina 4chan browser
 
 Created out of a desire to browse 4chan at work.
 This is a terminal browsing application for [4chan](https://www.4chan.org/).
-Built using the [urwid](https://github.com/urwid/urwid/) library for python, it uses the [4chan JSON API](https://github.com/4chan/4chan-API).
+Built using the [urwid](https://github.com/urwid/urwid/) library for python and the [4chan JSON API](https://github.com/4chan/4chan-API).
 
 ### Screenshots
 

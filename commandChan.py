@@ -384,6 +384,16 @@ def main():
             pass
         elif key == 's':
             # splits, adding a second page
+            global level
+            level = 0
+            global currentBoard
+            currentBoard = ''
+            global currentBoardWidget
+            currentBoardWidget = None
+            global boardListWidget
+            splitWidget = urwid.LineBox(boardListWidget)
+            urwid.MainLoop(urwid.Columns([splitWidget, splitWidget]), palette, screen, unhandled_input=unhandled).run()
+
             pass
         elif key == 'd':
             # deletes the item from the thread watcher
