@@ -299,13 +299,18 @@ def main():
 
         return listbox, (endTime - startTime), len(comments)
 
-    def displayBoard(button):
+    def displayBoard(button, board=None):
         global currentBoard
-        currentBoard = button.get_label()
+
+        if board:
+            currentBoard = board
+        else:
+            currentBoard = button.get_label()
+
         global level
         level = 1
 
-        temp, parseTime, itemCount = getBoard(button.get_label())
+        temp, parseTime, itemCount = getBoard(currentBoard)
 
         global currentBoardWidget
         currentBoardWidget = urwid.LineBox(urwid.Pile([temp]))
@@ -313,7 +318,7 @@ def main():
         catalogue = urwid.Overlay(urwid.LineBox(urwid.Pile([temp])), test, 'center', ('relative', 90), 'middle', ('relative', 95))
         frame = urwid.Frame(urwid.AttrWrap(catalogue, 'body'), header=header)
 
-        infoString = urwid.AttrWrap(urwid.Text('Board: ' + button.get_label()), 'header')
+        infoString = urwid.AttrWrap(urwid.Text('Board: ' + currentBoard), 'header')
         timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 's', 'right'), 'header')
         footerWidget = urwid.Columns([infoString, timeString])
         frame.footer = footerWidget
@@ -366,8 +371,8 @@ def main():
             global watchedThreads
             watcherWidget = threadWatcher(None)
 
-            temp = urwid.ListBox(urwid.SimpleListWalker([watcherWidget]))
-            frame = urwid.Frame(urwid.AttrWrap(temp, 'body'), header=header)
+            watcherWidget = urwid.ListBox(urwid.SimpleListWalker([watcherWidget]))
+            frame = urwid.Frame(urwid.AttrWrap(watcherWidget, 'body'), header=header)
             frame.footer = urwid.AttrWrap(urwid.Text('Thread Watcher: ' + str(len(watchedThreads)) + ' thread(s) watched'), 'header')
 
             urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled).run()
@@ -378,11 +383,17 @@ def main():
             # splits, adding a second page
             pass
         elif key == 'd':
-            # deletes the item from the list
+            # deletes the item from the thread watcher
             pass
         elif key == 'u':
-            # in-place update
-            pass
+            global currentBoard
+            global currentThread
+            global level
+
+            if level == 1:
+                displayBoard(None, currentBoard)
+            elif level == 2:
+                displayThread(currentBoard, currentThread)
         elif key == 'q' and level == 0:
             sys.exit()
         elif key =='q' and level == 1:

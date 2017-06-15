@@ -2,7 +2,6 @@
 
 # CLI curses 4chan browser
 
-
 Created out of a desire to browse 4chan at work.
 This is a terminal browsing application for [4chan](https://www.4chan.org/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python, it uses the [4chan JSON API](https://github.com/4chan/4chan-API).
@@ -40,8 +39,8 @@ Bugs List
 ------
 | Cause                                              | Effect                       | Fix
 |:--------------------------------------------------:|:----------------------------:|:--------------------------------:|
-| Posts get incorrectly flagged as containing images | Program fatally crashes      |                                  |
+| Posts get incorrectly flagged as containing images | Program fatally crashes      | Changed where the image links were being parsed|
 | Cross Thread Links                                 | Program fatally crashes      |                                  |
-| Unknown                                            | Image links aren't displayed | The code got deleted somehow...? |
+| Unknown                                            | Image links aren't displayed | Replaced the code I accidentally erased|
 
 If you wish to contribute or know more please feel free to contact me!
