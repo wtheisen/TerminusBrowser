@@ -1,4 +1,4 @@
-# commandChan - a termina 4chan browser
+# commandChan - a terminal 4chan browser
 
 Created out of a desire to browse 4chan at work.
 This is a terminal browsing application for [4chan](https://www.4chan.org/).
@@ -47,5 +47,6 @@ Bugs List
 | Posts get incorrectly flagged as containing images | Program fatally crashes      | Changed where the image links were being parsed|
 | Cross Thread Links                                 | Program fatally crashes      |                                  |
 | Unknown                                            | Image links aren't displayed | Replaced the code I accidentally erased|
+
 
 If you wish to contribute or know more please feel free to contact me!
