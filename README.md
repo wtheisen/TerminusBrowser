@@ -1,5 +1,4 @@
 # commandChan
-======
 
 # CLI curses 4chan browser
 
@@ -16,7 +15,6 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 
 ![Thread View](./screenshots/threadView.png?raw=true "Thread View")
 
-
 ### TODO List
 
 - [X] Display images links on posts
@@ -25,7 +23,9 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 - [] Display comment replies in the info bar at the top of the comment
 - [] Save threads to a custom hotkey menu
     - [X] Watch threads from the board view
-    - [] Watch thread from within the thread
+    - [X] Watch thread from within the thread
+    - [] Hotkey to delete thread from watcher
+    - [] Auto-prune threads that get archived
 - [] Quote button full interaction
     - [X] Quotes of OP have the (OP) designator
     - [X] Interacting with Quotes displays a preview of said Quote

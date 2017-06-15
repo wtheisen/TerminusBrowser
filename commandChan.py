@@ -358,32 +358,19 @@ def main():
         if key == 'w' and (level == 1 or level == 2):
             # add the currently focused thread to the thread watcher
             global watchedThreads
-
-            if level == 1:
-                global currentBoardWidget
-                currentWidget = ((currentBoardWidget.base_widget).contents)[0][0].focus.focus
-                watchedThreads.append(currentWidget)
-            # else:
-            #     global currentThreadWidgets
-            #     currentWidget = currentBoardWidget.get_focus_widgets()
-
-            pass
+            global currentBoardWidget
+            currentWidget = ((currentBoardWidget.base_widget).contents)[0][0].focus.focus
+            watchedThreads.append(currentWidget)
         elif key == 'e':
             # 'e'xpand the thread watcher
-            watcherWidget = None
-            global level
-            if level == 1:
-                global currentBoardWidget
-                watcherWidget = threadWatcher(currentBoardWidget)
+            global watchedThreads
+            watcherWidget = threadWatcher(None)
 
             temp = urwid.ListBox(urwid.SimpleListWalker([watcherWidget]))
             frame = urwid.Frame(urwid.AttrWrap(temp, 'body'), header=header)
-            frame.footer = urwid.AttrWrap(urwid.Text('Board: '), 'header')
+            frame.footer = urwid.AttrWrap(urwid.Text('Thread Watcher: ' + str(len(watchedThreads)) + ' thread(s) watched'), 'header')
 
             urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled).run()
-
-
-            pass
         elif key == 'f':
             # filters the contents of the pages based on the term(maybe full regex?) entered
             pass
