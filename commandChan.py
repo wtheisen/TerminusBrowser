@@ -325,9 +325,12 @@ def main():
 
         urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled, pop_ups=True).run()
 
-    def displayThread(button):
+    def displayThread(button, thread=None):
         global currentThread
-        currentThread = button.get_label()
+        if thread:
+            currentThread = thread
+        else:
+            currentThread = button.get_label()
         global level
         level = 2
         global currentBoardWidget
@@ -337,7 +340,7 @@ def main():
         thread = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), currentBoardWidget, 'center', ('relative', 60), 'middle', ('relative', 95))
         frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=header)
 
-        infoString = urwid.AttrWrap(urwid.Text('Board: ' + currentBoard + ', Thread: ' + button.get_label()), 'header')
+        infoString = urwid.AttrWrap(urwid.Text('Board: ' + currentBoard + ', Thread: ' + currentThread), 'header')
         timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 's', 'right'), 'header')
         footerWidget = urwid.Columns([infoString, timeString])
 
