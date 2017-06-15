@@ -43,7 +43,7 @@ class QuotePreview(urwid.WidgetWrap):
         close_button = urwid.Button("Hide")
         urwid.connect_signal(close_button, 'click', lambda button:self._emit("close"))
         cleanQuoteNumber = re.sub("[^0-9]", "", str(quoteNumber))
-        fill = urwid.Filler(urwid.Pile([currentThreadWidgets[cleanQuoteNumber], close_button]))
+        fill = urwid.Filler(urwid.LineBox(urwid.Pile([currentThreadWidgets[cleanQuoteNumber], close_button])))
         self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
 
 class QuoteButton(urwid.PopUpLauncher):
@@ -228,7 +228,7 @@ def main():
         watcherWidget = urwid.Pile(watchedThreads)
 
 
-    def getBoard(board):
+    def getBoard(board, userFilter=None):
         '''returns the board widget'''
         startTime = time.time()
         titles = getJSONCatalog('https://a.4cdn.org' + board + 'catalog.json')
@@ -237,11 +237,19 @@ def main():
 
         for title, number in titles.items():
             title = title.replace('-', ' ')
-            items = str(number).split('::')
-            threadButton = urwid.Button(str(items[0]), displayThread)
-            threadInfo = urwid.Text('Replies: ' + str(items[1]) + ' Images: ' + str(items[2]))
-            threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
-            test.append(urwid.LineBox(urwid.Pile(threadList)))
+            if userFilter:
+                if userFilter in title:
+                    items = str(number).split('::')
+                    threadButton = urwid.Button(str(items[0]), displayThread)
+                    threadInfo = urwid.Text('Replies: ' + str(items[1]) + ' Images: ' + str(items[2]))
+                    threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
+                    test.append(urwid.LineBox(urwid.Pile(threadList)))
+            else:
+                items = str(number).split('::')
+                threadButton = urwid.Button(str(items[0]), displayThread)
+                threadInfo = urwid.Text('Replies: ' + str(items[1]) + ' Images: ' + str(items[2]))
+                threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
+                test.append(urwid.LineBox(urwid.Pile(threadList)))
 
         endTime = time.time()
 
@@ -299,7 +307,7 @@ def main():
 
         return listbox, (endTime - startTime), len(comments)
 
-    def displayBoard(button, board=None):
+    def displayBoard(button, board=None, userFilter=None):
         global currentBoard
 
         if board:
@@ -310,7 +318,10 @@ def main():
         global level
         level = 1
 
-        temp, parseTime, itemCount = getBoard(currentBoard)
+        if userFilter:
+            temp, parseTime, itemCount = getBoard(currentBoard, userFilter)
+        else:
+            temp, parseTime, itemCount = getBoard(currentBoard)
 
         global currentBoardWidget
         currentBoardWidget = urwid.LineBox(urwid.Pile([temp]))
