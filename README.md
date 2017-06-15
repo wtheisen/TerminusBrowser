@@ -1,10 +1,19 @@
 # commandChan - a terminal 4chan browser
 
+# Table of Contents
+1. [Introduction](#introduction)
+2. [Screenshots](#screenshots)
+3. [Hotkeys](#hotkeys)
+4. [TODO List](#todoList)
+5. [Bug List](#bugList)
+
+## Introduction <a name="introduction"></a>
+
 Created out of a desire to browse 4chan at work.
 This is a terminal browsing application for [4chan](https://www.4chan.org/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python and the [4chan JSON API](https://github.com/4chan/4chan-API).
 
-### Screenshots
+## Screenshots <a name="screenshots"></a>
 
 ![Board Index](./screenshots/boardIndex.png?raw=true "Board Index")
 
@@ -12,14 +21,14 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 
 ![Thread View](./screenshots/threadView.png?raw=true "Thread View")
 
-### Hotkeys
+## Hotkeys <a name="hotkeys"></a>
 
 - 'q' - go up a level, or quit the program if viewing the board index
 - 'u' - in-place update either the catalog or the thread in focus
 - 'w' - watch the currently focused thread
 - 'e' - view the thread watcher
 
-### TODO List
+## TODO List <a name="todoList"></a>
 
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
@@ -40,8 +49,8 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 - [] Posting from the client
 
 
-Bugs List
-------
+## Bugs List <a name="bugList"></a>
+
 | Cause                                              | Effect                       | Fix
 |:--------------------------------------------------:|:----------------------------:|:--------------------------------:|
 | Posts get incorrectly flagged as containing images | Program fatally crashes      | Changed where the image links were being parsed|
