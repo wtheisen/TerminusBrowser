@@ -23,9 +23,12 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python, it 
 - [X] Board and Thread fetch information in the footer
 - [] Filtering options on all pages with information in the footer
 - [] Display comment replies in the info bar at the top of the comment
-- [X] Quotes of OP have the (OP) designator
 - [] Save threads to a custom hotkey menu
-- [X] Interacting with Quotes displays a preview of said Quote
+    - [X] Watch threads from the board view
+    - [] Watch thread from within the thread
+- [] Quote button full interaction
+    - [X] Quotes of OP have the (OP) designator
+    - [X] Interacting with Quotes displays a preview of said Quote
     - [] Size of preview depends on size of quote being previewed
     - [] Chain Quote Previews together to view up the quote tree
 - [] Split view based on hotkeys

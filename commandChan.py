@@ -59,18 +59,23 @@ def getJSONThread(url, chan, threadNumber):
 def parseFourThread(data):
     comments = collections.OrderedDict()
     posts = data["posts"]
+    global currentThreadOPNumber
+
     for post in posts:
+        if str(post["resto"]) == '0':
+            currentThreadOPNumber = str(post["no"])
+
         try:
             imageBool = post['filename']
             try:
-                comments[post["no"]] = post["com"] + '::' + 'image'
+                comments[str(post["no"]) + ' ' + post["now"]] = post["com"] + '::' + 'image'
             except:
-                comments[post["no"]] = '::image'
+                comments[str(post["no"]) + ' ' + post["now"]] = '::image'
         except:
             try:
-                comments[post["no"]] = post["com"]
+                comments[str(post["no"]) + ' ' + post["now"]] = post["com"]
             except:
-                comments[post["no"]] = ''
+                comments[str(post["no"]) + ' ' + post["now"]] = ''
     return comments
 
 def getImageUrls(url, board):
@@ -175,6 +180,17 @@ def commentTagParser(postNum, comment, imageURL=None):
 
 ################################################################################
 
+watchedThreads = []
+
+def threadWatcher(currentWidget):
+    global watchedThreads
+
+    watcherWidget = urwid.LineBox(urwid.Pile([urwid.GridFlow(watchedThreads, 30, 2, 2, 'center')]))
+
+    return watcherWidget
+
+################################################################################
+
 boards = ['/g/', '/v/', '/tv/', '/sp/', '/fa/', '/pol/', '/vg/',
           '/a/', '/b/', '/c/', '/d/', '/e/',
           '/f/', '/gif/', '/h/', '/hr/', '/k/',
@@ -198,8 +214,6 @@ currentBoardWidget = None
 currentThread = ''
 currentThreadWidgets = None
 currentThreadOPNumber = None
-
-watchedThreads = []
 
 level = 0
 
@@ -341,8 +355,46 @@ def main():
     boardListWidget = frame
 
     def unhandled(key):
-        if key == 's' and (level == 1 or level == 2):
+        if key == 'w' and (level == 1 or level == 2):
             # add the currently focused thread to the thread watcher
+            global watchedThreads
+
+            if level == 1:
+                global currentBoardWidget
+                currentWidget = ((currentBoardWidget.base_widget).contents)[0][0].focus.focus
+                watchedThreads.append(currentWidget)
+            # else:
+            #     global currentThreadWidgets
+            #     currentWidget = currentBoardWidget.get_focus_widgets()
+
+            pass
+        elif key == 'e':
+            # 'e'xpand the thread watcher
+            watcherWidget = None
+            global level
+            if level == 1:
+                global currentBoardWidget
+                watcherWidget = threadWatcher(currentBoardWidget)
+
+            temp = urwid.ListBox(urwid.SimpleListWalker([watcherWidget]))
+            frame = urwid.Frame(urwid.AttrWrap(temp, 'body'), header=header)
+            frame.footer = urwid.AttrWrap(urwid.Text('Board: '), 'header')
+
+            urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled).run()
+
+
+            pass
+        elif key == 'f':
+            # filters the contents of the pages based on the term(maybe full regex?) entered
+            pass
+        elif key == 's':
+            # splits, adding a second page
+            pass
+        elif key == 'd':
+            # deletes the item from the list
+            pass
+        elif key == 'u':
+            # in-place update
             pass
         elif key == 'q' and level == 0:
             sys.exit()
@@ -353,7 +405,6 @@ def main():
             currentBoard = ''
             global currentBoardWidget
             currentBoardWidget = None
-
             global boardListWidget
             urwid.MainLoop(boardListWidget, palette, screen, unhandled_input=unhandled).run()
         elif key == 'q' and level == 2:
@@ -373,15 +424,7 @@ def main():
         ('body', 'light gray', 'black', 'standout'),
         ('quote', 'light cyan', 'black'),
         ('greenText', 'dark green', 'black'),
-        ('reverse', 'light gray', 'black'),
         ('header', 'white', 'dark red', 'bold'),
-        ('important', 'dark blue', 'light gray', ('standout', 'underline')),
-        ('editfc', 'white', 'dark blue', 'bold'),
-        ('editbx', 'light gray', 'dark blue'),
-        ('editcp', 'black', 'light gray', 'standout'),
-        ('bright', 'dark gray', 'light gray', ('bold', 'standout')),
-        ('buttn', 'black', 'dark cyan'),
-        ('buttnf', 'white', 'dark blue', 'bold'),
         ('quotePreview', 'light gray', 'black')
         ]
 
