@@ -8,6 +8,34 @@ import urwid.web_display
 
 ################################################################################
 
+boards = ['/g/', '/v/', '/tv/', '/sp/', '/fa/', '/pol/', '/vg/',
+          '/a/', '/b/', '/c/', '/d/', '/e/',
+          '/f/', '/gif/', '/h/', '/hr/', '/k/',
+          '/m/', '/o/', '/p/', '/r/', '/s/',
+          '/t/', '/u/', '/vr/',
+          '/w/', '/wg/', '/i/', '/ic/', '/r9k/',
+          '/s4s/', '/vip/', '/cm/', '/hm/', '/lgbt/',
+          '/y/', '/3/', '/aco/', '/adv/', '/an/',
+          '/asp/', '/bant/', '/biz/', '/cgl/', '/ck/',
+          '/co/', '/diy/', '/fit/', '/gd/', '/hc/',
+          '/his/', '/int/', '/jp/', '/lit/', '/mlp/',
+          '/mu/', '/n/', '/news/', '/out/', '/po/',
+          '/qst/', '/sci/', '/soc/', '/tg/', 'toy',
+          '/trv/', '/vp/', '/wsg/', '/wsr/', '/x/']
+
+boardListWidget = None
+
+currentBoard = ''
+currentBoardWidget = None
+
+currentThread = ''
+currentThreadWidgets = None
+currentThreadOPNumber = None
+
+level = 0
+
+################################################################################
+
 class QuotePreview(urwid.WidgetWrap):
     signals = ['close']
     def __init__(self, quoteNumber):
@@ -191,34 +219,6 @@ def threadWatcher(currentWidget):
 
 ################################################################################
 
-boards = ['/g/', '/v/', '/tv/', '/sp/', '/fa/', '/pol/', '/vg/',
-          '/a/', '/b/', '/c/', '/d/', '/e/',
-          '/f/', '/gif/', '/h/', '/hr/', '/k/',
-          '/m/', '/o/', '/p/', '/r/', '/s/',
-          '/t/', '/u/', '/vr/',
-          '/w/', '/wg/', '/i/', '/ic/', '/r9k/',
-          '/s4s/', '/vip/', '/cm/', '/hm/', '/lgbt/',
-          '/y/', '/3/', '/aco/', '/adv/', '/an/',
-          '/asp/', '/bant/', '/biz/', '/cgl/', '/ck/',
-          '/co/', '/diy/', '/fit/', '/gd/', '/hc/',
-          '/his/', '/int/', '/jp/', '/lit/', '/mlp/',
-          '/mu/', '/n/', '/news/', '/out/', '/po/',
-          '/qst/', '/sci/', '/soc/', '/tg/', 'toy',
-          '/trv/', '/vp/', '/wsg/', '/wsr/', '/x/']
-
-boardListWidget = None
-
-currentBoard = ''
-currentBoardWidget = None
-
-currentThread = ''
-currentThreadWidgets = None
-currentThreadOPNumber = None
-
-level = 0
-
-################################################################################
-
 def main():
 
     header = urwid.AttrWrap(urwid.Text('CommandChan'), 'header')
@@ -358,13 +358,14 @@ def main():
     test = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
     frame = urwid.Frame(urwid.AttrWrap(test, 'body'), header=header)
+    frame.footer = urwid.AttrWrap(urwid.Text('Board Index'), 'header')
 
     global boardListWidget
     boardListWidget = frame
 
     def unhandled(key):
         if key == 'w' and (level == 1 or level == 2):
-            # add the currently focused thread to the thread watcher
+            # 'w'atch the currently focused thread
             global watchedThreads
             global currentBoardWidget
             currentWidget = ((currentBoardWidget.base_widget).contents)[0][0].focus.focus

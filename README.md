@@ -12,6 +12,13 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 
 ![Thread View](./screenshots/threadView.png?raw=true "Thread View")
 
+### Hotkeys
+
+- 'q' - go up a level, or quit the program if viewing the board index
+- 'u' - in-place update either the catalog or the thread in focus
+- 'w' - watch the currently focused thread
+- 'e' - view the thread watcher
+
 ### TODO List
 
 - [X] Display images links on posts
