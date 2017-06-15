@@ -1,6 +1,5 @@
 # commandChan - a terminal 4chan browser
 
-# Table of Contents
 1. [Introduction](#introduction)
 2. [Screenshots](#screenshots)
 3. [Hotkeys](#hotkeys)
