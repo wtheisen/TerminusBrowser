@@ -1,98 +1,4013 @@
-number: 60874998   06/12/17(Mon)18:38:24
-number: 60875012   06/12/17(Mon)18:39:28
-number: 60875018   06/12/17(Mon)18:39:54
-number: 60875027   06/12/17(Mon)18:40:51
-number: 60875031   06/12/17(Mon)18:40:59
-number: 60875042   06/12/17(Mon)18:41:42
-number: 60875044   06/12/17(Mon)18:41:47
-number: 60875051   06/12/17(Mon)18:42:28
-number: 60875057   06/12/17(Mon)18:43:10
-number: 60875064   06/12/17(Mon)18:43:57
-number: 60875071   06/12/17(Mon)18:44:34
-number: 60875083   06/12/17(Mon)18:45:25
-number: 60875088   06/12/17(Mon)18:45:36
-number: 60875091   06/12/17(Mon)18:45:49
-number: 60875093   06/12/17(Mon)18:45:57
-number: 60875094   06/12/17(Mon)18:46:12
-number: 60875103   06/12/17(Mon)18:47:11
-number: 60875104   06/12/17(Mon)18:47:15
-number: 60875140   06/12/17(Mon)18:49:59
-number: 60875151   06/12/17(Mon)18:50:45
-number: 60875158   06/12/17(Mon)18:51:23
-number: 60875187   06/12/17(Mon)18:53:45
-number: 60875199   06/12/17(Mon)18:55:22
-number: 60875202   06/12/17(Mon)18:55:28
-number: 60875320   06/12/17(Mon)19:05:58
-number: 60875397   06/12/17(Mon)19:11:53
-number: 60875436   06/12/17(Mon)19:15:02
-number: 60875454   06/12/17(Mon)19:16:56
-number: 60875462   06/12/17(Mon)19:17:50
-number: 60875465   06/12/17(Mon)19:18:11
-number: 60875493   06/12/17(Mon)19:20:08
-number: 60875675   06/12/17(Mon)19:33:52
-number: 60875707   06/12/17(Mon)19:35:48
-number: 60875721   06/12/17(Mon)19:36:39
-number: 60875740   06/12/17(Mon)19:37:47
-number: 60875766   06/12/17(Mon)19:39:48
-number: 60875798   06/12/17(Mon)19:42:23
-number: 60875918   06/12/17(Mon)19:52:56
-number: 60875928   06/12/17(Mon)19:53:34
-number: 60875935   06/12/17(Mon)19:54:27
-number: 60875940   06/12/17(Mon)19:54:53
-number: 60875943   06/12/17(Mon)19:55:15
-number: 60875959   06/12/17(Mon)19:56:40
-number: 60875968   06/12/17(Mon)19:57:31
-number: 60875982   06/12/17(Mon)19:58:32
-number: 60875993   06/12/17(Mon)19:59:11
-number: 60876002   06/12/17(Mon)20:00:27
-number: 60876008   06/12/17(Mon)20:00:45
-number: 60876017   06/12/17(Mon)20:01:28
-number: 60876041   06/12/17(Mon)20:04:28
-number: 60876080   06/12/17(Mon)20:08:29
-number: 60876086   06/12/17(Mon)20:09:09
-number: 60876097   06/12/17(Mon)20:10:02
-number: 60876104   06/12/17(Mon)20:10:31
-number: 60876105   06/12/17(Mon)20:10:43
-number: 60876106   06/12/17(Mon)20:10:57
-number: 60876110   06/12/17(Mon)20:11:08
-number: 60876153   06/12/17(Mon)20:16:37
-number: 60876162   06/12/17(Mon)20:17:38
-number: 60876165   06/12/17(Mon)20:18:11
-number: 60876192   06/12/17(Mon)20:20:57
-number: 60876226   06/12/17(Mon)20:25:27
-number: 60876244   06/12/17(Mon)20:27:13
-number: 60876290   06/12/17(Mon)20:31:17
-number: 60876367   06/12/17(Mon)20:40:10
-number: 60876393   06/12/17(Mon)20:44:25
-number: 60876667   06/12/17(Mon)21:16:07
-number: 60876678   06/12/17(Mon)21:17:05
-number: 60876700   06/12/17(Mon)21:18:58
-number: 60876720   06/12/17(Mon)21:21:05
-number: 60876725   06/12/17(Mon)21:21:33
-number: 60876763   06/12/17(Mon)21:25:26
-number: 60876771   06/12/17(Mon)21:25:56
-number: 60876801   06/12/17(Mon)21:28:53
-number: 60876802   06/12/17(Mon)21:28:56
-number: 60876840   06/12/17(Mon)21:33:27
-number: 60876845   06/12/17(Mon)21:34:18
-number: 60876855   06/12/17(Mon)21:35:39
-number: 60876906   06/12/17(Mon)21:41:01
-number: 60876912   06/12/17(Mon)21:42:04
-number: 60876921   06/12/17(Mon)21:42:54
-number: 60876932   06/12/17(Mon)21:43:46
-number: 60876941   06/12/17(Mon)21:44:48
-number: 60876959   06/12/17(Mon)21:47:11
-number: 60876969   06/12/17(Mon)21:48:36
-number: 60876972   06/12/17(Mon)21:48:51
-number: 60877060   06/12/17(Mon)22:01:06
-number: 60877116   06/12/17(Mon)22:09:29
-number: 60877155   06/12/17(Mon)22:13:51
-number: 60877169   06/12/17(Mon)22:15:43
-number: 60877171   06/12/17(Mon)22:15:49
-number: 60877176   06/12/17(Mon)22:17:07
-number: 60877192   06/12/17(Mon)22:19:18
-number: 60877207   06/12/17(Mon)22:21:37
-number: 60877214   06/12/17(Mon)22:22:45
-number: 60877220   06/12/17(Mon)22:23:09
-number: 60877257   06/12/17(Mon)22:28:32
-number: 60877281   06/12/17(Mon)22:33:16
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+The /g/ Wiki:
+T
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+The /g/ Wiki:
+T
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+The /g/ Wiki:
+T
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+O
+O
+O
+How do I convert C headers to rust
+What are your goto languages for starting new projects? Python fags need not apply.
+
+a href="#p71686226" class="quotelink"
+&gt;&gt;71686226
+/a
+
+br
+just check that the difference in x is the same as the difference in y and that object2&#039;s coords are greater than object1&#039;s
+
+a href="#p71686282" class="quotelink"
+&gt;&gt;71686282
+/a
+
+br
+Almost always C.
+
+a href="#p71686283" class="quotelink"
+&gt;&gt;71686283
+/a
+
+br
+but how does that equate to 45?
+
+a href="#p71686282" class="quotelink"
+&gt;&gt;71686282
+/a
+
+br
+Python.
+
+a href="#p71686299" class="quotelink"
+&gt;&gt;71686299
+/a
+
+br
+it will always be 45 if the difference in both x and y between the objects are equal
+
+a href="#p71686311" class="quotelink"
+&gt;&gt;71686311
+/a
+
+br
+Terrible.
+
+a href="#p71686320" class="quotelink"
+&gt;&gt;71686320
+/a
+
+br
+no u
+
+a href="#p71686298" class="quotelink"
+&gt;&gt;71686298
+/a
+
+br
+Do you use Glib/something similar or just write that sort of stuff yourself? Maybe I&#039;m a brainlet but reinventing the wheel seems to be a bit of a problem when starting a new project in C. Particularly with strings.
+
+a href="#p71686211" class="quotelink"
+&gt;&gt;71686211
+/a
+
+br
+
+span class="quote"
+&gt;What are you working on, /g/?
+/span
+
+br
+Learning full stack webdev atm. Am planning on cloning niche websites like zillow/airbnb and market it to some people on nigeria and mongolia.
+
+a href="#p71686337" class="quotelink"
+&gt;&gt;71686337
+/a
+
+br
+
+span class="quote"
+&gt;glib
+/span
+
+br
+
+br
+Absolutely fucking disgusting
+
+a href="#p71686226" class="quotelink"
+&gt;&gt;71686226
+/a
+
+br
+Stay in school and learn basic trigonometry? I forget when you cover this stuff, maybe at 14 or so?
+
+a href="#p71686282" class="quotelink"
+&gt;&gt;71686282
+/a
+
+br
+used to be sepples, now it&#039;s rust
+
+a href="#p71686502" class="quotelink"
+&gt;&gt;71686502
+/a
+
+br
+How do I into rust? I feel like I&#039;m about to go full c++ autism mode
+
+a href="#p71686226" class="quotelink"
+&gt;&gt;71686226
+/a
+
+br
+basic trig my dude, the ratio of height to width is used to calculate the slope, which is directly related to the angle from the normal
+
+a href="#p71686509" class="quotelink"
+&gt;&gt;71686509
+/a
+
+br
+I used based haskellman&#039;s intro
+br
+https://www.snoyman.com/blog/2018/1
+wbr
+0/rust-crash-course-01-kick-the-tir
+wbr
+es
+
+a href="#p71686509" class="quotelink"
+&gt;&gt;71686509
+/a
+
+br
+First you buy your programming socks, then you get that book by Klobnik.
+
+a href="#p71686282" class="quotelink"
+&gt;&gt;71686282
+/a
+
+br
+Whatever is best suited for the job?
+S
+
+a href="#p71686509" class="quotelink"
+&gt;&gt;71686509
+/a
+
+br
+
+a href="#p71686525" class="quotelink"
+&gt;&gt;71686525
+/a
+
+br
+
+a href="#p71686526" class="quotelink"
+&gt;&gt;71686526
+/a
+
+br
+
+br
+Forgot to mention: I&#039;d like to write freestanding programs so if there&#039;s docs related to that please link them. I have lots of C experience and some C++
+
+a href="#p71686533" class="quotelink"
+&gt;&gt;71686533
+/a
+
+br
+So C++ always
+
+a href="#p71686541" class="quotelink"
+&gt;&gt;71686541
+/a
+
+br
+It&#039;s just an extra u, you can spell it either color or colour it doesn&#039;t matter.
+
+a href="#p71686552" class="quotelink"
+&gt;&gt;71686552
+/a
+
+br
+then try this also:
+br
+https://os.phil-opp.com/
+
+a href="#p71686541" class="quotelink"
+&gt;&gt;71686541
+/a
+
+br
+
+span class="quote"
+&gt;not usign multiple concatenated strings
+/span
+
+br
+
+br
+lmao
+
+a href="#p71686599" class="quotelink"
+&gt;&gt;71686599
+/a
+
+br
+
+span class="quote"
+&gt;writing shaders as strings
+/span
+
+
+a href="#p71686337" class="quotelink"
+&gt;&gt;71686337
+/a
+
+br
+
+span class="quote"
+&gt;Glib
+/span
+
+br
+Fuck no. I avoid that shit like the plague.
+
+a href="#p71686605" class="quotelink"
+&gt;&gt;71686605
+/a
+
+br
+That&#039;s what he did. If he must do that then at least do it properly
+
+a href="#p71686557" class="quotelink"
+&gt;&gt;71686557
+/a
+
+br
+
+span class="quote"
+&gt;inb4 i was only pretending to be retarded
+/span
+
+C++ would absolutely be the best language if they made a C++ lite that removed half the shit nobody uses anyway.
+
+a href="#p71686685" class="quotelink"
+&gt;&gt;71686685
+/a
+
+br
+They could call it C.
+
+a href="#p71686685" class="quotelink"
+&gt;&gt;71686685
+/a
+
+br
+So Go? It&#039;s like C but better.
+
+a href="#p71686742" class="quotelink"
+&gt;&gt;71686742
+/a
+
+br
+
+span class="quote"
+&gt;GC
+/span
+
+br
+
+br
+And a shitty GC at that.
+
+a href="#p71686685" class="quotelink"
+&gt;&gt;71686685
+/a
+
+br
+just dont use
+Is Hacker&#039;s Delight worth the read?
+br
+Or there is a library that sums up everything in it.
+
+
+
+a href="#p71686924" class="quotelink"
+&gt;&gt;71686924
+/a
+
+br
+
+span class="quote"
+&gt;library for bitwise ops
+/span
+
+br
+
+br
+the absolute state of the dpt
+
+a href="#p71686991" class="quotelink"
+&gt;&gt;71686991
+/a
+
+br
+Amazing anon. Please open source it the world needs more competition in the proprietary 3D graphics space
+
+a href="#p71687013" class="quotelink"
+&gt;&gt;71687013
+/a
+
+br
+if you say so bud
+
+
+Does Lisp have fmap?
+
+a href="#p71687053" class="quotelink"
+&gt;&gt;71687053
+/a
+
+br
+It should be jtoddlers in this thread.
+Reading the rust book. Wow, this language is a pleasure to write in. Should&#039;ve done this sooner. Much better than Go.
+
+a href="#p71686211" class="quotelink"
+&gt;&gt;71686211
+/a
+
+br
+Working on a portfolio manager for my peer to peer lending since websites are shit and excel can only take you so far before becoming a bloated monster.
+hi please hate https://github.com/gelbpunkt a little. He is a python fag
+
+a href="#p71687395" class="quotelink"
+&gt;&gt;71687395
+/a
+
+br
+
+span class="quote"
+&gt;all those oss contributions
+/span
+
+br
+
+br
+You&#039;re the faggot here
+
+
+
+a href="#p71686299" class="quotelink"
+&gt;&gt;71686299
+/a
+
+br
+Because we use a system where 360 degrees is a full circle. For anything beyond practical real world measuring you&#039;ll want to work with radians instead.
+br
+
+br
+You really shouldn&#039;t be learning python if you don&#039;t understand basic trigonometry. Math is a fundamental part of programming.
+I&#039;ve written a B-tree in C and I&#039;m having a bit of trouble extending
+br
+it to take arbitrary keys/values. Mostly, I&#039;m having trouble with freeing the values whenever a delete occurs. I figure I&#039;ve got two options: require the
+br
+user to provide a free function that&#039;s called automatically on deletes, or 
+br
+just have delete return a pointer to the deleted value and let the user free
+br
+it however they want.
+br
+
+br
+Anyone have any advice?
+
+a href="#p71687587" class="quotelink"
+&gt;&gt;71687587
+/a
+
+br
+The first sounds more straight forward and less prone to bugs due to hidden logic desu.
+
+
+
+a href="#p71687587" class="quotelink"
+&gt;&gt;71687587
+/a
+
+br
+Copy the user&#039;s data into the tree yourself and manage your own memory so the user doesn&#039;t have to?
+
+a href="#p71687624" class="quotelink"
+&gt;&gt;71687624
+/a
+
+br
+
+a href="#p71687619" class="quotelink"
+&gt;&gt;71687619
+/a
+
+br
+Yes, be consistent. If the rest of your btree functions copy user data then the btree should free it. If the user provided reference is what is kept in the btree, then the user should be responsible for freeing it.
+
+a href="#p71687639" class="quotelink"
+&gt;&gt;71687639
+/a
+
+br
+If the guy&#039;s a bro he implements both and supports it by providing an option during btree creation.
+
+
+
+a href="#p71687587" class="quotelink"
+&gt;&gt;71687587
+/a
+
+br
+Wouldn&#039;t it make more sense to write a b-tree in B?
+Is anyone using Magit? I can&#039;t figure out how to commit and push to a new remote branch in one go.
+
+a href="#p71687801" class="quotelink"
+&gt;&gt;71687801
+/a
+
+br
+Inary ree.
+
+a href="#p71687071" class="quotelink"
+&gt;&gt;71687071
+/a
+
+br
+yes
+br
+it&#039;s not called fmap though
+
+
+
+a href="#p71686211" class="quotelink"
+&gt;&gt;71686211
+/a
+
+br
+Lisp is the most powerful programming language.
+
+a href="#p71687904" class="quotelink"
+&gt;&gt;71687904
+/a
+
+br
+yes
+
+a href="#p71687619" class="quotelink"
+&gt;&gt;71687619
+/a
+
+br
+god there&#039;s nothing I love more than women making faux pas
+br
+for such a social creature to make a mistake and be ridiculed and excluded, its exquisite
+
+
+
+a href="#p71687929" class="quotelink"
+&gt;&gt;71687929
+/a
+
+br
+You&#039;re mean spirited.
+
+a href="#p71687893" class="quotelink"
+&gt;&gt;71687893
+/a
+
+br
+What&#039;s it called?
+
+a href="#p71687718" class="quotelink"
+&gt;&gt;71687718
+/a
+
+br
+Why has your coworker put his personal repo on the company gitlab hub?
+
+a href="#p71687969" class="quotelink"
+&gt;&gt;71687969
+/a
+
+br
+map
+
+a href="#p71686211" class="quotelink"
+&gt;&gt;71686211
+/a
+
+br
+What&#039;s the best java IDE? People at uni keep arguing between Eclipse and Intellij for some reason.
+
+a href="#p71687981" class="quotelink"
+&gt;&gt;71687981
+/a
+
+br
+
+span class="quote"
+&gt;java IDE
+/span
+
+br
+indian designated environment?
+
+a href="#p71687977" class="quotelink"
+&gt;&gt;71687977
+/a
+
+br
+But doesn&#039;t this only work for conventional lists?
+
+a href="#p71687981" class="quotelink"
+&gt;&gt;71687981
+/a
+
+br
+Intellij &gt; all.
+
+a href="#p71687981" class="quotelink"
+&gt;&gt;71687981
+/a
+
+br
+Intellij has a very competent backend. I use spacemacs with Java LSP, mostly because I love spacemacs and Java LSP is good enough for me
+
+a href="#p71688004" class="quotelink"
+&gt;&gt;71688004
+/a
+
+br
+not just lists, but anything that is a proper sequence.
+
+a href="#p71688045" class="quotelink"
+&gt;&gt;71688045
+/a
+
+br
+
+span class="quote"
+&gt;not just lists, but lists
+/span
+
+
+a href="#p71688053" class="quotelink"
+&gt;&gt;71688053
+/a
+
+br
+note the use of the word &quot;proper,&quot; so not circular or dotted lists.
+
+a href="#p71688045" class="quotelink"
+&gt;&gt;71688045
+/a
+
+br
+So lists and vectors?
+If your favorite language doesn&#039;t have an official standard, it&#039;s shit.
+
+a href="#p71687941" class="quotelink"
+&gt;&gt;71687941
+/a
+
+br
+yes, and?
+
+a href="#p71688069" class="quotelink"
+&gt;&gt;71688069
+/a
+
+br
+anything that is a proper sequence as defined by the standard, yes
+
+a href="#p71688085" class="quotelink"
+&gt;&gt;71688085
+/a
+
+br
+Well that&#039;s fucking useless.
+br
+What&#039;s the point of it being &quot;generic&quot; if it&#039;s only generic over two types and it&#039;s not extensible?
+What is it about programming that makes everyone either an insufferable cunt or a faggot?
+
+a href="#p71688096" class="quotelink"
+&gt;&gt;71688096
+/a
+
+br
+if by two types, you mean lists and vectors, those are just two subtypes of sequence. as long as anything is a proper sequence, then it qualifies.
+
+a href="#p71688101" class="quotelink"
+&gt;&gt;71688101
+/a
+
+br
+or in your case, both
+
+a href="#p71688122" class="quotelink"
+&gt;&gt;71688122
+/a
+
+br
+What are the other sequences?
+
+a href="#p71688122" class="quotelink"
+&gt;&gt;71688122
+/a
+
+br
+in haskell map takes a pure function (unlike traverse), and there are many cases like binary trees where no order is required to map
+
+a href="#p71688126" class="quotelink"
+&gt;&gt;71688126
+/a
+
+br
+rekt
+
+a href="#p71688128" class="quotelink"
+&gt;&gt;71688128
+/a
+
+br
+by default, you get vector and list, but this in itself is extensible. simply define a new subtype of sequence.
+
+a href="#p71688141" class="quotelink"
+&gt;&gt;71688141
+/a
+
+br
+i see
+br
+so you probably want something like apply, which simply applies a function to its arguments (could be anything)
+
+a href="#p71688186" class="quotelink"
+&gt;&gt;71688186
+/a
+
+br
+I think he&#039;s just trying to say he likes typeclasses
+
+a href="#p71688175" class="quotelink"
+&gt;&gt;71688175
+/a
+
+br
+If it&#039;s extensible that&#039;s fine. How do you do this?
+
+a href="#p71688186" class="quotelink"
+&gt;&gt;71688186
+/a
+
+br
+learn haskell and stop making stupid replies
+
+span class="quote"
+&gt;mfw passing functions as parameters in clojure coming from a java background
+/span
+
+
+a href="#p71688101" class="quotelink"
+&gt;&gt;71688101
+/a
+
+br
+Because it&#039;s a topic where it&#039;s incredibly easy to pretend you know shit when you actually don&#039;t, unlike, say, discussions about physics or math.
+android/kotlin question
+br
+How to execute many retrofit requests in parallel and wait for all of them to finish?
+
+a href="#p71688207" class="quotelink"
+&gt;&gt;71688207
+/a
+
+br
+i already have
+br
+if i&#039;m going to use something that is inherently useless, i am going to use lisp
+
+a href="#p71688101" class="quotelink"
+&gt;&gt;71688101
+/a
+
+br
+Acting like an arrogant cunt online is the best part of being a programmer.
+
+a href="#p71688217" class="quotelink"
+&gt;&gt;71688217
+/a
+
+br
+Yeah and?
+
+a href="#p71688204" class="quotelink"
+&gt;&gt;71688204
+/a
+
+br
+just (apply function args)
+
+a href="#p71688101" class="quotelink"
+&gt;&gt;71688101
+/a
+
+br
+They dont have sex.
+
+
+
+a href="#p71688217" class="quotelink"
+&gt;&gt;71688217
+/a
+
+br
+Atrocities such as the &quot;strategy pattern&quot; to circumvent the lack of higher oder functions actually exist. Just try to wrap your head around it.
+br
+[spoiler]Yes, I&#039;m aware newer Java versions have them.[/spoiler]
+br
+[spoiler]Yes, I know spoiler tags don&#039;t work on /g/.[/spoiler]
+
+a href="#p71688247" class="quotelink"
+&gt;&gt;71688247
+/a
+
+br
+you clearly haven&#039;t
+
+a href="#p71688253" class="quotelink"
+&gt;&gt;71688253
+/a
+
+br
+This. People also underestimate the importance of this.
+
+a href="#p71688217" class="quotelink"
+&gt;&gt;71688217
+/a
+
+br
+The newer java with lambdas and the Function interface is better, I don&#039;t know how people could stand programming in Java before that though.
+
+a href="#p71688271" class="quotelink"
+&gt;&gt;71688271
+/a
+
+br
+believe what you want, no one is stopping you
+
+span class="quote"
+&gt;some faggot reserved lots of package names on crate.io and did absolutely nothing with them
+/span
+
+br
+
+br
+This should be illegal
+
+a href="#p71688288" class="quotelink"
+&gt;&gt;71688288
+/a
+
+br
+good
+
+a href="#p71688288" class="quotelink"
+&gt;&gt;71688288
+/a
+
+br
+So what you&#039;re saying is that cargo is a piece of shit that doesn&#039;t curate in the slightest?
+Is there any VM yet that can run linux with modern OpenGL support?
+
+a href="#p71688280" class="quotelink"
+&gt;&gt;71688280
+/a
+
+br
+Anonymous classes were tolerable.
+br
+
+br
+But having to use them to do recursion with some capture is just... Ugh.
+
+a href="#p71688299" class="quotelink"
+&gt;&gt;71688299
+/a
+
+br
+
+a href="#p71688302" class="quotelink"
+&gt;&gt;71688302
+/a
+
+br
+Yeah
+br
+Just ran into this huge faggot with over 50 &quot;todo&quot; packages with really good names
+br
+I&#039;m not going to be secondary to some squatting faggot
+br
+
+br
+Are you implying there are alternatives to crates.io tho?
+
+a href="#p71687974" class="quotelink"
+&gt;&gt;71687974
+/a
+
+br
+Your guess is as good as mine
+
+a href="#p71688373" class="quotelink"
+&gt;&gt;71688373
+/a
+
+br
+i&#039;m sure if you really cared, you could bitch about it to people who could resolve this problem
+
+a href="#p71688326" class="quotelink"
+&gt;&gt;71688326
+/a
+
+br
+how do you do this?
+C++20 concepts suck balls already.
+
+a href="#p71688373" class="quotelink"
+&gt;&gt;71688373
+/a
+
+br
+Wait, its not namespaced like github&#039;s user/project thing? Because that worked oh so well for rubygems, npm...
+
+a href="#p71688404" class="quotelink"
+&gt;&gt;71688404
+/a
+
+br
+Why?
+
+a href="#p71688448" class="quotelink"
+&gt;&gt;71688448
+/a
+
+br
+Concepts aren&#039;t parametric.
+
+a href="#p71688455" class="quotelink"
+&gt;&gt;71688455
+/a
+
+br
+What does this mean?
+
+a href="#p71688390" class="quotelink"
+&gt;&gt;71688390
+/a
+
+br
+It can&#039;t be solved. Nobody is gonna drop compatibility with the current infrastructure. The only chance is to get it right before building and deploying it, and they fucked up
+
+a href="#p71688475" class="quotelink"
+&gt;&gt;71688475
+/a
+
+br
+well, i suppose the only solution is to give up then and stop using rust.
+
+
+
+a href="#p71686211" class="quotelink"
+&gt;&gt;71686211
+/a
+
+br
+If you could wish for only one programming language to exist, which programming language would it be and why?
+
+a href="#p71687940" class="quotelink"
+&gt;&gt;71687940
+/a
+
+br
+like if u crie
+
+a href="#p71688403" class="quotelink"
+&gt;&gt;71688403
+/a
+
+br
+
+pre class="prettyprint"
+void foo(...)
+br
+{
+br
+    return new Object(){ void rec(...) { /* ... */ }}.rec(init);
+/pre
+
+br
+}
+
+a href="#p71688560" class="quotelink"
+&gt;&gt;71688560
+/a
+
+br
+oh i see
+br
+this is just lambda over let over lambda
+
+
+
+a href="#p71688553" class="quotelink"
+&gt;&gt;71688553
+/a
+
+br
+the one i created
+br
+untold power over the programming cattle, i decide what features they have to work with
+
+a href="#p71688553" class="quotelink"
+&gt;&gt;71688553
+/a
+
+br
+it would have to be assembly because that&#039;s the only one that  could at least in principle be used in every possible use case
+
+a href="#p71688569" class="quotelink"
+&gt;&gt;71688569
+/a
+
+br
+Yes exactly and in Java it&#039;s unusable
+
+a href="#p71688592" class="quotelink"
+&gt;&gt;71688592
+/a
+
+br
+well you could use clojure instead
+
+a href="#p71688581" class="quotelink"
+&gt;&gt;71688581
+/a
+
+br
+So how does that work is it just the last template argument that gets substituted
+
+a href="#p71688553" class="quotelink"
+&gt;&gt;71688553
+/a
+
+br
+haskell without the bad
+
+a href="#p71688601" class="quotelink"
+&gt;&gt;71688601
+/a
+
+br
+As far as I can tell, any template parameters you pass to the concept in a template introducer is just tacked onto the end.
+br
+So,
+br
+
+pre class="prettyprint"
+template &lt;Foo&lt;bar&gt; T&gt;
+br
+
+/pre
+
+br
+Is equivalent to
+br
+
+pre class="prettyprint"
+template &lt;typename T&gt;
+br
+    requires Foo&lt;T, bar&gt;
+br
+
+/pre
+
+br
+I haven&#039;t read the paper, that&#039;s just what I figured out from playing with the concepts implementation in GCC.
+br
+Also GCC only implements an old TS, so they may have changed it in the current spec. I don&#039;t think they have though.
+
+a href="#p71688581" class="quotelink"
+&gt;&gt;71688581
+/a
+
+br
+are these just rust traits?
+
+a href="#p71688647" class="quotelink"
+&gt;&gt;71688647
+/a
+
+br
+They solve the same problem but they work a bit differently.
+
+a href="#p71688647" class="quotelink"
+&gt;&gt;71688647
+/a
+
+br
+Rust is neither the only nor the first language to support traits.
+br
+https://en.wikipedia.org/wiki/Trait
+wbr
+_(computer_programming)#Supported_l
+wbr
+anguages
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+so, cirno?
+
+a href="#p71686282" class="quotelink"
+&gt;&gt;71686282
+/a
+
+br
+ocaml or c
+
+a href="#p71688700" class="quotelink"
+&gt;&gt;71688700
+/a
+
+br
+He must be talking about Shirase-san!
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+Satania is cuter than Bjarne Stroustrup.
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+Not this shit again
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+yeah this
+br
+the age of anime is over
+
+a href="#p71688745" class="quotelink"
+&gt;&gt;71688745
+/a
+
+br
+t. idiot-kun
+
+pre class="prettyprint"
+#include &lt;Windows.h&gt;
+br
+
+br
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+br
+                   LPSTR lpCmdLine, int nCmdShow)
+br
+{
+br
+    MessageBox(
+br
+        NULL,
+br
+        TEXT(&quot;foo&quot;),
+br
+        TEXT(&quot;MESSAGE&quot;),
+br
+        MB_OK
+br
+    );
+br
+    return 0;
+br
+}
+/pre
+
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+It&#039;s always people like you bringing this shit up again and again. _You_ are the one ruining this thread.
+br
+Fuck off.
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+
+span class="quote"
+&gt;pay homage to
+/span
+
+br
+gay
+
+a href="#p71688620" class="quotelink"
+&gt;&gt;71688620
+/a
+
+br
+
+a href="#p71688553" class="quotelink"
+&gt;&gt;71688553
+/a
+
+br
+same
+
+a href="#p71688620" class="quotelink"
+&gt;&gt;71688620
+/a
+
+br
+
+a href="#p71688777" class="quotelink"
+&gt;&gt;71688777
+/a
+
+br
+not haskell then
+
+a href="#p71687071" class="quotelink"
+&gt;&gt;71687071
+/a
+
+br
+literally every lambda calculus based language has map
+Programming languages need a way to disambiguate nouns and verbs.
+I started using this editor, and i love it https://micro-editor.github.io/
+
+a href="#p71688315" class="quotelink"
+&gt;&gt;71688315
+/a
+
+br
+just google it lmao
+br
+but don&#039;t actually use google
+
+a href="#p71688982" class="quotelink"
+&gt;&gt;71688982
+/a
+
+br
+nYou vAre artA adjDumb adjGorilla nNigger
+
+a href="#p71688957" class="quotelink"
+&gt;&gt;71688957
+/a
+
+br
+fmap is more general than map
+
+a href="#p71688982" class="quotelink"
+&gt;&gt;71688982
+/a
+
+br
+Gerunds exist.
+
+a href="#p71689026" class="quotelink"
+&gt;&gt;71689026
+/a
+
+br
+what the fuck is a gerund
+
+a href="#p71689037" class="quotelink"
+&gt;&gt;71689037
+/a
+
+br
+A nominalised verb. A first class function, if you like.
+
+a href="#p71689053" class="quotelink"
+&gt;&gt;71689053
+/a
+
+br
+that is inelegant.
+br
+&quot;Mapping&quot; does not sound like a very good name for a map data structure
+
+a href="#p71689065" class="quotelink"
+&gt;&gt;71689065
+/a
+
+br
+What is it you .want by distinguishing nouns and verbs?
+Does every language have a package manager now? Perl, ruby, python, javascript, lua, go, rust... They all have fucking package managers.
+br
+
+br
+What is this bullshit
+
+a href="#p71689109" class="quotelink"
+&gt;&gt;71689109
+/a
+
+br
+No, only hip ones.
+
+a href="#p71689079" class="quotelink"
+&gt;&gt;71689079
+/a
+
+br
+I want to have a data structure called map, but I also want a function called map.
+br
+The two are completely different semantically, but the only difference in their naming is that one&#039;s a noun and the other is a verb.
+br
+But I still should be able to &quot;create a map&quot; and &quot;map these items&quot; without having to use a different word for each.
+br
+See, in &quot;create a map&quot; and &quot;map these items&quot;, the sentence structure perfectly disambiguates which word I&#039;m talking about. Programming languages should allow the same somehow.
+
+a href="#p71689126" class="quotelink"
+&gt;&gt;71689126
+/a
+
+br
+Use Java or common lisp or even C then
+
+a href="#p71689126" class="quotelink"
+&gt;&gt;71689126
+/a
+
+br
+[struct]
+br
+struct map;
+br
+void map(...);
+br
+[/struct]
+
+a href="#p71689202" class="quotelink"
+&gt;&gt;71689202
+/a
+
+br
+
+span class="quote"
+&gt;[struct]
+/span
+
+br
+nice job anon
+
+
+
+span class="deadlink"
+&gt;&gt;71688596
+/span
+
+br
+uhhh
+anime
+
+a href="#p71689331" class="quotelink"
+&gt;&gt;71689331
+/a
+
+br
+
+a href="#p71689331" class="quotelink"
+&gt;&gt;71689331
+/a
+
+br
+Lmao #gottem . I reported that cunt on 20 some proxies. Let this be a lesson for you reddit normies.
+
+a href="#p71689402" class="quotelink"
+&gt;&gt;71689402
+/a
+
+br
+ironic shitposting is still shitposting
+
+a href="#p71689448" class="quotelink"
+&gt;&gt;71689448
+/a
+
+br
+You want to be next?
+
+a href="#p71689454" class="quotelink"
+&gt;&gt;71689454
+/a
+
+br
+n-nani?!
+
+
+
+a href="#p71689466" class="quotelink"
+&gt;&gt;71689466
+/a
+
+br
+That&#039;s not a trick, that&#039;s a standard feature.
+
+
+
+a href="#p71689473" class="quotelink"
+&gt;&gt;71689473
+/a
+
+br
+Why is the syntax for raw string literals so fucking weird. I doubt the average c++ coder knows about it. Kinda like how no one knows about tui mode in gdb.
+
+a href="#p71689523" class="quotelink"
+&gt;&gt;71689523
+/a
+
+br
+There&#039;s nothing weird about it.
+
+a href="#p71689466" class="quotelink"
+&gt;&gt;71689466
+/a
+
+br
+Since when does cpp have this
+
+a href="#p71689573" class="quotelink"
+&gt;&gt;71689573
+/a
+
+br
+#6 on this list.
+br
+
+br
+https://en.cppreference.com/w/cpp/l
+wbr
+anguage/string_literal
+
+a href="#p71689523" class="quotelink"
+&gt;&gt;71689523
+/a
+
+br
+a lot of languages unfortunately have odd syntax for &quot;string blocks&quot; because when they were originally designed it was lol why would anyone need anything other than a single line?
+
+a href="#p71689688" class="quotelink"
+&gt;&gt;71689688
+/a
+
+br
+Why have delimiters though? 
+br
+
+br
+I wonder how many people have R&quot;FOO( in their code.
+I know the bare minimum of programming and can solve simple problems in Java or C. I wanted to learn C++ and I&#039;m reading Stroustrup&#039;s Principles and Practice Using C++ from the start, doing every single drill and exercise, even the most trivial ones. Can I really learn to program like this?
+Just found the greatest string copy of all time
+br
+
+pre class="prettyprint"
+while (*dst++ = *src++);
+/pre
+
+
+
+
+a href="#p71689859" class="quotelink"
+&gt;&gt;71689859
+/a
+
+br
+You&#039;re creating a new random number generator object for every character which is disgustingly slow and inefficient.
+
+a href="#p71689826" class="quotelink"
+&gt;&gt;71689826
+/a
+
+br
+
+pre class="prettyprint"
+while ((*dst++ = *src++) != &#039;/0&#039;)
+br
+
+/pre
+
+br
+Ftfy
+I
+
+a href="#p71687053" class="quotelink"
+&gt;&gt;71687053
+/a
+
+br
+based
+
+a href="#p71689957" class="quotelink"
+&gt;&gt;71689957
+/a
+
+br
+Anon...
+
+a href="#p71689957" class="quotelink"
+&gt;&gt;71689957
+/a
+
+br
+!= 0 is what the while condition is evaluating anyway. remember that &#039;\0&#039; is actually just 0.
+
+a href="#p71689714" class="quotelink"
+&gt;&gt;71689714
+/a
+
+br
+It&#039;s useful for corner cases. I never ran into it thouhh.
+
+a href="#p71686226" class="quotelink"
+&gt;&gt;71686226
+/a
+
+br
+If we say that the angle is named X and
+br
+Object3_X = 1
+br
+Object 3_Y = 0
+br
+We know that tan(x) = [Object1 Object3]/[Object2 Object3]
+br
+We then have to solve for X.
+br
+Welcome to middle school.
+
+a href="#p71690266" class="quotelink"
+&gt;&gt;71690266
+/a
+
+br
+woah
+
+a href="#p71689466" class="quotelink"
+&gt;&gt;71689466
+/a
+
+br
+Does it remove leading white space?
+I
+
+a href="#p71690395" class="quotelink"
+&gt;&gt;71690395
+/a
+
+br
+The latter. Use pointers.
+br
+Like, cur and next.
+I&#039;m trying to recreate the functionality of a python script i found in c#, but there are some lines i don&#039;t quite understand:
+br
+
+br
+(length, unk) = struct.unpack_from(&quot;&lt;II&quot;, dat, offset)
+br
+
+span class="quote"
+&gt;what is this whole line doing?
+/span
+
+br
+
+br
+if type(val).__name__ == &#039;ANShape&#039;:
+br
+
+span class="quote"
+&gt;the _name_ part
+/span
+
+br
+
+br
+(self.transform, self.IDnumber, self.radius, self.center[0], self.center[1], self.center[2]) = struct.unpack_from(&quot;&lt;hHHhhh&quot;, dat, offset)
+br
+
+span class="quote"
+&gt;what even the fuck?
+/span
+
+br
+
+br
+if a python dev would enlighten me that would be great.
+
+a href="#p71690420" class="quotelink"
+&gt;&gt;71690420
+/a
+
+br
+So how do you go about initializing each node? Is it just in an unnamed place in memory?
+br
+Again, please be slow I&#039;m retarded.
+
+
+
+a href="#p71689782" class="quotelink"
+&gt;&gt;71689782
+/a
+
+br
+Yes you can, but it is quite a slow way to learn. Online tutorials and experimentation, and Googling issues you have while programming - this is from my experience the best and quickest way to learn how to program. Of course, once you know one language, it&#039;s easy to learn another language that&#039;s of a similar type. For example, you could learn Python to a decent level from a couple of YouTube videos once you know C++.
+
+a href="#p71690455" class="quotelink"
+&gt;&gt;71690455
+/a
+
+br
+To advance through the list, set cur to point to the next entry.
+br
+If you want to e.g. add a new node at the end, assuming you&#039;re at the end of the list already, just call malloc and put the returned pointer as the pointer to next in the current node.
+I want to start programming and have a feeling Python is a meme. Should I start with C?
+
+a href="#p71690461" class="quotelink"
+&gt;&gt;71690461
+/a
+
+br
+
+pre class="prettyprint"
+Given array nums = [1, 0, -1, 0, -2, 2] 
+br
+and target = 0.
+br
+
+br
+-1 1
+br
+0 0
+br
+2 -2
+br
+
+/pre
+
+br
+
+br
+it works but it was not prettiest code.
+
+a href="#p71690527" class="quotelink"
+&gt;&gt;71690527
+/a
+
+br
+Python is actually very good language.
+
+a href="#p71690527" class="quotelink"
+&gt;&gt;71690527
+/a
+
+br
+good news, you no longer have to pick between systems languages and high-level scripting langs.
+br
+https://nim-lang.org/
+
+a href="#p71690567" class="quotelink"
+&gt;&gt;71690567
+/a
+
+br
+
+span class="quote"
+&gt;FIOC
+/span
+
+br
+fuck off with your shitty meme lang
+
+a href="#p71690590" class="quotelink"
+&gt;&gt;71690590
+/a
+
+br
+it&#039;s alright little duck, there can exist a world without your precious curlies.
+Curly braces make me cum
+
+a href="#p71690623" class="quotelink"
+&gt;&gt;71690623
+/a
+
+br
+Yeah, like in Ada, Pascal and Ruby.
+
+a href="#p71690655" class="quotelink"
+&gt;&gt;71690655
+/a
+
+br
+And Nim doesn&#039;t even need &quot;end&quot;, either.
+
+a href="#p71690455" class="quotelink"
+&gt;&gt;71690455
+/a
+
+br
+Each node has some data and a pointer. And you have a pointer &quot;head&quot; which you use to access the first node.
+br
+
+br
+Adding a node:
+br
+If there are no nodes, create a new node with a pointer to null. Point the head to that node.
+br
+If there is a node, create a new node with a pointer to what the head points to. Point the head to that node.
+br
+
+br
+A node lives in some random part of memory and you can access it with pointers.
+
+a href="#p71690566" class="quotelink"
+&gt;&gt;71690566
+/a
+
+br
+ok anon i might take a look at learn python the hard way and go from there.
+
+a href="#p71690477" class="quotelink"
+&gt;&gt;71690477
+/a
+
+br
+The thing I am most concerned about is not learning programming properly, &quot;in depth&quot;. I really don&#039;t want to blindly follow solutions for the problems I will face while not fully understand what I&#039;m doing. For example, we have a Debian and a pfSense server at work and I usually have to solve random problems that happen, or to implement some systems, simple things, but I don&#039;t have the slightest clue of what I&#039;m doing, I just google the problem or what I want to do, solve it find another problem, google it again, solve it, rinse and repeat. I feel like working my way through a book will make me more aware of the intrinsics of the language.
+Noob here, how do I find projects to contribute?
+
+a href="#p71690737" class="quotelink"
+&gt;&gt;71690737
+/a
+
+br
+do you have previous programming experience? if so just use their python docs and their tutorials they&#039;re really good. python is extremely quick to learn if you already know another language.
+
+
+
+a href="#p71690050" class="quotelink"
+&gt;&gt;71690050
+/a
+
+br
+
+span class="quote"
+&gt;http://bedford-computing.co.uk/lea
+wbr
+rning/wp-content/uploads/2015/10/No
+wbr
+.Starch.Python.Oct_.2015.ISBN_.1593
+wbr
+276036.pdf
+/span
+
+br
+
+br
+I&#039;m using this.
+
+a href="#p71690050" class="quotelink"
+&gt;&gt;71690050
+/a
+
+br
+literally just download pytorch and start making neural networks because it&#039;s that easy
+
+a href="#p71690843" class="quotelink"
+&gt;&gt;71690843
+/a
+
+br
+Set the stage of life in a variable and then choose the correct article afterwards, in one location.
+
+a href="#p71690772" class="quotelink"
+&gt;&gt;71690772
+/a
+
+br
+I don&#039;t, this would be my first one. thanks for the advice anyway!
+
+a href="#p71690843" class="quotelink"
+&gt;&gt;71690843
+/a
+
+br
+
+br
+
+pre class="prettyprint"
+age = 40
+br
+
+br
+if age &lt; 2:
+br
+    print(&quot;This person is a baby&quot;)
+br
+elif (age &gt;= 2) and (age &lt; 4):
+br
+    print(&quot;This person is a toddler&quot;)
+br
+elif (age &gt;= 4) and (age &lt; 13):
+br
+    print(&quot;This person is a kid&quot;)
+br
+elif (age &gt;= 13) and (age &lt; 20):
+br
+    print(&quot;This person is a teenager&quot;)
+br
+elif (age &gt;= 20) and (age &lt; 65):
+br
+    print(&quot;This person is an adult&quot;)
+br
+else:
+br
+    print(&quot;This person is an elder&quot;)
+br
+
+/pre
+
+
+a href="#p71687940" class="quotelink"
+&gt;&gt;71687940
+/a
+
+br
+absolute state of american schools
+
+a href="#p71691002" class="quotelink"
+&gt;&gt;71691002
+/a
+
+br
+That&#039;s a Japanese school
+
+a href="#p71686533" class="quotelink"
+&gt;&gt;71686533
+/a
+
+br
+underrated
+
+a href="#p71690843" class="quotelink"
+&gt;&gt;71690843
+/a
+
+br
+In python, it&#039;s just
+br
+
+pre class="prettyprint"
+age = 40
+br
+[&quot;baby&quot;, &quot;toddler&quot;, &quot;kid&quot;, &quot;teenager&quot;, &quot;adult&quot;, &quot;elder&quot;][[n for n, x in enumerate([0, 2, 4, 13, 20, 65]) if x &lt; age][-1]]
+br
+
+/pre
+
+
+a href="#p71691067" class="quotelink"
+&gt;&gt;71691067
+/a
+
+br
+What is what you&#039;re doing called there? I have yet to learn it.
+
+a href="#p71690855" class="quotelink"
+&gt;&gt;71690855
+/a
+
+br
+
+a href="#p71690869" class="quotelink"
+&gt;&gt;71690869
+/a
+
+br
+thanks, will check it out
+
+a href="#p71691138" class="quotelink"
+&gt;&gt;71691138
+/a
+
+br
+pretty sure that&#039;s list comprehension
+
+a href="#p71691138" class="quotelink"
+&gt;&gt;71691138
+/a
+
+br
+it&#039;s called &quot;retarded&quot;
+L
+
+a href="#p71690843" class="quotelink"
+&gt;&gt;71690843
+/a
+
+br
+and here&#039;s what i&#039;d do for the weird indefinite article stuff you&#039;re doing
+br
+
+br
+
+pre class="prettyprint"
+age = 40
+br
+
+br
+if age &lt; 2:
+br
+    stage = &quot;baby&quot;
+br
+elif age &gt;= 2 and age &lt; 4:
+br
+    stage = &quot;toddler&quot;
+br
+elif age &gt;= 4 and age &lt; 13:
+br
+    stage = &quot;kid&quot;
+br
+elif age &gt;= 13 and age &lt; 20:
+br
+    stage = &quot;teenager&quot;
+br
+elif age &gt;= 20 and age &lt; 65:
+br
+    stage = &quot;adult&quot;
+br
+else:
+br
+    stage = &quot;elder&quot;
+br
+
+br
+if stage[0] == &#039;a&#039; or stage[0] == &#039;e&#039; or stage[0] == &#039;i&#039; or stage[0] == &#039;o&#039; or stage[0] == &#039;u&#039;:
+br
+    print(&quot;This person is an &quot; + stage)
+br
+else:
+br
+    print(&quot;This person is a &quot; + stage)
+br
+
+/pre
+
+
+a href="#p71691226" class="quotelink"
+&gt;&gt;71691226
+/a
+
+br
+malloc allocates from heap not stack.
+
+
+If I&#039;m pretty fluent in C# and Java (roughly 2 years experience, maybe 5 years programming in general), how hard will it be to become decent at C++? I&#039;m taking a course that requires &quot;fluency in C++&quot; as a pre-requisite, and I have about a month to prepare.
+
+a href="#p71691226" class="quotelink"
+&gt;&gt;71691226
+/a
+
+br
+It&#039;s allocated on the heap.
+br
+Duplicating that statement
+br
+
+pre class="prettyprint"
+int *p = malloc(sizeof(int));
+br
+int *p = malloc(sizeof(int));
+br
+
+/pre
+
+br
+would be bad because you&#039;d be declaring p twice. However if you did
+br
+
+pre class="prettyprint"
+int *p = malloc(sizeof(int));
+br
+*p = malloc(sizeof(int));
+br
+
+/pre
+
+br
+this would also be bad because you can no longer free the first block of memory. You no longer have a pointer to it.
+br
+But yes, you will have a new block of memory somewhere else on the heap.
+How can I compile something with jsoncpp via Makefile? Already tried those two. Can&#039;t find anything in the docs either.
+br
+
+pre class="prettyprint"
+-ljson
+br
+-ljsoncpp
+br
+
+/pre
+
+br
+
+pre class="prettyprint"
+fatal error: jsoncpp/json/json.h: No such file or directory
+br
+#include &lt;jsoncpp/json/json.h&gt;
+br
+
+/pre
+
+
+
+
+
+
+a href="#p71691300" class="quotelink"
+&gt;&gt;71691300
+/a
+
+br
+Oh and that last asterisk shouldn&#039;t be there my bad
+
+a href="#p71691227" class="quotelink"
+&gt;&gt;71691227
+/a
+
+br
+
+a href="#p71691207" class="quotelink"
+&gt;&gt;71691207
+/a
+
+br
+Thank you
+
+a href="#p71691302" class="quotelink"
+&gt;&gt;71691302
+/a
+
+br
+you need to tell it where to look for those .h files
+
+a href="#p71691227" class="quotelink"
+&gt;&gt;71691227
+/a
+
+br
+
+pre class="prettyprint"
+if age &lt; 16:
+br
+    stage = &quot;ripe&quot;
+br
+else:
+br
+    stage = &quot;old hag&quot;
+br
+
+/pre
+
+br
+ftfy
+
+a href="#p71691432" class="quotelink"
+&gt;&gt;71691432
+/a
+
+br
+absofruitly based
+
+a href="#p71691425" class="quotelink"
+&gt;&gt;71691425
+/a
+
+br
+I&#039;m kinda new to writing makefiles by hand, why -lcurl or -lncurses work out of the box and jsoncpp doesn&#039;t?
+
+a href="#p71691466" class="quotelink"
+&gt;&gt;71691466
+/a
+
+br
+Basically, it depends on how it&#039;s installed. There&#039;s a default value it pulls from, but otherwise you have to specify if it isn&#039;t in that default location.
+R
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;4K
+/span
+
+Rip navi
+Rip prices
+
+
+Damn bros, i thought id get btfo for buying a 2060 by this new 2060 super. Looks like only 2070 owners got btfo
+
+a href="#p71689661" class="quotelink"
+&gt;&gt;71689661
+/a
+
+br
+
+span class="quote"
+&gt;16GB VRAM card BTFO by 8GB
+/span
+
+
+
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+AMD are fucking done. The 2060 Super is as fast as the 5700 XT whilst being cheaper. The 2070 Super is way faster for the same money. Not to mention faster than Radeon VII too for significantly less.
+br
+
+br
+Just pull out of the GPU market, AMD. It&#039;s getting embarrassing.
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+a href="#p71689758" class="quotelink"
+&gt;&gt;71689758
+/a
+
+br
+tfw i was right 
+a href="/g/thread/71503975#p71509064" class="quotelink"
+&gt;&gt;71509064
+/a
+ except for the 1080 part. Even down to the &quot;I don&#039;t know why 2070 exists.&quot; When should I start my youtube channel bros?
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;&#039;new&#039; 2060
+/span
+
+br
+
+span class="quote"
+&gt;15% price increase
+/span
+
+br
+
+span class="quote"
+&gt;17% performance increase
+/span
+
+br
+???
+T
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+2080 &gt;= RTX 2070 SUPER &gt;= 1080
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+would consider a 2070 SUPER if the price would&#039;ve been better.
+br
+399€ please
+I
+
+a href="#p71690300" class="quotelink"
+&gt;&gt;71690300
+/a
+
+br
+you mean when none of this shit was even speculated to be out and all of it matches the 1080ti with the 2070 super onwards beating it by 5%+? retard
+
+a href="#p71689904" class="quotelink"
+&gt;&gt;71689904
+/a
+
+br
+2070 is getting discontinued so it doesn&#039;t actually exist anymore
+
+
+
+a href="#p71690441" class="quotelink"
+&gt;&gt;71690441
+/a
+
+br
+RTX was already out, why would you ever buy previous nvidia gen?
+Really want a 2070 Super under 200mm for a mini itx case.
+br
+
+br
+How long does it take them to start making their own boards and custom coolers?
+
+a href="#p71690511" class="quotelink"
+&gt;&gt;71690511
+/a
+
+br
+2060 was a worse pick back then
+getting a 2070 super and will gave my radeon vii to my bro.
+So 2060 or 2060 super?
+
+a href="#p71690609" class="quotelink"
+&gt;&gt;71690609
+/a
+
+br
+2060 didnt come out until 2019 numbnuts
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;&gt;RTX 2070 Super = Radeon VII/1080ti
+/span
+
+br
+It is much cheaper than Radeon VII. topkek
+
+a href="#p71691009" class="quotelink"
+&gt;&gt;71691009
+/a
+
+br
+
+span class="quote"
+&gt;falling for the 8gb is enough in 2019 meme
+/span
+
+
+a href="#p71691027" class="quotelink"
+&gt;&gt;71691027
+/a
+
+br
+then Navi is 100% DOA. 
+br
+
+br
+dummy
+What will the actual prices for super be? I dont trust the MSRP
+
+a href="#p71691068" class="quotelink"
+&gt;&gt;71691068
+/a
+
+br
+2060 S = $399
+br
+2070 S = $499
+
+a href="#p71691122" class="quotelink"
+&gt;&gt;71691122
+/a
+
+br
+Regular 2060 is going for 370€ minimum here in my EU shithole, i&#039;m gonna guess 450€ for 2060 super, we&#039;re gonna get super jewed
+
+a href="#p71691221" class="quotelink"
+&gt;&gt;71691221
+/a
+
+br
+I am curious about your shithole. name? Poland?
+
+a href="#p71691221" class="quotelink"
+&gt;&gt;71691221
+/a
+
+br
+These prices don&#039;t include VAT
+br
+Burgers don&#039;t actually pay 399 or 499 but a bit more.
+
+a href="#p71691254" class="quotelink"
+&gt;&gt;71691254
+/a
+
+br
+Close, Portugal
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;bought a gtx680 when it was first released because it was a supposedly huge jump from Fermi fires of series 500-era
+/span
+
+br
+
+span class="quote"
+&gt;the Crysis of graphics cards for years to come
+/span
+
+br
+
+span class="quote"
+&gt;charts like these stopped showing it relatively soon after
+/span
+
+br
+
+span class="quote"
+&gt;finally get a gtx980ti because of a flash black Friday sale on amazon
+/span
+
+br
+
+span class="quote"
+&gt;thiswilllastmeforyearstocome.fgt
+/span
+
+br
+
+span class="quote"
+&gt;figured it&#039;d be a workhorse card for years to come, like the Crysis of graphics cards again
+/span
+
+br
+
+span class="quote"
+&gt;it&#039;s completely non-existent from all these carts
+/span
+
+br
+Cant I just get the 2500k of graphics cards to see these comparison charts for once please?
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+Great, new gpu&#039;s. 
+br
+
+br
+Wtf, those prices. Fuck it. Where are my mid-range gpus? 250 max! Were we spoiled in the past??
+R
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;4K
+/span
+
+Rip navi
+Rip prices
+
+
+Damn bros, i thought id get btfo for buying a 2060 by this new 2060 super. Looks like only 2070 owners got btfo
+
+a href="#p71689661" class="quotelink"
+&gt;&gt;71689661
+/a
+
+br
+
+span class="quote"
+&gt;16GB VRAM card BTFO by 8GB
+/span
+
+
+
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+AMD are fucking done. The 2060 Super is as fast as the 5700 XT whilst being cheaper. The 2070 Super is way faster for the same money. Not to mention faster than Radeon VII too for significantly less.
+br
+
+br
+Just pull out of the GPU market, AMD. It&#039;s getting embarrassing.
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+a href="#p71689758" class="quotelink"
+&gt;&gt;71689758
+/a
+
+br
+tfw i was right 
+a href="/g/thread/71503975#p71509064" class="quotelink"
+&gt;&gt;71509064
+/a
+ except for the 1080 part. Even down to the &quot;I don&#039;t know why 2070 exists.&quot; When should I start my youtube channel bros?
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;&#039;new&#039; 2060
+/span
+
+br
+
+span class="quote"
+&gt;15% price increase
+/span
+
+br
+
+span class="quote"
+&gt;17% performance increase
+/span
+
+br
+???
+T
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+2080 &gt;= RTX 2070 SUPER &gt;= 1080
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+would consider a 2070 SUPER if the price would&#039;ve been better.
+br
+399€ please
+I
+
+a href="#p71690300" class="quotelink"
+&gt;&gt;71690300
+/a
+
+br
+you mean when none of this shit was even speculated to be out and all of it matches the 1080ti with the 2070 super onwards beating it by 5%+? retard
+
+a href="#p71689904" class="quotelink"
+&gt;&gt;71689904
+/a
+
+br
+2070 is getting discontinued so it doesn&#039;t actually exist anymore
+
+
+
+a href="#p71690441" class="quotelink"
+&gt;&gt;71690441
+/a
+
+br
+RTX was already out, why would you ever buy previous nvidia gen?
+Really want a 2070 Super under 200mm for a mini itx case.
+br
+
+br
+How long does it take them to start making their own boards and custom coolers?
+
+a href="#p71690511" class="quotelink"
+&gt;&gt;71690511
+/a
+
+br
+2060 was a worse pick back then
+getting a 2070 super and will gave my radeon vii to my bro.
+So 2060 or 2060 super?
+
+a href="#p71690609" class="quotelink"
+&gt;&gt;71690609
+/a
+
+br
+2060 didnt come out until 2019 numbnuts
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;&gt;RTX 2070 Super = Radeon VII/1080ti
+/span
+
+br
+It is much cheaper than Radeon VII. topkek
+
+a href="#p71691009" class="quotelink"
+&gt;&gt;71691009
+/a
+
+br
+
+span class="quote"
+&gt;falling for the 8gb is enough in 2019 meme
+/span
+
+
+a href="#p71691027" class="quotelink"
+&gt;&gt;71691027
+/a
+
+br
+then Navi is 100% DOA. 
+br
+
+br
+dummy
+What will the actual prices for super be? I dont trust the MSRP
+
+a href="#p71691068" class="quotelink"
+&gt;&gt;71691068
+/a
+
+br
+2060 S = $399
+br
+2070 S = $499
+
+a href="#p71691122" class="quotelink"
+&gt;&gt;71691122
+/a
+
+br
+Regular 2060 is going for 370€ minimum here in my EU shithole, i&#039;m gonna guess 450€ for 2060 super, we&#039;re gonna get super jewed
+
+a href="#p71691221" class="quotelink"
+&gt;&gt;71691221
+/a
+
+br
+I am curious about your shithole. name? Poland?
+
+a href="#p71691221" class="quotelink"
+&gt;&gt;71691221
+/a
+
+br
+These prices don&#039;t include VAT
+br
+Burgers don&#039;t actually pay 399 or 499 but a bit more.
+
+a href="#p71691254" class="quotelink"
+&gt;&gt;71691254
+/a
+
+br
+Close, Portugal
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+
+span class="quote"
+&gt;bought a gtx680 when it was first released because it was a supposedly huge jump from Fermi fires of series 500-era
+/span
+
+br
+
+span class="quote"
+&gt;the Crysis of graphics cards for years to come
+/span
+
+br
+
+span class="quote"
+&gt;charts like these stopped showing it relatively soon after
+/span
+
+br
+
+span class="quote"
+&gt;finally get a gtx980ti because of a flash black Friday sale on amazon
+/span
+
+br
+
+span class="quote"
+&gt;thiswilllastmeforyearstocome.fgt
+/span
+
+br
+
+span class="quote"
+&gt;figured it&#039;d be a workhorse card for years to come, like the Crysis of graphics cards again
+/span
+
+br
+
+span class="quote"
+&gt;it&#039;s completely non-existent from all these carts
+/span
+
+br
+Cant I just get the 2500k of graphics cards to see these comparison charts for once please?
+
+a href="#p71689647" class="quotelink"
+&gt;&gt;71689647
+/a
+
+br
+Great, new gpu&#039;s. 
+br
+
+br
+Wtf, those prices. Fuck it. Where are my mid-range gpus? 250 max! Were we spoiled in the past??
+t
+Held back e-Ink technology by artificially gimping the devices to conform to Amazon botnet
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+gf has one, seems okay.
+
+a href="#p71681279" class="quotelink"
+&gt;&gt;71681279
+/a
+
+br
+
+span class="quote"
+&gt;held back by e ink
+/span
+
+br
+e ink is literally the entire appeal
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+Shitty locked down device. Get a Kobo.
+
+a href="#p71681311" class="quotelink"
+&gt;&gt;71681311
+/a
+
+br
+bbbut that&#039;s not what i said
+
+a href="#p71681311" class="quotelink"
+&gt;&gt;71681311
+/a
+
+br
+go back and read the comment you incorrectly quoted..
+br
+...sure is summer in here
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+If you want your books to be deleted when bezos think their a re not appropriate
+
+a href="#p71681331" class="quotelink"
+&gt;&gt;71681331
+/a
+
+br
+is it locked down? I just transfer mobis using calibre and it works fine.
+which one should i get if I just want to read animu
+
+a href="#p71681304" class="quotelink"
+&gt;&gt;71681304
+/a
+
+br
+
+span class="quote"
+&gt;gf
+/span
+
+br
+HAHAHAHAHAHHAHAHAHHA FAGGOT HAHAHAHAHAHAHAHAHAHA
+it was an attempt to get Amazon in more people&#039;s hands.
+
+a href="#p71681413" class="quotelink"
+&gt;&gt;71681413
+/a
+
+br
+anything with a massive screen and decent dpi. Bonus points if it can run koreader.
+I
+I have one, it&#039;s really fucking great.
+reading on it is great. software is lacking many useful features like marking a book as read. For some reason does not load cover images on some files. Actually does not load any in my case and i have about 1500 mobis loaded on it. There are no profiles as far as I know. Software comes in many language versions but not in mine of course - lets support some exotic eastern gibberish and completely ignore the fact that kindle is the most popular ebook reader in one of european countries.
+br
+
+br
+also
+br
+
+a href="#p71681279" class="quotelink"
+&gt;&gt;71681279
+/a
+
+br
+fpbp
+br
+display makes it so fucking slooow, I mean hardware-wise it&#039;s ok, touch recognition is fine but the waiting for display refresh and drawing is making the whole experience meh and you cant be sure for a second if you tapped the right thing. Kindles with buttons were based,
+
+a href="#p71681451" class="quotelink"
+&gt;&gt;71681451
+/a
+
+br
+if you format your mangas yourself it&#039;s totally usable, using one for berserk and it looks great
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+I want a kindle but don&#039;t want amazon botnet what do I buy?
+
+a href="#p71681675" class="quotelink"
+&gt;&gt;71681675
+/a
+
+br
+Kobo
+
+a href="#p71681451" class="quotelink"
+&gt;&gt;71681451
+/a
+
+br
+welcome, brother
+
+a href="#p71681451" class="quotelink"
+&gt;&gt;71681451
+/a
+
+br
+Does anyone have experience with untranslated manga on an ereader? Runes look tiny on my phone, it&#039;s unpleasant.
+
+a href="#p71681663" class="quotelink"
+&gt;&gt;71681663
+/a
+
+br
+Hardware buttons should be mandatory for these things.
+br
+
+br
+There&#039;s so much wrong with modern ereaders and the general market right now. It feels like the phone market just before the ipod and iphone came out. Just waiting for someone to get enough things right that it finally sells like hotcakes and shows all the other manufacturers for the incompetent retards they really are.
+
+a href="#p71681451" class="quotelink"
+&gt;&gt;71681451
+/a
+
+br
+protip: go to the menu in the upper right in Comic Screen and click &quot;Soft page button&quot; and turn the opacity for the plus/minus page buttons down to zero
+
+a href="#p71681675" class="quotelink"
+&gt;&gt;71681675
+/a
+
+br
+disable wifi + calibre
+
+
+
+a href="#p71682639" class="quotelink"
+&gt;&gt;71682639
+/a
+
+br
+do you need to disable wifi? I haven&#039;t done that since I got mine and my sideloaded books are fine
+
+a href="#p71682285" class="quotelink"
+&gt;&gt;71682285
+/a
+
+br
+eh, my kobo is fine. id rather physical buttons, but for the money I spent on it and the amount of books I read, it was an easy decision
+
+
+
+a href="#p71682815" class="quotelink"
+&gt;&gt;71682815
+/a
+
+br
+Bad, get a tablet
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+I see no reason to buy one. Either buy books or use a tablet.
+Shit. If you read in the sun anyway instead of friends you are a friendless loser and it&#039;s suitable for you. If you have a higher than 30 IQ, you&#039;ll realize that it&#039;s only good for reading &quot;fun&quot; books and sucks for PDF and research or information books. 
+br
+
+br
+A tablet is unironically the best, especially AMOLED for reading at night. If you read at your computer just turn your screen 90 degrees to read in 9:16, way better than 4:3 or 1:1.
+
+a href="#p71682731" class="quotelink"
+&gt;&gt;71682731
+/a
+
+br
+No but I guess it removes the botnet potential.
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+
+span class="quote"
+&gt;no headphone jack
+/span
+
+br
+
+span class="quote"
+&gt;can&#039;t listen to audiobooks
+/span
+
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+
+span class="quote"
+&gt;That goblina in the reflection
+/span
+
+br
+La creatura ..
+
+a href="#p71681451" class="quotelink"
+&gt;&gt;71681451
+/a
+
+br
+Are there any good ereader for college textbooks?
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+I&#039;ve bought three as gifts. E ink is great. Pirate everything I ever want to read and plop it down on a lightweight device that doesn&#039;t need constant charging.
+br
+I use it all the time when I go on vacation
+I
+
+span class="quote"
+&gt;book (paper) $4
+/span
+
+br
+
+span class="quote"
+&gt;book (kindle) $15
+/span
+
+br
+JUST
+Is it possible to use an ereader as a screen for a Raspberry Pi or similar?
+br
+I want to do plaintext wordprocessing innawoods and battery life is a consideration
+
+a href="#p71682639" class="quotelink"
+&gt;&gt;71682639
+/a
+
+br
+
+span class="quote"
+&gt;disable wifi
+/span
+
+br
+Is this difficult to do on an ereader?
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+Why would you get a locked down Kindle when you could get a Kobo for less money, that isn&#039;t locked down nearly as much?
+
+a href="#p71684364" class="quotelink"
+&gt;&gt;71684364
+/a
+
+br
+Based as fuck. I gotta the aura h2o with the warm light and it&#039;s totally worth it.
+
+a href="#p71681673" class="quotelink"
+&gt;&gt;71681673
+/a
+
+br
+Care to share how your formatting pages? Page sizes, formats, fonts etc?
+
+a href="#p71684572" class="quotelink"
+&gt;&gt;71684572
+/a
+
+br
+Not him but see Kindle Comic Converter
+
+
+amoled white text on black. matte screen. e ink cant compete
+tfw the books I&#039;m pirating have transcription errors and garbage text
+br
+
+br
+why must the world be so cruel /g/
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+Waiting for other reflective display tech to come out. In colour and video. e-Ink sucks compared to the stuff coming soon
+
+a href="#p71684669" class="quotelink"
+&gt;&gt;71684669
+/a
+
+br
+it can on the same day when the amoled goes back on its charger
+
+a href="#p71684697" class="quotelink"
+&gt;&gt;71684697
+/a
+
+br
+yeah thats the downside (although back lightless amoled hmm) but its my phone, tablet and ebook reader and gets 2 days charge
+
+a href="#p71681279" class="quotelink"
+&gt;&gt;71681279
+/a
+
+br
+E-Ink holds back itself. Color never.
+
+a href="#p71684673" class="quotelink"
+&gt;&gt;71684673
+/a
+
+br
+Libgen has too many options for popular texts, its overwhelming. I have no idea how good any of them are until I read them.
+
+a href="#p71684973" class="quotelink"
+&gt;&gt;71684973
+/a
+
+br
+Onyx has one but only for China&#039;s educational market, since the power would be abused by civilians
+
+a href="#p71684275" class="quotelink"
+&gt;&gt;71684275
+/a
+
+br
+Yes, there are several ~13&quot; options.
+Color and above 24Hz when
+
+a href="#p71684391" class="quotelink"
+&gt;&gt;71684391
+/a
+
+br
+
+span class="quote"
+&gt;buying an drm ebook from amazon ever
+/span
+
+br
+
+span class="quote"
+&gt;buying ebooks at all
+/span
+
+br
+babys first time using the internet, eh?
+I bought my parents a kindle and they shattered the screen. Like the top half worked but not the rest of the screen. I had to call Amazon to have it replaced, and then my parents broke the replacement. They broke the next one as well. 
+br
+
+br
+That was the kindle with the keyboard, newer models have a touchscreen. Someone got the new kindle for my grandmother. It mainly uses gestures to turn pages and stuff. She was utterly confused by it, she thought the books I put on it were samples because after a few pages it would go back to the beginning. She couldn&#039;t read the whole book.
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+Unlike tablets, Kindle is glare-free
+
+a href="#p71681451" class="quotelink"
+&gt;&gt;71681451
+/a
+
+br
+I tried it for a while, but the screen was shit. Unless you&#039;re planning to read your chinese cartoons outside all the time a good tablet is more interesting
+What&#039;s a good shit cheap chink ebook reader?
+
+a href="#p71686426" class="quotelink"
+&gt;&gt;71686426
+/a
+
+br
+Does the kindle not have an option to just make it so you can tap the left/right side of the screen to go back/further like kobo has?
+br
+Are your family members the kind of people who always have broken screens on their phone?
+
+a href="#p71687322" class="quotelink"
+&gt;&gt;71687322
+/a
+
+br
+
+span class="quote"
+&gt;I tried it for a while, but the screen was shit. Unless you&#039;re planning to read your chinese cartoons outside all the time a good tablet is more interesting
+/span
+
+br
+I will read many more books than manga so e-ink is a must.
+
+a href="#p71687377" class="quotelink"
+&gt;&gt;71687377
+/a
+
+br
+There aren&#039;t any
+br
+Kobo Clara HD on sale is the cheapest usable reader that isn&#039;t a kindle.
+
+a href="#p71686426" class="quotelink"
+&gt;&gt;71686426
+/a
+
+br
+The touchscreen controls are whats stopping me from upgrading to a newer kindle. Nothing wrong with a simple button to change page
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+It&#039;s one of the best ereaders out there. It&#039;s 100% amazon botnet but this can be avoided if you never enable wifi, which I did. Why the fuck would I want wifi on an ereader, anyway? I download and transfer all my books using calibre, works good. It&#039;s also durable, I had a sony and a kobo before and both broke down on me. However, as any e ink reader it&#039;s painfully slow, I can&#039;t believe you have to wait for a second for a page to draw graphs or scroll PDFs  in 2019 when its cost is over 100$.
+br
+
+br
+It does have some shit formatting presets when reading .epub or pdfs. 
+br
+
+br
+all in all it&#039;s the best ereader I used, but until they fix the speed issues that plague all ereaders it will still be lacking.
+
+a href="#p71681260" class="quotelink"
+&gt;&gt;71681260
+/a
+
+br
+I prefer laptop and libgen.
+
+a href="#p71688312" class="quotelink"
+&gt;&gt;71688312
+/a
+
+br
+
+span class="quote"
+&gt;I prefer laptop and libgen.
+/span
+
+br
+You will have no eyesight at 40
+
+a href="#p71688349" class="quotelink"
+&gt;&gt;71688349
+/a
+
+br
+How is small ass tablet any better for eyes.
+
+a href="#p71688364" class="quotelink"
+&gt;&gt;71688364
+/a
+
+br
+
+span class="quote"
+&gt;How is small ass tablet any better for eyes.
+/span
+
+br
+Not a tablet, e-ink
+br
+It&#039;s like paper
+
+a href="#p71681311" class="quotelink"
+&gt;&gt;71681311
+/a
+
+br
+reddón
+
+a href="#p71688220" class="quotelink"
+&gt;&gt;71688220
+/a
+
+br
+Try some PocketBook devices, they have hardware buttons.
+
+a href="#p71681413" class="quotelink"
+&gt;&gt;71681413
+/a
+
+br
+I got the Kindle Oasis 7&quot; for this.  I have only read what&#039;s on Kindle unlimited though (not much animu, mostly American stuff.)  The Amazon bought comics will zoom and read panel by panel so you can read everything.  I&#039;d say  7&quot; is the bare minimum but anything larger is very expensive.  I think one of the competitors is coming out with a 7&quot; for $200 soon if you don&#039;t want to support Amazon.
+I have different e-readers with displays from 6&quot; to 8&quot;. The Kindle Oasis with 7&quot; is the most comfy one and by far my favorite.
+
+a href="#p71687404" class="quotelink"
+&gt;&gt;71687404
+/a
+
+br
+Yeah, they are. I bought my mom a tablet that came with a stylus that inserts into the bottom right side of the device. She couldn&#039;t find the stylus. Somehow she
+br
+ shattered the screen. After a couple years she told me about how she had called tech support or whoever about the missing stylus and they were very unhelpful. I showed her how to take the stylus out. It was around Christmas so I bought her a new tablet and a protective leather case. 
+br
+
+br
+Baby Boomer incompetence is incredible.
+
+a href="#p71682691" class="quotelink"
+&gt;&gt;71682691
+/a
+
+br
+for $5 I&#039;d expect a couple GBs too
+
+
+
+
+
+a href="#p71681675" class="quotelink"
+&gt;&gt;71681675
+/a
+
+br
+Kobo. I&#039;ve got one and I really like it
+
+a href="#p71681413" class="quotelink"
+&gt;&gt;71681413
+/a
+
+br
+get one with a bigger screen. most of them come in 6&#039;&#039;. while you can read them fine most of the time it can get annoying to make out what the finer print says. also, you may need to install cbz support yourself since most of them don&#039;t come with support for those.
+
+a href="#p71690603" class="quotelink"
+&gt;&gt;71690603
+/a
+
+br
+
+span class="quote"
+&gt;How much?
+/span
+
+br
+
+span class="quote"
+&gt;&gt;BASED MURATA
+/span
+
+br
+It was 195 shipped from Spain on AliExpress
+br
+Official store
+br
+
+br
+But it was a sale, should be 220 average
+
+a href="#p71691435" class="quotelink"
+&gt;&gt;71691435
+/a
+
+br
+Man, the prospect tempts, but my blood isn&#039;t made for that.
+What&#039;s a good e-reader that respect my privacy? I got a kindle a while ago expecting to de-amazon it but it&#039;s a model that can&#039;t be downgraded or anything.
+br
+What do you anons recommend?

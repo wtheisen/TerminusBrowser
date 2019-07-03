@@ -117,6 +117,8 @@ def getImageUrls(url, board):
     extensionList = ('.jpg', '.jpeg', '.png', '.gif', '.webm')
     images = []
 
+    print 'meow'
+
     for img in page.find_all('a', href=True):
         if board in str(img) and 'i.4cdn.org' in str(img):
             tagList = str(img).split('"')
@@ -220,7 +222,6 @@ def threadWatcher(currentWidget):
 ################################################################################
 
 def main():
-
     header = urwid.AttrWrap(urwid.Text('CommandChan'), 'header')
 
     def threadWatcherWidget():
@@ -280,6 +281,8 @@ def main():
         images = deDup(images)
         for i in range(0, len(images)):
             images[i] = 'http:' + images[i]
+
+        print('images')
 
         for num, comment in comments.items():
             comment = comment.split('::')
@@ -410,7 +413,10 @@ def main():
         elif key == 'd':
             # deletes the item from the thread watcher
             pass
-        elif key == 'u':
+        elif key == 'f':
+            # filter the current view
+            pass
+        elif key == 'r':
             global currentBoard
             global currentThread
             global level

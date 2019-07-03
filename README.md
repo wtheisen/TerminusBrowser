@@ -23,9 +23,9 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 ## Hotkeys <a name="hotkeys"></a>
 
 - 'q' - go up a level, or quit the program if viewing the board index
-- 'u' - in-place update either the catalog or the thread in focus
 - 'w' - watch the currently focused thread
 - 'e' - view the thread watcher
+- 'r' - in-place update either the catalog or the thread in focus
 
 ## TODO List <a name="todoList"></a>
 
