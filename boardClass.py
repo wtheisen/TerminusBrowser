@@ -6,14 +6,12 @@ from boardViewClasses import buildView
 from debug import DEBUG
 
 class Board:
-    def __init__(self, board, userFilter, indexView=None):
-        self.board = board
-        self.userFilter = userFilter
-        self.indexView = indexView
+    def __init__(self, urwidViewManager):
+        self.uvm = urwidViewManager
 
         self.threads = {}
         self.style = VIEWSTYLES.BOXES
-        self.url = 'https://a.4cdn.org' + board + 'catalog.json'
+        self.url = 'https://a.4cdn.org' + self.uvm.boardString + 'catalog.json'
 
         startTime = time.time()
         self.titles = self.getJSONCatalog(self.url)
@@ -21,14 +19,11 @@ class Board:
 
         DEBUG(self.titles)
 
-        self.parseTime = (endTime - startTime)
-        self.itemCount = len(self.titles)
+        self.uvm.parseTime = (endTime - startTime)
 
         self.boardView = buildView(self.style,
-                                   self.board,
-                                   self.titles,
-                                   self.userFilter,
-                                   self.indexView)
+                                   self.uvm,
+                                   self)
 
     def getJSONCatalog(self, url):
         response = requests.get(url)

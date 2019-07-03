@@ -1,36 +1,39 @@
 #Thread Class
-import requests, json, collections
-import threadViewClasses
+import requests, json, collections, re
+import urwid
 
 from bs4 import BeautifulSoup
-
-def displayThread():
-    pass
+from customUrwidClasses import QuoteButton
+from debug import DEBUG
+from threadViewClasses import buildView
+from viewStyles import VIEWSTYLES
 
 class Thread:
-    def __init__(self, board, number):
-        self.board = board
-        self.number = str(number)
-        self.url = 'https://a.4cdn.org' + self.board + 'thread/' + self.number
+    def __init__(self, urwidViewManager):
+        self.uvm = urwidViewManager
+        self.url = 'https://a.4cdn.org' + self.uvm.boardString + 'thread/' + str(self.uvm.threadNum)
+        self.imageUrl = 'http://boards.4chan.org' + self.uvm.boardString + 'thread/' + str(self.uvm.threadNum)
 
-        self.comments = self.getJSONThread(self.url)
-        self.images   = self.getImageUrls(self.url, self.board)
+        self.comments = self.getJSONThread()
+        # DEBUG(self.comments)
+        self.getImageUrls()
+
+        buildView(VIEWSTYLES.BOXES, self.uvm, self)
 
 
-    def getJSONThread(self, url):
-        response = requests.get(url + '.json')
+    def getJSONThread(self):
+        response = requests.get(self.url + '.json')
         data = response.json()
-        return parseFourThread(data)
+        return self.parseFourThread(data)
 
-    def parseFourThread(data):
+    def parseFourThread(self, data):
         comments = collections.OrderedDict()
         posts = data["posts"]
-        global currentThreadOPNumber
 
         replies = {}
         for post in posts:
             if str(post["resto"]) == '0':
-                currentThreadOPNumber = str(post["no"])
+                self.currentThreadOPNumber = str(post["no"])
 
             replies[str(post["no"])] = []
             try:
@@ -44,48 +47,46 @@ class Thread:
             try:
                 imageBool = post['filename']
                 try:
-                    comments[str(post["no"]) + ' ' + post["now"]] = post["com"] + '::image'
+                    comments[(str(post["no"]), post["now"])] = (post["com"], True)
                 except:
-                    comments[str(post["no"]) + ' ' + post["now"]] = '::image'
+                    comments[(str(post["no"]), post["now"])] = ('', True)
             except:
                 try:
-                    comments[str(post["no"]) + ' ' + post["now"]] = post["com"]
+                    comments[(str(post["no"]), post["now"])] = (post["com"], False)
                 except:
-                    comments[str(post["no"]) + ' ' + post["now"]] = ''
+                    comments[(str(post["no"]), post["now"])] = ('', False)
         return comments
 
-    def getImageUrls(url, board):
+    def getImageUrls(self):
         def load(url):
             req = requests.get(url)
             return str(req.content)
 
-        thread_link = url
-        page = BeautifulSoup(load(thread_link), "lxml")
+        DEBUG(self.url)
+        page = BeautifulSoup(load(self.imageUrl), "lxml")
+        # DEBUG(page)
         extensionList = ('.jpg', '.jpeg', '.png', '.gif', '.webm')
         images = []
 
-        print('meow')
-
         for img in page.find_all('a', href=True):
-            if board in str(img) and 'i.4cdn.org' in str(img):
+            if self.uvm.boardString in str(img) and 'i.4cdn.org' in str(img):
                 tagList = str(img).split('"')
                 for tag in tagList:
-                    if board in str(tag):
+                    if self.uvm.boardString in str(tag):
                         if any(extension in tag for extension in extensionList):
                             images.append(str(tag))
 
-        return images
+        DEBUG(images)
+        self.images = images
 
-    def commentTagParser(postNum, comment, imageURL=None):
+    def commentTagParser(self, postNumDate, comment, imageURL=None):
         soup = BeautifulSoup(comment, "html.parser")
         tags = [str(tag) for tag in soup.find_all()]
         contents = []
 
-        global currentThreadOPNumber
-
         test = re.split('<|>', comment)
 
-        contents.append(urwid.Text(str(postNum).strip()))
+        contents.append(urwid.Text(str(postNumDate)))
         contents.append(urwid.Divider('-'))
 
         quote = False
@@ -121,7 +122,7 @@ class Thread:
                 item = item.replace('&gt;', '>')
                 item = item.replace('&lt;', '<')
 
-                if str(currentThreadOPNumber) == item[2:]:
+                if str(self.currentThreadOPNumber) == item[2:]:
                     item += '(OP)'
 
                 contents.append(urwid.AttrWrap(QuoteButton(item), 'quote'))

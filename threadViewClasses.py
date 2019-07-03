@@ -1,66 +1,55 @@
 #Thread view classes
+import time, urwid, re
+from viewStyles import VIEWSTYLES
+from debug import DEBUG
 
-class urwidThreadView:
-    def getThread(board, threadNum, images, comments):
+def buildView(style, urwidViewManager, thread):
+    if style is VIEWSTYLES.BOXES:
+        return urwidThreadViewBoxes(urwidViewManager, thread)
+
+class urwidThreadViewBoxes:
+    def __init__(self, urwidViewManager, thread):
+        self.uvm = urwidViewManager
+        self.t = thread
+
+        DEBUG('YEET')
+
+        self.buildHeaderView()
+        self.buildThreadView()
+
+    def buildHeaderView(self):
+            self.header = urwid.AttrWrap(urwid.Text('CommandChan'), 'header')
+
+    def getThread(self):
         startTime = time.time()
         test = []
         temp = {}
 
-        def deDup(seq):
-            seen = set()
-            seen_add = seen.add
-            return [x for x in seq if not (x in seen or seen_add(x))]
-
-        images = [ img for img in images if "s" not in img ]
-        images = deDup(images)
+        images = [ img for img in self.t.images if re.match('^\/\/.*\/.\/.*s\..*', img) ]
         for i in range(0, len(images)):
             images[i] = 'http:' + images[i]
 
-        for num, comment in comments.items():
-            comment = comment.split('::')
-
-            try:
-                hasImage = comment[1]
-                comment = comment[0]
-                commentWidget = urwid.LineBox(commentTagParser(num, comment, images.pop(0)))
-            except:
-                if comment == 'image':
-                    commentWidget = urwid.LineBox(commentTagParser(num, '', images.pop(0)))
-                else:
-                    comment = comment[0]
-                    commentWidget = urwid.LineBox(commentTagParser(num, comment))
+        for numDate, commentImage in self.t.comments.items():
+            DEBUG(commentImage)
+            if commentImage[1] is True:
+                commentWidget = urwid.LineBox(self.t.commentTagParser(numDate, commentImage[0], images.pop(0)))
+            else:
+                commentWidget = urwid.LineBox(self.t.commentTagParser(numDate, commentImage[0]))
 
             test.append(commentWidget)
-            temp[str(num).split()[0]] = commentWidget
-
-        currentThreadWidgets = temp
+            temp[str(numDate[0])] = commentWidget
 
         endTime = time.time()
+        # DEBUG(len(test))
+        self.uvm.itemCount = len(self.t.comments)
+        self.uvm.parseTime = endTime - startTime
 
         listbox_content = test
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
-        return listbox, (endTime - startTime), len(comments)
+        return listbox
 
-    def displayThread(button, thread=None):
-        global currentThread
-        if thread:
-            currentThread = thread
-        else:
-            currentThread = button.get_label()
-        global level
-        level = 2
-        global currentBoardWidget
-        global currentBoard
-
-        listbox, parseTime, itemCount = getThread(currentBoard, currentThread)
-        thread = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), currentBoardWidget, 'center', ('relative', 60), 'middle', ('relative', 95))
-        frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=header)
-
-        infoString = urwid.AttrWrap(urwid.Text('Mode: ' + str(currentMode) + ', Board: ' + currentBoard + ', Thread: ' + currentThread), 'header')
-        timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(itemCount) + ' items in ' + str(parseTime)[0:6] + 's', 'right'), 'header')
-        footerWidget = urwid.Columns([infoString, timeString])
-
-        frame.footer = footerWidget
-
-        urwid.MainLoop(frame, palette, screen, unhandled_input=unhandled, pop_ups=True).run()
+    def buildThreadView(self):
+        listbox = self.getThread()
+        thread = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), self.uvm.indexView, 'center', ('relative', 60), 'middle', ('relative', 95))
+        self.uvm.frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=self.header)
