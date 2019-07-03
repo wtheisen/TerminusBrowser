@@ -11,6 +11,9 @@ from boardClass import Board
 from threadClass import Thread
 from debug import INITDEBUG, DEBUG
 
+from customUrwidClasses import CommandBar
+from commandHandlerClass import CommandHandler
+
 ################################################################################
 
 boards = ['/g/', '/v/', '/tv/', '/sp/', '/fa/', '/pol/', '/vg/',
@@ -43,6 +46,12 @@ class urwidView():
     def __init__(self):
         self.level = LEVEL.INDEX
         self.mode = MODE.NORMAL
+        self.commandHandler = CommandHandler()
+
+        self.commandBar = CommandBar(lambda: self._update_focus(True))
+
+        urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.evalCommand)
+        urwid.connect_signal(self.commandBar, 'exit_insert', self.exitInsert)
 
         self.boardString = 'Index'
         self.threadNum = 0
@@ -72,7 +81,16 @@ class urwidView():
         self.buildStartView()
         self.buildAddFooterView()
 
-        self.displayStartView()
+        self.displayFrame()
+
+    def exitInsert(self):
+        self.mode = MODE.NORMAL
+        self.buildAddFooterView()
+        self.frame.focus_position = 'body'
+        self.displayFrame()
+
+    def _update_focus(self, focus):
+        self._focus=focus
 
     def buildHeaderView(self):
         self.header = urwid.AttrWrap(urwid.Text('CommandChan'), 'header')
@@ -80,7 +98,6 @@ class urwidView():
     def buildAddFooterView(self):
         infoString = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) + ', Board: ' + self.boardString), 'header')
         timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(self.itemCount) + ' items in ' + str(self.parseTime)[0:6] + 's', 'right'), 'header')
-        self.commandBar = urwid.Edit(u": ")
         footerWidget = urwid.Pile([urwid.Columns([infoString, timeString]), self.commandBar])
         self.frame.footer = footerWidget
 
@@ -138,17 +155,14 @@ class urwidView():
     
 
     def handleKey(self, key):
-        if key == 'esc':
-            self.mode = MODE.NORMAL
-            self.buildAddFooterView()
-            self.displayFrame()
         if key == 'i':
             self.mode = MODE.INSERT
             self.buildAddFooterView()
+            self.frame.focus_position = 'footer'
             self.displayFrame()
-            self.commandBar.focus = True
 
         if self.mode is MODE.NORMAL:
+            DEBUG(key)
             if key == 'w' and self.level in (LEVEL.BOARD, LEVEL.THREAD):
                 # 'w'atch the currently focused thread
                 pass

@@ -1,4 +1,7 @@
-import urwid, re
+import urwid, re, collections
+
+from commandHandlerClass import CommandHandler
+from debug import DEBUG
 
 class QuotePreview(urwid.WidgetWrap):
     signals = ['close']
@@ -23,3 +26,45 @@ class QuoteButton(urwid.PopUpLauncher):
 
     def get_pop_up_parameters(self):
         return {'left':0, 'top':1, 'overlay_width':128, 'overlay_height':12}
+
+class FocusMixin(object):
+    def mouse_event(self, size, event, button, x, y, focus):
+        if focus and hasattr(self, '_got_focus') and self._got_focus:
+            self._got_focus()
+        return super(FocusMixin,self).mouse_event(size, event, button, x, y, focus)
+
+class CommandBar(FocusMixin, urwid.Edit):
+# class CommandBar(urwid.Edit):
+    signals=['command_entered', 'exit_insert']
+
+    def __init__(self, got_focus=None):
+        urwid.Edit.__init__(self)
+        self.history=collections.deque(maxlen=1000)
+        self._history_index=-1
+        self._got_focus=got_focus
+
+    def keypress(self, size, key):
+        if key == 'esc':
+            urwid.emit_signal(self, 'exit_insert')
+        if key == 'enter':
+            line=self.edit_text.strip()
+            if line:
+                urwid.emit_signal(self, 'command_entered', line)
+                self.history.append(line)
+            self._history_index=len(self.history)
+            self.edit_text=u''
+        if key=='up':
+            self._history_index-=1
+            if self._history_index< 0:
+                self._history_index= 0
+            else:
+                self.edit_text=self.history[self._history_index]
+        if key=='down':
+            self._history_index+=1
+            if self._history_index>=len(self.history):
+                self._history_index=len(self.history)
+                self.edit_text=u''
+            else:
+                self.edit_text=self.history[self._history_index]
+        else:
+            urwid.Edit.keypress(self, size, key)

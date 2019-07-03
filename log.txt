@@ -5167,3 +5167,122 @@ a href="#p71707943" class="quotelink"
 
 br
 based
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
