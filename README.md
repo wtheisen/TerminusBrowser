@@ -22,25 +22,33 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 
 ## Hotkeys <a name="hotkeys"></a>
 
-- 'q' - go up a level, or quit the program if viewing the board index
-- 'w' - watch the currently focused thread
-- 'e' - view the thread watcher
-- 'r' - in-place update either the catalog or the thread in focus
+- 'q'   - go up a level, or quit the program if viewing the board index
+- 'w'   - watch the currently focused thread
+- 'e'   - view the thread watcher
+- 'r'   - in-place update either the catalog or the thread in focus
+- 'i'   - puts you in insert mode where you can type full commands
+- 'esc' - puts you in normal mode where the usual hotkeys will work
+
+## Commands <a name="commands"></a>
+
+- (s)earch [PATTERN] - filters the current view to only items containing [PATTERN]
 
 ## TODO List <a name="todoList"></a>
 
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
-- [] Filtering options on all pages with information in the footer
+- [*] Filtering options on all pages with information in the footer
+- [] Full suite of commands
+- [] Toggleable display modes(boxes, tree, cascade)
 - [] Display comment replies in the info bar at the top of the comment
 - [] Save threads to a custom hotkey menu
-    - [X] Watch threads from the board view
-    - [X] Watch thread from within the thread
+    - [] Watch threads from the board view
+    - [] Watch thread from within the thread
     - [] Hotkey to delete thread from watcher
     - [] Auto-prune threads that get archived
 - [] Quote button full interaction
-    - [X] Quotes of OP have the (OP) designator
-    - [X] Interacting with Quotes displays a preview of said Quote
+    - [] Quotes of OP have the (OP) designator
+    - [] Interacting with Quotes displays a preview of said Quote
     - [] Size of preview depends on size of quote being previewed
     - [] Chain Quote Previews together to view up the quote tree
 - [] Split view based on hotkeys
