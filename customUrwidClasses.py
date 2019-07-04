@@ -49,8 +49,9 @@ class CommandBar(FocusMixin, urwid.Edit):
         if key == 'enter':
             line=self.edit_text.strip()
             if line:
-                urwid.emit_signal(self, 'command_entered', line)
+                self.edit_text=u''
                 self.history.append(line)
+                urwid.emit_signal(self, 'command_entered', line)
             self._history_index=len(self.history)
             self.edit_text=u''
         if key=='up':

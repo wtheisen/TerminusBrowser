@@ -13,6 +13,7 @@ from debug import INITDEBUG, DEBUG
 
 from customUrwidClasses import CommandBar
 from commandHandlerClass import CommandHandler
+from customeTypes import LEVEL, MODE
 
 ################################################################################
 
@@ -30,15 +31,6 @@ boards = ['/g/', '/v/', '/tv/', '/sp/', '/fa/', '/pol/', '/vg/',
           '/mu/', '/n/', '/news/', '/out/', '/po/',
           '/qst/', '/sci/', '/soc/', '/tg/', 'toy',
           '/trv/', '/vp/', '/wsg/', '/wsr/', '/x/']
-
-class LEVEL(Enum):
-    INDEX  = 0
-    BOARD  = 1
-    THREAD = 2
-
-class MODE(Enum):
-    NORMAL = 0
-    INSERT = 1
 
 ################################################################################
 
@@ -82,15 +74,6 @@ class urwidView():
         self.buildAddFooterView()
 
         self.displayFrame()
-
-    def filterUpdate(self):
-       if self.level == LEVEL.BOARD:
-            self.buildStartView()
-            self.mode = MODE.NORMAL
-            self.frame.focus_position = 'body'
-            self.board = Board(self)
-            self.buildAddFooterView()
-            self.displayFrame()
 
     def exitInsert(self):
         self.mode = MODE.NORMAL
@@ -164,7 +147,7 @@ class urwidView():
     
 
     def handleKey(self, key):
-        if key == 'i':
+        if key == ':':
             self.mode = MODE.INSERT
             self.buildAddFooterView()
             self.frame.focus_position = 'footer'
@@ -172,19 +155,15 @@ class urwidView():
 
         if self.mode is MODE.NORMAL:
             DEBUG(key)
-            if key == 'w' and self.level in (LEVEL.BOARD, LEVEL.THREAD):
-                # 'w'atch the currently focused thread
-                pass
-            elif key == 'e':
-                # 'e'xpand the thread watcher
-                pass
-            elif key == 's':
-                # split view
-                pass
-            elif key == 'd':
-                # deletes the item from the thread watcher
-                pass
-            elif key == 'r':
+            if key == 'h':
+                self.frame.keypress((1000,1000), 'left')
+            if key == 'j':
+                self.frame.keypress((1000000000,1000000000), 'down')
+            if key == 'k':
+                self.frame.keypress((1000,1000), 'up')
+            if key == 'l':
+                self.frame.keypress((1000,1000), 'right')
+            if key == 'r':
                 if self.level is LEVEL.BOARD:
                     self.displayBoard(self)
                 elif self.level is LEVEL.THREAD:

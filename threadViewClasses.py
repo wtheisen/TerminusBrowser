@@ -1,13 +1,14 @@
 #Thread view classes
 import time, urwid, re
-from viewStyles import VIEWSTYLES
+from customeTypes import VIEWSTYLES
 from debug import DEBUG
 
 def buildView(style, urwidViewManager, thread):
     if style is VIEWSTYLES.BOXES:
         return urwidThreadViewBoxes(urwidViewManager, thread)
-
+   
 class urwidThreadViewBoxes:
+
     def __init__(self, urwidViewManager, thread):
         self.uvm = urwidViewManager
         self.t = thread
@@ -25,7 +26,8 @@ class urwidThreadViewBoxes:
         test = []
         temp = {}
 
-        images = [ img for img in self.t.images if re.match('^\/\/.*\/.\/.*s\..*', img) ]
+        images = [ img for img in self.t.images if re.match(r"^//.*/.*/.*s\..*", img) ]
+        DEBUG(images)
         for i in range(0, len(images)):
             images[i] = 'http:' + images[i]
 

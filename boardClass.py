@@ -1,7 +1,7 @@
 #Board Meta-class
 import requests, collections, json, time
 
-from viewStyles import VIEWSTYLES
+from customeTypes import VIEWSTYLES
 from boardViewClasses import buildView
 from debug import DEBUG
 

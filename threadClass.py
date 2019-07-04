@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from customUrwidClasses import QuoteButton
 from debug import DEBUG
 from threadViewClasses import buildView
-from viewStyles import VIEWSTYLES
+from customeTypes import VIEWSTYLES
 
 class Thread:
     def __init__(self, urwidViewManager):
