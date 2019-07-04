@@ -9,12 +9,15 @@ def preCommand(uvm):
 
 def search(uvm):
     preCommand(uvm)
-    if uvm.level is LEVEL.BOARD:
+    if uvm.level is LEVEL.INDEX:
+        uvm.buildStartView()
+    elif uvm.level is LEVEL.BOARD:
         uvm.board = Board(uvm)
     elif uvm.level is LEVEL.THREAD:
         uvm.thread = Thread(uvm)
 
     uvm.userFilter = None
+    uvm.buildAddHeaderView()
     uvm.buildAddFooterView()
     uvm.displayFrame()
 

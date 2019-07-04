@@ -49,5 +49,6 @@ class urwidBoardViewBoxes:
     def buildBoardView(self):
         catalogueBox = self.createBoardCatalogueView()
         view = urwid.LineBox(urwid.Pile([catalogueBox]))
-        catalogue = urwid.Overlay(view, self.uvm.indexView, 'center', ('relative', 90), 'middle', ('relative', 95))
-        self.uvm.frame = urwid.Frame(urwid.AttrWrap(catalogue, 'body'), header=self.header)
+        # catalogue = urwid.Overlay(view, self.uvm.indexView, 'center', ('relative', 90), 'middle', ('relative', 95))
+        self.uvm.bodyView = urwid.Overlay(view, self.uvm.indexView, 'center', ('relative', 90), 'middle', ('relative', 95))
+        # self.uvm.bodyView = urwid.Frame(urwid.AttrWrap(catalogue, 'body'), header=self.header)

@@ -57,5 +57,6 @@ class urwidThreadViewBoxes:
 
     def buildThreadView(self):
         listbox = self.getThread()
-        thread = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), self.uvm.indexView, 'center', ('relative', 60), 'middle', ('relative', 95))
-        self.uvm.frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=self.header)
+        # thread = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), self.uvm.indexView, 'center', ('relative', 60), 'middle', ('relative', 95))
+        self.uvm.bodyView = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), self.uvm.indexView, 'center', ('relative', 60), 'middle', ('relative', 95))
+        # self.uvm.frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=self.header)

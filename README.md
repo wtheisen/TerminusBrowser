@@ -36,8 +36,10 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
-- [*] Filtering options on all pages with information in the footer
+- [X*] Filtering options on all pages with information in the footer
 - [] Full suite of commands
+    - [X] Search command for current view
+    - [X] Thread command to view thread by number
 - [] Toggleable display modes(boxes, tree, cascade)
 - [] Display comment replies in the info bar at the top of the comment
 - [] Save threads to a custom hotkey menu

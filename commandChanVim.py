@@ -69,8 +69,8 @@ class urwidView():
         self.frame = None
         self.indexView = None
 
-        self.buildHeaderView()
         self.buildStartView()
+        self.buildAddHeaderView()
         self.buildAddFooterView()
 
         self.displayFrame()
@@ -85,11 +85,15 @@ class urwidView():
     def _update_focus(self, focus):
         self._focus=focus
 
-    def buildHeaderView(self):
-        self.header = urwid.AttrWrap(urwid.Text('CommandChan'), 'header')
+    def buildAddHeaderView(self):
+        header = urwid.AttrWrap(urwid.Text('CommandChan -- Board: ' + self.boardString +
+                                                ', Thread: ' + str(self.threadNum)), 'header')
+        self.frame = urwid.Frame(urwid.AttrWrap(self.bodyView, 'body'), header=header)
+        # self.frame = self.indexView
 
     def buildAddFooterView(self):
-        infoString = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) + ', Board: ' + self.boardString), 'header')
+        infoString = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) +
+                                               ', Filter: ' + str(self.userFilter)), 'header')
         timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(self.itemCount) + ' items in ' + str(self.parseTime)[0:6] + 's', 'right'), 'header')
         footerWidget = urwid.Pile([urwid.Columns([infoString, timeString]), self.commandBar])
         self.frame.footer = footerWidget
@@ -99,18 +103,21 @@ class urwidView():
 
         boardButtons = []
         for board in boards:
-            boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.displayBoard), 'center')))
+            if self.userFilter:
+                if self.userFilter.lower() in board.lower():
+                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.displayBoard), 'center')))
+            else:
+                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.displayBoard), 'center')))
 
         buttonGrid = urwid.GridFlow(boardButtons, 12, 2, 2, 'center')
         listbox_content = [buttonGrid]
 
-        test = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
-
-        self.frame = urwid.Frame(urwid.AttrWrap(test, 'body'), header=self.header)
-        self.indexView = self.frame
+        self.indexView = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
+        self.bodyView = self.indexView
 
         endTime = time.time()
         self.parseTime = (endTime - startTime)
+        self.itemCount = len(boardButtons)
 
     def displayFrame(self):
         urwid.MainLoop(self.frame,
@@ -120,7 +127,9 @@ class urwidView():
                        pop_ups=True).run()
 
     def displayStartView(self):
-        self.frame = self.indexView
+        self.bodyView = self.indexView
+        self.buildAddHeaderView()
+        self.buildAddFooterView()
         self.displayFrame()
 
     def displayBoard(self, button, board=None, userFilter=None):
@@ -132,6 +141,7 @@ class urwidView():
             self.boardString = button.get_label()
             self.board = Board(self)
 
+        self.buildAddHeaderView()
         self.buildAddFooterView()
         self.displayFrame()
 
@@ -141,6 +151,7 @@ class urwidView():
 
         self.thread = Thread(self)
 
+        self.buildAddHeaderView()
         self.buildAddFooterView()
         self.displayFrame()
 
@@ -156,15 +167,16 @@ class urwidView():
         if self.mode is MODE.NORMAL:
             DEBUG(key)
             if key == 'h':
-                self.frame.keypress((1000,1000), 'left')
+                self.frame.keypress((100,100), 'left')
             if key == 'j':
-                self.frame.keypress((1000,1000), 'down')
+                self.frame.keypress((150,100), 'down')
             if key == 'k':
-                self.frame.keypress((1000,1000), 'up')
+                self.frame.keypress((150,100), 'up')
             if key == 'l':
-                self.frame.keypress((1000,1000), 'right')
+                self.frame.keypress((100,100), 'right')
             if key == 'r':
                 if self.level is LEVEL.BOARD:
+                    DEBUG('refreshing')
                     self.displayBoard(self, self.boardString)
                 elif self.level is LEVEL.THREAD:
                     self.displayThread(self, self.threadNum)
