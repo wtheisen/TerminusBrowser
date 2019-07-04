@@ -5286,3 +5286,6537 @@ br
 
 To use the Code tag, book-end your body of code with: [code] and [/code]
 
+Old thread: 
+a href="/g/thread/71698424#p71698424" class="quotelink"
+&gt;&gt;71698424
+/a
+
+br
+
+br
+What are you working on, /g/?
+First for C++ is the only language you need
+
+a href="#p71705326" class="quotelink"
+&gt;&gt;71705326
+/a
+
+br
+*Assembly, you stupid nigger.
+
+a href="#p71705305" class="quotelink"
+&gt;&gt;71705305
+/a
+
+br
+literally nothing
+br
+im balls deep in powertracing issues at work and i have no energy when i come home anymore
+
+a href="#p71705347" class="quotelink"
+&gt;&gt;71705347
+/a
+
+br
+
+span class="quote"
+&gt;learn x86 assembly
+/span
+
+br
+
+span class="quote"
+&gt;stuck on desert island with raspberry pi
+/span
+
+br
+
+span class="quote"
+&gt;can&#039;t do anything 
+/span
+
+br
+Yeah I don&#039;t think so buddy
+What&#039;s the equivalent of win forms in java? 
+br
+Some GUI you just drag and drop and it just werks. 
+br
+I have to make some small assignemnt doesn&#039;t have to be pretty or new epic stuff should just werk.
+
+a href="/g/thread/71698424#p71705236" class="quotelink"
+&gt;&gt;71705236
+/a
+
+br
+
+span class="quote"
+&gt;the contempt business people have for devs
+/span
+
+br
+
+br
+story time??
+
+a href="#p71705408" class="quotelink"
+&gt;&gt;71705408
+/a
+
+br
+I was introduced to JavaFX or swing. I don&#039;t recall which. There was a new thing coming out which we didn&#039;t learn. But that was many years ago.
+br
+Search for Java window builder and see what that is.
+Exceptions are vastly superior to C/Rust/Go-style error handling
+i can&#039;t stop procrastinating asjdhahfgggasliuglajskd
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+lumping c, rust and go together like they&#039;re the same just demonstrates you&#039;re a retard
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Deoptimising.
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Correct and also one of the many reasons C++ is the best language
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Yeah lemme just unwind stack at any tiny problem. Try catch is only good to make a program shut up, not your for reliability
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+this, thanks to exceptions I never have to use those bloated if/else
+Some anon was asking for the updated one
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+No, Haskell&#039;s Either-likes is the only sane way to work with computations that can fail. Exceptions are yet another, invisible and requiring special syntax and runtime support to handle way to return value from a function.
+br
+Exceptions are 100% retarded invention.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+
+span class="quote"
+&gt; Haskell&#039;s Either-likes
+/span
+
+br
+you mean monad transformers
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+You don&#039;t need that meme shit, just a type that can represent a value or an error
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+monad transformers are a rather complicated notion but also become necessary to subsume exceptins
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+They&#039;re enabling global error.
+br
+But they&#039;re not very good in the small. So many complications are introduced by having a second control flow path.
+
+a href="#p71705909" class="quotelink"
+&gt;&gt;71705909
+/a
+
+br
+
+span class="quote"
+&gt;monad transformers are a rather complicated notion
+/span
+
+br
+Huh? It&#039;s literally just a nicer way of dealing with monads inside monads.
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+This 
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+t. seething cnile
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+you and I know that, pajeet doesn&#039;t
+br
+
+br
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+by the time you&#039;ve implemented decent functions to manipulate error types you have a monad
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+
+a href="#p71706051" class="quotelink"
+&gt;&gt;71706051
+/a
+
+br
+t. CS freshman
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+They are not mutually exclusive, a good API will provide both depending on the situation (e.g. file opening).
+
+a href="#p71706122" class="quotelink"
+&gt;&gt;71706122
+/a
+
+br
+muh Enterprise grade 200loc Error sum type
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+Sometimes (actually quite a lot of times) I want to turn Either&lt;L1, R1&gt; into Either&lt;L2, R1&gt; to enrich the error data. Quite often I want to have E&lt;L1, R1&gt; -&gt; E&lt;L2, R2&gt; to do both.
+br
+Monad transformers will not help here.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+I&#039;ve heard people say that in C++ exceptions are cheaper than error codes because they&#039;re free when they don&#039;t trigger or something.
+br
+To me that doesn&#039;t make sense. Whatever mechanism that implements exceptions couldn&#039;t also implement error codes?
+
+a href="#p71706131" class="quotelink"
+&gt;&gt;71706131
+/a
+
+br
+You are correct, they are not mutually exclusive. Exceptions are ok for things like division by zero (because it will be night fucking mare otherwise to do arithmetic)
+
+a href="#p71706173" class="quotelink"
+&gt;&gt;71706173
+/a
+
+br
+uhhhh
+Hey, Anone~ Will you learn JavaScript with me? Pretty please?
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+when you return from a function that returns an error code you must compare and branch 
+br
+with you return from a function that throws an exception you just keep going
+br
+when an exception is thrown however you get fucked up runtime callstack introspection which is slow as balls however
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+It makes sense if you have 1 fail for 100000 non-fail situations. The stack-unwinding cost will be just amortized.
+br
+My problem with exception is the cost of programmers understanding the control flow. Java did the right thing demanding exceptions being part of function&#039;s signature. But pajeets were to stupid to understand and properly use and instead did the needful.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+So like std::expected?
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+Go suck a nigger dick or something, sweetie. White men are talking.
+Help me bros
+br
+I am trying to turn Python-driven data analytics into a hobby outside of work, but I have learned that looking for nails (projects) to hit with a hammer (programming) is not the right way to think about programming.
+br
+What the hell do I do?
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+Don&#039;t know, did not read about it yet, sorry.
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+yeah but not retarded
+
+a href="#p71706147" class="quotelink"
+&gt;&gt;71706147
+/a
+
+br
+monad transformers allow you to make a stack of different ways of handling errors in different parts of you system, they even let you have some kind of priority in them (you don&#039;t really care about the previous formatting error if you&#039;re out of memory)
+br
+what you&#039;re talking about is completely irrelevant, if your favourite language doesn&#039;t have a bifunctor class/trait you might as well kys.
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+what are you working on, jsposter?
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+Data analytics sounds like a fucking boring hobby, maybe that&#039;s your issue
+
+a href="#p71706240" class="quotelink"
+&gt;&gt;71706240
+/a
+
+br
+Good, I wouldn&#039;t want to use Hasklel either. Too many brainlets smelling the thing up.
+
+a href="#p71706267" class="quotelink"
+&gt;&gt;71706267
+/a
+
+br
+Brainlet. It&#039;s literally the future of our society
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+
+span class="quote"
+&gt;this is what Haskellers actually believe
+/span
+
+br
+II love the language but it has its place
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+Yeah at actual companies, not for fucking hobbyist retards
+
+a href="#p71706326" class="quotelink"
+&gt;&gt;71706326
+/a
+
+br
+A hobby that doubles as a career is literally the most fulfilling thing you can do
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+a dream we will never achieve
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+That&#039;s too cumbersome. You need a syntax/symanic help from the language here for practical usage.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Forcing yourself to enjoy your career as a hobby isn&#039;t the same thing as making money off your hobby though.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Truth
+br
+
+br
+I get disappointed when it&#039;s time to call it quits I enjoy my work so much.
+br
+
+br
+Currently working for a big car company working on an electric self driving car to compete with tesla.
+br
+
+br
+Doing full stack dev with C, C++, Mqtt, React, Redux, Python. 
+br
+
+br
+God I hate the people I work with but love the project.
+
+a href="#p71706396" class="quotelink"
+&gt;&gt;71706396
+/a
+
+br
+I just feel disappointed when work is over because no gf to go home to
+br
+Programming is a great job but I get my fill at work and I have other hobbies I&#039;d rather do at home
+br
+But writing important software at work makes me feel less inclined to do it in my free time as well
+Where my /programing as a hobby/ bros at?
+br
+I need emotional support.
+
+a href="#p71706193" class="quotelink"
+&gt;&gt;71706193
+/a
+
+br
+
+span class="quote"
+&gt;when you return from a function that returns an error code you must compare and branch
+/span
+
+br
+Yes I accept that in the case where the function is invisible to the compiler there can be complications like double checking.
+br
+But in other cases I don&#039;t really see it. Because any error will stem from some sort of error evaluation like:
+br
+
+pre class="prettyprint"
+if(a==5) return -1; //oops, a can&#039;t be 5 here
+br
+
+/pre
+
+br
+Outside the function we define our error handling with an if that does a redundant check. For the compiler to eliminate the two it needs to know the function code. But if it does it already knows which branch we should go down and it can simply go there. Instead of returning to the location where we made the call to the function that returns an error code we could jump straight into the block catching the error. The compiler might have to reorder some things in some cases but I&#039;d deem the normal case as being trivial.
+br
+
+br
+So in the non-error case (as determined inside the function) you just return and keep going as you say. It doesn&#039;t seem like anything that&#039;s inherent to exceptions or error codes. If I were to guess it&#039;s just the exceptions being assumed to be costly. That assumption is a lot harder when you&#039;re dealing with error code because they&#039;re really just ints. But the compiler do this if you just place an unlikely attribute around the error branch?
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+I agree. The &#039;invisible control flow&#039; argument is for retards that can&#039;t into exception safety.
+
+a href="#p71706490" class="quotelink"
+&gt;&gt;71706490
+/a
+
+br
+
+span class="quote"
+&gt;For the compiler to eliminate the two it needs to know the function code.
+/span
+
+br
+One of the two.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+never gonna make  it.
+
+a href="#p71706524" class="quotelink"
+&gt;&gt;71706524
+/a
+
+br
+Bullies should go neck themselves desu.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+All the people jerking over monads and exceptions are hobbyists
+Is it just me who looks at this and says 
+br
+
+span class="quote"
+&gt;Wow so elegant. I can&#039;t believe I used to do anything without writing a new class at every step
+/span
+
+br
+And then you just rest blissfully knowing you need to consider partial state at every turn because you compile with exceptions enabled.
+br
+
+br
+More seriously. This is a blatant overuse of global error handling. Exceptions and its devotees encourage that.
+Small sql question, is the arrangement for checks important? 
+br
+Like 
+br
+Select * 
+br
+From person p, customer c
+br
+Where p.id = c.id
+br
+And something something.
+
+a href="#p71706614" class="quotelink"
+&gt;&gt;71706614
+/a
+
+br
+Sorry buddy but i haven no idea what monad is.
+Guys, I hate my career. Did any of you get into programming later in life?
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+Not a problem with smart pointers but yeah exceptions are shit but C++ isn&#039;t &quot;elegant&quot; to begin with
+
+a href="#p71706377" class="quotelink"
+&gt;&gt;71706377
+/a
+
+br
+yes, it&#039;s called do notation
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+My advice is to brainstorm business ideas and see your hobby as a potential source of income.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+I program at home and at work. Does that count?
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+I see. OOM is every relevant error for Haskell.
+
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+
+br
+I&#039;m living it.
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+I started young but I know it&#039;s possible to get into it later. Back in the day, a lot of old engineers suddenly had to learn programming just to keep their jobs.
+
+a href="#p71706684" class="quotelink"
+&gt;&gt;71706684
+/a
+
+br
+That is just syntax help, you mong.
+
+a href="#p71706692" class="quotelink"
+&gt;&gt;71706692
+/a
+
+br
+I do the same but my profession is not related to computers.
+br
+im medfag by trade
+
+a href="#p71706703" class="quotelink"
+&gt;&gt;71706703
+/a
+
+br
+based
+
+a href="#p71706728" class="quotelink"
+&gt;&gt;71706728
+/a
+
+br
+that&#039;s literally what you asked for, retard
+
+a href="#p71706646" class="quotelink"
+&gt;&gt;71706646
+/a
+
+br
+1) No
+br
+2) Use joins
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+Got my first programming job at 27. Was programming as a hobby for 4 years by then.
+
+a href="#p71706780" class="quotelink"
+&gt;&gt;71706780
+/a
+
+br
+1) what I wanted to say was is a=b the same as b=a? In terms of equals 
+br
+2) doesn‘t it join automatically? (Just learning it and using some tasks from prof)
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+
+a href="#p71706680" class="quotelink"
+&gt;&gt;71706680
+/a
+
+br
+it&#039;s a fucking tutorial, of course you&#039;re going to ask &quot;why would I do this in production code&quot;
+
+a href="#p71706809" class="quotelink"
+&gt;&gt;71706809
+/a
+
+br
+1) Yes, same thing.
+br
+2) The query optimiser might convert that to joins, but you should not rely on it and write using joins yourself.
+this is going to sound retarded but I want to start some sort of foss product, i just dont know what to do.  Are there any recommended sites for &quot;shit we need but no ones done it yet&quot;?
+
+a href="#p71706755" class="quotelink"
+&gt;&gt;71706755
+/a
+
+br
+Remove nigger sperm from your cucky eyes, and read this again: 
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+ past &quot;syntax&quot; word.
+
+a href="#p71706832" class="quotelink"
+&gt;&gt;71706832
+/a
+
+br
+https://en.wikibooks.org/wiki/C%2B%
+wbr
+2B_Programming/Exception_Handling
+br
+
+span class="quote"
+&gt;Writing exception safe code
+/span
+
+br
+It&#039;s about practice. Not explaining how exceptions work.
+br
+That nuance clearly wasn&#039;t in my post though.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+You&#039;re a bit late. This whole programming thing is almost over. It&#039;s hard to document what&#039;s left to do when there&#039;s so little.
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+You don&#039;t need to declare a class for every delete, that&#039;s what unique_ptr is for.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+Composer for Blender.
+br
+Literally the only thing it needs.
+br
+Look at Nuke does and copy it to blender,you will probably be named FOSS hero.
+
+a href="#p71706881" class="quotelink"
+&gt;&gt;71706881
+/a
+
+br
+yeah I know.  Im just bored at home.  I guess I could contribute to some apache stuff in my free time
+
+a href="#p71706887" class="quotelink"
+&gt;&gt;71706887
+/a
+
+br
+
+span class="quote"
+&gt;Literally the only thing it needs.
+/span
+
+br
+Have you ever used other 3D software? Blender has gotten pretty good (especially for being free), but it&#039;s still lacking in a lot of areas.
+
+a href="#p71706895" class="quotelink"
+&gt;&gt;71706895
+/a
+
+br
+If you already have a job, please don&#039;t.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+You could go ask people other than programmers. I&#039;m sure there&#039;s a lot of people who don&#039;t have access to what they want because they&#039;re only comfortable with GUI.
+
+a href="#p71706871" class="quotelink"
+&gt;&gt;71706871
+/a
+
+br
+makes more sense
+br
+still, using allocating/freeing heap memory as an example in a &quot;best practices&quot; section is dumb because best practice is use the standard library type for that
+
+a href="#p71706943" class="quotelink"
+&gt;&gt;71706943
+/a
+
+br
+I believe that blender has the potential to be the best 3d software paid or not.
+br
+Its not lacking much honestly.
+.
+
+a href="#p71706866" class="quotelink"
+&gt;&gt;71706866
+/a
+
+br
+you quoted the wrong post but thanks for the (you) anon
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Restarts are vastly superior to exceptions
+
+a href="#p71707083" class="quotelink"
+&gt;&gt;71707083
+/a
+
+br
+hehe anal
+
+span class="quote"
+&gt;GC language users: you don&#039;t have to manually free memory! So convenient! 
+/span
+
+br
+
+span class="quote"
+&gt;.Dispose(): I&#039;m about to end this man&#039;s whole career
+/span
+
+br
+What&#039;s the point of GC if you have to do essentially the same shit for some objects.
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Just don&#039;t input wrong data LMAO.
+Programming is hard or I am just a brainlet... :(
+br
+
+br
+I spent hours understand what is going on here
+
+a href="#p71707203" class="quotelink"
+&gt;&gt;71707203
+/a
+
+br
+Dispose() isn&#039;t really about freeing memory, but ok
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+Please printscreen, anon, I can&#039;t read this shit
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+
+span class="quote"
+&gt;taking a picture of your screen
+/span
+
+
+a href="#p71707203" class="quotelink"
+&gt;&gt;71707203
+/a
+
+br
+You basically said it yourself already, you only have to do it for some very large objects and you don&#039;t have to be nearly as cautious about it
+
+a href="#p71707227" class="quotelink"
+&gt;&gt;71707227
+/a
+
+br
+It&#039;s not about memory but you have to manage those objects exactly the same way you have to free memory.
+
+a href="#p71707257" class="quotelink"
+&gt;&gt;71707257
+/a
+
+br
+And garbage collectors manage memory
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+Looks like somebody is btfo.
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+
+span class="quote"
+&gt;Shot on Mi 9 SE AI triple camera
+/span
+
+
+a href="#p71706984" class="quotelink"
+&gt;&gt;71706984
+/a
+
+br
+Does it have the potential? Sure, it made huge strides in the last decade going from GIMP level to software that is actually on generally equal footing with others.
+br
+And while it is a very good overall package, but for specific areas I&#039;d still rather pick something like ZBrush, Substance Designer/Painter, Houdini, literally anything else for UVs, etc. The only edge in those areas Blender has is the very tight integration between its components, but that often doesn&#039;t make up for how much Blender lacks. 
+br
+Frankly, the biggest reason that Blender has gotten so good is that Autodesk has been totally slacking off for years. If they/some other company get their shit together, it could change again.
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+Be more specific
+
+a href="#p71707265" class="quotelink"
+&gt;&gt;71707265
+/a
+
+br
+And I&#039;m saying that it isn&#039;t much of an improvement and I can&#039;t even wrap this dispose crap with RAII.
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+The fact that you took a photo of your screen confirms that you are, in fact, a brainlet. I&#039;m sorry anon
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+
+span class="quote"
+&gt;&quot;Programming&quot;
+/span
+
+br
+
+span class="quote"
+&gt;Posts a screenshot of not-C++
+/span
+
+GC users are retards who forget that memory isn&#039;t the only resource that needs to be managed.
+
+a href="#p71707289" class="quotelink"
+&gt;&gt;71707289
+/a
+
+br
+
+span class="quote"
+&gt;resource A has to be managed 95% of the time
+/span
+
+br
+
+span class="quote"
+&gt;there&#039;s an infinite amount of other resources but you have to manage them relatively rarely
+/span
+
+br
+
+span class="quote"
+&gt;automate management of resource A
+/span
+
+br
+
+span class="quote"
+&gt;still have to manage all the other possible resources
+/span
+
+br
+
+span class="quote"
+&gt;this isn&#039;t an improvement
+/span
+
+
+a href="#p71707316" class="quotelink"
+&gt;&gt;71707316
+/a
+
+br
+GC was invented by someone much smarter than you&#039;ll ever be, brainlet.
+
+a href="#p71707289" class="quotelink"
+&gt;&gt;71707289
+/a
+
+br
+C#, Java etc allow you to wrap them in stuff like try-with-resources, learn your languages.
+
+a href="#p71707307" class="quotelink"
+&gt;&gt;71707307
+/a
+
+br
+
+span class="quote"
+&gt;&gt;&quot;&quot;
+/span
+
+
+a href="#p71707333" class="quotelink"
+&gt;&gt;71707333
+/a
+
+br
+If he&#039;s so smart then why didn&#039;t he generalize GC to manage more than just memory?
+br
+hmmmmm
+Something that scrapes Anilist for the airing shows in a given season and spits out an RSS and Download Rules to media/anime/airing/season.year/show
+wbr
+/ file to append to the end of your QBittorrent rules file.
+
+a href="#p71707351" class="quotelink"
+&gt;&gt;71707351
+/a
+
+br
+Yes. In C++ multi character strings are enclosed with &quot;. Don&#039;t be a nigger.
+
+a href="#p71707352" class="quotelink"
+&gt;&gt;71707352
+/a
+
+br
+because lisp can handle the rest
+
+a href="#p71707370" class="quotelink"
+&gt;&gt;71707370
+/a
+
+br
+anon was complimenting your greentext skills
+
+a href="#p71707352" class="quotelink"
+&gt;&gt;71707352
+/a
+
+br
+You got a shitpost to your shitpost, and you&#039;re still the retard. Lisp pioneered gc among a bazillion other shit, now go figure it the fuck out on your own.
+
+a href="#p71707352" class="quotelink"
+&gt;&gt;71707352
+/a
+
+br
+he did, ur language is just too shit.
+
+a href="#p71707411" class="quotelink"
+&gt;&gt;71707411
+/a
+
+br
+
+span class="quote"
+&gt;my language
+/span
+
+br
+I only use programming languages, so obviously I don&#039;t have to deal with GCs.
+
+a href="#p71707424" class="quotelink"
+&gt;&gt;71707424
+/a
+
+br
+figures why you still haven&#039;t collected yourself
+
+a href="#p71707370" class="quotelink"
+&gt;&gt;71707370
+/a
+
+br
+this 
+a href="#p71707382" class="quotelink"
+&gt;&gt;71707382
+/a
+
+br
+for liberal definitions of complimenting
+
+a href="#p71707446" class="quotelink"
+&gt;&gt;71707446
+/a
+
+br
+Are you complaining about the combination of different quoting methods? I don&#039;t think there&#039;s any problem with it.
+
+a href="#p71706482" class="quotelink"
+&gt;&gt;71706482
+/a
+
+br
+This. I want to do it in my free time, but the thought of doing unpaid labor physically pains me.
+
+a href="#p71707347" class="quotelink"
+&gt;&gt;71707347
+/a
+
+br
+C# has using but it&#039;s not automatic, you have to wrap every instance of a class.
+
+a href="#p71707547" class="quotelink"
+&gt;&gt;71707547
+/a
+
+br
+Good point.
+Is there a comfy and &quot;safe&quot; career path to go after with a CS degree?
+br
+Something that if future proof and if you are able to learn it you will do it with ease and never fail.
+
+a href="#p71707562" class="quotelink"
+&gt;&gt;71707562
+/a
+
+br
+No, because your less comfy peers will automate your work away.
+
+a href="#p71707197" class="quotelink"
+&gt;&gt;71707197
+/a
+
+raii is completely redundant if you have generics and ideally C++ style references
+
+a href="#p71707643" class="quotelink"
+&gt;&gt;71707643
+/a
+
+br
+You are wrong and have no idea what you&#039;re talking about.
+
+a href="#p71707643" class="quotelink"
+&gt;&gt;71707643
+/a
+
+br
+Raii is to ensure resources are freed even when there&#039;s an unhandled exception.
+
+a href="#p71707643" class="quotelink"
+&gt;&gt;71707643
+/a
+
+br
+
+span class="quote"
+&gt;C++ style references
+/span
+
+br
+So, RAII?
+
+a href="#p71707657" class="quotelink"
+&gt;&gt;71707657
+/a
+
+br
+
+pre class="prettyprint"
+template &lt;typename T, typename F&gt;
+br
+void scoped(F &amp;fn)
+br
+{
+br
+    T obj; // presume POD
+br
+    init(&amp;obj);
+br
+    f(obj); // presume takes an argument of T&amp;
+br
+    close(&amp;obj);
+br
+}
+/pre
+
+br
+passing arguments to init, returning values from f and handling exceptions is left as an exercise for the reader
+
+a href="#p71707347" class="quotelink"
+&gt;&gt;71707347
+/a
+
+br
+
+a href="#p71707547" class="quotelink"
+&gt;&gt;71707547
+/a
+
+br
+Java has Lombok that provides an annotation for easy management, C# 8.0 has using declarations that do the same thing.
+br
+Sure, it&#039;s not automatic but it&#039;s not as painful as having to start logic at column 120 because you have a few nested using/try-with-resources blocks.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+I&#039;m sure dynamic allocation is left as a reader exercise, too.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+
+span class="quote"
+&gt;presume POD
+/span
+
+br
+It&#039;s shit.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+init is your ctor and close is your dtor. that&#039;s where your dynamic allocation takes place.
+
+a href="#p71707562" class="quotelink"
+&gt;&gt;71707562
+/a
+
+br
+Mananger, a lot CS just get decent money,Networking and experience and move up to non-IT jobs, just autist get code monkey path.
+
+a href="#p71707749" class="quotelink"
+&gt;&gt;71707749
+/a
+
+br
+
+span class="quote"
+&gt;missing the point
+/span
+
+br
+all that comment intends to convey is that there won&#039;t be a ctor and dtor implicitly generated
+br
+
+br
+
+a href="#p71707754" class="quotelink"
+&gt;&gt;71707754
+/a
+ for 
+a href="#p71707746" class="quotelink"
+&gt;&gt;71707746
+/a
+
+
+a href="#p71707754" class="quotelink"
+&gt;&gt;71707754
+/a
+
+br
+
+a href="#p71707771" class="quotelink"
+&gt;&gt;71707771
+/a
+
+br
+Okay, so why write all that boilerplate when you can have the language handle it for you?
+Recommend me some quick resource to learn git and github
+
+a href="#p71707829" class="quotelink"
+&gt;&gt;71707829
+/a
+
+br
+man git
+
+a href="#p71706211" class="quotelink"
+&gt;&gt;71706211
+/a
+The /g/ Wiki:
+br
+
+a href="http://wiki.installgentoo.com/"
+http://wiki.installgentoo.com/
+/a
+
+br
+
+br
+
+
+/g/ is for the discussion of technology and related topics.
+br
+
+/g/ is 
+b
+
+u
+NOT
+/u
+
+/b
+ your personal tech support team or personal consumer review site.
+br
+
+br
+
+For tech support/issues with computers, use 
+a href="https://boards.4chan.org/wsr/"
+/wsr/ - Worksafe Requests
+/a
+ or one of the following:
+br
+
+
+a href="https://startpage.com/"
+https://startpage.com/
+/a
+ or 
+a href="https://duckduckgo.com"
+https://duckduckgo.com
+/a
+ (i.e., fucking google it)
+br
+
+
+a href="https://stackexchange.com/"
+https://stackexchange.com/
+/a
+
+br
+
+
+a href="http://www.logicalincrements.com/"
+http://www.logicalincrements.com/
+/a
+
+br
+
+br
+
+
+You can also search the catalog for a specific term by using:
+br
+
+
+a href="https://boards.4chan.org/g/searchword"
+
+a href="https://boards.4chan.org/g/searchword" target="_blank"
+https://boards.4chan.org/g/searchwo
+wbr
+rd
+/a
+
+/a
+ or by clicking on [Search]
+br
+
+br
+ 
+
+Always check the catalog before creating a thread:
+br
+
+a href="https://boards.4chan.org/g/catalog"
+
+a href="/g/catalog" class="quotelink"
+&gt;&gt;&gt;/g/catalog
+/a
+
+/a
+
+br
+
+br
+
+
+Please check the rules before you post:
+br
+
+a href="https://www.4chan.org/rules"
+
+/a
+
+br
+
+
+i
+Begging for cryptocurrency is against the rules!
+/i
+
+br
+
+br
+
+
+To use the Code tag, book-end your body of code with: [code] and [/code]
+
+Old thread: 
+a href="/g/thread/71698424#p71698424" class="quotelink"
+&gt;&gt;71698424
+/a
+
+br
+
+br
+What are you working on, /g/?
+First for C++ is the only language you need
+
+a href="#p71705326" class="quotelink"
+&gt;&gt;71705326
+/a
+
+br
+*Assembly, you stupid nigger.
+
+a href="#p71705305" class="quotelink"
+&gt;&gt;71705305
+/a
+
+br
+literally nothing
+br
+im balls deep in powertracing issues at work and i have no energy when i come home anymore
+
+a href="#p71705347" class="quotelink"
+&gt;&gt;71705347
+/a
+
+br
+
+span class="quote"
+&gt;learn x86 assembly
+/span
+
+br
+
+span class="quote"
+&gt;stuck on desert island with raspberry pi
+/span
+
+br
+
+span class="quote"
+&gt;can&#039;t do anything 
+/span
+
+br
+Yeah I don&#039;t think so buddy
+What&#039;s the equivalent of win forms in java? 
+br
+Some GUI you just drag and drop and it just werks. 
+br
+I have to make some small assignemnt doesn&#039;t have to be pretty or new epic stuff should just werk.
+
+a href="/g/thread/71698424#p71705236" class="quotelink"
+&gt;&gt;71705236
+/a
+
+br
+
+span class="quote"
+&gt;the contempt business people have for devs
+/span
+
+br
+
+br
+story time??
+
+a href="#p71705408" class="quotelink"
+&gt;&gt;71705408
+/a
+
+br
+I was introduced to JavaFX or swing. I don&#039;t recall which. There was a new thing coming out which we didn&#039;t learn. But that was many years ago.
+br
+Search for Java window builder and see what that is.
+Exceptions are vastly superior to C/Rust/Go-style error handling
+i can&#039;t stop procrastinating asjdhahfgggasliuglajskd
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+lumping c, rust and go together like they&#039;re the same just demonstrates you&#039;re a retard
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Deoptimising.
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Correct and also one of the many reasons C++ is the best language
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Yeah lemme just unwind stack at any tiny problem. Try catch is only good to make a program shut up, not your for reliability
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+this, thanks to exceptions I never have to use those bloated if/else
+Some anon was asking for the updated one
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+No, Haskell&#039;s Either-likes is the only sane way to work with computations that can fail. Exceptions are yet another, invisible and requiring special syntax and runtime support to handle way to return value from a function.
+br
+Exceptions are 100% retarded invention.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+
+span class="quote"
+&gt; Haskell&#039;s Either-likes
+/span
+
+br
+you mean monad transformers
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+You don&#039;t need that meme shit, just a type that can represent a value or an error
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+monad transformers are a rather complicated notion but also become necessary to subsume exceptins
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+They&#039;re enabling global error.
+br
+But they&#039;re not very good in the small. So many complications are introduced by having a second control flow path.
+
+a href="#p71705909" class="quotelink"
+&gt;&gt;71705909
+/a
+
+br
+
+span class="quote"
+&gt;monad transformers are a rather complicated notion
+/span
+
+br
+Huh? It&#039;s literally just a nicer way of dealing with monads inside monads.
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+This 
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+t. seething cnile
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+you and I know that, pajeet doesn&#039;t
+br
+
+br
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+by the time you&#039;ve implemented decent functions to manipulate error types you have a monad
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+
+a href="#p71706051" class="quotelink"
+&gt;&gt;71706051
+/a
+
+br
+t. CS freshman
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+They are not mutually exclusive, a good API will provide both depending on the situation (e.g. file opening).
+
+a href="#p71706122" class="quotelink"
+&gt;&gt;71706122
+/a
+
+br
+muh Enterprise grade 200loc Error sum type
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+Sometimes (actually quite a lot of times) I want to turn Either&lt;L1, R1&gt; into Either&lt;L2, R1&gt; to enrich the error data. Quite often I want to have E&lt;L1, R1&gt; -&gt; E&lt;L2, R2&gt; to do both.
+br
+Monad transformers will not help here.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+I&#039;ve heard people say that in C++ exceptions are cheaper than error codes because they&#039;re free when they don&#039;t trigger or something.
+br
+To me that doesn&#039;t make sense. Whatever mechanism that implements exceptions couldn&#039;t also implement error codes?
+
+a href="#p71706131" class="quotelink"
+&gt;&gt;71706131
+/a
+
+br
+You are correct, they are not mutually exclusive. Exceptions are ok for things like division by zero (because it will be night fucking mare otherwise to do arithmetic)
+
+a href="#p71706173" class="quotelink"
+&gt;&gt;71706173
+/a
+
+br
+uhhhh
+Hey, Anone~ Will you learn JavaScript with me? Pretty please?
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+when you return from a function that returns an error code you must compare and branch 
+br
+with you return from a function that throws an exception you just keep going
+br
+when an exception is thrown however you get fucked up runtime callstack introspection which is slow as balls however
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+It makes sense if you have 1 fail for 100000 non-fail situations. The stack-unwinding cost will be just amortized.
+br
+My problem with exception is the cost of programmers understanding the control flow. Java did the right thing demanding exceptions being part of function&#039;s signature. But pajeets were to stupid to understand and properly use and instead did the needful.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+So like std::expected?
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+Go suck a nigger dick or something, sweetie. White men are talking.
+Help me bros
+br
+I am trying to turn Python-driven data analytics into a hobby outside of work, but I have learned that looking for nails (projects) to hit with a hammer (programming) is not the right way to think about programming.
+br
+What the hell do I do?
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+Don&#039;t know, did not read about it yet, sorry.
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+yeah but not retarded
+
+a href="#p71706147" class="quotelink"
+&gt;&gt;71706147
+/a
+
+br
+monad transformers allow you to make a stack of different ways of handling errors in different parts of you system, they even let you have some kind of priority in them (you don&#039;t really care about the previous formatting error if you&#039;re out of memory)
+br
+what you&#039;re talking about is completely irrelevant, if your favourite language doesn&#039;t have a bifunctor class/trait you might as well kys.
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+what are you working on, jsposter?
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+Data analytics sounds like a fucking boring hobby, maybe that&#039;s your issue
+
+a href="#p71706240" class="quotelink"
+&gt;&gt;71706240
+/a
+
+br
+Good, I wouldn&#039;t want to use Hasklel either. Too many brainlets smelling the thing up.
+
+a href="#p71706267" class="quotelink"
+&gt;&gt;71706267
+/a
+
+br
+Brainlet. It&#039;s literally the future of our society
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+
+span class="quote"
+&gt;this is what Haskellers actually believe
+/span
+
+br
+II love the language but it has its place
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+Yeah at actual companies, not for fucking hobbyist retards
+
+a href="#p71706326" class="quotelink"
+&gt;&gt;71706326
+/a
+
+br
+A hobby that doubles as a career is literally the most fulfilling thing you can do
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+a dream we will never achieve
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+That&#039;s too cumbersome. You need a syntax/symanic help from the language here for practical usage.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Forcing yourself to enjoy your career as a hobby isn&#039;t the same thing as making money off your hobby though.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Truth
+br
+
+br
+I get disappointed when it&#039;s time to call it quits I enjoy my work so much.
+br
+
+br
+Currently working for a big car company working on an electric self driving car to compete with tesla.
+br
+
+br
+Doing full stack dev with C, C++, Mqtt, React, Redux, Python. 
+br
+
+br
+God I hate the people I work with but love the project.
+
+a href="#p71706396" class="quotelink"
+&gt;&gt;71706396
+/a
+
+br
+I just feel disappointed when work is over because no gf to go home to
+br
+Programming is a great job but I get my fill at work and I have other hobbies I&#039;d rather do at home
+br
+But writing important software at work makes me feel less inclined to do it in my free time as well
+Where my /programing as a hobby/ bros at?
+br
+I need emotional support.
+
+a href="#p71706193" class="quotelink"
+&gt;&gt;71706193
+/a
+
+br
+
+span class="quote"
+&gt;when you return from a function that returns an error code you must compare and branch
+/span
+
+br
+Yes I accept that in the case where the function is invisible to the compiler there can be complications like double checking.
+br
+But in other cases I don&#039;t really see it. Because any error will stem from some sort of error evaluation like:
+br
+
+pre class="prettyprint"
+if(a==5) return -1; //oops, a can&#039;t be 5 here
+br
+
+/pre
+
+br
+Outside the function we define our error handling with an if that does a redundant check. For the compiler to eliminate the two it needs to know the function code. But if it does it already knows which branch we should go down and it can simply go there. Instead of returning to the location where we made the call to the function that returns an error code we could jump straight into the block catching the error. The compiler might have to reorder some things in some cases but I&#039;d deem the normal case as being trivial.
+br
+
+br
+So in the non-error case (as determined inside the function) you just return and keep going as you say. It doesn&#039;t seem like anything that&#039;s inherent to exceptions or error codes. If I were to guess it&#039;s just the exceptions being assumed to be costly. That assumption is a lot harder when you&#039;re dealing with error code because they&#039;re really just ints. But the compiler do this if you just place an unlikely attribute around the error branch?
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+I agree. The &#039;invisible control flow&#039; argument is for retards that can&#039;t into exception safety.
+
+a href="#p71706490" class="quotelink"
+&gt;&gt;71706490
+/a
+
+br
+
+span class="quote"
+&gt;For the compiler to eliminate the two it needs to know the function code.
+/span
+
+br
+One of the two.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+never gonna make  it.
+
+a href="#p71706524" class="quotelink"
+&gt;&gt;71706524
+/a
+
+br
+Bullies should go neck themselves desu.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+All the people jerking over monads and exceptions are hobbyists
+Is it just me who looks at this and says 
+br
+
+span class="quote"
+&gt;Wow so elegant. I can&#039;t believe I used to do anything without writing a new class at every step
+/span
+
+br
+And then you just rest blissfully knowing you need to consider partial state at every turn because you compile with exceptions enabled.
+br
+
+br
+More seriously. This is a blatant overuse of global error handling. Exceptions and its devotees encourage that.
+Small sql question, is the arrangement for checks important? 
+br
+Like 
+br
+Select * 
+br
+From person p, customer c
+br
+Where p.id = c.id
+br
+And something something.
+
+a href="#p71706614" class="quotelink"
+&gt;&gt;71706614
+/a
+
+br
+Sorry buddy but i haven no idea what monad is.
+Guys, I hate my career. Did any of you get into programming later in life?
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+Not a problem with smart pointers but yeah exceptions are shit but C++ isn&#039;t &quot;elegant&quot; to begin with
+
+a href="#p71706377" class="quotelink"
+&gt;&gt;71706377
+/a
+
+br
+yes, it&#039;s called do notation
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+My advice is to brainstorm business ideas and see your hobby as a potential source of income.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+I program at home and at work. Does that count?
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+I see. OOM is every relevant error for Haskell.
+
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+
+br
+I&#039;m living it.
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+I started young but I know it&#039;s possible to get into it later. Back in the day, a lot of old engineers suddenly had to learn programming just to keep their jobs.
+
+a href="#p71706684" class="quotelink"
+&gt;&gt;71706684
+/a
+
+br
+That is just syntax help, you mong.
+
+a href="#p71706692" class="quotelink"
+&gt;&gt;71706692
+/a
+
+br
+I do the same but my profession is not related to computers.
+br
+im medfag by trade
+
+a href="#p71706703" class="quotelink"
+&gt;&gt;71706703
+/a
+
+br
+based
+
+a href="#p71706728" class="quotelink"
+&gt;&gt;71706728
+/a
+
+br
+that&#039;s literally what you asked for, retard
+
+a href="#p71706646" class="quotelink"
+&gt;&gt;71706646
+/a
+
+br
+1) No
+br
+2) Use joins
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+Got my first programming job at 27. Was programming as a hobby for 4 years by then.
+
+a href="#p71706780" class="quotelink"
+&gt;&gt;71706780
+/a
+
+br
+1) what I wanted to say was is a=b the same as b=a? In terms of equals 
+br
+2) doesn‘t it join automatically? (Just learning it and using some tasks from prof)
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+
+a href="#p71706680" class="quotelink"
+&gt;&gt;71706680
+/a
+
+br
+it&#039;s a fucking tutorial, of course you&#039;re going to ask &quot;why would I do this in production code&quot;
+
+a href="#p71706809" class="quotelink"
+&gt;&gt;71706809
+/a
+
+br
+1) Yes, same thing.
+br
+2) The query optimiser might convert that to joins, but you should not rely on it and write using joins yourself.
+this is going to sound retarded but I want to start some sort of foss product, i just dont know what to do.  Are there any recommended sites for &quot;shit we need but no ones done it yet&quot;?
+
+a href="#p71706755" class="quotelink"
+&gt;&gt;71706755
+/a
+
+br
+Remove nigger sperm from your cucky eyes, and read this again: 
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+ past &quot;syntax&quot; word.
+
+a href="#p71706832" class="quotelink"
+&gt;&gt;71706832
+/a
+
+br
+https://en.wikibooks.org/wiki/C%2B%
+wbr
+2B_Programming/Exception_Handling
+br
+
+span class="quote"
+&gt;Writing exception safe code
+/span
+
+br
+It&#039;s about practice. Not explaining how exceptions work.
+br
+That nuance clearly wasn&#039;t in my post though.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+You&#039;re a bit late. This whole programming thing is almost over. It&#039;s hard to document what&#039;s left to do when there&#039;s so little.
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+You don&#039;t need to declare a class for every delete, that&#039;s what unique_ptr is for.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+Composer for Blender.
+br
+Literally the only thing it needs.
+br
+Look at Nuke does and copy it to blender,you will probably be named FOSS hero.
+
+a href="#p71706881" class="quotelink"
+&gt;&gt;71706881
+/a
+
+br
+yeah I know.  Im just bored at home.  I guess I could contribute to some apache stuff in my free time
+
+a href="#p71706887" class="quotelink"
+&gt;&gt;71706887
+/a
+
+br
+
+span class="quote"
+&gt;Literally the only thing it needs.
+/span
+
+br
+Have you ever used other 3D software? Blender has gotten pretty good (especially for being free), but it&#039;s still lacking in a lot of areas.
+
+a href="#p71706895" class="quotelink"
+&gt;&gt;71706895
+/a
+
+br
+If you already have a job, please don&#039;t.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+You could go ask people other than programmers. I&#039;m sure there&#039;s a lot of people who don&#039;t have access to what they want because they&#039;re only comfortable with GUI.
+
+a href="#p71706871" class="quotelink"
+&gt;&gt;71706871
+/a
+
+br
+makes more sense
+br
+still, using allocating/freeing heap memory as an example in a &quot;best practices&quot; section is dumb because best practice is use the standard library type for that
+
+a href="#p71706943" class="quotelink"
+&gt;&gt;71706943
+/a
+
+br
+I believe that blender has the potential to be the best 3d software paid or not.
+br
+Its not lacking much honestly.
+.
+
+a href="#p71706866" class="quotelink"
+&gt;&gt;71706866
+/a
+
+br
+you quoted the wrong post but thanks for the (you) anon
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Restarts are vastly superior to exceptions
+Old thread: 
+a href="/g/thread/71698424#p71698424" class="quotelink"
+&gt;&gt;71698424
+/a
+
+br
+
+br
+What are you working on, /g/?
+First for C++ is the only language you need
+
+a href="#p71705326" class="quotelink"
+&gt;&gt;71705326
+/a
+
+br
+*Assembly, you stupid nigger.
+
+a href="#p71705305" class="quotelink"
+&gt;&gt;71705305
+/a
+
+br
+literally nothing
+br
+im balls deep in powertracing issues at work and i have no energy when i come home anymore
+
+a href="#p71705347" class="quotelink"
+&gt;&gt;71705347
+/a
+
+br
+
+span class="quote"
+&gt;learn x86 assembly
+/span
+
+br
+
+span class="quote"
+&gt;stuck on desert island with raspberry pi
+/span
+
+br
+
+span class="quote"
+&gt;can&#039;t do anything 
+/span
+
+br
+Yeah I don&#039;t think so buddy
+What&#039;s the equivalent of win forms in java? 
+br
+Some GUI you just drag and drop and it just werks. 
+br
+I have to make some small assignemnt doesn&#039;t have to be pretty or new epic stuff should just werk.
+
+a href="/g/thread/71698424#p71705236" class="quotelink"
+&gt;&gt;71705236
+/a
+
+br
+
+span class="quote"
+&gt;the contempt business people have for devs
+/span
+
+br
+
+br
+story time??
+
+a href="#p71705408" class="quotelink"
+&gt;&gt;71705408
+/a
+
+br
+I was introduced to JavaFX or swing. I don&#039;t recall which. There was a new thing coming out which we didn&#039;t learn. But that was many years ago.
+br
+Search for Java window builder and see what that is.
+Exceptions are vastly superior to C/Rust/Go-style error handling
+i can&#039;t stop procrastinating asjdhahfgggasliuglajskd
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+lumping c, rust and go together like they&#039;re the same just demonstrates you&#039;re a retard
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Deoptimising.
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Correct and also one of the many reasons C++ is the best language
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Yeah lemme just unwind stack at any tiny problem. Try catch is only good to make a program shut up, not your for reliability
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+this, thanks to exceptions I never have to use those bloated if/else
+Some anon was asking for the updated one
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+No, Haskell&#039;s Either-likes is the only sane way to work with computations that can fail. Exceptions are yet another, invisible and requiring special syntax and runtime support to handle way to return value from a function.
+br
+Exceptions are 100% retarded invention.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+
+span class="quote"
+&gt; Haskell&#039;s Either-likes
+/span
+
+br
+you mean monad transformers
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+You don&#039;t need that meme shit, just a type that can represent a value or an error
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+monad transformers are a rather complicated notion but also become necessary to subsume exceptins
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+They&#039;re enabling global error.
+br
+But they&#039;re not very good in the small. So many complications are introduced by having a second control flow path.
+
+a href="#p71705909" class="quotelink"
+&gt;&gt;71705909
+/a
+
+br
+
+span class="quote"
+&gt;monad transformers are a rather complicated notion
+/span
+
+br
+Huh? It&#039;s literally just a nicer way of dealing with monads inside monads.
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+This 
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+t. seething cnile
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+you and I know that, pajeet doesn&#039;t
+br
+
+br
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+by the time you&#039;ve implemented decent functions to manipulate error types you have a monad
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+
+a href="#p71706051" class="quotelink"
+&gt;&gt;71706051
+/a
+
+br
+t. CS freshman
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+They are not mutually exclusive, a good API will provide both depending on the situation (e.g. file opening).
+
+a href="#p71706122" class="quotelink"
+&gt;&gt;71706122
+/a
+
+br
+muh Enterprise grade 200loc Error sum type
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+Sometimes (actually quite a lot of times) I want to turn Either&lt;L1, R1&gt; into Either&lt;L2, R1&gt; to enrich the error data. Quite often I want to have E&lt;L1, R1&gt; -&gt; E&lt;L2, R2&gt; to do both.
+br
+Monad transformers will not help here.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+I&#039;ve heard people say that in C++ exceptions are cheaper than error codes because they&#039;re free when they don&#039;t trigger or something.
+br
+To me that doesn&#039;t make sense. Whatever mechanism that implements exceptions couldn&#039;t also implement error codes?
+
+a href="#p71706131" class="quotelink"
+&gt;&gt;71706131
+/a
+
+br
+You are correct, they are not mutually exclusive. Exceptions are ok for things like division by zero (because it will be night fucking mare otherwise to do arithmetic)
+
+a href="#p71706173" class="quotelink"
+&gt;&gt;71706173
+/a
+
+br
+uhhhh
+Hey, Anone~ Will you learn JavaScript with me? Pretty please?
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+when you return from a function that returns an error code you must compare and branch 
+br
+with you return from a function that throws an exception you just keep going
+br
+when an exception is thrown however you get fucked up runtime callstack introspection which is slow as balls however
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+It makes sense if you have 1 fail for 100000 non-fail situations. The stack-unwinding cost will be just amortized.
+br
+My problem with exception is the cost of programmers understanding the control flow. Java did the right thing demanding exceptions being part of function&#039;s signature. But pajeets were to stupid to understand and properly use and instead did the needful.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+So like std::expected?
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+Go suck a nigger dick or something, sweetie. White men are talking.
+Help me bros
+br
+I am trying to turn Python-driven data analytics into a hobby outside of work, but I have learned that looking for nails (projects) to hit with a hammer (programming) is not the right way to think about programming.
+br
+What the hell do I do?
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+Don&#039;t know, did not read about it yet, sorry.
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+yeah but not retarded
+
+a href="#p71706147" class="quotelink"
+&gt;&gt;71706147
+/a
+
+br
+monad transformers allow you to make a stack of different ways of handling errors in different parts of you system, they even let you have some kind of priority in them (you don&#039;t really care about the previous formatting error if you&#039;re out of memory)
+br
+what you&#039;re talking about is completely irrelevant, if your favourite language doesn&#039;t have a bifunctor class/trait you might as well kys.
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+what are you working on, jsposter?
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+Data analytics sounds like a fucking boring hobby, maybe that&#039;s your issue
+
+a href="#p71706240" class="quotelink"
+&gt;&gt;71706240
+/a
+
+br
+Good, I wouldn&#039;t want to use Hasklel either. Too many brainlets smelling the thing up.
+
+a href="#p71706267" class="quotelink"
+&gt;&gt;71706267
+/a
+
+br
+Brainlet. It&#039;s literally the future of our society
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+
+span class="quote"
+&gt;this is what Haskellers actually believe
+/span
+
+br
+II love the language but it has its place
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+Yeah at actual companies, not for fucking hobbyist retards
+
+a href="#p71706326" class="quotelink"
+&gt;&gt;71706326
+/a
+
+br
+A hobby that doubles as a career is literally the most fulfilling thing you can do
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+a dream we will never achieve
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+That&#039;s too cumbersome. You need a syntax/symanic help from the language here for practical usage.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Forcing yourself to enjoy your career as a hobby isn&#039;t the same thing as making money off your hobby though.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Truth
+br
+
+br
+I get disappointed when it&#039;s time to call it quits I enjoy my work so much.
+br
+
+br
+Currently working for a big car company working on an electric self driving car to compete with tesla.
+br
+
+br
+Doing full stack dev with C, C++, Mqtt, React, Redux, Python. 
+br
+
+br
+God I hate the people I work with but love the project.
+
+a href="#p71706396" class="quotelink"
+&gt;&gt;71706396
+/a
+
+br
+I just feel disappointed when work is over because no gf to go home to
+br
+Programming is a great job but I get my fill at work and I have other hobbies I&#039;d rather do at home
+br
+But writing important software at work makes me feel less inclined to do it in my free time as well
+Where my /programing as a hobby/ bros at?
+br
+I need emotional support.
+
+a href="#p71706193" class="quotelink"
+&gt;&gt;71706193
+/a
+
+br
+
+span class="quote"
+&gt;when you return from a function that returns an error code you must compare and branch
+/span
+
+br
+Yes I accept that in the case where the function is invisible to the compiler there can be complications like double checking.
+br
+But in other cases I don&#039;t really see it. Because any error will stem from some sort of error evaluation like:
+br
+
+pre class="prettyprint"
+if(a==5) return -1; //oops, a can&#039;t be 5 here
+br
+
+/pre
+
+br
+Outside the function we define our error handling with an if that does a redundant check. For the compiler to eliminate the two it needs to know the function code. But if it does it already knows which branch we should go down and it can simply go there. Instead of returning to the location where we made the call to the function that returns an error code we could jump straight into the block catching the error. The compiler might have to reorder some things in some cases but I&#039;d deem the normal case as being trivial.
+br
+
+br
+So in the non-error case (as determined inside the function) you just return and keep going as you say. It doesn&#039;t seem like anything that&#039;s inherent to exceptions or error codes. If I were to guess it&#039;s just the exceptions being assumed to be costly. That assumption is a lot harder when you&#039;re dealing with error code because they&#039;re really just ints. But the compiler do this if you just place an unlikely attribute around the error branch?
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+I agree. The &#039;invisible control flow&#039; argument is for retards that can&#039;t into exception safety.
+
+a href="#p71706490" class="quotelink"
+&gt;&gt;71706490
+/a
+
+br
+
+span class="quote"
+&gt;For the compiler to eliminate the two it needs to know the function code.
+/span
+
+br
+One of the two.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+never gonna make  it.
+
+a href="#p71706524" class="quotelink"
+&gt;&gt;71706524
+/a
+
+br
+Bullies should go neck themselves desu.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+All the people jerking over monads and exceptions are hobbyists
+Is it just me who looks at this and says 
+br
+
+span class="quote"
+&gt;Wow so elegant. I can&#039;t believe I used to do anything without writing a new class at every step
+/span
+
+br
+And then you just rest blissfully knowing you need to consider partial state at every turn because you compile with exceptions enabled.
+br
+
+br
+More seriously. This is a blatant overuse of global error handling. Exceptions and its devotees encourage that.
+Small sql question, is the arrangement for checks important? 
+br
+Like 
+br
+Select * 
+br
+From person p, customer c
+br
+Where p.id = c.id
+br
+And something something.
+
+a href="#p71706614" class="quotelink"
+&gt;&gt;71706614
+/a
+
+br
+Sorry buddy but i haven no idea what monad is.
+Guys, I hate my career. Did any of you get into programming later in life?
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+Not a problem with smart pointers but yeah exceptions are shit but C++ isn&#039;t &quot;elegant&quot; to begin with
+
+a href="#p71706377" class="quotelink"
+&gt;&gt;71706377
+/a
+
+br
+yes, it&#039;s called do notation
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+My advice is to brainstorm business ideas and see your hobby as a potential source of income.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+I program at home and at work. Does that count?
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+I see. OOM is every relevant error for Haskell.
+
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+
+br
+I&#039;m living it.
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+I started young but I know it&#039;s possible to get into it later. Back in the day, a lot of old engineers suddenly had to learn programming just to keep their jobs.
+
+a href="#p71706684" class="quotelink"
+&gt;&gt;71706684
+/a
+
+br
+That is just syntax help, you mong.
+
+a href="#p71706692" class="quotelink"
+&gt;&gt;71706692
+/a
+
+br
+I do the same but my profession is not related to computers.
+br
+im medfag by trade
+
+a href="#p71706703" class="quotelink"
+&gt;&gt;71706703
+/a
+
+br
+based
+
+a href="#p71706728" class="quotelink"
+&gt;&gt;71706728
+/a
+
+br
+that&#039;s literally what you asked for, retard
+
+a href="#p71706646" class="quotelink"
+&gt;&gt;71706646
+/a
+
+br
+1) No
+br
+2) Use joins
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+Got my first programming job at 27. Was programming as a hobby for 4 years by then.
+
+a href="#p71706780" class="quotelink"
+&gt;&gt;71706780
+/a
+
+br
+1) what I wanted to say was is a=b the same as b=a? In terms of equals 
+br
+2) doesn‘t it join automatically? (Just learning it and using some tasks from prof)
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+
+a href="#p71706680" class="quotelink"
+&gt;&gt;71706680
+/a
+
+br
+it&#039;s a fucking tutorial, of course you&#039;re going to ask &quot;why would I do this in production code&quot;
+
+a href="#p71706809" class="quotelink"
+&gt;&gt;71706809
+/a
+
+br
+1) Yes, same thing.
+br
+2) The query optimiser might convert that to joins, but you should not rely on it and write using joins yourself.
+this is going to sound retarded but I want to start some sort of foss product, i just dont know what to do.  Are there any recommended sites for &quot;shit we need but no ones done it yet&quot;?
+
+a href="#p71706755" class="quotelink"
+&gt;&gt;71706755
+/a
+
+br
+Remove nigger sperm from your cucky eyes, and read this again: 
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+ past &quot;syntax&quot; word.
+
+a href="#p71706832" class="quotelink"
+&gt;&gt;71706832
+/a
+
+br
+https://en.wikibooks.org/wiki/C%2B%
+wbr
+2B_Programming/Exception_Handling
+br
+
+span class="quote"
+&gt;Writing exception safe code
+/span
+
+br
+It&#039;s about practice. Not explaining how exceptions work.
+br
+That nuance clearly wasn&#039;t in my post though.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+You&#039;re a bit late. This whole programming thing is almost over. It&#039;s hard to document what&#039;s left to do when there&#039;s so little.
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+You don&#039;t need to declare a class for every delete, that&#039;s what unique_ptr is for.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+Composer for Blender.
+br
+Literally the only thing it needs.
+br
+Look at Nuke does and copy it to blender,you will probably be named FOSS hero.
+
+a href="#p71706881" class="quotelink"
+&gt;&gt;71706881
+/a
+
+br
+yeah I know.  Im just bored at home.  I guess I could contribute to some apache stuff in my free time
+
+a href="#p71706887" class="quotelink"
+&gt;&gt;71706887
+/a
+
+br
+
+span class="quote"
+&gt;Literally the only thing it needs.
+/span
+
+br
+Have you ever used other 3D software? Blender has gotten pretty good (especially for being free), but it&#039;s still lacking in a lot of areas.
+
+a href="#p71706895" class="quotelink"
+&gt;&gt;71706895
+/a
+
+br
+If you already have a job, please don&#039;t.
+
+a href="#p71706857" class="quotelink"
+&gt;&gt;71706857
+/a
+
+br
+You could go ask people other than programmers. I&#039;m sure there&#039;s a lot of people who don&#039;t have access to what they want because they&#039;re only comfortable with GUI.
+
+a href="#p71706871" class="quotelink"
+&gt;&gt;71706871
+/a
+
+br
+makes more sense
+br
+still, using allocating/freeing heap memory as an example in a &quot;best practices&quot; section is dumb because best practice is use the standard library type for that
+
+a href="#p71706943" class="quotelink"
+&gt;&gt;71706943
+/a
+
+br
+I believe that blender has the potential to be the best 3d software paid or not.
+br
+Its not lacking much honestly.
+.
+
+a href="#p71706866" class="quotelink"
+&gt;&gt;71706866
+/a
+
+br
+you quoted the wrong post but thanks for the (you) anon
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Restarts are vastly superior to exceptions
+
+a href="#p71707083" class="quotelink"
+&gt;&gt;71707083
+/a
+
+br
+hehe anal
+
+span class="quote"
+&gt;GC language users: you don&#039;t have to manually free memory! So convenient! 
+/span
+
+br
+
+span class="quote"
+&gt;.Dispose(): I&#039;m about to end this man&#039;s whole career
+/span
+
+br
+What&#039;s the point of GC if you have to do essentially the same shit for some objects.
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Just don&#039;t input wrong data LMAO.
+Programming is hard or I am just a brainlet... :(
+br
+
+br
+I spent hours understand what is going on here
+
+a href="#p71707203" class="quotelink"
+&gt;&gt;71707203
+/a
+
+br
+Dispose() isn&#039;t really about freeing memory, but ok
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+Please printscreen, anon, I can&#039;t read this shit
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+
+span class="quote"
+&gt;taking a picture of your screen
+/span
+
+
+a href="#p71707203" class="quotelink"
+&gt;&gt;71707203
+/a
+
+br
+You basically said it yourself already, you only have to do it for some very large objects and you don&#039;t have to be nearly as cautious about it
+
+a href="#p71707227" class="quotelink"
+&gt;&gt;71707227
+/a
+
+br
+It&#039;s not about memory but you have to manage those objects exactly the same way you have to free memory.
+
+a href="#p71707257" class="quotelink"
+&gt;&gt;71707257
+/a
+
+br
+And garbage collectors manage memory
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+Looks like somebody is btfo.
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+
+span class="quote"
+&gt;Shot on Mi 9 SE AI triple camera
+/span
+
+
+a href="#p71706984" class="quotelink"
+&gt;&gt;71706984
+/a
+
+br
+Does it have the potential? Sure, it made huge strides in the last decade going from GIMP level to software that is actually on generally equal footing with others.
+br
+And while it is a very good overall package, but for specific areas I&#039;d still rather pick something like ZBrush, Substance Designer/Painter, Houdini, literally anything else for UVs, etc. The only edge in those areas Blender has is the very tight integration between its components, but that often doesn&#039;t make up for how much Blender lacks. 
+br
+Frankly, the biggest reason that Blender has gotten so good is that Autodesk has been totally slacking off for years. If they/some other company get their shit together, it could change again.
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+Be more specific
+
+a href="#p71707265" class="quotelink"
+&gt;&gt;71707265
+/a
+
+br
+And I&#039;m saying that it isn&#039;t much of an improvement and I can&#039;t even wrap this dispose crap with RAII.
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+The fact that you took a photo of your screen confirms that you are, in fact, a brainlet. I&#039;m sorry anon
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+
+span class="quote"
+&gt;&quot;Programming&quot;
+/span
+
+br
+
+span class="quote"
+&gt;Posts a screenshot of not-C++
+/span
+
+GC users are retards who forget that memory isn&#039;t the only resource that needs to be managed.
+
+a href="#p71707289" class="quotelink"
+&gt;&gt;71707289
+/a
+
+br
+
+span class="quote"
+&gt;resource A has to be managed 95% of the time
+/span
+
+br
+
+span class="quote"
+&gt;there&#039;s an infinite amount of other resources but you have to manage them relatively rarely
+/span
+
+br
+
+span class="quote"
+&gt;automate management of resource A
+/span
+
+br
+
+span class="quote"
+&gt;still have to manage all the other possible resources
+/span
+
+br
+
+span class="quote"
+&gt;this isn&#039;t an improvement
+/span
+
+
+a href="#p71707316" class="quotelink"
+&gt;&gt;71707316
+/a
+
+br
+GC was invented by someone much smarter than you&#039;ll ever be, brainlet.
+
+a href="#p71707289" class="quotelink"
+&gt;&gt;71707289
+/a
+
+br
+C#, Java etc allow you to wrap them in stuff like try-with-resources, learn your languages.
+
+a href="#p71707307" class="quotelink"
+&gt;&gt;71707307
+/a
+
+br
+
+span class="quote"
+&gt;&gt;&quot;&quot;
+/span
+
+
+a href="#p71707333" class="quotelink"
+&gt;&gt;71707333
+/a
+
+br
+If he&#039;s so smart then why didn&#039;t he generalize GC to manage more than just memory?
+br
+hmmmmm
+Something that scrapes Anilist for the airing shows in a given season and spits out an RSS and Download Rules to media/anime/airing/season.year/show
+wbr
+/ file to append to the end of your QBittorrent rules file.
+
+a href="#p71707351" class="quotelink"
+&gt;&gt;71707351
+/a
+
+br
+Yes. In C++ multi character strings are enclosed with &quot;. Don&#039;t be a nigger.
+
+a href="#p71707352" class="quotelink"
+&gt;&gt;71707352
+/a
+
+br
+because lisp can handle the rest
+
+a href="#p71707370" class="quotelink"
+&gt;&gt;71707370
+/a
+
+br
+anon was complimenting your greentext skills
+
+a href="#p71707352" class="quotelink"
+&gt;&gt;71707352
+/a
+
+br
+You got a shitpost to your shitpost, and you&#039;re still the retard. Lisp pioneered gc among a bazillion other shit, now go figure it the fuck out on your own.
+
+a href="#p71707352" class="quotelink"
+&gt;&gt;71707352
+/a
+
+br
+he did, ur language is just too shit.
+
+a href="#p71707411" class="quotelink"
+&gt;&gt;71707411
+/a
+
+br
+
+span class="quote"
+&gt;my language
+/span
+
+br
+I only use programming languages, so obviously I don&#039;t have to deal with GCs.
+
+a href="#p71707424" class="quotelink"
+&gt;&gt;71707424
+/a
+
+br
+figures why you still haven&#039;t collected yourself
+
+a href="#p71707370" class="quotelink"
+&gt;&gt;71707370
+/a
+
+br
+this 
+a href="#p71707382" class="quotelink"
+&gt;&gt;71707382
+/a
+
+br
+for liberal definitions of complimenting
+
+a href="#p71707446" class="quotelink"
+&gt;&gt;71707446
+/a
+
+br
+Are you complaining about the combination of different quoting methods? I don&#039;t think there&#039;s any problem with it.
+
+a href="#p71706482" class="quotelink"
+&gt;&gt;71706482
+/a
+
+br
+This. I want to do it in my free time, but the thought of doing unpaid labor physically pains me.
+
+a href="#p71707347" class="quotelink"
+&gt;&gt;71707347
+/a
+
+br
+C# has using but it&#039;s not automatic, you have to wrap every instance of a class.
+
+a href="#p71707547" class="quotelink"
+&gt;&gt;71707547
+/a
+
+br
+Good point.
+Is there a comfy and &quot;safe&quot; career path to go after with a CS degree?
+br
+Something that if future proof and if you are able to learn it you will do it with ease and never fail.
+
+a href="#p71707562" class="quotelink"
+&gt;&gt;71707562
+/a
+
+br
+No, because your less comfy peers will automate your work away.
+
+a href="#p71707197" class="quotelink"
+&gt;&gt;71707197
+/a
+
+raii is completely redundant if you have generics and ideally C++ style references
+
+a href="#p71707643" class="quotelink"
+&gt;&gt;71707643
+/a
+
+br
+You are wrong and have no idea what you&#039;re talking about.
+
+a href="#p71707643" class="quotelink"
+&gt;&gt;71707643
+/a
+
+br
+Raii is to ensure resources are freed even when there&#039;s an unhandled exception.
+
+a href="#p71707643" class="quotelink"
+&gt;&gt;71707643
+/a
+
+br
+
+span class="quote"
+&gt;C++ style references
+/span
+
+br
+So, RAII?
+
+a href="#p71707657" class="quotelink"
+&gt;&gt;71707657
+/a
+
+br
+
+pre class="prettyprint"
+template &lt;typename T, typename F&gt;
+br
+void scoped(F &amp;fn)
+br
+{
+br
+    T obj; // presume POD
+br
+    init(&amp;obj);
+br
+    f(obj); // presume takes an argument of T&amp;
+br
+    close(&amp;obj);
+br
+}
+/pre
+
+br
+passing arguments to init, returning values from f and handling exceptions is left as an exercise for the reader
+
+a href="#p71707347" class="quotelink"
+&gt;&gt;71707347
+/a
+
+br
+
+a href="#p71707547" class="quotelink"
+&gt;&gt;71707547
+/a
+
+br
+Java has Lombok that provides an annotation for easy management, C# 8.0 has using declarations that do the same thing.
+br
+Sure, it&#039;s not automatic but it&#039;s not as painful as having to start logic at column 120 because you have a few nested using/try-with-resources blocks.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+I&#039;m sure dynamic allocation is left as a reader exercise, too.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+
+span class="quote"
+&gt;presume POD
+/span
+
+br
+It&#039;s shit.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+init is your ctor and close is your dtor. that&#039;s where your dynamic allocation takes place.
+
+a href="#p71707562" class="quotelink"
+&gt;&gt;71707562
+/a
+
+br
+Mananger, a lot CS just get decent money,Networking and experience and move up to non-IT jobs, just autist get code monkey path.
+
+a href="#p71707749" class="quotelink"
+&gt;&gt;71707749
+/a
+
+br
+
+span class="quote"
+&gt;missing the point
+/span
+
+br
+all that comment intends to convey is that there won&#039;t be a ctor and dtor implicitly generated
+br
+
+br
+
+a href="#p71707754" class="quotelink"
+&gt;&gt;71707754
+/a
+ for 
+a href="#p71707746" class="quotelink"
+&gt;&gt;71707746
+/a
+
+
+a href="#p71707754" class="quotelink"
+&gt;&gt;71707754
+/a
+
+br
+
+a href="#p71707771" class="quotelink"
+&gt;&gt;71707771
+/a
+
+br
+Okay, so why write all that boilerplate when you can have the language handle it for you?
+Recommend me some quick resource to learn git and github
+
+a href="#p71707829" class="quotelink"
+&gt;&gt;71707829
+/a
+
+br
+man git
+
+a href="#p71706211" class="quotelink"
+&gt;&gt;71706211
+/a
+
+br
+
+a href="#p71706193" class="quotelink"
+&gt;&gt;71706193
+/a
+
+br
+Here&#039;s a really nice benchmark on the performance of exceptions in Java. They can be much faster than anything else if done non-frequently.
+br
+https://shipilev.net/blog/2014/exce
+wbr
+ptional-performance/
+
+a href="#p71707791" class="quotelink"
+&gt;&gt;71707791
+/a
+
+br
+#1 it&#039;s explicit
+br
+c++ syntax is a clusterfuck but in a sane language with mlish syntax it&#039;d be lean enough to invoke and use. outside of those domains it would be at least on par with the try-with-resources/using/with constructs poolangs give you. 
+br
+#2 you don&#039;t have to jump through insane hoops when you manually manage resource lifetimes. you just call init and close like you&#039;re used too. if you&#039;ve ever written anything approximating a standard library container you know what the problem here is.
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+Just use std::array
+br
+It doesn&#039;t have any overhead
+
+a href="#p71707844" class="quotelink"
+&gt;&gt;71707844
+/a
+
+br
+I&#039;ve written multiple standard library containers and you&#039;re definitely doing something wrong.
+
+a href="#p71707481" class="quotelink"
+&gt;&gt;71707481
+/a
+
+br
+that&#039;s what you&#039;d like to think
+
+a href="#p71707868" class="quotelink"
+&gt;&gt;71707868
+/a
+
+br
+how can you even stand using placement new
+
+a href="#p71707893" class="quotelink"
+&gt;&gt;71707893
+/a
+
+br
+What&#039;s fucking wrong with it?
+br
+Are you retarded?
+
+a href="#p71707901" class="quotelink"
+&gt;&gt;71707901
+/a
+
+br
+everything that&#039;s wrong with initialisation in C++ and then everything that&#039;s wrong with the new operator
+
+a href="#p71707963" class="quotelink"
+&gt;&gt;71707963
+/a
+
+br
+So nothing
+If i learn c++ then i need to specialize in something right? I cant just randomly write random useless code. i wont get a job for audio processing if i have no related knowledge but just c++ knowledge? If thats true then what are the specialities people focus on? What do you with c++?
+
+a href="#p71707983" class="quotelink"
+&gt;&gt;71707983
+/a
+
+br
+
+span class="quote"
+&gt;If thats true then what are the specialities people focus on?
+/span
+
+br
+things they like
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+zero-cost exception &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Normal try-catch from Java/C++/etc. What we have in most modern languages is horrible for performance (even when no exception is thrown) and Pajeets in Java absolutely ABUSE exceptions and throw it all over the place. /g/ is basically traumatized by this so there&#039;s no hope in anyone here using exceptions.
+
+a href="#p71707973" class="quotelink"
+&gt;&gt;71707973
+/a
+
+br
+assuming this is only passed types with well behaved constructors and destructors, when does this invoke undefined behaviour?
+br
+
+pre class="prettyprint"
+template &lt;typename T&gt;
+br
+void foo()
+br
+{
+br
+    delete new T;
+br
+}
+/pre
+
+br
+
+br
+
+a href="#p71708009" class="quotelink"
+&gt;&gt;71708009
+/a
+
+br
+wait does java and the like not have zero cost exceptions? C++ has had it for eons
+
+a href="#p71707973" class="quotelink"
+&gt;&gt;71707973
+/a
+
+br
+
+span class="quote"
+&gt;nothing
+/span
+
+br
+http://mikelui.io/2019/01/03/seriou
+wbr
+sly-bonkers.html
+
+a href="#p71708023" class="quotelink"
+&gt;&gt;71708023
+/a
+
+br
+I could be wrong, maybe a newer JVM finally got them. I try to stay away from pajeet land.
+
+a href="#p71708023" class="quotelink"
+&gt;&gt;71708023
+/a
+
+br
+You do realize placement new doesn&#039;t allocate, right.
+br
+Literally all placement new does is call the constructor on an address.
+br
+Your question is irrelevant.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+how do you even get onto the internet with a brain that small?
+
+a href="#p71707999" class="quotelink"
+&gt;&gt;71707999
+/a
+
+br
+Ok but how realistic is it to learn at home as neet?
+
+a href="#p71708054" class="quotelink"
+&gt;&gt;71708054
+/a
+
+br
+my question is demonstrative of how busted new and delete are, but if you want more details
+br
+http://www.scs.stanford.edu/~dm/hom
+wbr
+e/papers/c++-new.html
+
+a href="#p71708084" class="quotelink"
+&gt;&gt;71708084
+/a
+
+br
+
+span class="quote"
+&gt;my question is demonstrative of how busted new and delete are
+/span
+
+br
+I&#039;ll say it again. Placement new is not the same as new
+
+a href="#p71708064" class="quotelink"
+&gt;&gt;71708064
+/a
+
+br
+as realistic as you maintaining motivation to grind for hours learning how to code for months on end.  so completely unrealistic for you
+
+a href="#p71708023" class="quotelink"
+&gt;&gt;71708023
+/a
+
+br
+
+span class="quote"
+&gt;C++ has had it for eons
+/span
+
+br
+No it&#039;s still in the proposal stages
+br
+http://www.open-std.org/jtc1/sc22/w
+wbr
+g21/docs/papers/2018/p0709r0.pdf
+
+a href="#p71708064" class="quotelink"
+&gt;&gt;71708064
+/a
+
+br
+it depends on the domain. There&#039;s obviously much more literature and open source projects out there on game engines than trading engines, for example.
+
+a href="#p71708113" class="quotelink"
+&gt;&gt;71708113
+/a
+
+br
+the itanium abi adopted by gcc in 2001 describes how exceptions are to be implemented and they cost nothing (except perhaps binary size) unless they are thrown
+br
+
+br
+also that proposal is just semantically fucked, you dont&#039; want that shit
+
+a href="#p71708092" class="quotelink"
+&gt;&gt;71708092
+/a
+
+br
+Im talking about the subjects where you specialize not code. Stuff like audio processing, machine vision stuff is not just learn code
+What can be considered good practices for storing credentials to connect to a SQL database? I&#039;m doing some stuff in Python/Pandas where I need to retrieve some information and I don&#039;t want to hardcode these credentials in.
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+I honestly think that&#039;s bad code in that it takes a pointer  given to it and calls delete on a pointer it didn&#039;t new.  Ownership should be clearly defined and what something does to a pointer should be expected.  The constructor should have only taken a value, and if the destructor is calling delete, made its own call to new.  RAII is there for you.
+br
+
+br
+I get that it&#039;s a tutorial, but I think it teaches a bad habit.  Whenever possible, shit should be internal, and matched like HTML tags.  Don&#039;t make a thing over here and have it randomly deleted elsewhere.
+br
+
+br
+Also, it wasn&#039;t clear to me why they didn&#039;t put g() inside of the try block, since it&#039;s what can throw.
+http://www.open-std.org/jtc1/sc22/w
+wbr
+g14/www/docs/n2289.pdf
+br
+Imagine the seething if this finally made it&#039;s way into C. The committee thought highly of it too.
+
+a href="#p71707728" class="quotelink"
+&gt;&gt;71707728
+/a
+
+br
+This looks like templated C++ code as written by someone really in love with C.
+
+a href="#p71708234" class="quotelink"
+&gt;&gt;71708234
+/a
+
+br
+basically yeah, most of what C++ adds is garbage. if c needed anything adding it needed a metaprogramming framework, macros and templates are not good for either purpose
+
+a href="#p71708171" class="quotelink"
+&gt;&gt;71708171
+/a
+
+br
+If possible you could prompt for the password when your program starts.
+
+a href="#p71708232" class="quotelink"
+&gt;&gt;71708232
+/a
+
+br
+it won&#039;t
+
+a href="#p71708023" class="quotelink"
+&gt;&gt;71708023
+/a
+
+br
+I&#039;m curious, when?
+
+a href="#p71708291" class="quotelink"
+&gt;&gt;71708291
+/a
+
+br
+Cope. The committee liked the original idea.  Just not the retard who wanted to split it into two ideas.
+
+a href="#p71707083" class="quotelink"
+&gt;&gt;71707083
+/a
+
+br
+pfttttt they said anal, haha, the mad man
+
+a href="#p71708145" class="quotelink"
+&gt;&gt;71708145
+/a
+
+br
+same answer
+
+a href="#p71707221" class="quotelink"
+&gt;&gt;71707221
+/a
+
+br
+That&#039;s web development though, not programming.
+
+a href="#p71707609" class="quotelink"
+&gt;&gt;71707609
+/a
+
+br
+dohohohooooho pfttttt
+
+a href="#p71708358" class="quotelink"
+&gt;&gt;71708358
+/a
+
+br
+
+span class="quote"
+&gt;Niall: I am an author of Boost.
+/span
+
+br
+Why is this man on the C committee?
+
+a href="#p71708454" class="quotelink"
+&gt;&gt;71708454
+/a
+
+br
+The C committee is unironically terrible. C become dominant despite it, not because of it.
+
+a href="#p71708474" class="quotelink"
+&gt;&gt;71708474
+/a
+
+br
+
+a href="#p71708454" class="quotelink"
+&gt;&gt;71708454
+/a
+
+br
+both committes overlap quite a bit and a good number of proposals are presented for C and C++ or taken from C++.  Reading the minutes of a WG14 meeting is like watching your favorite anime die slowly.
+Is it weird that I find Boost really hot?
+
+a href="#p71708748" class="quotelink"
+&gt;&gt;71708748
+/a
+
+br
+kys furfag
+
+a href="#p71708775" class="quotelink"
+&gt;&gt;71708775
+/a
+
+br
+wtf how did you know?
+Spent like an hour debugging a zero division error until I realized it basically boils down to shit like this
+br
+
+pre class="prettyprint"
+asdf :: Int
+br
+asdf = ((1+2)*4)^24
+br
+
+/pre
+
+br
+overflowing to a negative number. Why did Python have to make me such a shit coder
+
+a href="#p71708996" class="quotelink"
+&gt;&gt;71708996
+/a
+
+br
+dynamically typed shitlangs rot your brain.
+br
+this is not a joke.
+
+a href="#p71709010" class="quotelink"
+&gt;&gt;71709010
+/a
+
+br
+
+span class="quote"
+&gt;dynamically typed
+/span
+
+br
+
+span class="quote"
+&gt;asdf :: Int
+/span
+
+
+a href="#p71709041" class="quotelink"
+&gt;&gt;71709041
+/a
+
+br
+why don&#039;t you actually read his post.
+
+a href="#p71705408" class="quotelink"
+&gt;&gt;71705408
+/a
+ javafx studio or something
+
+a href="#p71708996" class="quotelink"
+&gt;&gt;71708996
+/a
+
+br
+use Integer for unbounded ints
+Write a function that takes three integer parameters and prints the larger two. You should be able to solve this.
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+Not doing your homework.
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+pre class="prettyprint"
+def faggot( i, j, k ):
+br
+    print( &quot;{} {}&quot;.format( *sorted( ( i, j, k), reverse = True )[ : 2 ] ) )
+/pre
+
+
+a href="#p71709087" class="quotelink"
+&gt;&gt;71709087
+/a
+
+br
+I already solved it but was curious if /dpt/ had any ingenious solutions.
+br
+
+br
+
+pre class="prettyprint"
+(cond ((and (&gt; y x) (&gt; z x)) (print y z)))
+br
+      ((and (&gt; x y) (&gt; z y)) (print x z)))   
+br
+      ((and (&gt; x z) (&gt; y z)) (print x y)))
+br
+      (else (print x y)))))
+/pre
+
+
+a href="#p71705408" class="quotelink"
+&gt;&gt;71705408
+/a
+
+br
+JavaFX Scene Builder
+Is it possible to have a vector of function pointers?
+
+a href="#p71709230" class="quotelink"
+&gt;&gt;71709230
+/a
+
+br
+yes
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+a href="#p71709158" class="quotelink"
+&gt;&gt;71709158
+/a
+
+br
+
+a href="#p71709186" class="quotelink"
+&gt;&gt;71709186
+/a
+
+br
+
+br
+
+pre class="prettyprint"
+def faggot (i, j, k):
+br
+    a = [i, j, k]
+br
+    m = min(a)
+br
+    print ([x for x in a if x != m])
+br
+
+/pre
+
+Is C# worth learning?
+
+a href="#p71709230" class="quotelink"
+&gt;&gt;71709230
+/a
+
+br
+sure, why wouldn&#039;t it be possible?
+br
+
+a href="#p71709158" class="quotelink"
+&gt;&gt;71709158
+/a
+
+br
+yuck
+
+a href="#p71709263" class="quotelink"
+&gt;&gt;71709263
+/a
+
+br
+yes
+br
+
+br
+
+a href="#p71709230" class="quotelink"
+&gt;&gt;71709230
+/a
+
+br
+yes
+br
+
+br
+next questions
+
+a href="#p71709254" class="quotelink"
+&gt;&gt;71709254
+/a
+
+br
+
+a href="#p71709274" class="quotelink"
+&gt;&gt;71709274
+/a
+
+br
+
+pre class="prettyprint"
+def faggot( *args ):
+br
+    print( &quot;{} {}&quot;.format( *sorted( args )[ -2 : ] ) )
+/pre
+
+
+a href="#p71708775" class="quotelink"
+&gt;&gt;71708775
+/a
+
+br
+I am indifferent to furries but I like c++ boost libraries. Boost is pretty neat desu senpai.
+
+a href="#p71706396" class="quotelink"
+&gt;&gt;71706396
+/a
+
+br
+
+span class="quote"
+&gt;Working on an electric self driving car
+/span
+
+br
+
+span class="quote"
+&gt;Full stack
+/span
+
+br
+
+br
+You mean you&#039;re working on their website lmao?
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+pre class="prettyprint"
+def queer(i,j,k):
+br
+    lst = [i,j,k]
+br
+    a = max(lst) #get 1st max
+br
+    del lst[lst.index(a)] #delete 1st max
+br
+    return a,max(lst) # get 1st,2nd max
+br
+
+br
+print (queer(1,2,3))
+br
+print (queer(1,1,-1))
+br
+print (queer(1,2,31))
+br
+print (queer(1,0,0))
+br
+
+/pre
+
+
+a href="#p71709330" class="quotelink"
+&gt;&gt;71709330
+/a
+
+br
+Making a website with C and C++ lmao
+
+a href="#p71709254" class="quotelink"
+&gt;&gt;71709254
+/a
+
+br
+Using min is pretty clean.
+br
+
+br
+I was wondering if there was a simple boolean expression like i &gt; j &gt; k that might shortcircuit in the right way to produce a result.
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+f x y z = drop 1 . sort $ [x,y,z]
+
+a href="#p71709350" class="quotelink"
+&gt;&gt;71709350
+/a
+
+br
+h-heh
+
+a href="#p71709350" class="quotelink"
+&gt;&gt;71709350
+/a
+
+br
+you can&#039;t do that?
+br
+
+br
+shitty &quot;programmer&quot; detected
+I hate python. Recommend a good substitute.
+
+a href="#p71709390" class="quotelink"
+&gt;&gt;71709390
+/a
+
+br
+Nim
+
+a href="#p71709274" class="quotelink"
+&gt;&gt;71709274
+/a
+
+br
+
+span class="quote"
+&gt;sure, why wouldn&#039;t it be possible?
+/span
+
+br
+Oh I&#039;m dumb. I was using insert instead of push_back.
+br
+
+a href="#p71709300" class="quotelink"
+&gt;&gt;71709300
+/a
+
+br
+
+span class="quote"
+&gt;next questions
+/span
+
+br
+Why are these new captchas taking a million years to complete?
+
+a href="#p71709390" class="quotelink"
+&gt;&gt;71709390
+/a
+
+br
+haskell or sepples
+
+a href="#p71709383" class="quotelink"
+&gt;&gt;71709383
+/a
+
+br
+fucking wt lmao
+
+a href="#p71709254" class="quotelink"
+&gt;&gt;71709254
+/a
+
+br
+doesn&#039;t work for [0,0,1]
+
+a href="#p71709186" class="quotelink"
+&gt;&gt;71709186
+/a
+
+br
+
+pre class="prettyprint"
+(defun print_two_larger (x y z)
+br
+    (format t &quot;The two largest numbers are ~a~%&quot; (remove (min x y z) (list x y z))))
+br
+
+/pre
+
+
+a href="#p71709435" class="quotelink"
+&gt;&gt;71709435
+/a
+
+br
+This is a good point. Ideally the procedure should still work given arguments like 0,0,1 or 9,9,9.
+
+a href="#p71709312" class="quotelink"
+&gt;&gt;71709312
+/a
+
+br
+if you&#039;re going to do that, here&#039;s an O(n) solution:
+br
+
+pre class="prettyprint"
+def faggot(*args):
+br
+  biggest = args[0]
+br
+  second = args[1]
+br
+  for arg in args:
+br
+    if arg &gt; biggest:
+br
+      second = biggest
+br
+      biggest = arg
+br
+    elif arg &gt; second:
+br
+      second = arg
+br
+  print(biggest)
+br
+  print(second)
+br
+
+/pre
+
+br
+
+br
+
+a href="#p71709435" class="quotelink"
+&gt;&gt;71709435
+/a
+
+br
+fugg you right
+Hi I&#039;m new to coding.
+br
+
+br
+A while back I read something about how you shouldn&#039;t have methods that are too complex. Avoiding like 7+ lines or whatever in a single method. Obviously this is only if you can help it and things like that. It was more of a guideline than a rule. 
+br
+
+br
+Does anyone know the name of this concept? It&#039;s bugging me.
+
+a href="#p71709470" class="quotelink"
+&gt;&gt;71709470
+/a
+
+br
+
+pre class="prettyprint"
+import math
+br
+a = math.inf
+br
+faggot(a,1,1)
+br
+# inf
+br
+# inf
+br
+
+/pre
+
+br
+
+br
+OH NO NO NO NO NO
+
+a href="#p71709525" class="quotelink"
+&gt;&gt;71709525
+/a
+
+br
+seperation of concerns
+
+a href="#p71709525" class="quotelink"
+&gt;&gt;71709525
+/a
+
+br
+disregard every arbitrary rule like that you read. 
+br
+It&#039;s nothing but fucking wank. 
+br
+Everyone programs differently.
+
+a href="#p71709470" class="quotelink"
+&gt;&gt;71709470
+/a
+
+br
+
+a href="#p71709439" class="quotelink"
+&gt;&gt;71709439
+/a
+
+br
+(print_two_larger 9 9 9) evaluates to false. It&#039;s harder than it first appears! I just realized I can reduce the conditional statement by 1 since there&#039;s only 3 logical cases.
+
+a href="#p71709537" class="quotelink"
+&gt;&gt;71709537
+/a
+
+br
+shit I thought about that but forgot to actually type it
+br
+
+pre class="prettyprint"
+def faggot(*args):
+br
+  biggest = args[0]
+br
+  second = args[1]
+br
+  for arg in args[1:]
+br
+    if arg &gt; biggest:
+br
+      second = biggest
+br
+      biggest = arg
+br
+    elif arg &gt; second:
+br
+      second = arg
+br
+  print(biggest)
+br
+  print(second) 
+br
+
+/pre
+
+
+a href="#p71709578" class="quotelink"
+&gt;&gt;71709578
+/a
+
+br
+Since I&#039;m new and learning, I&#039;m goal oriented most of the time but I figured rules like that were decent for learning. Obviously if I can&#039;t accomplish something following that rule, I won&#039;t rack my brain trying to solve it. 
+br
+
+br
+
+a href="#p71709548" class="quotelink"
+&gt;&gt;71709548
+/a
+
+br
+I don&#039;t remember this being the name I first of it under but it seems close enough. Thanks.
+
+a href="#p71709525" class="quotelink"
+&gt;&gt;71709525
+/a
+
+br
+OOP artisan meme. Just ignore.
+
+a href="#p71709525" class="quotelink"
+&gt;&gt;71709525
+/a
+
+br
+https://en.wikipedia.org/wiki/SOLID
+wbr
+
+
+a href="#p71709450" class="quotelink"
+&gt;&gt;71709450
+/a
+
+br
+
+a href="#p71709610" class="quotelink"
+&gt;&gt;71709610
+/a
+
+br
+Sure
+br
+
+pre class="prettyprint"
+(defun print_two_larger (x y z)
+br
+    (let ((clean-list (remove-duplicates (list x y z))))
+br
+     (format t &quot;List with two largest numbers (or largest number): ~a~%&quot; (if (/= (length clean-list) 3) clean-list (remove (min x y z) clean-list))))) 
+br
+
+/pre
+
+br
+
+br
+Thank me later for your homework.
+
+a href="#p71709525" class="quotelink"
+&gt;&gt;71709525
+/a
+
+br
+John Carmack experimented with inlining all his functions and found it was less buggy (most of his bugs were from uninitialized stuff) and made the control flow of the program more obvious.
+anyone here into competitive programming? any advice for a greenhorn?
+br
+I&#039;m considering trying this friday&#039;s CodeForces round..
+
+a href="#p71708232" class="quotelink"
+&gt;&gt;71708232
+/a
+
+br
+That&#039;s pretty disgusting. Why do they let people who associate with C++ programmers opine here? 
+br
+People are already having a hard time accepting C11. This just locks the newer standards off into obscurity.
+
+a href="#p71709748" class="quotelink"
+&gt;&gt;71709748
+/a
+
+br
+It&#039;s not homework, it&#039;s from exercise 1.3 in SICP. The implementation was a lot harder than first anticipated so /dpt/ might enjoy the ride too. We are both slightly better programmers now
+
+a href="#p71709751" class="quotelink"
+&gt;&gt;71709751
+/a
+
+br
+That&#039;s the short version of it.
+br
+http://number-none.com/blow/john_ca
+wbr
+rmack_on_inlined_code.html
+br
+The long story is that he now recognizes the importance of state changes not being hidden behind abstractions. It&#039;s a great source of bugs to change state the programmer stands on.
+br
+
+span class="quote"
+&gt;In the years since I wrote this, I have gotten much more bullish about pure functional programming, even in C/C++ where reasonable.
+/span
+
+br
+
+br
+When he thinks functional he&#039;s probably not thinking the high-level haskelly stuff.
+
+a href="#p71709838" class="quotelink"
+&gt;&gt;71709838
+/a
+
+br
+I mean they probably expect you to do something with conditionals if you&#039;re this early but yeah the things I posted would allow you to extend this to bigger scopes and you also could count the number of arguments instead of having a dirty &quot;3&quot; in the middle.
+br
+
+br
+But too fucking lazy. Solution isn&#039;t perfect but it doesn&#039;t matter.
+
+a href="#p71709610" class="quotelink"
+&gt;&gt;71709610
+/a
+
+br
+you really only need one actually
+br
+
+pre class="prettyprint"
+def fun(i, j, k):
+br
+  a, b = i, k
+br
+  if j &gt; a or j &gt; b:
+br
+    a, b = j, max(a, b)
+br
+  print(a)
+br
+  print(b)
+br
+
+/pre
+
+br
+although technically max(a,b) is a second one
+rate my merge sort function
+br
+
+pre class="prettyprint"
+msort :: Ord a =&gt; [a] -&gt; [a]
+br
+msort [] = []
+br
+msort [x] = [x]
+br
+msort xs = let l = length xs ; h = div l 2
+br
+           in merge (msort $ take h xs) (msort $ drop h xs) where
+br
+  merge = curry $ unfoldr ca where
+br
+    ca ([], []) = Nothing
+br
+    ca ([], y:ys) = Just (y, ([], ys))
+br
+    ca (x:xs, []) = Just (x, (xs, []))
+br
+    ca (x:xs, y:ys)
+br
+      | x &lt;= y = Just (x, (xs, y:ys))
+br
+      | x &gt;  y = Just (y, (x:xs, ys))
+br
+
+/pre
+
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+pre class="prettyprint"
+IEnumerable&lt;int&gt; trap(int astolfo, int felix, int hideri)
+br
+{
+br
+    return new [] {astolfo, felix, hideri}
+br
+        .OrderBy(cutest =&gt; cutest)
+br
+        .Skip(1)
+br
+    ;
+br
+}
+br
+
+/pre
+
+
+a href="#p71709900" class="quotelink"
+&gt;&gt;71709900
+/a
+
+br
+
+span class="quote"
+&gt;not ordering by dick size
+/span
+
+br
+
+br
+anon...
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+a href="#p71709884" class="quotelink"
+&gt;&gt;71709884
+/a
+
+br
+in fact you can do it even cleaner:
+br
+
+pre class="prettyprint"
+def fun(i, k, j):
+br
+  if j &gt; i or j &gt; k:
+br
+    k, i = j, max(i, k)
+br
+  print(k)
+br
+  print(i)
+br
+
+/pre
+
+
+a href="#p71709909" class="quotelink"
+&gt;&gt;71709909
+/a
+
+br
+i had that thought but the code&#039;ll become too lewd to post here
+
+a href="#p71709900" class="quotelink"
+&gt;&gt;71709900
+/a
+
+br
+
+span class="quote"
+&gt;.OrderBy(cutest =&gt; cutest)
+/span
+
+
+a href="#p71709621" class="quotelink"
+&gt;&gt;71709621
+/a
+
+br
+
+span class="quote"
+&gt;if I can&#039;t accomplish something following that rule I won&#039;t rack my brain trying to solve it.
+/span
+
+br
+I wouldn&#039;t say that&#039;s the best strategy. If you follow some good rules you can stick to almost never breaking them and be excellent.
+br
+Sometimes arbitrary constraints that are pure inconvenience to apply helps you grow. But those should not be applied generally of course.
+br
+
+br
+What&#039;s worth telling you with regards to this topic is that since programming is a craft/art and not a science you&#039;ll find people who advocate radically different ways of doing it passionately. It will be very difficult to tell as a newbie whats good advice and what isn&#039;t.
+br
+So think critically about what you&#039;re doing when you&#039;re following their advice and if it seems bonkers you should think about what you&#039;re getting out of it. If you can&#039;t come up with anything you should ask them or someone else.
+br
+
+br
+There&#039;s a lot of things that are just tradeoffs as well. Maybe something makes you develop a prototype for whatever you&#039;re doing very but it then becomes next to impossible to build on. You should realize the costs and benefits in those situations.
+br
+
+br
+Thinking about this post it&#039;s probably a bit further ahead than you are. It might not be all that applicable to a complete newbie. But as much as we ridicule them, the people who come into this thread not understanding why pointers need to exist have the potential to be great programmers if they put the time in.
+
+a href="#p71709900" class="quotelink"
+&gt;&gt;71709900
+/a
+
+br
+
+span class="quote"
+&gt;IEnumerable&lt;int&gt;
+/span
+
+br
+This is so zoy
+br
+
+span class="quote"
+&gt;ITraversable
+/span
+
+br
+
+span class="quote"
+&gt;IIterable 
+/span
+
+br
+gay
+
+a href="#p71710001" class="quotelink"
+&gt;&gt;71710001
+/a
+
+br
+tl;dr just code
+br
+
+br
+Refine your habits later once you&#039;re at ease with things.
+
+a href="#p71710001" class="quotelink"
+&gt;&gt;71710001
+/a
+
+br
+
+span class="quote"
+&gt;since programming is a craft/art and not a science
+/span
+
+
+a href="#p71710050" class="quotelink"
+&gt;&gt;71710050
+/a
+
+br
+Spotted the dumb pythonista
+
+a href="#p71710069" class="quotelink"
+&gt;&gt;71710069
+/a
+
+br
+Computer science is science dummy. And the only python I&#039;ve written is hacks for people&#039;s stupid broken scripts.
+br
+
+br
+Code artisans BTFO
+
+a href="#p71710050" class="quotelink"
+&gt;&gt;71710050
+/a
+
+br
+
+a href="#p71710152" class="quotelink"
+&gt;&gt;71710152
+/a
+
+br
+very compelling arguments
+
+a href="#p71710024" class="quotelink"
+&gt;&gt;71710024
+/a
+
+br
+IFuckable&lt;Trap&gt;
+
+a href="#p71710190" class="quotelink"
+&gt;&gt;71710190
+/a
+
+
+a href="#p71709390" class="quotelink"
+&gt;&gt;71709390
+/a
+
+br
+Go
+
+a href="#p71710152" class="quotelink"
+&gt;&gt;71710152
+/a
+
+br
+I bet your code isn&#039;t even GMO free
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+pre class="prettyprint"
+void print_largest_two(int x, int y, int z)
+br
+{
+br
+    int&amp; a = x;
+br
+    int&amp; b = y;
+br
+    int&amp; c = z;
+br
+    if (a &lt; b) std::swap(a, b);
+br
+    if (b &lt; c) std::swap(b, c);
+br
+    if (a &lt; b) std::swap(a, b);
+br
+    std::printf(&quot;%i, %i\n&quot;, a, b);
+br
+}
+br
+
+/pre
+
+crying while i try doing css
+
+a href="#p71710352" class="quotelink"
+&gt;&gt;71710352
+/a
+
+br
+
+span class="quote"
+&gt;int&amp; a = x;
+/span
+
+br
+
+span class="quote"
+&gt;int&amp; b = y;
+/span
+
+br
+
+span class="quote"
+&gt;int&amp; c = z;
+/span
+
+br
+bruh why
+
+a href="#p71710298" class="quotelink"
+&gt;&gt;71710298
+/a
+
+br
+
+span class="quote"
+&gt;the virgin worried about the ethical impact of his kode and carbon footprint
+/span
+
+br
+
+span class="quote"
+&gt;the chad nuclear missile guidance system
+/span
+
+
+a href="#p71710352" class="quotelink"
+&gt;&gt;71710352
+/a
+
+br
+see 
+a href="#p71709936" class="quotelink"
+&gt;&gt;71709936
+/a
+
+br
+two comparisons is all you need
+How do people deal with undefined behaviour? I just spent hours debugging because I forgot to initialize a pointer and therefore a nullpointer check failed.
+
+a href="#p71710535" class="quotelink"
+&gt;&gt;71710535
+/a
+
+br
+I don&#039;t introduce it in the first place.
+br
+If there are already UBs in your code base you should look into UB sanitizer available in gcc, clang and valgrind.
+
+a href="#p71710535" class="quotelink"
+&gt;&gt;71710535
+/a
+
+br
+my language initializes everything at declaration so this isn&#039;t a problem. Come join us in the current decade.
+
+a href="#p71710535" class="quotelink"
+&gt;&gt;71710535
+/a
+
+br
+Turn on all your compiler warnings. Yes, all of them.
+
+a href="#p71710535" class="quotelink"
+&gt;&gt;71710535
+/a
+
+br
+
+a href="#p71710613" class="quotelink"
+&gt;&gt;71710613
+/a
+ + -g + valgrind
+
+a href="#p71708996" class="quotelink"
+&gt;&gt;71708996
+/a
+
+br
+Is this ADA?
+br
+
+a href="#p71709079" class="quotelink"
+&gt;&gt;71709079
+/a
+
+br
+
+pre class="prettyprint"
+def highest(x,y,z):
+br
+    nums = [x, y, z]
+br
+    for i, x in enumerate(sorted(nums)):
+br
+        if i &lt; 2:
+br
+            print(i)
+br
+
+/pre
+
+
+a href="#p71710383" class="quotelink"
+&gt;&gt;71710383
+/a
+
+br
+Neat!
+
+a href="#p71710731" class="quotelink"
+&gt;&gt;71710731
+/a
+
+br
+Ada doesn&#039;t have FP style declaration. 
+br
+that&#039;s most likely haskell.
+
+a href="#p71710731" class="quotelink"
+&gt;&gt;71710731
+/a
+
+br
+I messed this up. My bad.
+br
+
+pre class="prettyprint"
+def highest(x,y,z):
+br
+    nums = [x, y, z]
+br
+    for i, e in enumerate(sorted(nums)):
+br
+        if i &lt; 2:
+br
+            print(e)
+br
+
+/pre
+
+
+a href="#p71710613" class="quotelink"
+&gt;&gt;71710613
+/a
+
+br
+I&#039;ll take a look, thanks. 
+br
+
+a href="#p71710576" class="quotelink"
+&gt;&gt;71710576
+/a
+
+br
+I think sometimes it&#039;d be inefficient to initialize everything. It&#039;s also for an OS course, so I didn&#039;t have any choice.
+br
+
+a href="#p71710613" class="quotelink"
+&gt;&gt;71710613
+/a
+
+br
+Do I need to turn something on beyond -Wall? I had assumed it would include everything.
+br
+
+a href="#p71710645" class="quotelink"
+&gt;&gt;71710645
+/a
+
+br
+This might sound stupid, but because I have to connect gdb to QEMU, I haven&#039;t been able to connect to it before it crashes, but if something like that happens again, I&#039;ll try to give it a shot.
+
+a href="#p71710758" class="quotelink"
+&gt;&gt;71710758
+/a
+
+br
+100%. I don&#039;t know of any other language that uses :: for type annotations.
+
+a href="#p71710889" class="quotelink"
+&gt;&gt;71710889
+/a
+
+br
+Clean uses them as well, which is a pretty inspirational lang even though no one uses it. But the better FP langs realized that a single : suffices.
+
+a href="#p71710889" class="quotelink"
+&gt;&gt;71710889
+/a
+
+br
+Perl.
+
+Old thread: 
+a href="/g/thread/71698424#p71698424" class="quotelink"
+&gt;&gt;71698424
+/a
+
+br
+
+br
+What are you working on, /g/?
+First for C++ is the only language you need
+
+a href="#p71705326" class="quotelink"
+&gt;&gt;71705326
+/a
+
+br
+*Assembly, you stupid nigger.
+
+a href="#p71705305" class="quotelink"
+&gt;&gt;71705305
+/a
+
+br
+literally nothing
+br
+im balls deep in powertracing issues at work and i have no energy when i come home anymore
+
+a href="#p71705347" class="quotelink"
+&gt;&gt;71705347
+/a
+
+br
+
+span class="quote"
+&gt;learn x86 assembly
+/span
+
+br
+
+span class="quote"
+&gt;stuck on desert island with raspberry pi
+/span
+
+br
+
+span class="quote"
+&gt;can&#039;t do anything 
+/span
+
+br
+Yeah I don&#039;t think so buddy
+What&#039;s the equivalent of win forms in java? 
+br
+Some GUI you just drag and drop and it just werks. 
+br
+I have to make some small assignemnt doesn&#039;t have to be pretty or new epic stuff should just werk.
+
+a href="/g/thread/71698424#p71705236" class="quotelink"
+&gt;&gt;71705236
+/a
+
+br
+
+span class="quote"
+&gt;the contempt business people have for devs
+/span
+
+br
+
+br
+story time??
+
+a href="#p71705408" class="quotelink"
+&gt;&gt;71705408
+/a
+
+br
+I was introduced to JavaFX or swing. I don&#039;t recall which. There was a new thing coming out which we didn&#039;t learn. But that was many years ago.
+br
+Search for Java window builder and see what that is.
+Exceptions are vastly superior to C/Rust/Go-style error handling
+i can&#039;t stop procrastinating asjdhahfgggasliuglajskd
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+lumping c, rust and go together like they&#039;re the same just demonstrates you&#039;re a retard
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Deoptimising.
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Correct and also one of the many reasons C++ is the best language
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+Yeah lemme just unwind stack at any tiny problem. Try catch is only good to make a program shut up, not your for reliability
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+this, thanks to exceptions I never have to use those bloated if/else
+Some anon was asking for the updated one
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+No, Haskell&#039;s Either-likes is the only sane way to work with computations that can fail. Exceptions are yet another, invisible and requiring special syntax and runtime support to handle way to return value from a function.
+br
+Exceptions are 100% retarded invention.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+
+span class="quote"
+&gt; Haskell&#039;s Either-likes
+/span
+
+br
+you mean monad transformers
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+You don&#039;t need that meme shit, just a type that can represent a value or an error
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+monad transformers are a rather complicated notion but also become necessary to subsume exceptins
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+They&#039;re enabling global error.
+br
+But they&#039;re not very good in the small. So many complications are introduced by having a second control flow path.
+
+a href="#p71705909" class="quotelink"
+&gt;&gt;71705909
+/a
+
+br
+
+span class="quote"
+&gt;monad transformers are a rather complicated notion
+/span
+
+br
+Huh? It&#039;s literally just a nicer way of dealing with monads inside monads.
+
+a href="#p71705874" class="quotelink"
+&gt;&gt;71705874
+/a
+
+br
+This 
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+t. seething cnile
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+you and I know that, pajeet doesn&#039;t
+br
+
+br
+
+a href="#p71705905" class="quotelink"
+&gt;&gt;71705905
+/a
+
+br
+by the time you&#039;ve implemented decent functions to manipulate error types you have a monad
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+
+a href="#p71706051" class="quotelink"
+&gt;&gt;71706051
+/a
+
+br
+t. CS freshman
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+They are not mutually exclusive, a good API will provide both depending on the situation (e.g. file opening).
+
+a href="#p71706122" class="quotelink"
+&gt;&gt;71706122
+/a
+
+br
+muh Enterprise grade 200loc Error sum type
+
+a href="#p71705977" class="quotelink"
+&gt;&gt;71705977
+/a
+
+br
+
+a href="#p71706052" class="quotelink"
+&gt;&gt;71706052
+/a
+
+br
+Sometimes (actually quite a lot of times) I want to turn Either&lt;L1, R1&gt; into Either&lt;L2, R1&gt; to enrich the error data. Quite often I want to have E&lt;L1, R1&gt; -&gt; E&lt;L2, R2&gt; to do both.
+br
+Monad transformers will not help here.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+I&#039;ve heard people say that in C++ exceptions are cheaper than error codes because they&#039;re free when they don&#039;t trigger or something.
+br
+To me that doesn&#039;t make sense. Whatever mechanism that implements exceptions couldn&#039;t also implement error codes?
+
+a href="#p71706131" class="quotelink"
+&gt;&gt;71706131
+/a
+
+br
+You are correct, they are not mutually exclusive. Exceptions are ok for things like division by zero (because it will be night fucking mare otherwise to do arithmetic)
+
+a href="#p71706173" class="quotelink"
+&gt;&gt;71706173
+/a
+
+br
+uhhhh
+Hey, Anone~ Will you learn JavaScript with me? Pretty please?
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+when you return from a function that returns an error code you must compare and branch 
+br
+with you return from a function that throws an exception you just keep going
+br
+when an exception is thrown however you get fucked up runtime callstack introspection which is slow as balls however
+
+a href="#p71706162" class="quotelink"
+&gt;&gt;71706162
+/a
+
+br
+It makes sense if you have 1 fail for 100000 non-fail situations. The stack-unwinding cost will be just amortized.
+br
+My problem with exception is the cost of programmers understanding the control flow. Java did the right thing demanding exceptions being part of function&#039;s signature. But pajeets were to stupid to understand and properly use and instead did the needful.
+
+a href="#p71705844" class="quotelink"
+&gt;&gt;71705844
+/a
+
+br
+So like std::expected?
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+Go suck a nigger dick or something, sweetie. White men are talking.
+Help me bros
+br
+I am trying to turn Python-driven data analytics into a hobby outside of work, but I have learned that looking for nails (projects) to hit with a hammer (programming) is not the right way to think about programming.
+br
+What the hell do I do?
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+Don&#039;t know, did not read about it yet, sorry.
+
+a href="#p71706213" class="quotelink"
+&gt;&gt;71706213
+/a
+
+br
+yeah but not retarded
+
+a href="#p71706147" class="quotelink"
+&gt;&gt;71706147
+/a
+
+br
+monad transformers allow you to make a stack of different ways of handling errors in different parts of you system, they even let you have some kind of priority in them (you don&#039;t really care about the previous formatting error if you&#039;re out of memory)
+br
+what you&#039;re talking about is completely irrelevant, if your favourite language doesn&#039;t have a bifunctor class/trait you might as well kys.
+
+a href="#p71706187" class="quotelink"
+&gt;&gt;71706187
+/a
+
+br
+what are you working on, jsposter?
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+Data analytics sounds like a fucking boring hobby, maybe that&#039;s your issue
+
+a href="#p71706240" class="quotelink"
+&gt;&gt;71706240
+/a
+
+br
+Good, I wouldn&#039;t want to use Hasklel either. Too many brainlets smelling the thing up.
+
+a href="#p71706267" class="quotelink"
+&gt;&gt;71706267
+/a
+
+br
+Brainlet. It&#039;s literally the future of our society
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+
+span class="quote"
+&gt;this is what Haskellers actually believe
+/span
+
+br
+II love the language but it has its place
+
+a href="#p71706296" class="quotelink"
+&gt;&gt;71706296
+/a
+
+br
+Yeah at actual companies, not for fucking hobbyist retards
+
+a href="#p71706326" class="quotelink"
+&gt;&gt;71706326
+/a
+
+br
+A hobby that doubles as a career is literally the most fulfilling thing you can do
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+a dream we will never achieve
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+That&#039;s too cumbersome. You need a syntax/symanic help from the language here for practical usage.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Forcing yourself to enjoy your career as a hobby isn&#039;t the same thing as making money off your hobby though.
+
+a href="#p71706350" class="quotelink"
+&gt;&gt;71706350
+/a
+
+br
+Truth
+br
+
+br
+I get disappointed when it&#039;s time to call it quits I enjoy my work so much.
+br
+
+br
+Currently working for a big car company working on an electric self driving car to compete with tesla.
+br
+
+br
+Doing full stack dev with C, C++, Mqtt, React, Redux, Python. 
+br
+
+br
+God I hate the people I work with but love the project.
+
+a href="#p71706396" class="quotelink"
+&gt;&gt;71706396
+/a
+
+br
+I just feel disappointed when work is over because no gf to go home to
+br
+Programming is a great job but I get my fill at work and I have other hobbies I&#039;d rather do at home
+br
+But writing important software at work makes me feel less inclined to do it in my free time as well
+Where my /programing as a hobby/ bros at?
+br
+I need emotional support.
+
+a href="#p71706193" class="quotelink"
+&gt;&gt;71706193
+/a
+
+br
+
+span class="quote"
+&gt;when you return from a function that returns an error code you must compare and branch
+/span
+
+br
+Yes I accept that in the case where the function is invisible to the compiler there can be complications like double checking.
+br
+But in other cases I don&#039;t really see it. Because any error will stem from some sort of error evaluation like:
+br
+
+pre class="prettyprint"
+if(a==5) return -1; //oops, a can&#039;t be 5 here
+br
+
+/pre
+
+br
+Outside the function we define our error handling with an if that does a redundant check. For the compiler to eliminate the two it needs to know the function code. But if it does it already knows which branch we should go down and it can simply go there. Instead of returning to the location where we made the call to the function that returns an error code we could jump straight into the block catching the error. The compiler might have to reorder some things in some cases but I&#039;d deem the normal case as being trivial.
+br
+
+br
+So in the non-error case (as determined inside the function) you just return and keep going as you say. It doesn&#039;t seem like anything that&#039;s inherent to exceptions or error codes. If I were to guess it&#039;s just the exceptions being assumed to be costly. That assumption is a lot harder when you&#039;re dealing with error code because they&#039;re really just ints. But the compiler do this if you just place an unlikely attribute around the error branch?
+
+a href="#p71705740" class="quotelink"
+&gt;&gt;71705740
+/a
+
+br
+I agree. The &#039;invisible control flow&#039; argument is for retards that can&#039;t into exception safety.
+
+a href="#p71706490" class="quotelink"
+&gt;&gt;71706490
+/a
+
+br
+
+span class="quote"
+&gt;For the compiler to eliminate the two it needs to know the function code.
+/span
+
+br
+One of the two.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+never gonna make  it.
+
+a href="#p71706524" class="quotelink"
+&gt;&gt;71706524
+/a
+
+br
+Bullies should go neck themselves desu.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+All the people jerking over monads and exceptions are hobbyists
+Is it just me who looks at this and says 
+br
+
+span class="quote"
+&gt;Wow so elegant. I can&#039;t believe I used to do anything without writing a new class at every step
+/span
+
+br
+And then you just rest blissfully knowing you need to consider partial state at every turn because you compile with exceptions enabled.
+br
+
+br
+More seriously. This is a blatant overuse of global error handling. Exceptions and its devotees encourage that.
+Small sql question, is the arrangement for checks important? 
+br
+Like 
+br
+Select * 
+br
+From person p, customer c
+br
+Where p.id = c.id
+br
+And something something.
+
+a href="#p71706614" class="quotelink"
+&gt;&gt;71706614
+/a
+
+br
+Sorry buddy but i haven no idea what monad is.
+Guys, I hate my career. Did any of you get into programming later in life?
+
+a href="#p71706632" class="quotelink"
+&gt;&gt;71706632
+/a
+
+br
+Not a problem with smart pointers but yeah exceptions are shit but C++ isn&#039;t &quot;elegant&quot; to begin with
+
+a href="#p71706377" class="quotelink"
+&gt;&gt;71706377
+/a
+
+br
+yes, it&#039;s called do notation
+
+a href="#p71706235" class="quotelink"
+&gt;&gt;71706235
+/a
+
+br
+My advice is to brainstorm business ideas and see your hobby as a potential source of income.
+
+a href="#p71706483" class="quotelink"
+&gt;&gt;71706483
+/a
+
+br
+I program at home and at work. Does that count?
+
+a href="#p71706261" class="quotelink"
+&gt;&gt;71706261
+/a
+
+br
+I see. OOM is every relevant error for Haskell.
+
+a href="#p71706365" class="quotelink"
+&gt;&gt;71706365
+/a
+
+br
+I&#039;m living it.
+
+a href="#p71706670" class="quotelink"
+&gt;&gt;71706670
+/a
+
+br
+I started young but I know it&#039;s possible to get into it later. Back in the day, a lot of old engineers suddenly had to learn programming just to keep their jobs.
+
+a href="#p71706684" class="quotelink"
+&gt;&gt;71706684
+/a
+
+br
+That is just syntax help, you mong.
+
+a href="#p71706692" class="quotelink"
+&gt;&gt;71706692
+/a
+
+br
+I do the same but my profession is not related to computers.
+br
+im medfag by trade
+
+a href="#p71706703" class="quotelink"
+&gt;&gt;71706703
+/a
+
+br
+based
+
+a href="#p71706728" class="quotelink"
+&gt;&gt;71706728
+/a
+
+br
+that&#039;s literally what you asked for, retard
+
+a href="#p71706646" class="quotelink"
+&gt;&gt;71706646
+/a
+
+br
+1) No
+No Comfort, No Problem Edition
+br
+
+br
+How to ask for recommendations:
+br
+
+span class="quote"
+&gt;Budget
+/span
+
+br
+
+span class="quote"
+&gt;Source
+/span
+
+br
+
+span class="quote"
+&gt;Type of headphone
+/span
+
+br
+
+span class="quote"
+&gt;Open or closed
+/span
+
+br
+
+span class="quote"
+&gt;Comfort level
+/span
+
+br
+
+span class="quote"
+&gt;Sound signature
+/span
+
+br
+
+span class="quote"
+&gt;Past headphones 
+/span
+
+br
+
+br
+For sub-$50 headphones and IEMs, check out the infographic in 
+a href="//boards.4channel.org/g/catalog#s=csg" class="quotelink"
+&gt;&gt;&gt;/g/csg
+/a
+
+br
+
+br
+/g/ wiki headphone FAQ: https://wiki.installgentoo.com/inde
+wbr
+x.php?title=Headphones
+br
+
+br
+Previous thread: 
+a href="/g/thread/71683554#p71683554" class="quotelink"
+&gt;&gt;71683554
+/a
+
+STAX
+First for END GAME
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+the fuck is that plug?
+
+a href="#p71709878" class="quotelink"
+&gt;&gt;71709878
+/a
+
+br
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+Incels
+How do I get the most out of pic related? 
+br
+
+br
+
+span class="quote"
+&gt;inb4 the trash
+/span
+
+
+a href="#p71710127" class="quotelink"
+&gt;&gt;71710127
+/a
+
+br
+huh?
+Any recommendations for cheap (under $100) bluetooth headphones? I don&#039;t expect miracles, just something decently comfortable and portable that doesn&#039;t sound like total ass.
+I have a pretty bad ground loop off of my sound card for some reason, does this mean I need to get a DAC
+
+a href="#p71710757" class="quotelink"
+&gt;&gt;71710757
+/a
+
+br
+you might be lucky and it could be something as simple as buying stax
+
+span class="quote"
+&gt;Pull some Sony MDRs out of my closet
+/span
+
+br
+
+span class="quote"
+&gt;They have white powdery WTF all over the leather (fake leather?)
+/span
+
+br
+
+br
+ahhhhhh
+What&#039;s a good amp/DAC combo that I can use between my phone, PC, and Audio-Technica AT-LP60 Turntable? I&#039;ll be using it to drive my beyerdynamic DT 880. I currently have my eyes on the Topping NX4 and the JDS Labs Atom. Will these work with the turntable?
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+I&#039;ve been using my SMSL AD18 with my lp60.  I imagine it has enough power for the DT 880s but you should double check.
+br
+
+br
+I use it with headphones a pair of klipsh speakers and sub woofer and you can even use phone bt if ya want.  Good for personal use and with friends over.
+pls buy my shitty snakeoil
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+
+a href="#p71711253" class="quotelink"
+&gt;&gt;71711253
+/a
+
+br
+JDS Atom will work great, but you should really consider replacing that turntable in the long term. Get something used with a counter weight and anti-skate.
+
+a href="#p71711278" class="quotelink"
+&gt;&gt;71711278
+/a
+
+br
+I inherited an older AT turntable from my uncle when he died. I may start using it when I get a chance to look it over.
+
+a href="#p71710865" class="quotelink"
+&gt;&gt;71710865
+/a
+
+br
+Could be mold, happens to my stuff when there&#039;s not enough sun and fresh air.
+Will you guys make fun of me if I get the sennheriser game one? I want a mic, and I was initially going to get the HD599 with some modmic frankenstein bullshit setup but if the audio is more or less the same I&#039;d much rather just get the game one.
+Arya is endgame.
+
+a href="#p71711371" class="quotelink"
+&gt;&gt;71711371
+/a
+
+br
+Get the PC37X. Same thing, basically, just non-gaymer.
+
+a href="#p71711395" class="quotelink"
+&gt;&gt;71711395
+/a
+
+br
+Ordering from massdrop is aids from where I live. I want to easily be able to return it if I don&#039;t like it.
+Do you ever get afraid when hooked up to a powerful amp that it&#039;s going to fail and make you deaf?
+
+a href="#p71711554" class="quotelink"
+&gt;&gt;71711554
+/a
+
+br
+If you have any amp made by Schiit, it&#039;s a real concern.
+I love listening to my Stax and talking about my Stax and making fun of people that don&#039;t have Stax
+
+a href="#p71711992" class="quotelink"
+&gt;&gt;71711992
+/a
+
+br
+stax is shit bro kill yourself
+No Comfort, No Problem Edition
+br
+
+br
+How to ask for recommendations:
+br
+
+span class="quote"
+&gt;Budget
+/span
+
+br
+
+span class="quote"
+&gt;Source
+/span
+
+br
+
+span class="quote"
+&gt;Type of headphone
+/span
+
+br
+
+span class="quote"
+&gt;Open or closed
+/span
+
+br
+
+span class="quote"
+&gt;Comfort level
+/span
+
+br
+
+span class="quote"
+&gt;Sound signature
+/span
+
+br
+
+span class="quote"
+&gt;Past headphones 
+/span
+
+br
+
+br
+For sub-$50 headphones and IEMs, check out the infographic in 
+a href="//boards.4channel.org/g/catalog#s=csg" class="quotelink"
+&gt;&gt;&gt;/g/csg
+/a
+
+br
+
+br
+/g/ wiki headphone FAQ: https://wiki.installgentoo.com/inde
+wbr
+x.php?title=Headphones
+br
+
+br
+Previous thread: 
+a href="/g/thread/71683554#p71683554" class="quotelink"
+&gt;&gt;71683554
+/a
+
+STAX
+First for END GAME
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+the fuck is that plug?
+
+a href="#p71709878" class="quotelink"
+&gt;&gt;71709878
+/a
+
+br
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+Incels
+How do I get the most out of pic related? 
+br
+
+br
+
+span class="quote"
+&gt;inb4 the trash
+/span
+
+
+a href="#p71710127" class="quotelink"
+&gt;&gt;71710127
+/a
+
+br
+huh?
+Any recommendations for cheap (under $100) bluetooth headphones? I don&#039;t expect miracles, just something decently comfortable and portable that doesn&#039;t sound like total ass.
+I have a pretty bad ground loop off of my sound card for some reason, does this mean I need to get a DAC
+
+a href="#p71710757" class="quotelink"
+&gt;&gt;71710757
+/a
+
+br
+you might be lucky and it could be something as simple as buying stax
+
+span class="quote"
+&gt;Pull some Sony MDRs out of my closet
+/span
+
+br
+
+span class="quote"
+&gt;They have white powdery WTF all over the leather (fake leather?)
+/span
+
+br
+
+br
+ahhhhhh
+What&#039;s a good amp/DAC combo that I can use between my phone, PC, and Audio-Technica AT-LP60 Turntable? I&#039;ll be using it to drive my beyerdynamic DT 880. I currently have my eyes on the Topping NX4 and the JDS Labs Atom. Will these work with the turntable?
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+I&#039;ve been using my SMSL AD18 with my lp60.  I imagine it has enough power for the DT 880s but you should double check.
+br
+
+br
+I use it with headphones a pair of klipsh speakers and sub woofer and you can even use phone bt if ya want.  Good for personal use and with friends over.
+pls buy my shitty snakeoil
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+
+a href="#p71711253" class="quotelink"
+&gt;&gt;71711253
+/a
+
+br
+JDS Atom will work great, but you should really consider replacing that turntable in the long term. Get something used with a counter weight and anti-skate.
+
+a href="#p71711278" class="quotelink"
+&gt;&gt;71711278
+/a
+
+br
+I inherited an older AT turntable from my uncle when he died. I may start using it when I get a chance to look it over.
+
+a href="#p71710865" class="quotelink"
+&gt;&gt;71710865
+/a
+
+br
+Could be mold, happens to my stuff when there&#039;s not enough sun and fresh air.
+Will you guys make fun of me if I get the sennheriser game one? I want a mic, and I was initially going to get the HD599 with some modmic frankenstein bullshit setup but if the audio is more or less the same I&#039;d much rather just get the game one.
+Arya is endgame.
+
+a href="#p71711371" class="quotelink"
+&gt;&gt;71711371
+/a
+
+br
+Get the PC37X. Same thing, basically, just non-gaymer.
+
+a href="#p71711395" class="quotelink"
+&gt;&gt;71711395
+/a
+
+br
+Ordering from massdrop is aids from where I live. I want to easily be able to return it if I don&#039;t like it.
+Do you ever get afraid when hooked up to a powerful amp that it&#039;s going to fail and make you deaf?
+
+a href="#p71711554" class="quotelink"
+&gt;&gt;71711554
+/a
+
+br
+If you have any amp made by Schiit, it&#039;s a real concern.
+I love listening to my Stax and talking about my Stax and making fun of people that don&#039;t have Stax
+
+a href="#p71711992" class="quotelink"
+&gt;&gt;71711992
+/a
+
+br
+stax is shit bro kill yourself
+No Comfort, No Problem Edition
+br
+
+br
+How to ask for recommendations:
+br
+
+span class="quote"
+&gt;Budget
+/span
+
+br
+
+span class="quote"
+&gt;Source
+/span
+
+br
+
+span class="quote"
+&gt;Type of headphone
+/span
+
+br
+
+span class="quote"
+&gt;Open or closed
+/span
+
+br
+
+span class="quote"
+&gt;Comfort level
+/span
+
+br
+
+span class="quote"
+&gt;Sound signature
+/span
+
+br
+
+span class="quote"
+&gt;Past headphones 
+/span
+
+br
+
+br
+For sub-$50 headphones and IEMs, check out the infographic in 
+a href="//boards.4channel.org/g/catalog#s=csg" class="quotelink"
+&gt;&gt;&gt;/g/csg
+/a
+
+br
+
+br
+/g/ wiki headphone FAQ: https://wiki.installgentoo.com/inde
+wbr
+x.php?title=Headphones
+br
+
+br
+Previous thread: 
+a href="/g/thread/71683554#p71683554" class="quotelink"
+&gt;&gt;71683554
+/a
+
+STAX
+First for END GAME
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+the fuck is that plug?
+
+a href="#p71709878" class="quotelink"
+&gt;&gt;71709878
+/a
+
+br
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+Incels
+How do I get the most out of pic related? 
+br
+
+br
+
+span class="quote"
+&gt;inb4 the trash
+/span
+
+
+a href="#p71710127" class="quotelink"
+&gt;&gt;71710127
+/a
+
+br
+huh?
+Any recommendations for cheap (under $100) bluetooth headphones? I don&#039;t expect miracles, just something decently comfortable and portable that doesn&#039;t sound like total ass.
+I have a pretty bad ground loop off of my sound card for some reason, does this mean I need to get a DAC
+
+a href="#p71710757" class="quotelink"
+&gt;&gt;71710757
+/a
+
+br
+you might be lucky and it could be something as simple as buying stax
+
+span class="quote"
+&gt;Pull some Sony MDRs out of my closet
+/span
+
+br
+
+span class="quote"
+&gt;They have white powdery WTF all over the leather (fake leather?)
+/span
+
+br
+
+br
+ahhhhhh
+What&#039;s a good amp/DAC combo that I can use between my phone, PC, and Audio-Technica AT-LP60 Turntable? I&#039;ll be using it to drive my beyerdynamic DT 880. I currently have my eyes on the Topping NX4 and the JDS Labs Atom. Will these work with the turntable?
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+I&#039;ve been using my SMSL AD18 with my lp60.  I imagine it has enough power for the DT 880s but you should double check.
+br
+
+br
+I use it with headphones a pair of klipsh speakers and sub woofer and you can even use phone bt if ya want.  Good for personal use and with friends over.
+pls buy my shitty snakeoil
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+
+a href="#p71711253" class="quotelink"
+&gt;&gt;71711253
+/a
+
+br
+JDS Atom will work great, but you should really consider replacing that turntable in the long term. Get something used with a counter weight and anti-skate.
+
+a href="#p71711278" class="quotelink"
+&gt;&gt;71711278
+/a
+
+br
+I inherited an older AT turntable from my uncle when he died. I may start using it when I get a chance to look it over.
+
+a href="#p71710865" class="quotelink"
+&gt;&gt;71710865
+/a
+
+br
+Could be mold, happens to my stuff when there&#039;s not enough sun and fresh air.
+Will you guys make fun of me if I get the sennheriser game one? I want a mic, and I was initially going to get the HD599 with some modmic frankenstein bullshit setup but if the audio is more or less the same I&#039;d much rather just get the game one.
+Arya is endgame.
+
+a href="#p71711371" class="quotelink"
+&gt;&gt;71711371
+/a
+
+br
+Get the PC37X. Same thing, basically, just non-gaymer.
+
+a href="#p71711395" class="quotelink"
+&gt;&gt;71711395
+/a
+
+br
+Ordering from massdrop is aids from where I live. I want to easily be able to return it if I don&#039;t like it.
+Do you ever get afraid when hooked up to a powerful amp that it&#039;s going to fail and make you deaf?
+
+a href="#p71711554" class="quotelink"
+&gt;&gt;71711554
+/a
+
+br
+If you have any amp made by Schiit, it&#039;s a real concern.
+I love listening to my Stax and talking about my Stax and making fun of people that don&#039;t have Stax
+
+a href="#p71711992" class="quotelink"
+&gt;&gt;71711992
+/a
+
+br
+stax is shit bro kill yourself
+elex bro
+No Comfort, No Problem Edition
+br
+
+br
+How to ask for recommendations:
+br
+
+span class="quote"
+&gt;Budget
+/span
+
+br
+
+span class="quote"
+&gt;Source
+/span
+
+br
+
+span class="quote"
+&gt;Type of headphone
+/span
+
+br
+
+span class="quote"
+&gt;Open or closed
+/span
+
+br
+
+span class="quote"
+&gt;Comfort level
+/span
+
+br
+
+span class="quote"
+&gt;Sound signature
+/span
+
+br
+
+span class="quote"
+&gt;Past headphones 
+/span
+
+br
+
+br
+For sub-$50 headphones and IEMs, check out the infographic in 
+a href="//boards.4channel.org/g/catalog#s=csg" class="quotelink"
+&gt;&gt;&gt;/g/csg
+/a
+
+br
+
+br
+/g/ wiki headphone FAQ: https://wiki.installgentoo.com/inde
+wbr
+x.php?title=Headphones
+br
+
+br
+Previous thread: 
+a href="/g/thread/71683554#p71683554" class="quotelink"
+&gt;&gt;71683554
+/a
+
+STAX
+First for END GAME
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+the fuck is that plug?
+
+a href="#p71709878" class="quotelink"
+&gt;&gt;71709878
+/a
+
+br
+
+a href="#p71709876" class="quotelink"
+&gt;&gt;71709876
+/a
+
+br
+Incels
+How do I get the most out of pic related? 
+br
+
+br
+
+span class="quote"
+&gt;inb4 the trash
+/span
+
+
+a href="#p71710127" class="quotelink"
+&gt;&gt;71710127
+/a
+
+br
+huh?
+Any recommendations for cheap (under $100) bluetooth headphones? I don&#039;t expect miracles, just something decently comfortable and portable that doesn&#039;t sound like total ass.
+I have a pretty bad ground loop off of my sound card for some reason, does this mean I need to get a DAC
+
+a href="#p71710757" class="quotelink"
+&gt;&gt;71710757
+/a
+
+br
+you might be lucky and it could be something as simple as buying stax
+
+span class="quote"
+&gt;Pull some Sony MDRs out of my closet
+/span
+
+br
+
+span class="quote"
+&gt;They have white powdery WTF all over the leather (fake leather?)
+/span
+
+br
+
+br
+ahhhhhh
+What&#039;s a good amp/DAC combo that I can use between my phone, PC, and Audio-Technica AT-LP60 Turntable? I&#039;ll be using it to drive my beyerdynamic DT 880. I currently have my eyes on the Topping NX4 and the JDS Labs Atom. Will these work with the turntable?
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+I&#039;ve been using my SMSL AD18 with my lp60.  I imagine it has enough power for the DT 880s but you should double check.
+br
+
+br
+I use it with headphones a pair of klipsh speakers and sub woofer and you can even use phone bt if ya want.  Good for personal use and with friends over.
+pls buy my shitty snakeoil
+
+a href="#p71711120" class="quotelink"
+&gt;&gt;71711120
+/a
+
+br
+
+a href="#p71711253" class="quotelink"
+&gt;&gt;71711253
+/a
+
+br
+JDS Atom will work great, but you should really consider replacing that turntable in the long term. Get something used with a counter weight and anti-skate.
+
+a href="#p71711278" class="quotelink"
+&gt;&gt;71711278
+/a
+
+br
+I inherited an older AT turntable from my uncle when he died. I may start using it when I get a chance to look it over.
+
+a href="#p71710865" class="quotelink"
+&gt;&gt;71710865
+/a
+
+br
+Could be mold, happens to my stuff when there&#039;s not enough sun and fresh air.
+Will you guys make fun of me if I get the sennheriser game one? I want a mic, and I was initially going to get the HD599 with some modmic frankenstein bullshit setup but if the audio is more or less the same I&#039;d much rather just get the game one.
+Arya is endgame.
+
+a href="#p71711371" class="quotelink"
+&gt;&gt;71711371
+/a
+
+br
+Get the PC37X. Same thing, basically, just non-gaymer.
+
+a href="#p71711395" class="quotelink"
+&gt;&gt;71711395
+/a
+
+br
+Ordering from massdrop is aids from where I live. I want to easily be able to return it if I don&#039;t like it.
+Do you ever get afraid when hooked up to a powerful amp that it&#039;s going to fail and make you deaf?
+
+a href="#p71711554" class="quotelink"
+&gt;&gt;71711554
+/a
+
+br
+If you have any amp made by Schiit, it&#039;s a real concern.
+I love listening to my Stax and talking about my Stax and making fun of people that don&#039;t have Stax
+
+a href="#p71711992" class="quotelink"
+&gt;&gt;71711992
+/a
+
+br
+stax is shit bro kill yourself
+elex bro

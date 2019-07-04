@@ -46,7 +46,7 @@ class urwidView():
     def __init__(self):
         self.level = LEVEL.INDEX
         self.mode = MODE.NORMAL
-        self.commandHandler = CommandHandler()
+        self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True))
 
@@ -82,6 +82,15 @@ class urwidView():
         self.buildAddFooterView()
 
         self.displayFrame()
+
+    def filterUpdate(self):
+       if self.level == LEVEL.BOARD:
+            self.buildStartView()
+            self.mode = MODE.NORMAL
+            self.frame.focus_position = 'body'
+            self.board = Board(self)
+            self.buildAddFooterView()
+            self.displayFrame()
 
     def exitInsert(self):
         self.mode = MODE.NORMAL
@@ -169,13 +178,6 @@ class urwidView():
             elif key == 'e':
                 # 'e'xpand the thread watcher
                 pass
-            elif key == 'f':
-                # filters the contents of the pages based on the term(maybe full regex?) entered
-                regex = 'dpt'
-                if self.level is LEVEL.BOARD:
-                    self.displayBoard(None, self.board, regex)
-                elif self.level is LEVEL.THREAD:
-                    self.displayThread(self.board, self.board.thread)
             elif key == 's':
                 # split view
                 pass
@@ -193,9 +195,11 @@ class urwidView():
                 elif self.level is LEVEL.BOARD:
                     self.level = LEVEL.INDEX
                     self.board = ''
+                    self.userFilter = ''
                     self.displayStartView()
                 elif self.level is LEVEL.THREAD:
                     self.level = LEVEL.BOARD
+                    self.userFilter = ''
                     self.displayBoard(None, self.board)
                     self.displayFrame()
 
