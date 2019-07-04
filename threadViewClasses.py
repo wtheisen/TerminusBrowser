@@ -6,9 +6,8 @@ from debug import DEBUG
 def buildView(style, urwidViewManager, thread):
     if style is VIEWSTYLES.BOXES:
         return urwidThreadViewBoxes(urwidViewManager, thread)
-   
-class urwidThreadViewBoxes:
 
+class urwidThreadViewBoxes:
     def __init__(self, urwidViewManager, thread):
         self.uvm = urwidViewManager
         self.t = thread
@@ -38,8 +37,13 @@ class urwidThreadViewBoxes:
             else:
                 commentWidget = urwid.LineBox(self.t.commentTagParser(numDate, commentImage[0]))
 
-            test.append(commentWidget)
-            temp[str(numDate[0])] = commentWidget
+            if self.uvm.userFilter:
+                if self.uvm.userFilter.lower() in commentImage[0].lower():
+                    test.append(commentWidget)
+                    temp[str(numDate[0])] = commentWidget
+            else:
+                test.append(commentWidget)
+                temp[str(numDate[0])] = commentWidget
 
         endTime = time.time()
         # DEBUG(len(test))

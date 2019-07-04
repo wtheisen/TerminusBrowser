@@ -12,4 +12,5 @@ class LEVEL(Enum):
 
 class MODE(Enum):
     NORMAL = 0
-    INSERT = 1
+    COMMAND = 1
+    INSERT = 2

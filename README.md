@@ -23,15 +23,14 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 ## Hotkeys <a name="hotkeys"></a>
 
 - 'q'   - go up a level, or quit the program if viewing the board index
-- 'w'   - watch the currently focused thread
-- 'e'   - view the thread watcher
 - 'r'   - in-place update either the catalog or the thread in focus
-- 'i'   - puts you in insert mode where you can type full commands
+- ':'   - puts you in command mode where you can type full commands
 - 'esc' - puts you in normal mode where the usual hotkeys will work
 
 ## Commands <a name="commands"></a>
 
-- (s)earch [PATTERN] - filters the current view to only items containing [PATTERN]
+- (s)earch [PATTERN] - filters the current view to only items containing [PATTERN], if [PATTERN] is empty it will reset the search and refresh the current view
+- (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
 
 ## TODO List <a name="todoList"></a>
 

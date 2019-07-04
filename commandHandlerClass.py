@@ -15,7 +15,10 @@ class CommandHandler:
 
         if cmd[0] in ('s', 'search'):
             DEBUG('executing search command')
-            self.uvm.userFilter = cmd[1]
+            if len(cmd) is 1:
+                self.uvm.userFilter = None
+            elif len(cmd) is 2:
+                self.uvm.userFilter = cmd[1]
             commands.search(self.uvm)
         if cmd[0] in ('t', 'thread'):
             DEBUG('executing thread command')

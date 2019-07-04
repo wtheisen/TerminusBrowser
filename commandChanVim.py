@@ -43,7 +43,7 @@ class urwidView():
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
 
         urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.evalCommand)
-        urwid.connect_signal(self.commandBar, 'exit_insert', self.exitInsert)
+        urwid.connect_signal(self.commandBar, 'exit_command', self.exitCommand)
 
         self.boardString = 'Index'
         self.threadNum = 0
@@ -75,7 +75,7 @@ class urwidView():
 
         self.displayFrame()
 
-    def exitInsert(self):
+    def exitCommand(self):
         self.mode = MODE.NORMAL
         self.buildAddFooterView()
         self.commandBar.set_caption('')
@@ -147,7 +147,7 @@ class urwidView():
 
     def handleKey(self, key):
         if key == ':':
-            self.mode = MODE.INSERT
+            self.mode = MODE.COMMAND
             self.buildAddFooterView()
             self.commandBar.set_caption(':')
             self.frame.focus_position = 'footer'
@@ -165,9 +165,9 @@ class urwidView():
                 self.frame.keypress((1000,1000), 'right')
             if key == 'r':
                 if self.level is LEVEL.BOARD:
-                    self.displayBoard(self)
+                    self.displayBoard(self, self.boardString)
                 elif self.level is LEVEL.THREAD:
-                    self.displayThread(self)
+                    self.displayThread(self, self.threadNum)
             elif key == 'q':
                 if self.level is LEVEL.INDEX:
                     sys.exit()

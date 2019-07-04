@@ -37,7 +37,7 @@ class FocusMixin(object):
         return super(FocusMixin,self).mouse_event(size, event, button, x, y, focus)
 
 class CommandBar(FocusMixin, urwid.Edit):
-    signals=['command_entered', 'exit_insert']
+    signals=['command_entered', 'exit_command']
 
     def __init__(self, gotFocus, urwidViewManager):
         urwid.Edit.__init__(self)
@@ -48,7 +48,7 @@ class CommandBar(FocusMixin, urwid.Edit):
 
     def keypress(self, size, key):
         if key == 'esc':
-            urwid.emit_signal(self, 'exit_insert')
+            urwid.emit_signal(self, 'exit_command')
 
         if key == 'tab':
             autoComplete(self)

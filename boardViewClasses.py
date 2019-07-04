@@ -29,7 +29,7 @@ class urwidBoardViewBoxes:
         for title, threadInfo in self.b.titles.items():
             title = title.replace('-', ' ')
             if self.uvm.userFilter:
-                if re.search(self.uvm.userFilter, title):
+                if re.search(self.uvm.userFilter.lower(), title.lower()):
                     threadButton = urwid.Button(str(threadInfo[0]), self.uvm.displayThread)
                     threadInfo = urwid.Text('Replies: ' + str(threadInfo[1]) + ' Images: ' + str(threadInfo[2]))
                     threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]

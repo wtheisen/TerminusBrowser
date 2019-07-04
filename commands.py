@@ -8,15 +8,19 @@ def preCommand(uvm):
     uvm.frame.focus_position = 'body'
 
 def search(uvm):
-    if uvm.level == LEVEL.BOARD:
-        preCommand(uvm)
+    preCommand(uvm)
+    if uvm.level is LEVEL.BOARD:
         uvm.board = Board(uvm)
-        uvm.buildAddFooterView()
-        uvm.displayFrame()
+    elif uvm.level is LEVEL.THREAD:
+        uvm.thread = Thread(uvm)
+
+    uvm.userFilter = None
+    uvm.buildAddFooterView()
+    uvm.displayFrame()
 
 def thread(uvm):
-    if uvm.level == LEVEL.BOARD:
-        preCommand(uvm)
+    preCommand(uvm)
+    if uvm.level is LEVEL.BOARD:
         uvm.thread = Thread(uvm)
         uvm.buildAddFooterView()
         uvm.displayFrame()
