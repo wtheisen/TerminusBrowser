@@ -1,7 +1,10 @@
+# FocusMixin and CommandBar(Input) based on https://github.com/csrgxtu/Drogo/
+
 import urwid, re, collections
 
-from commandHandlerClass import CommandHandler
 from debug import DEBUG
+from autocomplete import autoComplete
+
 
 class QuotePreview(urwid.WidgetWrap):
     signals = ['close']
@@ -34,38 +37,46 @@ class FocusMixin(object):
         return super(FocusMixin,self).mouse_event(size, event, button, x, y, focus)
 
 class CommandBar(FocusMixin, urwid.Edit):
-# class CommandBar(urwid.Edit):
     signals=['command_entered', 'exit_insert']
 
-    def __init__(self, got_focus=None):
+    def __init__(self, gotFocus, urwidViewManager):
         urwid.Edit.__init__(self)
-        self.history=collections.deque(maxlen=1000)
-        self._history_index=-1
-        self._got_focus=got_focus
+        self.historyList = collections.deque(maxlen=1000)
+        self.historyIndex = -1
+        self.gotFocus = gotFocus
+        self.uvm = urwidViewManager
 
     def keypress(self, size, key):
         if key == 'esc':
             urwid.emit_signal(self, 'exit_insert')
+
+        if key == 'tab':
+            autoComplete(self)
+
         if key == 'enter':
-            line=self.edit_text.strip()
-            if line:
-                self.edit_text=u''
-                self.history.append(line)
-                urwid.emit_signal(self, 'command_entered', line)
-            self._history_index=len(self.history)
-            self.edit_text=u''
-        if key=='up':
-            self._history_index-=1
-            if self._history_index< 0:
-                self._history_index= 0
+            command = self.edit_text.strip()
+            if command:
+                self.edit_text = u''
+                self.historyList.append(command)
+                urwid.emit_signal(self, 'command_entered', command)
+            self.historyIndex = len(self.historyList)
+            self.edit_text = u''
+
+        if key == 'up':
+            self.historyIndex -= 1
+
+            if self.historyIndex < 0:
+                self.historyIndex = 0
             else:
-                self.edit_text=self.history[self._history_index]
-        if key=='down':
-            self._history_index+=1
-            if self._history_index>=len(self.history):
-                self._history_index=len(self.history)
-                self.edit_text=u''
+                self.edit_text = self.historyList[self.historyIndex]
+
+        if key == 'down':
+            self.historyIndex += 1
+
+            if self.historyIndex >= len(self.historyList):
+                self.historyIndex = len(self.historyList)
+                self.edit_text = u''
             else:
-                self.edit_text=self.history[self._history_index]
+                self.edit_text = self.historyList[self.historyIndex]
         else:
             urwid.Edit.keypress(self, size, key)

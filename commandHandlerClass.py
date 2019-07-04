@@ -1,18 +1,8 @@
 import urwid
 
-from boardClass import Board
-from debug import DEBUG
-from customeTypes import LEVEL, MODE
+import commands
 
-commandList = [
-    'search',
-    'thread',
-    'board',
-    'post',
-    'reply',
-    'threadStyle',
-    'boardStyle'
-]
+from debug import DEBUG
 
 class CommandHandler:
     def __init__(self, urwidViewManager):
@@ -20,14 +10,14 @@ class CommandHandler:
         self.uvm = urwidViewManager
 
     def evalCommand(self, cmd):
+        cmd = cmd.split()
         DEBUG(cmd)
 
-        if cmd.split()[0] in ('s' or 'search'):
-            self.uvm.userFilter = cmd.split()[1]
-            if self.uvm.level == LEVEL.BOARD:
-                self.uvm.buildStartView()
-                self.uvm.mode = MODE.NORMAL
-                self.uvm.frame.focus_position = 'body'
-                self.uvm.board = Board(self.uvm)
-                self.uvm.buildAddFooterView()
-                self.uvm.displayFrame()
+        if cmd[0] in ('s', 'search'):
+            DEBUG('executing search command')
+            self.uvm.userFilter = cmd[1]
+            commands.search(self.uvm)
+        if cmd[0] in ('t', 'thread'):
+            DEBUG('executing thread command')
+            self.uvm.threadNum = cmd[1]
+            commands.thread(self.uvm)

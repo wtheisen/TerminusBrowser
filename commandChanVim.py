@@ -40,7 +40,7 @@ class urwidView():
         self.mode = MODE.NORMAL
         self.commandHandler = CommandHandler(self)
 
-        self.commandBar = CommandBar(lambda: self._update_focus(True))
+        self.commandBar = CommandBar(lambda: self._update_focus(True), self)
 
         urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.evalCommand)
         urwid.connect_signal(self.commandBar, 'exit_insert', self.exitInsert)
@@ -78,6 +78,7 @@ class urwidView():
     def exitInsert(self):
         self.mode = MODE.NORMAL
         self.buildAddFooterView()
+        self.commandBar.set_caption('')
         self.frame.focus_position = 'body'
         self.displayFrame()
 
@@ -119,13 +120,11 @@ class urwidView():
                        pop_ups=True).run()
 
     def displayStartView(self):
-        self.buildStartView()
+        self.frame = self.indexView
         self.displayFrame()
 
     def displayBoard(self, button, board=None, userFilter=None):
         self.level = LEVEL.BOARD
-
-        self.buildStartView()
 
         if board:
             self.board = Board(self)
@@ -144,12 +143,13 @@ class urwidView():
 
         self.buildAddFooterView()
         self.displayFrame()
-    
+
 
     def handleKey(self, key):
         if key == ':':
             self.mode = MODE.INSERT
             self.buildAddFooterView()
+            self.commandBar.set_caption(':')
             self.frame.focus_position = 'footer'
             self.displayFrame()
 
@@ -158,7 +158,7 @@ class urwidView():
             if key == 'h':
                 self.frame.keypress((1000,1000), 'left')
             if key == 'j':
-                self.frame.keypress((1000000000,1000000000), 'down')
+                self.frame.keypress((1000,1000), 'down')
             if key == 'k':
                 self.frame.keypress((1000,1000), 'up')
             if key == 'l':
@@ -186,7 +186,6 @@ class urwidView():
 
 def main():
     u = urwidView()
-    # u.displayStartView()
 
 def setup():
     urwid.web_display.set_preferences("Urwid Tour")

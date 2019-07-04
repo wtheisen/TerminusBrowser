@@ -9,7 +9,7 @@ class Board:
     def __init__(self, urwidViewManager):
         self.uvm = urwidViewManager
 
-        self.threads = {}
+        self.threadNums = []
         self.style = VIEWSTYLES.BOXES
         self.url = 'https://a.4cdn.org' + self.uvm.boardString + 'catalog.json'
 
@@ -38,4 +38,5 @@ class Board:
             threadsList = page["threads"]
             for j in range(0, len(threadsList)):
                 titles[threadsList[j]["semantic_url"]] = (threadsList[j]["no"], threadsList[j]["replies"], threadsList[j]["images"])
+                self.threadNums.append(threadsList[j]["no"])
         return titles
