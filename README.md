@@ -11,6 +11,7 @@
 Created out of a desire to browse 4chan at work.
 This is a terminal browsing application for [4chan](https://www.4chan.org/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python and the [4chan API](https://github.com/4chan/4chan-API).
+To run `python3 commandChanVim.py`
 
 ## Screenshots <a name="screenshots"></a>
 
@@ -61,7 +62,7 @@ Built using the [urwid](https://github.com/urwid/urwid/) library for python and 
 
 | Cause                                              | Effect                       | Fix
 |:--------------------------------------------------:|:----------------------------:|:--------------------------------:|
-| Posts get incorrectly flagged as containing images | Program fatally crashes      | Changed where the image links were being parsed|
+| Posts get incorrectly flagged as containing images | Program fatally crashes      |Fixed regex for images|
 | Cross Thread Links                                 | Program fatally crashes      |                                  |
 | Unknown                                            | Image links aren't displayed | Replaced the code I accidentally erased|
 
