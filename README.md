@@ -38,6 +38,7 @@ To run `python3 commandChanVim.py`
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
 - [X] Filtering options on all pages with information in the footer
+- [X] HJKL movement (HL work right now, JK don't for some reason)
 - [] Full suite of commands
     - [X] Search command for current view
     - [X] Thread command to view thread by number
