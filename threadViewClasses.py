@@ -36,9 +36,9 @@ class urwidThreadViewBoxes:
         for numDate, commentImage in self.t.comments.items():
             DEBUG(commentImage)
             if commentImage[1] is True:
-                commentWidget = self.commentTagParser(numDate, commentImage[0], images.pop(0))
+                commentWidget = urwid.LineBox(self.commentTagParser(numDate, commentImage[0], images.pop(0)))
             else:
-                commentWidget = self.commentTagParser(numDate, commentImage[0])
+                commentWidget = urwid.LineBox(self.commentTagParser(numDate, commentImage[0]))
 
             if self.uvm.userFilter:
                 if self.uvm.userFilter.lower() in commentImage[0].lower():
@@ -47,10 +47,6 @@ class urwidThreadViewBoxes:
             else:
                 test.append(commentWidget)
                 temp[str(numDate[0])] = commentWidget
-
-        for k, v in temp.items():
-            DEBUG((k, v))
-            temp[k] = urwid.Pile(urwid.LineBox(v.append(urwid.Text('Replies: ' + str(self.t.postReplyDict[k])))))
 
         DEBUG(self.t.postReplyDict)
 
@@ -155,7 +151,6 @@ class urwidThreadViewBoxes:
         else:
             contents.append(urwid.Text('Image: '))
 
-        # contents.append(urwid.Text('Replies: ' + str(self.t.postReplyDict[str(postNumDate[0])])))
+        contents.append(urwid.Text('Replies: ' + str(self.t.postReplyDict[str(postNumDate[0])])))
 
-        # return urwid.Pile(contents)
-        return contents
+        return urwid.Pile(contents)
