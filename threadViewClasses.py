@@ -28,17 +28,14 @@ class urwidThreadViewBoxes:
         test = []
         temp = {}
 
-        images = [ img for img in self.t.images if re.match(r"^//.*/.*/.*s\..*", img) ]
-        DEBUG(images)
-        for i in range(0, len(images)):
-            images[i] = 'http:' + images[i]
+        # images = [ img for img in self.t.images if re.match(r"^//.*/.*/.*s\..*", img) ]
+        # DEBUG(images)
+        # for i in range(0, len(images)):
+        #     images[i] = 'http:' + images[i]
 
         for numDate, commentImage in self.t.comments.items():
             DEBUG(commentImage)
-            if commentImage[1] is True:
-                commentWidget = urwid.LineBox(self.commentTagParser(numDate, commentImage[0], images.pop(0)))
-            else:
-                commentWidget = urwid.LineBox(self.commentTagParser(numDate, commentImage[0]))
+            commentWidget = urwid.LineBox(self.commentTagParser(numDate, commentImage[0], commentImage[1]))
 
             if self.uvm.userFilter:
                 if self.uvm.userFilter.lower() in commentImage[0].lower():
@@ -67,8 +64,6 @@ class urwidThreadViewBoxes:
         # self.uvm.frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=self.header)
 
     def commentTagParser(self, postNumDate, comment, imageURL=None):
-        soup = BeautifulSoup(comment, "html.parser")
-        tags = [str(tag) for tag in soup.find_all()]
         contents = []
 
         test = re.split('<|>', comment)
