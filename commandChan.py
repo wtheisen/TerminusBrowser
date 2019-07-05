@@ -117,7 +117,7 @@ def getImageUrls(url, board):
     extensionList = ('.jpg', '.jpeg', '.png', '.gif', '.webm')
     images = []
 
-    print 'meow'
+    print('meow')
 
     for img in page.find_all('a', href=True):
         if board in str(img) and 'i.4cdn.org' in str(img):

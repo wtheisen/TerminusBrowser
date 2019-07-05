@@ -3,7 +3,6 @@ import requests, json, collections, re
 import urwid
 
 from bs4 import BeautifulSoup
-from customUrwidClasses import QuoteButton
 from debug import DEBUG
 from threadViewClasses import buildView
 from customeTypes import VIEWSTYLES
@@ -13,6 +12,8 @@ class Thread:
         self.uvm = urwidViewManager
         self.url = 'https://a.4cdn.org' + self.uvm.boardString + 'thread/' + str(self.uvm.threadNum)
         self.imageUrl = 'http://boards.4chan.org' + self.uvm.boardString + 'thread/' + str(self.uvm.threadNum)
+
+        self.postReplyDict = {}
 
         self.comments = self.getJSONThread()
         # DEBUG(self.comments)
@@ -30,12 +31,11 @@ class Thread:
         comments = collections.OrderedDict()
         posts = data["posts"]
 
-        replies = {}
         for post in posts:
+            self.postReplyDict[str(post["no"])] = []
+
             if str(post["resto"]) == '0':
                 self.currentThreadOPNumber = str(post["no"])
-
-            replies[str(post["no"])] = []
             try:
                 comStr = BeautifulSoup(post["com"], 'lxml')
                 quotes = comStr.find('a')
@@ -79,89 +79,4 @@ class Thread:
         DEBUG(images)
         self.images = images
 
-    def commentTagParser(self, postNumDate, comment, imageURL=None):
-        soup = BeautifulSoup(comment, "html.parser")
-        tags = [str(tag) for tag in soup.find_all()]
-        contents = []
 
-        test = re.split('<|>', comment)
-
-        contents.append(urwid.Text(str(postNumDate)))
-        contents.append(urwid.Divider('-'))
-
-        quote = False
-        comment = False
-        codeBlock = False
-        inlineCode = []
-
-        for item in test:
-            with open('log.txt', 'a+') as out:
-                out.write(item + '\n')
-
-            # item = item.encode('utf-8', 'xmlcharrefreplace').decode()
-            # item = bytes(item, "utf-8").decode()
-            # item = item.encode('utf-8')
-            # item = ascii(item)
-            if len(item) < 1:
-                continue
-            if '/pre' in item:
-                codeBlock = False
-                contents.append(urwid.LineBox(urwid.Pile(inlineCode)))
-                inlineCode = []
-            elif item[0] == '/' and not codeBlock:
-                continue
-            elif item == 'br':
-                continue
-            elif 'a href=' in item:
-                quote = True
-                continue
-            elif quote:
-                item = item.replace('&#039;', "'")
-                item = item.replace('&quot;', '"')
-                item = item.replace('&amp;', '&')
-                item = item.replace('&gt;', '>')
-                item = item.replace('&lt;', '<')
-
-                if str(self.currentThreadOPNumber) == item[2:]:
-                    item += '(OP)'
-
-                contents.append(urwid.AttrWrap(QuoteButton(item), 'quote'))
-                quote = False
-            elif 'span class="quote' in item:
-                comment = True
-                continue
-            elif comment:
-                item = item.replace('&#039;', "'")
-                item = item.replace('&quot;', '"')
-                item = item.replace('&amp;', '&')
-                item = item.replace('&gt;', '>')
-                item = item.replace('&lt;', '<')
-                item = item.replace('\r', '\n')
-
-                contents.append(urwid.AttrWrap(urwid.Text(item), 'greenText'))
-                comment = False
-            elif 'pre class="prettyprint"' in item:
-                codeBlock = True
-            else:
-                item = item.replace('&#039;', "'")
-                item = item.replace('&quot;', '"')
-                item = item.replace('&amp;', '&')
-                item = item.replace('&gt;', '>')
-                item = item.replace('&lt;', '<')
-
-                if not codeBlock:
-                    contents.append(urwid.Text(item))
-                else:
-                    inlineCode.append(urwid.Text(item))
-
-        contents.append(urwid.Divider())
-        contents.append(urwid.Divider('-'))
-
-        if imageURL:
-            contents.append(urwid.Text('Image: ' + str(imageURL)))
-        else:
-            contents.append(urwid.Text('Image: '))
-
-        contents.append(urwid.Text('Replies: '))
-
-        return urwid.Pile(contents)
