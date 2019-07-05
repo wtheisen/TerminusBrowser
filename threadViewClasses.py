@@ -112,7 +112,7 @@ class urwidThreadViewBoxes:
                 if str(self.t.currentThreadOPNumber) == item[2:]:
                     item += '(OP)'
 
-                self.t.postReplyDict[item[2:].split('(')[0]].append(str(postNumDate[0]))
+                # self.t.postReplyDict[item[2:].split('(')[0]].append(str(postNumDate[0]))
 
                 contents.append(urwid.AttrWrap(QuoteButton(item), 'quote'))
                 quote = False
