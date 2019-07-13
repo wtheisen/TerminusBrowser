@@ -27,3 +27,16 @@ def thread(uvm):
         uvm.thread = Thread(uvm)
         uvm.buildAddFooterView()
         uvm.displayFrame()
+
+def site(uvm):
+    preCommand(uvm)
+
+    uvm.boards = uvm.cfg.config[uvm.site.name]['boards']
+
+    uvm.level = LEVEL.INDEX
+    uvm.buildStartView()
+
+    uvm.userFilter = None
+    uvm.buildAddHeaderView()
+    uvm.buildAddFooterView()
+    uvm.displayFrame()

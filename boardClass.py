@@ -1,7 +1,7 @@
 #Board Meta-class
 import requests, collections, json, time
 
-from customeTypes import VIEWSTYLES
+from customeTypes import VIEWSTYLES, SITE
 from boardViewClasses import buildView
 from debug import DEBUG
 
@@ -11,8 +11,14 @@ class Board:
 
         self.threadNums = []
         self.style = VIEWSTYLES.BOXES
-        self.url = 'https://a.4cdn.org' + self.uvm.boardString + 'catalog.json'
-
+        if self.uvm.site == SITE.FCHAN:
+            self.url = 'https://a.4cdn.org' + self.uvm.boardString + 'catalog.json'
+            self.headers = {}
+        elif self.uvm.site == SITE.REDDIT:
+            self.url = 'https://www.reddit.com' + self.uvm.boardString + '.json'
+            self.headers = {
+                'user-agent': 'reddit-commandChan'
+            }
         startTime = time.time()
         self.titles = self.getJSONCatalog(self.url)
         endTime = time.time()
@@ -26,10 +32,14 @@ class Board:
                                    self)
 
     def getJSONCatalog(self, url):
-        response = requests.get(url)
+        response = requests.get(url, headers=self.headers)
         data = response.json()
-
-        return self.parseFourCatalog(data)
+       
+        if self.uvm.site == SITE.FCHAN:
+            return self.parseFourCatalog(data)
+        elif self.uvm.site == SITE.REDDIT:
+            return self.parseSubreddit(data)
+        return collections.OrderedDict()
 
     def parseFourCatalog(self, data):
         titles = collections.OrderedDict()
@@ -39,4 +49,15 @@ class Board:
             for j in range(0, len(threadsList)):
                 titles[threadsList[j]["semantic_url"]] = (threadsList[j]["no"], threadsList[j]["replies"], threadsList[j]["images"])
                 self.threadNums.append(threadsList[j]["no"])
+        return titles
+
+    def parseSubreddit(self, data):
+        titles = collections.OrderedDict()
+        posts = data['data']['children']
+        
+        for post in posts:
+            titles[post['data']['title']] = (post['data']['permalink'],
+                                             post['data']['score'],
+                                             post['data']['subreddit'])
+            self.threadNums.append(post['data']['title'])
         return titles

@@ -5,12 +5,17 @@ commandList = [
                 'post',
                 'reply',
                 'threadStyle',
-                'boardStyle'
+                'boardStyle',
+                'reddit',
+                '4chan'
             ]
 
 def autoComplete(editBox):
     currText = editBox.get_edit_text()
-    inputList = currText.split()[0]
+    try:
+        inputList = currText.split()[0]
+    except IndexError:
+        return
 
     if len(inputList) == 1: #completing first bit
         currCommand = currText.split()[0]
