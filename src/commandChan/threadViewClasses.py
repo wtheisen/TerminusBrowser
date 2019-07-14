@@ -17,8 +17,6 @@ class urwidThreadViewBoxes:
 
         DEBUG('YEET')
 
-        
-
         self.buildHeaderView()
         self.buildThreadView()
 

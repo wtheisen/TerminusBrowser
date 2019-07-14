@@ -22,7 +22,6 @@ class urwidBoardViewBoxes:
 
         self.buildHeaderView()
         self.buildBoardView()
-        
         #self.uvm.frame = self.frame
 
     def buildHeaderView(self):
