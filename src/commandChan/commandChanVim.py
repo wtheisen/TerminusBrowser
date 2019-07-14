@@ -7,9 +7,6 @@ import urwid.web_display
 from bs4 import BeautifulSoup
 from enum import Enum
 
-# Allows local testing w/ python3 CommandChanVim.py
-sys.path.append(".")
-
 from commandChan.config import Config
 from commandChan.boardClass import Board
 from commandChan.threadClass import Thread

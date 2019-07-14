@@ -32,4 +32,4 @@ class Config():
         ''' overwrites config file with data '''
         os.makedirs(os.path.dirname(self.location), exist_ok=True)
         with open(self.location, 'w') as cfg:
-            json.dump(data, cfg)
+            json.dump(data, cfg, indent=4)
