@@ -18,11 +18,15 @@ setup(
     },
     package_dir={'': 'src'},
     packages=['commandChan'],
+    package_data={'commandChan': [
+        'config.json'
+    ]},
     install_requires=[
         'requests==2.18.4',
         'urwid==2.0.1',
         'beautifulsoup4==4.7.1',
-        'lxml'
+        'lxml',
+        'setuptools'
     ],
-    python_requires='>=3.0'
+    python_requires='>=3.2'
 )
