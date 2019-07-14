@@ -1,6 +1,6 @@
 import urwid
 
-import commandChan.commands
+from commandChan import commands
 
 from commandChan.debug import DEBUG
 from commandChan.customeTypes import SITE
