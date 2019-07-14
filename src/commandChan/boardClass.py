@@ -1,9 +1,9 @@
 #Board Meta-class
 import requests, collections, json, time
 
-from customeTypes import VIEWSTYLES, SITE
-from boardViewClasses import buildView
-from debug import DEBUG
+from commandChan.customeTypes import VIEWSTYLES, SITE
+from commandChan.boardViewClasses import buildView
+from commandChan.debug import DEBUG
 
 class Board:
     def __init__(self, urwidViewManager):

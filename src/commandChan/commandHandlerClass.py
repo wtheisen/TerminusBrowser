@@ -1,9 +1,9 @@
 import urwid
 
-import commands
+import commandChan.commands
 
-from debug import DEBUG
-from customeTypes import SITE
+from commandChan.debug import DEBUG
+from commandChan.customeTypes import SITE
 
 class CommandHandler:
     def __init__(self, urwidViewManager):

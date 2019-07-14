@@ -1,6 +1,6 @@
-from boardClass import Board
-from threadClass import Thread
-from customeTypes import LEVEL, MODE
+from commandChan.boardClass import Board
+from commandChan.threadClass import Thread
+from commandChan.customeTypes import LEVEL, MODE
 
 def preCommand(uvm):
     uvm.commandBar.set_caption('')

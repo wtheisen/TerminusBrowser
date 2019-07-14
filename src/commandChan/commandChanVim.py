@@ -7,14 +7,14 @@ import urwid.web_display
 from bs4 import BeautifulSoup
 from enum import Enum
 
-from config import Config
-from boardClass import Board
-from threadClass import Thread
-from debug import INITDEBUG, DEBUG
+from commandChan.config import Config
+from commandChan.boardClass import Board
+from commandChan.threadClass import Thread
+from commandChan.debug import INITDEBUG, DEBUG
 
-from customUrwidClasses import CommandBar
-from commandHandlerClass import CommandHandler
-from customeTypes import LEVEL, MODE, SITE
+from commandChan.customUrwidClasses import CommandBar
+from commandChan.commandHandlerClass import CommandHandler
+from commandChan.customeTypes import LEVEL, MODE, SITE
 
 ################################################################################
 
