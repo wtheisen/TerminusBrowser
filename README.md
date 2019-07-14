@@ -35,15 +35,6 @@ To run `python3 commandChanVim.py`
 - reddit - switch client to reddit mode
 - 4chan - switch client to 4chan mode
 
-## Setup <a name="setup"></a>
-To run, either run:
-
-1. Install dependencies / module with `python3 setup.py develop`
-    - `python3 src/commandChan/commandChanVim.py`
-    - Whenever you update a package/code need to run `python3 setup.py develop` to build package
-2. install package with `python3 setup.py install`
-    - run with `commandChan` in terminal
-
 ## TODO List <a name="todoList"></a>
 
 - [X] Display images links on posts

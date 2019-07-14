@@ -2,9 +2,9 @@
 import requests, json, collections, re
 import urwid
 
-from commandChan.debug import DEBUG
-from commandChan.threadViewClasses import buildView
-from commandChan.customeTypes import VIEWSTYLES, SITE
+from debug import DEBUG
+from threadViewClasses import buildView
+from customeTypes import VIEWSTYLES, SITE
 
 class Thread:
     def __init__(self, urwidViewManager):

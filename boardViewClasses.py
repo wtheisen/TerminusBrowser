@@ -1,6 +1,6 @@
 #Board view classes
 import time, urwid, re
-from commandChan.customeTypes import VIEWSTYLES, SITE
+from customeTypes import VIEWSTYLES, SITE
 
 def buildView(style, urwidViewManager, board):
     if style is VIEWSTYLES.BOXES:

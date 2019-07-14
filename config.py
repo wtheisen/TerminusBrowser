@@ -1,7 +1,6 @@
 #Config.py
 
 import json, os
-import pkg_resources
 
 class Config():
     def __init__(self, location=None):
@@ -19,11 +18,7 @@ class Config():
                 return json.load(cfg)
         except:
             # add default config to location
-            filename = pkg_resources.resource_filename(
-                __name__,
-                'config.json'
-            )
-            with open(filename) as cfg:
+            with open('default_config.json') as cfg:
                 data = json.load(cfg)
                 self.write(data)
                 return data

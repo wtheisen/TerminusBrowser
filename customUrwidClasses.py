@@ -2,8 +2,8 @@
 
 import urwid, re, collections
 
-from commandChan.debug import DEBUG
-from commandChan.autocomplete import autoComplete
+from debug import DEBUG
+from autocomplete import autoComplete
 
 
 class QuotePreview(urwid.WidgetWrap):

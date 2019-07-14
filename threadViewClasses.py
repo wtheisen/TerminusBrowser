@@ -2,9 +2,9 @@
 import time, urwid, re
 
 from bs4 import BeautifulSoup
-from commandChan.customeTypes import VIEWSTYLES
-from commandChan.debug import DEBUG
-from commandChan.customUrwidClasses import QuoteButton
+from customeTypes import VIEWSTYLES
+from debug import DEBUG
+from customUrwidClasses import QuoteButton
 
 def buildView(style, urwidViewManager, thread):
     if style is VIEWSTYLES.BOXES:
