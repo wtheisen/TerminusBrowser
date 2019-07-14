@@ -1,6 +1,6 @@
 #Board view classes
 import time, urwid, re
-from commandChan.customeTypes import VIEWSTYLES
+from commandChan.customeTypes import VIEWSTYLES, SITE
 
 def buildView(style, urwidViewManager, board):
     if style is VIEWSTYLES.BOXES:
@@ -13,9 +13,16 @@ class urwidBoardViewBoxes:
 
         self.itemCount = 0
 
+
+        self.info_text = '{} {}'
+        if self.uvm.site == SITE.FCHAN:
+            self.info_text = 'Replies: {} Images: {}'
+        elif self.uvm.site == SITE.REDDIT:
+            self.info_text = 'Replies: {} Subreddit: {}'
+
         self.buildHeaderView()
         self.buildBoardView()
-
+        
         #self.uvm.frame = self.frame
 
     def buildHeaderView(self):
@@ -31,12 +38,12 @@ class urwidBoardViewBoxes:
             if self.uvm.userFilter:
                 if re.search(self.uvm.userFilter.lower(), title.lower()):
                     threadButton = urwid.Button(str(threadInfo[0]), self.uvm.displayThread)
-                    threadInfo = urwid.Text('Replies: ' + str(threadInfo[1]) + ' Images: ' + str(threadInfo[2]))
+                    threadInfo = urwid.Text(self.info_text.format(str(threadInfo[1]),str(threadInfo[2])))
                     threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
                     threadButtonList.append(urwid.LineBox(urwid.Pile(threadList)))
             else:
                 threadButton = urwid.Button(str(threadInfo[0]), self.uvm.displayThread)
-                threadInfo = urwid.Text('Replies: ' + str(threadInfo[1]) + ' Images: ' + str(threadInfo[2]))
+                threadInfo = urwid.Text(self.info_text.format(str(threadInfo[1]), str(threadInfo[2])))
                 threadList = [threadButton, urwid.Divider('-'), urwid.Divider(), urwid.Text(title), urwid.Divider(), urwid.Divider('-'), threadInfo]
                 threadButtonList.append(urwid.LineBox(urwid.Pile(threadList)))
 

@@ -7,6 +7,9 @@ import urwid.web_display
 from bs4 import BeautifulSoup
 from enum import Enum
 
+# Allows local testing w/ python3 CommandChanVim.py
+sys.path.append(".")
+
 from commandChan.config import Config
 from commandChan.boardClass import Board
 from commandChan.threadClass import Thread
@@ -22,7 +25,7 @@ class urwidView():
     def __init__(self):
         self.level  = LEVEL.INDEX
         self.mode   = MODE.NORMAL
-        self.site   = SITE.REDDIT
+        self.site   = SITE.FCHAN
         self.cfg    = Config()
         self.boards = self.cfg.config[self.site.name]['boards']
         self.commandHandler = CommandHandler(self)
