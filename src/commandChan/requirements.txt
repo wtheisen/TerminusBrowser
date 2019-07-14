@@ -1,0 +1,4 @@
+requests==2.18.4
+urwid==2.0.1
+beautifulsoup4==4.7.1
+lxml
