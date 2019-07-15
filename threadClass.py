@@ -3,6 +3,7 @@ import requests, json, collections, re
 import urwid
 
 from debug import DEBUG
+from postClass import Post
 from threadViewClasses import buildView
 from customeTypes import VIEWSTYLES, SITE
 
@@ -36,27 +37,23 @@ class Thread:
         return collections.OrderedDict()
 
     def parseFourThread(self, data):
-        comments = collections.OrderedDict()
+        commentObjList = []
         posts = data["posts"]
 
         for post in posts:
-            self.postReplyDict[str(post["no"])] = []
-
             if str(post["resto"]) == '0':
                 self.currentThreadOPNumber = str(post["no"])
-            try:
-                imageBool = post['filename']
-                try:
-                    comments[(str(post["no"]), post["now"])] = (post["com"], 'https://i.4cdn.org' + self.uvm.boardString + str(post["tim"]) + post["ext"])
-                    DEBUG('Added an image')
-                except:
-                    comments[(str(post["no"]), post["now"])] = ('', 'https://i.4cdn.org' + self.uvm.boardString + str(post["tim"]) + post["ext"])
-            except:
-                try:
-                    comments[(str(post["no"]), post["now"])] = (post["com"], '')
-                except:
-                    comments[(str(post["no"]), post["now"])] = ('', '')
-        return comments
+
+            p = Post(
+                str(post["no"]),
+                post["com"] if 'com' in post else "",
+                post["now"],
+                'https://i.4cdn.org' + self.uvm.boardString + str(post["tim"]) + post["ext"] if 'ext' in post else ''
+            )
+
+            commentObjList.append(p)
+
+        return commentObjList
 
     def parseRedditThread(self, data):
         top_level_comments = collections.OrderedDict()

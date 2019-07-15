@@ -1,7 +1,7 @@
 #Thread view classes
 import time, urwid, re
 
-from bs4 import BeautifulSoup
+from postClass import Post
 from customeTypes import VIEWSTYLES
 from debug import DEBUG
 from customUrwidClasses import QuoteButton
@@ -33,17 +33,18 @@ class urwidThreadViewBoxes:
         # for i in range(0, len(images)):
         #     images[i] = 'http:' + images[i]
 
-        for numDate, commentImage in self.t.comments.items():
-            DEBUG(commentImage)
-            commentWidget = urwid.LineBox(self.commentTagParser(numDate, commentImage[0], commentImage[1]))
+        for p in self.t.comments:
+            DEBUG(p.image)
+
+            commentWidget = urwid.LineBox(self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image))
 
             if self.uvm.userFilter:
-                if self.uvm.userFilter.lower() in commentImage[0].lower():
+                if self.uvm.userFilter.lower() in p.content.lower():
                     test.append(commentWidget)
-                    temp[str(numDate[0])] = commentWidget
+                    temp[p.userIdent] = commentWidget
             else:
                 test.append(commentWidget)
-                temp[str(numDate[0])] = commentWidget
+                temp[p.userIden] = commentWidget
 
         DEBUG(self.t.postReplyDict)
 
@@ -146,6 +147,6 @@ class urwidThreadViewBoxes:
         else:
             contents.append(urwid.Text('URL: '))
 
-        contents.append(urwid.Text('Replies: ' + str(self.t.postReplyDict[str(postNumDate[0])])))
+        contents.append(urwid.Text('Replies: '))
 
         return urwid.Pile(contents)
