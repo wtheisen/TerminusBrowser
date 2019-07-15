@@ -142,9 +142,9 @@ class urwidThreadViewBoxes:
         contents.append(urwid.Divider('-'))
 
         if imageURL:
-            contents.append(urwid.Text('Image: ' + str(imageURL)))
+            contents.append(urwid.Text('URL: ' + str(imageURL)))
         else:
-            contents.append(urwid.Text('Image: '))
+            contents.append(urwid.Text('URL: '))
 
         contents.append(urwid.Text('Replies: ' + str(self.t.postReplyDict[str(postNumDate[0])])))
 

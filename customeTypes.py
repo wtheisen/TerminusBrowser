@@ -14,3 +14,7 @@ class MODE(Enum):
     NORMAL = 0
     COMMAND = 1
     INSERT = 2
+
+class SITE(Enum):
+    FCHAN  = 0
+    REDDIT = 1

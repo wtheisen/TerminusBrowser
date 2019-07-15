@@ -32,6 +32,8 @@ To run `python3 commandChanVim.py`
 
 - (s)earch [PATTERN] - filters the current view to only items containing [PATTERN], if [PATTERN] is empty it will reset the search and refresh the current view
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
+- reddit - switch client to reddit mode
+- 4chan - switch client to 4chan mode
 
 ## TODO List <a name="todoList"></a>
 
@@ -57,7 +59,9 @@ To run `python3 commandChanVim.py`
 - [] Split view based on hotkeys
 - [] Timed updating of threads
 - [] Posting from the client
-
+- [] Full Reddit Functionality
+    - [] Pagination
+    - [] Tree comment structure
 
 ## Bugs List <a name="bugList"></a>
 

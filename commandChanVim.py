@@ -1,4 +1,4 @@
-import sys, urwid, time
+import sys, urwid, time, os
 import requests, json, collections, re
 
 import urwid.raw_display
@@ -7,37 +7,24 @@ import urwid.web_display
 from bs4 import BeautifulSoup
 from enum import Enum
 
+from config import Config
 from boardClass import Board
 from threadClass import Thread
 from debug import INITDEBUG, DEBUG
 
 from customUrwidClasses import CommandBar
 from commandHandlerClass import CommandHandler
-from customeTypes import LEVEL, MODE
-
-################################################################################
-
-boards = ['/g/', '/v/', '/tv/', '/sp/', '/fa/', '/pol/', '/vg/',
-          '/a/', '/b/', '/c/', '/d/', '/e/',
-          '/f/', '/gif/', '/h/', '/hr/', '/k/',
-          '/m/', '/o/', '/p/', '/r/', '/s/',
-          '/t/', '/u/', '/vr/',
-          '/w/', '/wg/', '/i/', '/ic/', '/r9k/',
-          '/s4s/', '/vip/', '/cm/', '/hm/', '/lgbt/',
-          '/y/', '/3/', '/aco/', '/adv/', '/an/',
-          '/asp/', '/bant/', '/biz/', '/cgl/', '/ck/',
-          '/co/', '/diy/', '/fit/', '/gd/', '/hc/',
-          '/his/', '/int/', '/jp/', '/lit/', '/mlp/',
-          '/mu/', '/n/', '/news/', '/out/', '/po/',
-          '/qst/', '/sci/', '/soc/', '/tg/', 'toy',
-          '/trv/', '/vp/', '/wsg/', '/wsr/', '/x/']
+from customeTypes import LEVEL, MODE, SITE
 
 ################################################################################
 
 class urwidView():
     def __init__(self):
-        self.level = LEVEL.INDEX
-        self.mode = MODE.NORMAL
+        self.level  = LEVEL.INDEX
+        self.mode   = MODE.NORMAL
+        self.site   = SITE.FCHAN
+        self.cfg    = Config()
+        self.boards = self.cfg.config[self.site.name]['boards']
         self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
@@ -46,10 +33,10 @@ class urwidView():
         urwid.connect_signal(self.commandBar, 'exit_command', self.exitCommand)
 
         self.boardString = 'Index'
-        self.threadNum = 0
+        self.threadID = 0
         self.userFilter = None
 
-        self.itemCount = len(boards)
+        self.itemCount = len(self.boards)
         self.parseTime = 0
 
         self.palette = [
@@ -86,8 +73,14 @@ class urwidView():
         self._focus=focus
 
     def buildAddHeaderView(self):
-        header = urwid.AttrWrap(urwid.Text('CommandChan -- Board: ' + self.boardString +
-                                                ', Thread: ' + str(self.threadNum)), 'header')
+        if self.site == SITE.FCHAN:
+            header_text = 'CommandChan -- Board: {} Thread: {}'
+        elif self.site == SITE.REDDIT:
+            header_text = 'CommandChan -- Subreddit: {} Post: {}'
+        else:
+            header_text = 'Error: {} {}'
+
+        header = urwid.AttrWrap(urwid.Text(header_text.format(self.boardString,str(self.threadID))), 'header')
         self.frame = urwid.Frame(urwid.AttrWrap(self.bodyView, 'body'), header=header)
         # self.frame = self.indexView
 
@@ -102,7 +95,7 @@ class urwidView():
         startTime = time.time()
 
         boardButtons = []
-        for board in boards:
+        for board in self.boards:
             if self.userFilter:
                 if self.userFilter.lower() in board.lower():
                     boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.displayBoard), 'center')))
@@ -147,7 +140,7 @@ class urwidView():
 
     def displayThread(self, button, board=None, userFilter=None):
         self.level = LEVEL.THREAD
-        self.threadNum = button.get_label()
+        self.threadID = button.get_label()
 
         self.thread = Thread(self)
 
@@ -179,7 +172,7 @@ class urwidView():
                     DEBUG('refreshing')
                     self.displayBoard(self, self.boardString)
                 elif self.level is LEVEL.THREAD:
-                    self.displayThread(self, self.threadNum)
+                    self.displayThread(self, self.threadID)
             elif key == 'q':
                 if self.level is LEVEL.INDEX:
                     sys.exit()

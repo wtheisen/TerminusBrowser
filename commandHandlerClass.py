@@ -3,6 +3,7 @@ import urwid
 import commands
 
 from debug import DEBUG
+from customeTypes import SITE
 
 class CommandHandler:
     def __init__(self, urwidViewManager):
@@ -24,3 +25,7 @@ class CommandHandler:
             DEBUG('executing thread command')
             self.uvm.threadNum = cmd[1]
             commands.thread(self.uvm)
+        if cmd[0] in ('reddit', '4chan'):
+            DEBUG('executing site command')
+            self.uvm.site = SITE.REDDIT if cmd[0] == 'reddit' else SITE.FCHAN
+            commands.site(self.uvm)
