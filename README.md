@@ -32,6 +32,7 @@ To run `python3 commandChanVim.py`
 
 - (s)earch [PATTERN] - filters the current view to only items containing [PATTERN], if [PATTERN] is empty it will reset the search and refresh the current view
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
+- (h)istory [INDEX] - open the thread located in [INDEX] in the history queue, if [INDEX] is not specified then it opens the previously viewed thread
 - reddit - switch client to reddit mode
 - 4chan - switch client to 4chan mode
 
