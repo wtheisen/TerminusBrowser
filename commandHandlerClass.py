@@ -25,6 +25,13 @@ class CommandHandler:
             DEBUG('executing thread command')
             self.uvm.threadNum = cmd[1]
             commands.thread(self.uvm)
+        if cmd[0] in ('h', 'history'):
+            DEBUG('executing history command')
+            if len(cmd) == 1:
+                self.uvm.threadID = self.uvm.history[0]
+            else:
+                self.uvm.threadID = self.uvm.history[int(cmd[1])]
+            commands.thread(self.uvm)
         if cmd[0] in ('reddit', '4chan'):
             DEBUG('executing site command')
             self.uvm.site = SITE.REDDIT if cmd[0] == 'reddit' else SITE.FCHAN

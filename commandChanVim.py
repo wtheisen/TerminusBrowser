@@ -4,7 +4,6 @@ import requests, json, collections, re
 import urwid.raw_display
 import urwid.web_display
 
-from bs4 import BeautifulSoup
 from enum import Enum
 
 from config import Config
@@ -38,6 +37,8 @@ class urwidView():
 
         self.itemCount = len(self.boards)
         self.parseTime = 0
+
+        self.history = collections.deque([], 10)
 
         self.palette = [
         ('body', 'light gray', 'black', 'standout'),
@@ -142,6 +143,7 @@ class urwidView():
         self.level = LEVEL.THREAD
         self.threadID = button.get_label()
 
+        self.history.appendleft(self.threadID)
         self.thread = Thread(self)
 
         self.buildAddHeaderView()

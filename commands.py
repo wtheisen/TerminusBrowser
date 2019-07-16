@@ -25,6 +25,7 @@ def thread(uvm):
     preCommand(uvm)
     if uvm.level is LEVEL.BOARD:
         uvm.thread = Thread(uvm)
+        uvm.buildAddHeaderView()
         uvm.buildAddFooterView()
         uvm.displayFrame()
 
@@ -39,4 +40,11 @@ def site(uvm):
     uvm.userFilter = None
     uvm.buildAddHeaderView()
     uvm.buildAddFooterView()
+    uvm.displayFrame()
+
+def history(uvm):
+    preCommand(uvm)
+    uvm.thread = Thread(uvm)
+    uvm.buildAddHeaderView()
+    uvm.buildAddFooterView
     uvm.displayFrame()
