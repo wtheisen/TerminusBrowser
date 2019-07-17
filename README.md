@@ -41,28 +41,28 @@ To run `python3 commandChanVim.py`
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
 - [X] Filtering options on all pages with information in the footer
-- [] HJKL movement (HL work right now, JK don't for some reason)
-- [] Full suite of commands
+- [ ] HJKL movement (HL work right now, JK don't for some reason)
+- [ ] Full suite of commands
     - [X] Search command for current view
     - [X] Thread command to view thread by number
-- [] Toggleable display modes(boxes, tree, cascade)
-- [] Display comment replies in the info bar at the top of the comment
-- [] Save threads to a custom hotkey menu
-    - [] Watch threads from the board view
-    - [] Watch thread from within the thread
-    - [] Hotkey to delete thread from watcher
-    - [] Auto-prune threads that get archived
-- [] Quote button full interaction
-    - [] Quotes of OP have the (OP) designator
-    - [] Interacting with Quotes displays a preview of said Quote
-    - [] Size of preview depends on size of quote being previewed
-    - [] Chain Quote Previews together to view up the quote tree
-- [] Split view based on hotkeys
-- [] Timed updating of threads
-- [] Posting from the client
-- [] Full Reddit Functionality
-    - [] Pagination
-    - [] Tree comment structure
+- [ ] Toggleable display modes(boxes, tree, cascade)
+- [ ] Display comment replies in the info bar at the top of the comment
+- [ ] Save threads to a custom hotkey menu
+    - [ ] Watch threads from the board view
+    - [ ] Watch thread from within the thread
+    - [ ] Hotkey to delete thread from watcher
+    - [ ] Auto-prune threads that get archived
+- [ ] Quote button full interaction
+    - [ ] Quotes of OP have the (OP) designator
+    - [ ] Interacting with Quotes displays a preview of said Quote
+    - [ ] Size of preview depends on size of quote being previewed
+    - [ ] Chain Quote Previews together to view up the quote tree
+- [ ] Split view based on hotkeys
+- [ ] Timed updating of threads
+- [ ] Posting from the client
+- [ ] Full Reddit Functionality
+    - [ ] Pagination
+    - [ ] Tree comment structure
 
 ## Bugs List <a name="bugList"></a>
 
