@@ -3,8 +3,9 @@
 1. [Introduction](#introduction)
 2. [Screenshots](#screenshots)
 3. [Hotkeys](#hotkeys)
-4. [TODO List](#todoList)
-5. [Bug List](#bugList)
+4. [Configuration](#config)
+5. [TODO List](#todoList)
+6. [Bug List](#bugList)
 
 ## Introduction <a name="introduction"></a>
 
@@ -35,6 +36,11 @@ To run `python3 commandChanVim.py`
 - (h)istory [INDEX] - open the thread located in [INDEX] in the history queue, if [INDEX] is not specified then it opens the previously viewed thread
 - reddit - switch client to reddit mode
 - 4chan - switch client to 4chan mode
+
+## Configuration <a name="config"></a>
+
+- To change the default site you can modify the config.json file [FCHAN/REDDIT]
+- The config.json file also contains the boards list and the subreddit list
 
 ## TODO List <a name="todoList"></a>
 

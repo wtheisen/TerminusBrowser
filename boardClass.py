@@ -34,7 +34,7 @@ class Board:
     def getJSONCatalog(self, url):
         response = requests.get(url, headers=self.headers)
         data = response.json()
-       
+
         if self.uvm.site == SITE.FCHAN:
             return self.parseFourCatalog(data)
         elif self.uvm.site == SITE.REDDIT:
@@ -54,7 +54,7 @@ class Board:
     def parseSubreddit(self, data):
         titles = collections.OrderedDict()
         posts = data['data']['children']
-        
+
         for post in posts:
             titles[post['data']['title']] = (post['data']['permalink'],
                                              post['data']['score'],

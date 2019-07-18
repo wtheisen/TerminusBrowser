@@ -1,8 +1,8 @@
 {
-	"SITE": 
+	"SITE":
 		"FCHAN",
 	"FCHAN": {
-		"boards": [ 
+		"boards": [
 			"/g/", "/v/", "/tv/", "/sp/", "/fa/", "/pol/",
 			"/vg/", "/a/", "/b/", "/c/", "/d/", "/e/",
 			"/f/", "/gif/", "/h/", "/hr/", "/k/", "/m/",

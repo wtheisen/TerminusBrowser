@@ -5,10 +5,10 @@ import json, os
 class Config():
     def __init__(self, location=None):
         if location:
-            self.location = location     
+            self.location = location
         else:
             self.location = os.path.expanduser('~') + '/.config/commandChan/config.json'
-        
+
         self.config = self.load()
 
     def load(self):
