@@ -21,8 +21,8 @@ class urwidView():
     def __init__(self):
         self.level  = LEVEL.INDEX
         self.mode   = MODE.NORMAL
-        self.site   = SITE.FCHAN
         self.cfg    = Config()
+        self.site   = SITE[self.cfg.config['SITE']]
         self.boards = self.cfg.config[self.site.name]['boards']
         self.commandHandler = CommandHandler(self)
 

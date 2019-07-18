@@ -1,4 +1,6 @@
 {
+	"SITE": 
+		"FCHAN",
 	"FCHAN": {
 		"boards": [ 
 			"/g/", "/v/", "/tv/", "/sp/", "/fa/", "/pol/",
