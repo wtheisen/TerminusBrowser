@@ -84,24 +84,32 @@ class CommandBar(FocusMixin, urwid.Edit):
 class HistoryMenu(urwid.WidgetWrap):
     """A dialog that appears with nothing but a close button """
     signals = ['close']
-    def __init__(self):
+    def __init__(self, urwidViewManager):
+        uvm = urwidViewManager
         close_button = urwid.Button("that's pretty cool")
         urwid.connect_signal(close_button, 'click',
             lambda button:self._emit("close"))
-        pile = urwid.Pile([urwid.Text(
-            "^^  I'm attached to the widget that opened me. "
-            "Try resizing the window!\n"), close_button])
+
+        historyButtonList = []
+        for i in uvm.history:
+            historyButtonList.append(urwid.Button(str(i), uvm.displayThread))
+
+        pile = urwid.Pile(historyButtonList)
+        # pile = urwid.Pile([urwid.Text(
+        #     "^^  I'm attached to the widget that opened me. "
+        #     "Try resizing the window!\n"), close_button])
         fill = urwid.Filler(pile)
         self.__super.__init__(urwid.AttrWrap(fill, 'popbg'))
 
 class HistoryButton(urwid.PopUpLauncher):
-    def __init__(self):
+    def __init__(self, urwidViewManager):
+        self.uvm = urwidViewManager
         self.__super.__init__(urwid.Button("History"))
         urwid.connect_signal(self.original_widget, 'click',
             lambda button: self.open_pop_up())
 
     def create_pop_up(self):
-        pop_up = HistoryMenu()
+        pop_up = HistoryMenu(self.uvm)
         urwid.connect_signal(pop_up, 'close',
             lambda button: self.close_pop_up())
         return pop_up
