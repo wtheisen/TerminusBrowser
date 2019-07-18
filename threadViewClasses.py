@@ -1,6 +1,9 @@
 #Thread view classes
 import time, urwid, re
 
+from html import unescape
+from html.parser import HTMLParser
+
 from postClass import Post
 from customeTypes import VIEWSTYLES
 from debug import DEBUG
@@ -37,7 +40,8 @@ class urwidThreadViewBoxes:
             self.t.postReplyDict[str(p.userIden)] = []
 
             # commentWidget = urwid.LineBox(self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image))
-            commentWidget = self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image)
+            # commentWidget = self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image)
+            commentWidget = self.notBrainletCommentTagParser(p)
 
             if self.uvm.userFilter:
                 if self.uvm.userFilter.lower() in p.content.lower():
@@ -71,92 +75,46 @@ class urwidThreadViewBoxes:
         self.uvm.bodyView = urwid.Overlay(urwid.LineBox(urwid.Pile([listbox])), self.uvm.indexView, 'center', ('relative', 60), 'middle', ('relative', 95))
         # self.uvm.frame = urwid.Frame(urwid.AttrWrap(thread, 'body'), header=self.header)
 
-    def commentTagParser(self, postNumDate, comment, imageURL=None):
-        contents = []
+    def notBrainletCommentTagParser(self, post):
+        widgetContent = []
+        rawCommentText = post.content
+        unescape(rawCommentText)
+        parent = self.t
 
-        test = re.split('<|>', comment)
+        class CommentParser(HTMLParser):
+            currTag = ''
 
-        contents.append(urwid.Text(str(postNumDate)))
-        contents.append(urwid.Divider('-'))
+            def handle_starttag(self, tag, attrs):
+                self.currTag = str(tag)
 
-        quote = False
-        comment = False
-        codeBlock = False
-        inlineCode = []
+            def handle_endtag(self, tag):
+                self.currTag = ''
 
-        for item in test:
-            with open('log.txt', 'a+') as out:
-                out.write(item + '\n')
+            def handle_data(self, data):
+                if self.currTag == 'span':
+                    widgetContent.append(urwid.AttrWrap(urwid.Text(str(data)), 'greenText'))
+                elif self.currTag == 'a':
+                    if str(parent.currentThreadOPNumber) == data[2:]:
+                        data += '(OP)'
 
-            # item = item.encode('utf-8', 'xmlcharrefreplace').decode()
-            # item = bytes(item, "utf-8").decode()
-            # item = item.encode('utf-8')
-            # item = ascii(item)
-            if len(item) < 1:
-                continue
-            if '/pre' in item:
-                codeBlock = False
-                contents.append(urwid.LineBox(urwid.Pile(inlineCode)))
-                inlineCode = []
-            elif item[0] == '/' and not codeBlock:
-                continue
-            elif item == 'br':
-                continue
-            elif 'a href=' in item:
-                quote = True
-                continue
-            elif quote:
-                item = item.replace('&#039;', "'")
-                item = item.replace('&quot;', '"')
-                item = item.replace('&amp;', '&')
-                item = item.replace('&gt;', '>')
-                item = item.replace('&lt;', '<')
+                    try:
+                        parent.postReplyDict[data[2:].split('(')[0]].append(str(post.userIden))
+                    except KeyError:
+                        pass
 
-                if str(self.t.currentThreadOPNumber) == item[2:]:
-                    item += '(OP)'
-
-                try:
-                    self.t.postReplyDict[item[2:].split('(')[0]].append(str(postNumDate.split()[0]))
-                except KeyError:
-                    pass
-
-                contents.append(urwid.AttrWrap(QuoteButton(item), 'quote'))
-                quote = False
-            elif 'span class="quote' in item:
-                comment = True
-                continue
-            elif comment:
-                item = item.replace('&#039;', "'")
-                item = item.replace('&quot;', '"')
-                item = item.replace('&amp;', '&')
-                item = item.replace('&gt;', '>')
-                item = item.replace('&lt;', '<')
-                item = item.replace('\r', '\n')
-
-                contents.append(urwid.AttrWrap(urwid.Text(item), 'greenText'))
-                comment = False
-            elif 'pre class="prettyprint"' in item:
-                codeBlock = True
-            else:
-                item = item.replace('&#039;', "'")
-                item = item.replace('&quot;', '"')
-                item = item.replace('&amp;', '&')
-                item = item.replace('&gt;', '>')
-                item = item.replace('&lt;', '<')
-
-                if not codeBlock:
-                    contents.append(urwid.Text(item))
+                    widgetContent.append(urwid.AttrWrap(QuoteButton(str(data)), 'quote'))
                 else:
-                    inlineCode.append(urwid.Text(item))
+                    widgetContent.append(urwid.Text(data))
 
-        contents.append(urwid.Divider())
-        contents.append(urwid.Divider('-'))
+        p = CommentParser()
+        p.feed(rawCommentText)
 
-        if imageURL:
-            contents.append(urwid.Text('URL: ' + str(imageURL)))
+        widgetContent.append(urwid.Divider())
+        widgetContent.append(urwid.Divider('-'))
+
+        if post.image:
+            widgetContent.append(urwid.Text('URL: ' + str(post.image)))
         else:
-            contents.append(urwid.Text('URL: '))
+            widgetContent.append(urwid.Text('URL: '))
 
-        # contents.append(urwid.Text('Replies: '))
-
-        return contents
+        return widgetContent
