@@ -104,7 +104,9 @@ class HistoryMenu(urwid.WidgetWrap):
 class HistoryButton(urwid.PopUpLauncher):
     def __init__(self, urwidViewManager):
         self.uvm = urwidViewManager
-        self.__super.__init__(urwid.Button("History"))
+        hButton = urwid.Button('History')
+        hButton._label.align = 'right'
+        self.__super.__init__(hButton)
         urwid.connect_signal(self.original_widget, 'click',
             lambda button: self.open_pop_up())
 

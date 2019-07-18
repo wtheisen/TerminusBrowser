@@ -85,7 +85,7 @@ class urwidView():
         # historyStringRight = urwid.AttrWrap(urwid.Text('History: ', 'right'), 'header')
 
         # headerWidget = urwid.Columns([boardThreadStringLeft, historyStringRight])
-        headerWidget = urwid.Columns([boardThreadStringLeft, HistoryButton(self)])
+        headerWidget = urwid.Columns([boardThreadStringLeft, urwid.AttrWrap(HistoryButton(self), 'header')])
         self.frame = urwid.Frame(urwid.AttrWrap(self.bodyView, 'body'))
         self.frame.header = headerWidget
 
