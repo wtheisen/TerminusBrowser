@@ -11,7 +11,7 @@ from boardClass import Board
 from threadClass import Thread
 from debug import INITDEBUG, DEBUG
 
-from customUrwidClasses import CommandBar
+from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
 from customeTypes import LEVEL, MODE, SITE
 
@@ -81,15 +81,19 @@ class urwidView():
         else:
             header_text = 'Error: {} {}'
 
-        header = urwid.AttrWrap(urwid.Text(header_text.format(self.boardString,str(self.threadID))), 'header')
-        self.frame = urwid.Frame(urwid.AttrWrap(self.bodyView, 'body'), header=header)
-        # self.frame = self.indexView
+        boardThreadStringLeft = urwid.AttrWrap(urwid.Text(header_text.format(self.boardString,str(self.threadID))), 'header')
+        # historyStringRight = urwid.AttrWrap(urwid.Text('History: ', 'right'), 'header')
+
+        # headerWidget = urwid.Columns([boardThreadStringLeft, historyStringRight])
+        headerWidget = urwid.Columns([boardThreadStringLeft, HistoryButton())])
+        self.frame = urwid.Frame(urwid.AttrWrap(self.bodyView, 'body'))
+        self.frame.header = headerWidget
 
     def buildAddFooterView(self):
-        infoString = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) +
+        infoStringLeft = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) +
                                                ', Filter: ' + str(self.userFilter)), 'header')
-        timeString = urwid.AttrWrap(urwid.Text('Parsed ' + str(self.itemCount) + ' items in ' + str(self.parseTime)[0:6] + 's', 'right'), 'header')
-        footerWidget = urwid.Pile([urwid.Columns([infoString, timeString]), self.commandBar])
+        timeStringRight = urwid.AttrWrap(urwid.Text('Parsed ' + str(self.itemCount) + ' items in ' + str(self.parseTime)[0:6] + 's', 'right'), 'header')
+        footerWidget = urwid.Pile([urwid.Columns([infoStringLeft, timeStringRight]), self.commandBar])
         self.frame.footer = footerWidget
 
     def buildStartView(self):
