@@ -25,8 +25,7 @@ class urwidThreadViewBoxes:
 
     def getThread(self):
         startTime = time.time()
-        test = []
-        temp = {}
+        postWidgetDict = {}
 
         # images = [ img for img in self.t.images if re.match(r"^//.*/.*/.*s\..*", img) ]
         # DEBUG(images)
@@ -34,17 +33,25 @@ class urwidThreadViewBoxes:
         #     images[i] = 'http:' + images[i]
 
         for p in self.t.comments:
-            DEBUG(p.image)
+            DEBUG(p.userIden)
+            self.t.postReplyDict[str(p.userIden)] = []
 
-            commentWidget = urwid.LineBox(self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image))
+            # commentWidget = urwid.LineBox(self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image))
+            commentWidget = self.commentTagParser(f'{p.userIden} {p.timestamp}', p.content, p.image)
 
             if self.uvm.userFilter:
                 if self.uvm.userFilter.lower() in p.content.lower():
-                    test.append(commentWidget)
-                    temp[p.userIdent] = commentWidget
+                    # postWidgetList.append(commentWidget)
+                    postWidgetDict[p.userIdent] = commentWidget
             else:
-                test.append(commentWidget)
-                temp[p.userIden] = commentWidget
+                # test.append(commentWidget)
+                postWidgetDict[p.userIden] = commentWidget
+
+        postWidgetList = []
+        for pNum, pWidget in postWidgetDict.items():
+            if pNum in self.t.postReplyDict:
+                pWidget.append(urwid.Text('Replies: ' + str(self.t.postReplyDict[pNum])))
+            postWidgetList.append(urwid.LineBox(urwid.Pile(pWidget)))
 
         DEBUG(self.t.postReplyDict)
 
@@ -53,7 +60,7 @@ class urwidThreadViewBoxes:
         self.uvm.itemCount = len(self.t.comments)
         self.uvm.parseTime = endTime - startTime
 
-        listbox_content = test
+        listbox_content = postWidgetList
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
         return listbox
@@ -108,7 +115,10 @@ class urwidThreadViewBoxes:
                 if str(self.t.currentThreadOPNumber) == item[2:]:
                     item += '(OP)'
 
-                # self.t.postReplyDict[item[2:].split('(')[0]].append(str(postNumDate[0]))
+                try:
+                    self.t.postReplyDict[item[2:].split('(')[0]].append(str(postNumDate.split()[0]))
+                except KeyError:
+                    pass
 
                 contents.append(urwid.AttrWrap(QuoteButton(item), 'quote'))
                 quote = False
@@ -147,6 +157,6 @@ class urwidThreadViewBoxes:
         else:
             contents.append(urwid.Text('URL: '))
 
-        contents.append(urwid.Text('Replies: '))
+        # contents.append(urwid.Text('Replies: '))
 
-        return urwid.Pile(contents)
+        return contents
