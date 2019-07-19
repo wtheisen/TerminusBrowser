@@ -35,3 +35,5 @@ def autoComplete(editBox):
                 pass
         editBox.set_edit_text(match)
         editBox.set_edit_pos(len(match))
+    elif len(inputList) == 2:
+        pass
