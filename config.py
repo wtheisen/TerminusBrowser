@@ -41,8 +41,8 @@ class Config():
             DEBUG('File {} does not exist'.format(location))
             return None
 
-    def write(self, location, data):
+    def write(self, data):
         ''' overwrites config file with data '''
-        os.makedirs(os.path.dirname(location), exist_ok=True)
-        with open(location, 'w') as cfg:
+        os.makedirs(os.path.dirname(self.location), exist_ok=True)
+        with open(self.location, 'w') as cfg:
             json.dump(data, cfg, indent=4)
