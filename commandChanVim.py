@@ -166,13 +166,13 @@ class urwidView():
         if self.mode is MODE.NORMAL:
             DEBUG(key)
             if key == 'h':
-                self.frame.keypress((100,100), 'left')
+                self.frame.keypress((95,60), 'left')
             if key == 'j':
-                self.frame.keypress((150,100), 'down')
+                self.frame.keypress((95,60), 'down')
             if key == 'k':
-                self.frame.keypress((150,100), 'up')
+                self.frame.keypress((95,60), 'up')
             if key == 'l':
-                self.frame.keypress((100,100), 'right')
+                self.frame.keypress((95,60), 'right')
             if key == 'r':
                 if self.level is LEVEL.BOARD:
                     DEBUG('refreshing')
