@@ -164,15 +164,16 @@ class urwidView():
             self.displayFrame()
 
         if self.mode is MODE.NORMAL:
+            rows, cols = urwid.raw_display.Screen().get_cols_rows()
             DEBUG(key)
             if key == 'h':
-                self.frame.keypress((95,60), 'left')
+                self.frame.keypress((rows,cols), 'left')
             if key == 'j':
-                self.frame.keypress((95,60), 'down')
+                self.frame.keypress((rows,cols), 'down')
             if key == 'k':
-                self.frame.keypress((95,60), 'up')
+                self.frame.keypress((rows,cols), 'up')
             if key == 'l':
-                self.frame.keypress((95,60), 'right')
+                self.frame.keypress((rows,cols), 'right')
             if key == 'r':
                 if self.level is LEVEL.BOARD:
                     DEBUG('refreshing')
