@@ -21,9 +21,9 @@ class urwidView():
     def __init__(self):
         self.level  = LEVEL.INDEX
         self.mode   = MODE.NORMAL
-        self.cfg    = Config('./default_config.json')
-        self.site   = SITE[self.cfg.config['SITE']]
-        self.boards = self.cfg.config[self.site.name]['boards']
+        self.cfg    = Config()
+        self.site   = SITE[self.cfg.get('SITE')]
+        self.boards = self.cfg.get(self.site.name)['boards']
         self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
