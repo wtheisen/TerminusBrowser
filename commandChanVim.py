@@ -13,7 +13,7 @@ from debug import INITDEBUG, DEBUG
 
 from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
-from customeTypes import LEVEL, MODE, SITE
+from customeTypes import LEVEL, MODE, SITE, STICKIES
 
 ################################################################################
 
@@ -21,6 +21,7 @@ class urwidView():
     def __init__(self):
         self.level  = LEVEL.INDEX
         self.mode   = MODE.NORMAL
+        self.stickies = STICKIES.SHOW
         self.cfg    = Config()
         self.site   = SITE[self.cfg.get('SITE')]
         self.boards = self.cfg.get(self.site.name)['boards']
