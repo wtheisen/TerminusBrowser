@@ -21,7 +21,7 @@ class urwidView():
     def __init__(self):
         self.level  = LEVEL.INDEX
         self.mode   = MODE.NORMAL
-        self.stickies = STICKIES.SHOW
+        self.stickies = STICKIES.HIDE
         self.cfg    = Config()
         self.site   = SITE[self.cfg.get('SITE')]
         self.boards = self.cfg.get(self.site.name)['boards']
