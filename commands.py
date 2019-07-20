@@ -46,5 +46,16 @@ def history(uvm):
     preCommand(uvm)
     uvm.thread = Thread(uvm)
     uvm.buildAddHeaderView()
-    uvm.buildAddFooterView
+    uvm.buildAddFooterView()
+    uvm.displayFrame()
+
+# For toggling stickies, auto refresh. Could use this func in other places if wish to rebase a lil
+def refresh(uvm):
+    uvm.mode = MODE.NORMAL
+    if uvm.level is LEVEL.BOARD:
+        uvm.displayBoard(uvm, uvm.boardString)
+    elif uvm.level is LEVEL.THREAD:
+        uvm.displayThread(uvm, uvm.threadID)
+    uvm.buildAddHeaderView()
+    uvm.buildAddFooterView()
     uvm.displayFrame()

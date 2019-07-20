@@ -3,7 +3,7 @@ import urwid
 import commands
 
 from debug import DEBUG
-from customeTypes import SITE
+from customeTypes import SITE, STICKIES
 
 class CommandHandler:
     def __init__(self, urwidViewManager):
@@ -36,3 +36,6 @@ class CommandHandler:
             DEBUG('executing site command')
             self.uvm.site = SITE.REDDIT if cmd[0] == 'reddit' else SITE.FCHAN
             commands.site(self.uvm)
+        if cmd[0] == 'stickies':
+           self.uvm.stickies = STICKIES.HIDE if self.uvm.stickies == STICKIES.SHOW else STICKIES.SHOW
+           commands.refresh(self.uvm)

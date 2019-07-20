@@ -1,7 +1,7 @@
 #Board Meta-class
 import requests, collections, json, time
 
-from customeTypes import VIEWSTYLES, SITE
+from customeTypes import VIEWSTYLES, SITE, STICKIES
 from boardViewClasses import buildView
 from debug import DEBUG
 
@@ -56,6 +56,9 @@ class Board:
         posts = data['data']['children']
 
         for post in posts:
+            if self.uvm.stickies == STICKIES.HIDE and post['data']['stickied']:
+                continue
+
             titles[post['data']['title']] = (post['data']['permalink'],
                                              post['data']['score'],
                                              post['data']['subreddit'])

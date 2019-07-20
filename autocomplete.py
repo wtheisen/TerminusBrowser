@@ -1,6 +1,7 @@
 commandList = [
                 'search',
                 'thread',
+                'stickies',
                 'board',
                 'post',
                 'reply',

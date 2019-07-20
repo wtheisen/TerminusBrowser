@@ -34,6 +34,7 @@ To run `python3 commandChanVim.py`
 - (s)earch [PATTERN] - filters the current view to only items containing [PATTERN], if [PATTERN] is empty it will reset the search and refresh the current view
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
 - (h)istory [INDEX] - open the thread located in [INDEX] in the history queue, if [INDEX] is not specified then it opens the previously viewed thread
+- stickies - toggle between showing and hiding stickies
 - reddit - switch client to reddit mode
 - 4chan - switch client to 4chan mode
 
@@ -47,10 +48,11 @@ To run `python3 commandChanVim.py`
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
 - [X] Filtering options on all pages with information in the footer
-- [ ] HJKL movement (HL work right now, JK don't for some reason)
+- [X] HJKL movement
 - [ ] Full suite of commands
     - [X] Search command for current view
     - [X] Thread command to view thread by number
+    - [X] Toggle to show or hide stickied reddit posts
 - [ ] Toggleable display modes(boxes, tree, cascade)
 - [ ] Display comment replies in the info bar at the top of the comment
 - [ ] Save threads to a custom hotkey menu
