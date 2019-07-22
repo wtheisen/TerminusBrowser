@@ -24,7 +24,9 @@ def autoComplete(editBox):
         currCommand = currText.split()[0]
         matches = [x for x in commandList if x.startswith(currCommand)]
         # Check to toggle for previous match
-        if len(matches) == 1:
+        if not len(matches):
+            return
+        elif len(matches) == 1:
             currCommand = currCommand[:3]
             matches = [x for x in commandList if x.startswith(currCommand)]
         match = min(matches, key=len)
