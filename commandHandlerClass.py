@@ -1,4 +1,4 @@
-import urwid
+import urwid, sys
 
 import commands
 
@@ -14,25 +14,28 @@ class CommandHandler:
         cmd = cmd.split()
         DEBUG(cmd)
 
+        if cmd[0] in ('qa', 'quitall'):
+            DEBUG('executing quit command')
+            sys.exit()
         if cmd[0] in ('s', 'search'):
             DEBUG('executing search command')
-            if len(cmd) is 1:
-                self.uvm.userFilter = None
-            elif len(cmd) is 2:
-                self.uvm.userFilter = cmd[1]
-            commands.search(self.uvm)
+            commands.search(self.uvm, cmd[1] if len(cmd) is 2 else None)
+        if cmd[0] in ('b', 'board'):
+            DEBUG('executing board command')
+            commands.board(self.uvm, cmd[1])
         if cmd[0] in ('t', 'thread'):
             DEBUG('executing thread command')
-            self.uvm.threadNum = cmd[1]
-            commands.thread(self.uvm)
+            commands.thread(self.uvm, cmd[1])
         if cmd[0] in ('h', 'history'):
             DEBUG('executing history command')
-            if len(cmd) == 1:
-                self.uvm.threadID = self.uvm.history[0]
-            else:
-                self.uvm.threadID = self.uvm.history[int(cmd[1])]
-            commands.thread(self.uvm)
+            commands.history(self.uvm)
         if cmd[0] in ('reddit', '4chan'):
             DEBUG('executing site command')
             self.uvm.site = SITE.REDDIT if cmd[0] == 'reddit' else SITE.FCHAN
             commands.site(self.uvm)
+        if cmd[0] in ('split'):
+            DEBUG('executing split command')
+            commands.split(self.uvm, 0, cmd[1] if len(cmd) == 2 else None)
+        if cmd[0] in ('vsplit'):
+            DEBUG('executing vsplit command')
+            commands.split(self.uvm, 1, cmd[1] if len(cmd) == 2 else None)

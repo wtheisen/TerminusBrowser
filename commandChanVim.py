@@ -7,8 +7,8 @@ import urwid.web_display
 from enum import Enum
 
 from config import Config
-from boardClass import Board
-from threadClass import Thread
+from viewClass import View
+from Frames.defaultFrame import DefaultFrame
 from debug import INITDEBUG, DEBUG
 
 from customUrwidClasses import CommandBar, HistoryButton
@@ -19,11 +19,10 @@ from customeTypes import LEVEL, MODE, SITE
 
 class urwidView():
     def __init__(self):
-        self.level  = LEVEL.INDEX
         self.mode   = MODE.NORMAL
         self.cfg    = Config('./default_config.json')
         self.site   = SITE[self.cfg.config['SITE']]
-        self.boards = self.cfg.config[self.site.name]['boards']
+        self.boardList = self.cfg.config[self.site.name]['boards']
         self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
@@ -31,14 +30,7 @@ class urwidView():
         urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.evalCommand)
         urwid.connect_signal(self.commandBar, 'exit_command', self.exitCommand)
 
-        self.boardString = 'Index'
-        self.threadID = 0
-        self.userFilter = None
-
-        self.itemCount = len(self.boards)
-        self.parseTime = 0
-
-        self.history = collections.deque([], 10)
+        self.history = collections.deque([], 50)
 
         self.palette = [
         ('body', 'light gray', 'black', 'standout'),
@@ -54,144 +46,77 @@ class urwidView():
         else:
             self.screen = urwid.raw_display.Screen()
 
-        self.frame = None
-        self.indexView = None
+        self.buildSetStartView()
+        self.body = None
+        self.allViews = urwid.Columns([self.currFocusView])
 
-        self.buildStartView()
-        self.buildAddHeaderView()
-        self.buildAddFooterView()
+        self.buildAddHeaderView(self.currFocusView)
+        self.buildAddFooterView(self.currFocusView)
 
-        self.displayFrame()
+        self.renderScreen()
 
     def exitCommand(self):
         self.mode = MODE.NORMAL
-        self.buildAddFooterView()
+        self.buildAddFooterView(self.currFocusView)
         self.commandBar.set_caption('')
-        self.frame.focus_position = 'body'
-        self.displayFrame()
+        self.body.focus_position = 'body'
+        self.renderScreen()
 
     def _update_focus(self, focus):
         self._focus=focus
 
-    def buildAddHeaderView(self):
-        if self.site == SITE.FCHAN:
-            header_text = 'CommandChan -- Board: {} Thread: {}'
-        elif self.site == SITE.REDDIT:
-            header_text = 'CommandChan -- Subreddit: {} Post: {}'
-        else:
-            header_text = 'Error: {} {}'
+    def buildAddHeaderView(self, focusView):
+        try:
+            headerWidget = urwid.AttrWrap(urwid.Text(focusView.frame.headerString), 'header')
+        except:
+            headerWidget = urwid.AttrWrap(urwid.Text(''), 'header')
 
-        boardThreadStringLeft = urwid.AttrWrap(urwid.Text(header_text.format(self.boardString,str(self.threadID))), 'header')
-        # historyStringRight = urwid.AttrWrap(urwid.Text('History: ', 'right'), 'header')
+        # self.allViews = self.currFocusView.view
+        self.body = urwid.Frame(urwid.AttrWrap(self.allViews, 'body'))
+        self.body.header = headerWidget
 
-        # headerWidget = urwid.Columns([boardThreadStringLeft, historyStringRight])
-        headerWidget = urwid.Columns([boardThreadStringLeft, urwid.AttrWrap(HistoryButton(self), 'header')])
-        self.frame = urwid.Frame(urwid.AttrWrap(self.bodyView, 'body'))
-        self.frame.header = headerWidget
+    def buildAddFooterView(self, focusView):
+        try:
+            footerStringLeft = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) + ', Filter: ' + str(self.currFocusView.uFilter)), 'header')
+            footerStringRight = urwid.AttrWrap(urwid.Text(focusView.frame.footerStringRight, 'right'), 'header')
+        except:
+            footerStringLeft = urwid.Text('')
+            footerStringRight = urwid.Text('')
 
-    def buildAddFooterView(self):
-        infoStringLeft = urwid.AttrWrap(urwid.Text('Mode: ' + str(self.mode) +
-                                               ', Filter: ' + str(self.userFilter)), 'header')
-        timeStringRight = urwid.AttrWrap(urwid.Text('Parsed ' + str(self.itemCount) + ' items in ' + str(self.parseTime)[0:6] + 's', 'right'), 'header')
-        footerWidget = urwid.Pile([urwid.Columns([infoStringLeft, timeStringRight]), self.commandBar])
-        self.frame.footer = footerWidget
 
-    def buildStartView(self):
-        startTime = time.time()
+        footerWidget = urwid.Pile([urwid.Columns([footerStringLeft, footerStringRight]), self.commandBar])
+        self.body.footer = footerWidget
 
-        boardButtons = []
-        for board in self.boards:
-            if self.userFilter:
-                if self.userFilter.lower() in board.lower():
-                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.displayBoard), 'center')))
-            else:
-                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.displayBoard), 'center')))
+    def buildSetStartView(self):
+        self.currFocusView = View(self, DefaultFrame(True))
+        # self.currFocusView = View(self)
 
-        buttonGrid = urwid.GridFlow(boardButtons, 12, 2, 2, 'center')
-        listbox_content = [buttonGrid]
-
-        self.indexView = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
-        self.bodyView = self.indexView
-
-        endTime = time.time()
-        self.parseTime = (endTime - startTime)
-        self.itemCount = len(boardButtons)
-
-    def displayFrame(self):
-        urwid.MainLoop(self.frame,
+    def renderScreen(self):
+        urwid.MainLoop(self.body,
                        self.palette,
                        self.screen,
                        unhandled_input=self.handleKey,
                        pop_ups=True).run()
 
-    def displayStartView(self):
-        self.bodyView = self.indexView
-        self.buildAddHeaderView()
-        self.buildAddFooterView()
-        self.displayFrame()
-
-    def displayBoard(self, button, board=None, userFilter=None):
-        self.level = LEVEL.BOARD
-
-        if board:
-            self.board = Board(self)
-        else:
-            self.boardString = button.get_label()
-            self.board = Board(self)
-
-        self.buildAddHeaderView()
-        self.buildAddFooterView()
-        self.displayFrame()
-
-    def displayThread(self, button, board=None, userFilter=None):
-        self.level = LEVEL.THREAD
-        self.threadID = button.get_label()
-
-        self.history.appendleft(self.threadID)
-        self.thread = Thread(self)
-
-        self.buildAddHeaderView()
-        self.buildAddFooterView()
-        self.displayFrame()
-
-
     def handleKey(self, key):
         if key == ':':
             self.mode = MODE.COMMAND
-            self.buildAddFooterView()
             self.commandBar.set_caption(':')
-            self.frame.focus_position = 'footer'
-            self.displayFrame()
+            self.body.focus_position = 'footer'
+            self.renderScreen()
 
         if self.mode is MODE.NORMAL:
             DEBUG(key)
             if key == 'h':
-                self.frame.keypress((100,100), 'left')
+                self.body.keypress((100,100), 'left')
             if key == 'j':
-                self.frame.keypress((150,100), 'down')
+                self.body.keypress((150,100), 'down')
             if key == 'k':
-                self.frame.keypress((150,100), 'up')
+                self.body.keypress((150,100), 'up')
             if key == 'l':
-                self.frame.keypress((100,100), 'right')
+                self.body.keypress((100,100), 'right')
             if key == 'r':
-                if self.level is LEVEL.BOARD:
-                    DEBUG('refreshing')
-                    self.displayBoard(self, self.boardString)
-                elif self.level is LEVEL.THREAD:
-                    self.displayThread(self, self.threadID)
-            elif key == 'q':
-                if self.level is LEVEL.INDEX:
-                    sys.exit()
-                elif self.level is LEVEL.BOARD:
-                    self.level = LEVEL.INDEX
-                    self.board = ''
-                    self.userFilter = ''
-                    self.displayStartView()
-                elif self.level is LEVEL.THREAD:
-                    self.level = LEVEL.BOARD
-                    self.userFilter = ''
-                    self.displayBoard(None, self.board)
-                    self.displayFrame()
+                pass
 
 ################################################################################
 
