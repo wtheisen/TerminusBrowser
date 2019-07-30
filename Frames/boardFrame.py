@@ -62,5 +62,6 @@ class BoardFrame(urwid.WidgetWrap):
         return titles
 
     def changeFrameThread(self, button):
-        import commands
-        commands.thread(self.uvm, self.boardString, button.get_label())
+        from commandHandlerClass import CommandHandler
+        ch = CommandHandler(self.uvm)
+        ch.routeCommand('thread ' + self.boardString + ' ' + button.get_label())

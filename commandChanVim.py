@@ -120,6 +120,16 @@ class urwidView():
                 self.body.keypress((rows,cols), 'up')
             if key == 'l':
                 self.body.keypress((rows,cols), 'right')
+
+            if key == 'H':
+                self.body.keypress((rows,cols), 'left')
+            if key == 'J':
+                self.body.keypress((rows,cols), 'down')
+            if key == 'K':
+                self.body.keypress((rows,cols), 'up')
+            if key == 'L':
+                self.body.keypress((rows,cols), 'right')
+
             if key == 'r':
                 pass
 

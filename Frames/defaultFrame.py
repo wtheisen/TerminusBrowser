@@ -6,9 +6,9 @@ class DefaultFrame(urwid.WidgetWrap):
         self.footerStringRight = f''
 
         if welcome:
-            self.contents = urwid.Button(pyfiglet.figlet_format('commandChan'), 'center')
+            self.contents = urwid.Text(pyfiglet.figlet_format('commandChan'), 'center')
         else:
-            self.contents = urwid.Button('')
+            self.contents = urwid.Text('')
 
         self.contents = urwid.Filler(self.contents)
         urwid.WidgetWrap.__init__(self, self.contents)

@@ -12,7 +12,7 @@ def chanCommands(cmd, uvm):
         board(uvm, cmd[1])
     if cmd[0] in ('t', 'thread'):
         DEBUG('executing thread command')
-        thread(uvm, cmd[1])
+        thread(uvm, cmd[1], cmd[2])
 
 def board(uvm, boardString):
     DEBUG('Executing board command')
@@ -21,4 +21,4 @@ def board(uvm, boardString):
 
 def thread(uvm, boardString, threadNumber):
     DEBUG('Executing thread command')
-    uvm.allViews = View(uvm, ThreadFrame(boardString, threadNumber, uvm))
+    setattr(uvm.currFocusView, 'frame', ThreadFrame(boardString, threadNumber, uvm))
