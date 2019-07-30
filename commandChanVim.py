@@ -58,7 +58,6 @@ class urwidView():
         self.buildAddHeaderView(self.currFocusView)
         self.buildAddFooterView(self.currFocusView)
 
-        self.renderScreen()
 
     def exitCommand(self):
         self.mode = MODE.NORMAL
@@ -130,6 +129,7 @@ class urwidView():
 
 def main():
     u = urwidView()
+    u.renderScreen()
 
 def setup():
     urwid.web_display.set_preferences("Urwid Tour")
@@ -139,6 +139,6 @@ def setup():
 
     main()
 
-if '__main__'==__name__ or urwid.web_display.is_web_request():
+if __name__ == '__main__' or urwid.web_display.is_web_request():
     INITDEBUG()
     setup()
