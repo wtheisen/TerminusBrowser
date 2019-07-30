@@ -14,19 +14,3 @@ class View(urwid.WidgetWrap):
             self.frame = DefaultFrame()
         else:
             self.frame = frame
-
-        self.contents = urwid.LineBox(self.frame)
-        urwid.WidgetWrap.__init__(self, self.contents)
-
-    def options(self):
-        return None
-
-    def setFrame(self, frame):
-        self.frame = frame
-        self.contents = urwid.LineBox(self.frame)
-        urwid.WidgetWrap.__init__(self, self.contents)
-
-    def gotFocus(self):
-        self.uvm.buildAddHeaderView(self)
-        self.uvm.buildAddFooterView(self)
-        self.uvm.renderScreen()

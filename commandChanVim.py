@@ -11,7 +11,7 @@ from viewClass import View
 from Frames.defaultFrame import DefaultFrame
 from debug import INITDEBUG, DEBUG
 
-from splitTracker import Column, Row
+from splitTracker import Column, Row, buildUrwidFromSplits
 
 from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
@@ -30,7 +30,7 @@ class urwidView():
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
 
-        urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.evalCommand)
+        urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.routeCommand)
         urwid.connect_signal(self.commandBar, 'exit_command', self.exitCommand)
 
         self.history = collections.deque([], 50)
@@ -51,9 +51,8 @@ class urwidView():
 
         self.buildSetStartView()
         self.body = None
-        self.allViews = self.currFocusView
 
-        self.splitTuple = (None)
+        self.splitTuple = self.currFocusView
 
         self.buildAddHeaderView(self.currFocusView)
         self.buildAddFooterView(self.currFocusView)
@@ -75,10 +74,9 @@ class urwidView():
         except:
             headerWidget = urwid.AttrWrap(urwid.Text(''), 'header')
 
-        # builtView = None
-        # for col in self.splitTuple:
-
-        self.body = urwid.Frame(urwid.AttrWrap(self.allViews, 'body'))
+        builtUrwidSplits = buildUrwidFromSplits(self.splitTuple)
+        DEBUG(type(builtUrwidSplits))
+        self.body = urwid.Frame(urwid.AttrWrap(builtUrwidSplits, 'body'))
         self.body.header = headerWidget
 
     def buildAddFooterView(self, focusView):

@@ -31,5 +31,8 @@ class IndexFrame(urwid.WidgetWrap):
         return urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
     def changeFrameBoard(self, button):
-        import commands
-        commands.board(self.uvm, button.get_label())
+        from commandHandlerClass import CommandHandler
+        ch = CommandHandler(self.uvm)
+        ch.routeCommand('board ' + button.get_label())
+        
+        # commands.board(self.uvm, button.get_label())
