@@ -25,19 +25,25 @@ def search(uvm, uFilter):
 
 def thread(uvm, boardString, threadNumber):
     preCommand(uvm)
-    uvm.allViews.contents[uvm.allViews.focus_position] = (View(uvm, ThreadFrame(boardString, threadNumber, uvm)), uvm.allViews.options())
+    uvm.allViews = View(uvm, ThreadFrame(boardString, threadNumber, uvm))
     postCommand(uvm)
 
 def board(uvm, boardString):
     preCommand(uvm)
     DEBUG('executing board command')
-    uvm.allViews.contents[uvm.allViews.focus_position] = (View(uvm, BoardFrame(boardString, uvm)), uvm.allViews.options())
+    # uvm.allViews.contents[uvm.allViews.focus_position] = (View(uvm, BoardFrame(boardString, uvm)), uvm.allViews.options())
+    uvm.allViews = View(uvm, BoardFrame(boardString, uvm))
     postCommand(uvm)
 
 def site(uvm):
     preCommand(uvm)
     if uvm.site is SITE.FCHAN:
-        uvm.allViews.contents[uvm.allViews.focus_position] = (View(uvm, IndexFrame(uvm)), uvm.allViews.options())
+        DEBUG(uvm.allViews.focus)
+        uvm.allViews = View(uvm, IndexFrame(uvm))
+        # uvm.currFocusView.setFrame(IndexFrame(uvm))
+        # setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
+        # uvm.currFocusView = View(uvm, IndexFrame(uvm))
+        # uvm.allViews.set_focus = (View(uvm, IndexFrame(uvm)), uvm.allViews.options())
     postCommand(uvm)
 
 def history(uvm):
@@ -46,22 +52,31 @@ def history(uvm):
 
 def split(uvm, splitType, splitView):
     DEBUG(type(uvm.allViews))
-    DEBUG(uvm.currFocusView.base_widget)
-    # DEBUG(uvm.allViews.focus)
+    DEBUG(uvm.allViews.focus)
     if splitType == 0:
         if type(uvm.allViews) is urwid.Pile:
             DEBUG('Pile supertype')
             uvm.allViews.contents.append((View(uvm), uvm.allViews.options()))
         else:
             DEBUG(uvm.allViews.contents)
-            uvm.allViews.contents[uvm.allViews.focus_position] = (urwid.Pile([uvm.currFocusView, View(uvm)]), uvm.allViews.options())
+            uvm.allViews.focus = urwid.Pile([uvm.currFocusView, View(uvm)])
     elif splitType == 1:
         if type(uvm.allViews) is urwid.Columns:
             DEBUG('Columns supertype')
             uvm.allViews.contents.append((View(uvm), uvm.allViews.options()))
         else:
-            uvm.allViews.contents[uvm.allViews.focus_position] = (urwid.Columns([uvm.currFocusView, View(uvm)]), uvm.allViews.options())
+            uvm.allViews.focus = urwid.Columns([uvm.currFocusView, View(uvm)])
 
-    uvm.buildAddHeaderView(uvm.currFocusView)
-    uvm.buildAddFooterView(uvm.currFocusView)
-    uvm.renderScreen()
+    postCommand(uvm)
+
+
+# For toggling stickies, auto refresh. Could use this func in other places if wish to rebase a lil
+def refresh(uvm):
+    uvm.mode = MODE.NORMAL
+    if uvm.level is LEVEL.BOARD:
+        uvm.displayBoard(uvm, uvm.boardString)
+    elif uvm.level is LEVEL.THREAD:
+        uvm.displayThread(uvm, uvm.threadID)
+    uvm.buildAddHeaderView()
+    uvm.buildAddFooterView()
+    uvm.displayFrame()

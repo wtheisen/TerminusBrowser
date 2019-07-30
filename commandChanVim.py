@@ -11,18 +11,21 @@ from viewClass import View
 from Frames.defaultFrame import DefaultFrame
 from debug import INITDEBUG, DEBUG
 
+from splitTracker import Column, Row
+
 from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
-from customeTypes import LEVEL, MODE, SITE
+from customeTypes import LEVEL, MODE, SITE, STICKIES
 
 ################################################################################
 
 class urwidView():
     def __init__(self):
         self.mode   = MODE.NORMAL
-        self.cfg    = Config('./default_config.json')
-        self.site   = SITE[self.cfg.config['SITE']]
-        self.boardList = self.cfg.config[self.site.name]['boards']
+        self.stickies = STICKIES.HIDE
+        self.cfg    = Config()
+        self.site   = SITE[self.cfg.get('SITE')]
+        self.boardList = self.cfg.get(self.site.name)['boards']
         self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
@@ -48,7 +51,9 @@ class urwidView():
 
         self.buildSetStartView()
         self.body = None
-        self.allViews = urwid.Columns([self.currFocusView])
+        self.allViews = self.currFocusView
+
+        self.splitTuple = (None)
 
         self.buildAddHeaderView(self.currFocusView)
         self.buildAddFooterView(self.currFocusView)
@@ -71,7 +76,9 @@ class urwidView():
         except:
             headerWidget = urwid.AttrWrap(urwid.Text(''), 'header')
 
-        # self.allViews = self.currFocusView.view
+        # builtView = None
+        # for col in self.splitTuple:
+
         self.body = urwid.Frame(urwid.AttrWrap(self.allViews, 'body'))
         self.body.header = headerWidget
 
@@ -106,15 +113,16 @@ class urwidView():
             self.renderScreen()
 
         if self.mode is MODE.NORMAL:
+            rows, cols = urwid.raw_display.Screen().get_cols_rows()
             DEBUG(key)
             if key == 'h':
-                self.body.keypress((100,100), 'left')
+                self.body.keypress((rows,cols), 'left')
             if key == 'j':
-                self.body.keypress((150,100), 'down')
+                self.body.keypress((rows,cols), 'down')
             if key == 'k':
-                self.body.keypress((150,100), 'up')
+                self.body.keypress((rows,cols), 'up')
             if key == 'l':
-                self.body.keypress((100,100), 'right')
+                self.body.keypress((rows,cols), 'right')
             if key == 'r':
                 pass
 
