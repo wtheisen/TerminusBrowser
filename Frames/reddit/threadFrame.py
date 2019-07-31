@@ -45,7 +45,7 @@ class RedditThreadFrame(urwid.WidgetWrap):
         return tree
 
     def buildFrame(self):
-        topnode = ParentCommentNode(self.comments)
+        topnode = CommentNode(self.comments)
         return urwid.TreeListBox(urwid.TreeWalker(topnode))
 
     def get_post(self, post):
@@ -70,10 +70,18 @@ class CommentWidget(urwid.TreeWidget):
         'dirmark')
 
     def __init__(self, node):
-        self._innerwidget = urwid.Text("test")
+        self._innerwidget = None
         self.__super.__init__(node)
-        self.expanded = self.get_node().get_depth() < 3
+        self.expanded = self.get_node().get_depth() < 3 or not self.get_node().get_value()['children']
         self.update_expanded_icon()
+
+    def get_inner_widget(self):
+        if self._innerwidget is None:
+            self._innerwidget = self.load_inner_widget()
+        return self._innerwidget
+
+    def load_inner_widget(self):
+        return urwid.LineBox(urwid.Text(self.get_display_text()))
 
     def keypress(self, size, key):
         """allow subclasses to intercept keystrokes"""
@@ -87,24 +95,8 @@ class CommentWidget(urwid.TreeWidget):
     def get_display_text(self):
         return self.get_node().get_value()['name']
 
-class LeafCommentWidget(urwid.TreeWidget):
-    """ Display widget for leaf nodes """
-    unexpanded_icon = urwid.AttrMap(urwid.TreeWidget.unexpanded_icon,
-        'dirmark')
-    expanded_icon = urwid.AttrMap(urwid.TreeWidget.expanded_icon,
-        'dirmark')
 
-    def get_display_text(self):
-        return self.get_node().get_value()['name']
-
-
-class LeafNode(urwid.TreeNode):
-    """ Data storage object for leaf nodes """
-    def load_widget(self):
-        return LeafCommentWidget(self)
-
-
-class ParentCommentNode(urwid.ParentNode):
+class CommentNode(urwid.ParentNode):
     """ Data storage object for interior/parent nodes """
     def load_widget(self):
         return CommentWidget(self)
@@ -117,8 +109,5 @@ class ParentCommentNode(urwid.ParentNode):
         """Return either an ExampleNode or ExampleParentNode"""
         childdata = self.get_value()['children'][key]
         childdepth = self.get_depth() + 1
-        if len(childdata['children']):
-            childclass = ParentCommentNode
-        else:
-            childclass = LeafNode
+        childclass = CommentNode
         return childclass(childdata, parent=self, key=key, depth=childdepth)
