@@ -10,21 +10,20 @@ class RedditThreadFrame(urwid.WidgetWrap):
         self.subString = subString
         self.threadUri = threadUri
         self.uFilter = uFilter
+        self.parsedItems = 0
 
         self.url = 'https://www.reddit.com' + self.threadUri
-        self.imageUrl = None
         self.headers = {
             'user-agent': 'reddit-commandChan'        
         }
-
-        self.postReplyDict = {}
 
         self.startTime = time.time()
         self.comments = self.getJSONThread()
         self.contents = self.buildFrame()
         urwid.WidgetWrap.__init__(self, self.contents)
-
         self.endTime = time.time()
+        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
+
 
     def getJSONThread(self):
         response = requests.get(self.url + '.json', headers=self.headers)
@@ -35,13 +34,29 @@ class RedditThreadFrame(urwid.WidgetWrap):
         post     = data[0]['data']['children'][0]
         comments = data[1]['data']['children']
         children  = []
+        # b/c the way posts are "different" than comments
+        # have to load replies for each top level comment
+        # then add as child to post
         for item in comments:
-            children.append({
-                'name': item['data'].get('body', ''),
-                'children': self.get_replies(item)
-            })
+            if not item['data'].get('body'):
+                continue
+            
+            children.append(Post(
+                item['data']['author'],
+                item['data']['body'],
+                item['data']['created'],
+                score=item['data']['score'],
+                replies=self.get_replies(item)
+            ))
+            self.parsedItems += 1
         
-        tree = {'name': self.get_post(post), 'children': children}
+        tree = Post(
+            item['data']['author'],
+            self.get_post(post),
+            item['data']['created'],
+            score=item['data']['score'],
+            replies=children
+        )
         return tree
 
     def buildFrame(self):
@@ -49,7 +64,9 @@ class RedditThreadFrame(urwid.WidgetWrap):
         return urwid.TreeListBox(urwid.TreeWalker(topnode))
 
     def get_post(self, post):
-        return "{}\n{}".format(post['data']['title'], post['data']['selftext'] if post['data']['selftext'] else post['data']['url'])
+        return "{}\n{}".format(post['data']['title'], 
+                               post['data']['selftext'] if post['data']['selftext']
+                                                        else post['data']['url'])
 
     def get_replies(self, comment):
         my_children = []
@@ -58,8 +75,14 @@ class RedditThreadFrame(urwid.WidgetWrap):
         if replies:
             for item in replies['data']['children']:
                 if item['data'].get('body'):
-                    my_children.append({'name': item['data']['body'], 'children': self.get_replies(item)})
-
+                    my_children.append(Post(
+                        item['data']['author'],
+                        item['data']['body'],
+                        item['data']['created'],
+                        score=item['data']['score'],
+                        replies=self.get_replies(item)
+                    ))
+                    self.parsedItems += 1
         return my_children
 
     
@@ -71,8 +94,13 @@ class CommentWidget(urwid.TreeWidget):
 
     def __init__(self, node):
         self._innerwidget = None
+        self.info_text = 'score: {} user: {}'
+
         self.__super.__init__(node)
-        self.expanded = self.get_node().get_depth() < 3 or not self.get_node().get_value()['children']
+        
+        self._has_child = self.get_node().get_value().replies != []
+        self.expanded = (self.get_node().get_depth() < 3 or
+                         not self._has_child)
         self.update_expanded_icon()
 
     def get_inner_widget(self):
@@ -81,11 +109,13 @@ class CommentWidget(urwid.TreeWidget):
         return self._innerwidget
 
     def load_inner_widget(self):
-        return urwid.LineBox(urwid.Text(self.get_display_text()))
+        content = [urwid.Text(self.get_display_text()), urwid.Divider('-'),
+                   urwid.Text(self.get_info_text())]
+        return urwid.LineBox(urwid.Pile(content))
 
     def keypress(self, size, key):
         """allow subclasses to intercept keystrokes"""
-        if key == 'right':
+        if key == 'right' and self._has_child:
             self.expanded = not self.expanded
             self.update_expanded_icon()
         else:
@@ -93,7 +123,11 @@ class CommentWidget(urwid.TreeWidget):
         return key
 
     def get_display_text(self):
-        return self.get_node().get_value()['name']
+        return self.get_node().get_value().content
+
+    def get_info_text(self):
+        return self.info_text.format(self.get_node().get_value().score,
+                                     self.get_node().get_value().userIden)
 
 
 class CommentNode(urwid.ParentNode):
@@ -103,11 +137,11 @@ class CommentNode(urwid.ParentNode):
 
     def load_child_keys(self):
         data = self.get_value()
-        return range(len(data['children']))
+        return range(len(data.replies))
 
     def load_child_node(self, key):
         """Return either an ExampleNode or ExampleParentNode"""
-        childdata = self.get_value()['children'][key]
+        childdata = self.get_value().replies[key]
         childdepth = self.get_depth() + 1
         childclass = CommentNode
         return childclass(childdata, parent=self, key=key, depth=childdepth)

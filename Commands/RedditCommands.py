@@ -13,6 +13,9 @@ def redditCommands(cmd, uvm):
     if cmd[0] in ('p', 'post'):
         DEBUG('executing post command')
         post(uvm, cmd[1], cmd[2])
+    if cmd[0] in ('subpage'):
+        DEBUG('executing url command')
+        subredditpage(uvm, cmd[1], cmd[2])
 
 def subreddit(uvm, subString):
     DEBUG('Executing subreddit command')
@@ -21,3 +24,7 @@ def subreddit(uvm, subString):
 def post(uvm, subString, postNumber):
     DEBUG('Executing post command')
     setattr(uvm.currFocusView, 'frame', RedditThreadFrame(subString, postNumber, uvm))
+
+def subredditpage(uvm, subString, token):
+    DEBUG('Executing sub page command')
+    setattr(uvm.currFocusView, 'frame', SubredditFrame(subString, uvm, token=token))

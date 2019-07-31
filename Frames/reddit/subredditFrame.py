@@ -1,18 +1,22 @@
 import urwid, re, time, collections, requests
+from debug import DEBUG
 from customeTypes import STICKIES
 
 class SubredditFrame(urwid.WidgetWrap):
-    def __init__(self, boardString, urwidViewManager, uFilter=None):
+    def __init__(self, boardString, urwidViewManager, uFilter=None, token=''):
         self.uvm = urwidViewManager
         self.boardString = boardString
         self.uFilter = uFilter
 
-        self.url = 'https://www.reddit.com' + self.boardString + '.json'
+        self.url = 'https://www.reddit.com' + self.boardString + '.json' + '?limit=100'
+        self.token = token
+        if self.token:
+            self.url += '&after=' + self.token
+
         self.headers = {
             'user-agent': 'reddit-commandChan'
         }
-        self.threadNums = []
-        self.info_text = 'Replies: {} Images: {}'
+        self.info_text = 'Upvotes: {} Comments: {}'
         self.parsedItems = 0
 
         self.startTime = time.time()
@@ -29,6 +33,10 @@ class SubredditFrame(urwid.WidgetWrap):
         threadButtonList = []
 
         for title, threadInfo in self.titles.items():
+            if title in ('Next', 'Prev'):
+                subButton = urwid.Button(str(threadInfo[0]), self.changeSubPage)
+                threadButtonList.append(urwid.LineBox(urwid.Pile([subButton, urwid.Divider('-'), urwid.Text(threadInfo[1])])))
+                continue
             title = title.replace('-', ' ')
             if self.uFilter:
                 if re.search(self.uFilter.lower(), title.lower()):
@@ -59,14 +67,21 @@ class SubredditFrame(urwid.WidgetWrap):
         titles = collections.OrderedDict()
         posts = data['data']['children']
 
+        DEBUG(data['data'].get('before'))
+
         for post in posts:
             if self.uvm.stickies == STICKIES.HIDE and post['data']['stickied']:
                 continue
 
             titles[post['data']['title']] = (post['data']['permalink'],
                                              post['data']['score'],
-                                             post['data']['subreddit'])
-            self.threadNums.append(post['data']['title'])
+                                             post['data']['num_comments'])
+
+        # parse next key
+        if data['data']['after']:
+            titles['Next'] = (data['data']['after'],
+                             'Next',
+                             '')
 
         return titles
 
@@ -74,3 +89,8 @@ class SubredditFrame(urwid.WidgetWrap):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
         ch.routeCommand('post ' + self.boardString + ' ' + button.get_label())
+
+    def changeSubPage(self, button):
+        from commandHandlerClass import CommandHandler
+        ch = CommandHandler(self.uvm)
+        ch.routeCommand('subpage ' + self.boardString + ' ' + button.get_label())
