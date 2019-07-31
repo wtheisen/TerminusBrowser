@@ -42,19 +42,19 @@ class RedditThreadFrame(urwid.WidgetWrap):
                 continue
             
             children.append(Post(
-                item['data']['author'],
-                item['data']['body'],
-                item['data']['created'],
-                score=item['data']['score'],
+                item['data'].get('author'),
+                item['data'].get('body'),
+                item['data'].get('created'),
+                score=item['data'].get('score'),
                 replies=self.get_replies(item)
             ))
             self.parsedItems += 1
         
         tree = Post(
-            item['data']['author'],
+            post['data'].get('author'),
             self.get_post(post),
-            item['data']['created'],
-            score=item['data']['score'],
+            post['data'].get('created'),
+            score=post['data'].get('score'),
             replies=children
         )
         return tree
@@ -76,10 +76,10 @@ class RedditThreadFrame(urwid.WidgetWrap):
             for item in replies['data']['children']:
                 if item['data'].get('body'):
                     my_children.append(Post(
-                        item['data']['author'],
-                        item['data']['body'],
-                        item['data']['created'],
-                        score=item['data']['score'],
+                        item['data'].get('author'),
+                        item['data'].get('body'),
+                        item['data'].get('created'),
+                        score=item['data'].get('score'),
                         replies=self.get_replies(item)
                     ))
                     self.parsedItems += 1
