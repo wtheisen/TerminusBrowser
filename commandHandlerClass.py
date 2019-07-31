@@ -27,7 +27,8 @@ class CommandHandler:
 
         if cmd.split()[0] in SystemCommandList:
             systemCommands(cmd, self.uvm)
-
+    
+        DEBUG(self.uvm.site)
         if self.uvm.currFocusView.site is SITE.FCHAN:
             chanCommands(cmd, self.uvm)
         if self.uvm.currFocusView.site is SITE.REDDIT:
