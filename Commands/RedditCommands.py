@@ -10,10 +10,10 @@ def redditCommands(cmd, uvm):
     if cmd[0] in ('sub', 'subreddit'):
         DEBUG('executing subreddit command')
         subreddit(uvm, cmd[1])
-    if cmd[0] in ('p', 'post'):
+    elif cmd[0] in ('p', 'post'):
         DEBUG('executing post command')
         post(uvm, cmd[1], cmd[2])
-    if cmd[0] in ('subpage'):
+    elif cmd[0] in ('subpage'):
         DEBUG('executing url command')
         subredditpage(uvm, cmd[1], cmd[2])
 
