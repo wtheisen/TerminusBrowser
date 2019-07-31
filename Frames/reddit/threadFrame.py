@@ -51,10 +51,10 @@ class RedditThreadFrame(urwid.WidgetWrap):
             self.parsedItems += 1
         
         tree = Post(
-            item['data'].get('author'),
+            post['data'].get('author'),
             self.get_post(post),
-            item['data'].get('created'),
-            score=item['data'].get('score'),
+            post['data'].get('created'),
+            score=post['data'].get('score'),
             replies=children
         )
         return tree
