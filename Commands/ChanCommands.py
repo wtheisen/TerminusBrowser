@@ -1,8 +1,8 @@
 from debug import DEBUG
 from viewClass import View
 
-from Frames.boardFrame import BoardFrame
-from Frames.threadFrame import ThreadFrame
+from Frames.fchan.boardFrame import BoardFrame
+from Frames.fchan.threadFrame import ThreadFrame
 
 def chanCommands(cmd, uvm):
     cmd = cmd.split()

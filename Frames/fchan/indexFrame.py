@@ -4,7 +4,6 @@ class IndexFrame(urwid.WidgetWrap):
     def __init__(self, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
         self.uFilter = uFilter
-
         self.headerString = 'CommandChan'
 
         self.parsedItems = 0
@@ -17,7 +16,7 @@ class IndexFrame(urwid.WidgetWrap):
 
     def buildFrame(self):
         boardButtons = []
-        for board in self.uvm.boardList:
+        for board in self.uvm.currFocusView.boardList:
             if self.uFilter:
                 if self.uFilter.lower() in board.lower():
                     boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.changeFrameBoard), 'center')))

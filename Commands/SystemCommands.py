@@ -4,7 +4,8 @@ from debug import DEBUG
 from customeTypes import SITE
 from viewClass import View
 
-from Frames.indexFrame import IndexFrame
+from Frames.reddit.indexFrame import RedditIndexFrame
+from Frames.fchan.indexFrame import IndexFrame
 
 from splitTracker import Row, Column
 
@@ -33,7 +34,12 @@ def systemCommands(cmd, uvm):
         if cmd[1] in '4chan':
             DEBUG('4chan requested')
             setattr(uvm.currFocusView, 'site', SITE.FCHAN)
+            setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('FCHAN')['boards'])
             setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
+        elif cmd[1] in ['reddit', 'Reddit']:
+            setattr(uvm.currFocusView, 'site', SITE.REDDIT)
+            setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('REDDIT')['boards'])
+            setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     if cmd[0] in ('split'):
         if type(uvm.splitTuple) is Row:
