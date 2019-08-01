@@ -1,6 +1,6 @@
 *.pyc
 *.swp
-*.txt
+log.txt
 *.log
 .vscode/
 __pycache__/
