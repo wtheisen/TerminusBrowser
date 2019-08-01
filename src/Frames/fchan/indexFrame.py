@@ -1,6 +1,10 @@
 import urwid, time
 
+from debug import DEBUG
+
 class IndexFrame(urwid.WidgetWrap):
+    IndexFrameFactory = lambda x: IndexFrame(*x)
+
     def __init__(self, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
         self.uFilter = uFilter
@@ -12,6 +16,9 @@ class IndexFrame(urwid.WidgetWrap):
         self.endTime = time.time()
 
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
+
+        DEBUG(self.uvm.history)
+
         urwid.WidgetWrap.__init__(self, self.contents)
 
     def buildFrame(self):

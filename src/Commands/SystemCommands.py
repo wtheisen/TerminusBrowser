@@ -6,19 +6,20 @@ from Views.viewClass import View
 
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.fchan.indexFrame import IndexFrame
+from Frames.fchan.boardFrame import BoardFrame
+from Frames.fchan.threadFrame import ThreadFrame
 
 from splitTracker import Row, Column
 
 SystemCommandList = [
-    'search',
-    'refresh',
+    's', 'search',
+    'r', 'refresh',
     'split',
     'vsplit',
-    'site',
-    'history'
+    'view',
+    'h', 'history',
     'q',
-    'qa',
-    'quitall'
+    'qa', 'quitall'
 ]
 
 def systemCommands(cmd, uvm):
@@ -28,13 +29,22 @@ def systemCommands(cmd, uvm):
         DEBUG('Executing quit command')
         sys.exit()
 
-    if cmd[0] in ('site'):
+    if cmd[0] in ('h', 'history'):
+        for h in uvm.history[1:]:
+            if h[0] is uvm.currFocusView.id:
+                DEBUG('Executing history command')
+                uvm.history.insert(0, h)
+                setattr(uvm.currFocusView, 'frame', h[1](h[2]))
+                break
+
+    if cmd[0] in ('view'):
         DEBUG('executing site command')
         DEBUG(cmd)
         if cmd[1] in '4chan':
             DEBUG('4chan requested')
             setattr(uvm.currFocusView, 'site', SITE.FCHAN)
             setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('FCHAN')['boards'])
+            uvm.currFocusView.updateHistory(IndexFrame.IndexFrameFactory, [uvm])
             setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
         elif cmd[1] in ['reddit', 'Reddit']:
             setattr(uvm.currFocusView, 'site', SITE.REDDIT)

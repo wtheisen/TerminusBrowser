@@ -1,6 +1,8 @@
 import urwid, re, time, collections, requests
 
 class BoardFrame(urwid.WidgetWrap):
+    BoardFrameFactory = lambda x: BoardFrame(*x)
+
     def __init__(self, boardString, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
         self.boardString = boardString
@@ -14,11 +16,11 @@ class BoardFrame(urwid.WidgetWrap):
         self.startTime = time.time()
 
         self.titles = self.getJSONCatalog(self.url)
-        self.contents = urwid.Pile(self.buildFrame(boardString))
-        urwid.WidgetWrap.__init__(self, self.contents)
         self.endTime = time.time()
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
+        self.contents = urwid.Pile(self.buildFrame(boardString))
+        urwid.WidgetWrap.__init__(self, self.contents)
     def buildFrame(self, board):
         '''returns the board widget'''
 

@@ -25,6 +25,7 @@ class CommandHandler:
     def routeCommand(self, cmd):
         self.preCommand()
 
+        DEBUG(cmd)
         if cmd.split()[0] in SystemCommandList:
             systemCommands(cmd, self.uvm)
     

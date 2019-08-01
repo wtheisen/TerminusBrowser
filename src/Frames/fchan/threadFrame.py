@@ -7,6 +7,8 @@ from postClass import Post
 from customUrwidClasses import QuoteButton
 
 class ThreadFrame(urwid.WidgetWrap):
+    ThreadFrameFactory = lambda x: ThreadFrame(*x)
+
     def __init__(self, boardString, threadNumber, urwidViewManager, uFilter = None):
         self.uvm = urwidViewManager
         self.boardString = boardString

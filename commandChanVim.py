@@ -37,7 +37,8 @@ class urwidView():
         urwid.connect_signal(self.commandBar, 'command_entered', self.commandHandler.routeCommand)
         urwid.connect_signal(self.commandBar, 'exit_command', self.exitCommand)
 
-        self.history = collections.deque([], 50)
+        self.idList = []
+        self.history = []
 
         self.palette = [
         ('body', 'light gray', 'black', 'standout'),
@@ -61,6 +62,11 @@ class urwidView():
         self.buildAddHeaderView(self.currFocusView)
         self.buildAddFooterView(self.currFocusView)
 
+    def getFreeID(self):
+        ID = 1
+        while ID in self.idList:
+            ID += 1
+        return ID
 
     def exitCommand(self):
         self.mode = MODE.NORMAL

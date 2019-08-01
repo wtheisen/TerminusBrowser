@@ -9,8 +9,12 @@ class View(urwid.WidgetWrap):
         self.site = None
         self.uvm = urwidViewManager
         self.uFilter = uFilter
+        self.id = self.uvm.getFreeID()
 
         if not frame:
             self.frame = DefaultFrame()
         else:
             self.frame = frame
+
+    def updateHistory(self, classPointer, args):
+        self.uvm.history.insert(0, (self.id, classPointer, args))
