@@ -1,5 +1,7 @@
-# commandChan - a terminal 4chan/Reddit browser
+[![Build Status](https://travis-ci.com/wtheisen/commandChan.svg?branch=master)](https://travis-ci.com/wtheisen/commandChan)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
+# commandChan - a terminal 4chan/Reddit browser
 1. [Introduction](#introduction)
 2. [Screenshots](#screenshots)
 3. [Hotkeys](#hotkeys)
