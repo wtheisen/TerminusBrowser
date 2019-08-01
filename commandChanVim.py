@@ -97,11 +97,12 @@ class urwidView():
         # self.currFocusView = View(self)
 
     def renderScreen(self):
-        urwid.MainLoop(self.body,
-                       self.palette,
-                       self.screen,
-                       unhandled_input=self.handleKey,
-                       pop_ups=True).run()
+        if __name__ == '__main__': # for testing purposes don't render outside file
+            urwid.MainLoop(self.body,
+                        self.palette,
+                        self.screen,
+                        unhandled_input=self.handleKey,
+                        pop_ups=True).run()
 
     def handleKey(self, key):
         if key == ':':

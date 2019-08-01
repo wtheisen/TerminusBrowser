@@ -6,7 +6,7 @@ from debug import DEBUG
 
 class Config():
     def __init__(self, location=None):
-        if location:
+        if location and not os.path.isdir(location):
             self.location = location
         else:
             self.location = os.path.expanduser('~') + '/.config/commandChan/config.json'
