@@ -7,8 +7,6 @@ import urwid.web_display
 
 from enum import Enum
 
-sys.path.append('src')
-
 from config import Config
 from Views.viewClass import View
 from Frames.defaultFrame import DefaultFrame

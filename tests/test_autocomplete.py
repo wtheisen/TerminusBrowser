@@ -2,8 +2,6 @@
 
 import sys
 
-sys.path.append('src')
-
 from customUrwidClasses import CommandBar
 from commandChanVim import urwidView
 from autocomplete import autoComplete
