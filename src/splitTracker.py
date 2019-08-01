@@ -1,7 +1,7 @@
 import urwid
 
 from debug import DEBUG
-from viewClass import View
+from Views.viewClass import View
 
 class Column():
     def __init__(self):

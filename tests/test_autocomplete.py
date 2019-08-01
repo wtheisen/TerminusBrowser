@@ -1,5 +1,7 @@
 # test_autocomplete.py
 
+import sys
+
 from customUrwidClasses import CommandBar
 from commandChanVim import urwidView
 from autocomplete import autoComplete

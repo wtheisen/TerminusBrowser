@@ -7,8 +7,11 @@ import urwid.web_display
 
 from enum import Enum
 
+# add sys to path so you don't have to sys.
+sys.path.append('src')
+
 from config import Config
-from viewClass import View
+from Views.viewClass import View
 from Frames.defaultFrame import DefaultFrame
 from debug import INITDEBUG, DEBUG
 

@@ -1,5 +1,5 @@
 from debug import DEBUG
-from viewClass import View
+from Views.viewClass import View
 
 from Frames.reddit.subredditFrame import SubredditFrame
 from Frames.reddit.threadFrame import RedditThreadFrame

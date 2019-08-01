@@ -12,7 +12,7 @@ class Config():
             self.location = os.path.expanduser('~') + '/.config/commandChan/config.json'
 
         # load default config
-        self.defaults = self._load('./default_config.json')
+        self.defaults = self._load('./src/default_config.json')
         if not self.defaults:
             DEBUG('ERROR: No default file')
 

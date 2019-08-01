@@ -8,7 +8,7 @@ import urwid.web_display
 from enum import Enum
 
 from config import Config
-from viewClass import View
+from Views.viewClass import View
 from Frames.defaultFrame import DefaultFrame
 from debug import INITDEBUG, DEBUG
 
