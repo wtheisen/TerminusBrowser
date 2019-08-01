@@ -2,5 +2,6 @@
 
 Commands/RedditCommands.py @sambattalio
 Frames/reddit/* @sambattalio
+treeThreadClasses.py @sambattalio
 
 tests/* @ginglis13
