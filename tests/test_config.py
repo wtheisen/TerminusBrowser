@@ -1,5 +1,6 @@
-import json, os
+import json, os, sys
 
+sys.path.append('src')
 from config import Config
 
 import pytest
