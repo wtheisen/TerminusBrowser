@@ -3,7 +3,7 @@ import urwid, time, requests, re
 from debug import DEBUG
 from postClass import Post
 from customUrwidClasses import QuoteButton
-from treeThreadClasses import CommentNode
+from Views.treeThreadClasses import CommentNode
 
 class RedditThreadFrame(urwid.WidgetWrap):
     def __init__(self, subString, threadUri, urwidViewManager, uFilter = None):

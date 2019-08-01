@@ -1,7 +1,7 @@
 *   @wtheisen
 
-Commands/RedditCommands.py @sambattalio
-Frames/reddit/* @sambattalio
-treeThreadClasses.py @sambattalio
+src/Commands/RedditCommands.py @sambattalio
+src/Frames/reddit/* @sambattalio
+src/Views/treeThreadClasses.py @sambattalio
 
 tests/* @ginglis13

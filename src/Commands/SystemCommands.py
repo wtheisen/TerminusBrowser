@@ -2,7 +2,7 @@ import sys
 
 from debug import DEBUG
 from customeTypes import SITE
-from viewClass import View
+from Views.viewClass import View
 
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.fchan.indexFrame import IndexFrame

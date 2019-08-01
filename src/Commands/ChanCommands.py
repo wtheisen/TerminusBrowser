@@ -1,5 +1,5 @@
 from debug import DEBUG
-from viewClass import View
+from Views.viewClass import View
 
 from Frames.fchan.boardFrame import BoardFrame
 from Frames.fchan.threadFrame import ThreadFrame

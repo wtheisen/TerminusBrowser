@@ -7,8 +7,10 @@ import urwid.web_display
 
 from enum import Enum
 
+sys.path.append('src')
+
 from config import Config
-from viewClass import View
+from Views.viewClass import View
 from Frames.defaultFrame import DefaultFrame
 from debug import INITDEBUG, DEBUG
 
@@ -18,7 +20,7 @@ from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
 from customeTypes import LEVEL, MODE, SITE, STICKIES
 
-from commandChanVim import urwidView
+from ..commandChanVim import urwidView
 
 import pytest
 
