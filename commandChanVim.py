@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys, urwid, time, os
 import requests, json, collections, re
 
