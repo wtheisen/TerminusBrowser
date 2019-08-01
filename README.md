@@ -32,9 +32,10 @@ To run `python3 commandChanVim.py`
 
 ## Commands <a name="commands"></a>
 
-- qa or quitall - Close the program
+- (q)uit(a)ll - Close the program
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
-- site [PATTERN] - [PATTERN] being either 4chan or reddit currently it will open that site in the current view
+- view [PATTERN] - [PATTERN] being either 4chan or reddit currently it will open that site in the current view
+- (h)istory - will go back one level in the history list 
 
 ## Configuration <a name="config"></a>
 
