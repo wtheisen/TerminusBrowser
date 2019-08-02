@@ -8,22 +8,28 @@ from autocomplete import autoComplete
 
 class QuotePreview(urwid.WidgetWrap):
     signals = ['close']
-    def __init__(self, quoteNumber):
-        global currentThreadWidgets
+    def __init__(self, quoteNumber, urwidViewManager):
+        currViewThreadWidgets = urwidViewManager.currFocusView.frame.postWidgetDict
+
         close_button = urwid.Button("Hide")
         urwid.connect_signal(close_button, 'click', lambda button:self._emit("close"))
         cleanQuoteNumber = re.sub("[^0-9]", "", str(quoteNumber))
-        fill = urwid.Filler(urwid.LineBox(urwid.Pile([currentThreadWidgets[cleanQuoteNumber], close_button])))
+        widgetList = currViewThreadWidgets[cleanQuoteNumber]
+        widgetList.append(close_button)
+        DEBUG(widgetList)
+        fill = urwid.Filler(urwid.LineBox(urwid.Pile(widgetList)))
         self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
 
 class QuoteButton(urwid.PopUpLauncher):
-    def __init__(self, quoteNumber):
+    def __init__(self, quoteNumber, urwidViewManager):
         self.quoteNumber = quoteNumber
+        self.uvm = urwidViewManager
+
         self.__super.__init__(urwid.Button(str(quoteNumber)))
         urwid.connect_signal(self.original_widget, 'click', lambda button: self.open_pop_up())
 
     def create_pop_up(self):
-        pop_up = QuotePreview(self.quoteNumber)
+        pop_up = QuotePreview(self.quoteNumber, self.uvm)
         urwid.connect_signal(pop_up, 'close', lambda button: self.close_pop_up())
         return pop_up
 

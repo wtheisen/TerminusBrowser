@@ -15,6 +15,8 @@ class ThreadFrame(urwid.WidgetWrap):
         self.threadNumber = threadNumber
         self.uFilter = uFilter
 
+        self.threadWidgetDict = {}
+
         self.url = 'https://a.4cdn.org' + self.boardString + 'thread/' + str(self.threadNumber)
         self.imageUrl = 'http://boards.4chan.org' + self.boardString + 'thread/' + str(self.threadNumber)
         self.headers = {}
@@ -27,6 +29,7 @@ class ThreadFrame(urwid.WidgetWrap):
         urwid.WidgetWrap.__init__(self, self.contents)
 
         self.endTime = time.time()
+        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
     def getJSONThread(self):
         response = requests.get(self.url + '.json', headers=self.headers)
@@ -57,7 +60,7 @@ class ThreadFrame(urwid.WidgetWrap):
         return urwid.Pile([listbox])
 
     def buildThread(self):
-        postWidgetDict = {}
+        self.postWidgetDict = {}
 
         for p in self.comments:
             self.postReplyDict[str(p.userIden)] = []
@@ -66,17 +69,18 @@ class ThreadFrame(urwid.WidgetWrap):
 
             if self.uFilter:
                 if self.uFilter.lower() in p.content.lower():
-                    postWidgetDict[p.userIdent] = commentWidget
+                    self.postWidgetDict[p.userIdent] = commentWidget
             else:
-                postWidgetDict[p.userIden] = commentWidget
+                self.postWidgetDict[p.userIden] = commentWidget
 
         postWidgetList = []
-        for pNum, pWidget in postWidgetDict.items():
+        for pNum, pWidget in self.postWidgetDict.items():
             if pNum in self.postReplyDict:
                 pWidget.append(urwid.Text('Replies: ' + str(self.postReplyDict[pNum])))
             postWidgetList.append(urwid.LineBox(urwid.Pile(pWidget)))
 
-        self.uvm.itemCount = len(self.comments)
+        self.parsedItems = len(self.comments)
+
 
         listbox_content = postWidgetList
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
@@ -110,7 +114,7 @@ class ThreadFrame(urwid.WidgetWrap):
                     except KeyError:
                         pass
 
-                    widgetContent.append(urwid.AttrWrap(QuoteButton(str(data)), 'quote'))
+                    widgetContent.append(urwid.AttrWrap(QuoteButton(str(data), parent.uvm), 'quote'))
                 else:
                     widgetContent.append(urwid.Text(data))
 
