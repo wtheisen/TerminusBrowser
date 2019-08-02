@@ -15,7 +15,14 @@ sites in the terminal using a unified program.
 This is currently a terminal browsing application for [4chan](https://www.4chan.org/), and now [Reddit](https://www.reddit.com/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python. 
 It also makes use of the [4chan API](https://github.com/4chan/4chan-API) and the [Reddit API](https://www.reddit.com/dev/api/) 
-To run `python3 commandChanVim.py`
+
+To run, first install the dependencies in requirements.txt
+
+```
+pip3 install -r requirements.txt
+```
+
+And then run `./commandChanVim.py`
 
 ## Screenshots <a name="screenshots"></a>
 
