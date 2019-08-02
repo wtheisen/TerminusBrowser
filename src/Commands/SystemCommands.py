@@ -29,7 +29,7 @@ def systemCommands(cmd, uvm):
         DEBUG('Executing quit command')
         sys.exit()
 
-    if cmd[0] in ('h', 'history'):
+    elif cmd[0] in ('h', 'history'):
         for h in uvm.history[1:]:
             if h[0] is uvm.currFocusView.id:
                 DEBUG('Executing history command')
@@ -37,7 +37,16 @@ def systemCommands(cmd, uvm):
                 setattr(uvm.currFocusView, 'frame', h[1](h[2]))
                 break
 
-    if cmd[0] in ('view'):
+    elif cmd[0] in ('s', 'search'):
+        h = uvm.history[0]
+        DEBUG(uvm.history)
+        newArgs = h[2].copy()
+        if len(cmd) is 2:
+            newArgs.append(cmd[1])
+
+        setattr(uvm.currFocusView, 'frame', h[1](newArgs))
+
+    elif cmd[0] in ('view'):
         DEBUG('executing site command')
         DEBUG(cmd)
         if cmd[1] in '4chan':
@@ -51,7 +60,7 @@ def systemCommands(cmd, uvm):
             setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('REDDIT')['boards'])
             setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
-    if cmd[0] in ('split'):
+    elif cmd[0] in ('split'):
         if type(uvm.splitTuple) is Row:
             uvm.splitTuple.widgets.append(View(uvm))
         else:

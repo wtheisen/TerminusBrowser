@@ -13,8 +13,8 @@
 Created out of a desire to browse 4chan at work, commandChan is turning into a general framework for browsing
 sites in the terminal using a unified program.
 This is currently a terminal browsing application for [4chan](https://www.4chan.org/), and now [Reddit](https://www.reddit.com/).
-Built using the [urwid](https://github.com/urwid/urwid/) library for python. 
-It also makes use of the [4chan API](https://github.com/4chan/4chan-API) and the [Reddit API](https://www.reddit.com/dev/api/) 
+Built using the [urwid](https://github.com/urwid/urwid/) library for python.
+It also makes use of the [4chan API](https://github.com/4chan/4chan-API) and the [Reddit API](https://www.reddit.com/dev/api/)
 To run `python3 commandChanVim.py`
 
 ## Screenshots <a name="screenshots"></a>
@@ -35,7 +35,8 @@ To run `python3 commandChanVim.py`
 - (q)uit(a)ll - Close the program
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
 - view [PATTERN] - [PATTERN] being either 4chan or reddit currently it will open that site in the current view
-- (h)istory - will go back one level in the history list 
+- (h)istory - will go back one level in the history list
+- (s)earch [PATTERN] - will search the current view for the pattern, if pattern is blank it will reset the current view
 
 ## Configuration <a name="config"></a>
 

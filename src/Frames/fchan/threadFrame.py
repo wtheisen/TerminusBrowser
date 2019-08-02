@@ -69,7 +69,7 @@ class ThreadFrame(urwid.WidgetWrap):
 
             if self.uFilter:
                 if self.uFilter.lower() in p.content.lower():
-                    self.postWidgetDict[p.userIdent] = commentWidget
+                    self.postWidgetDict[p.userIden] = commentWidget
             else:
                 self.postWidgetDict[p.userIden] = commentWidget
 
