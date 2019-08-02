@@ -60,6 +60,8 @@ And then run `./commandChanVim.py`
     - [X] Search command for current view
     - [X] Thread command to view thread by number
     - [X] Toggle to show or hide stickied reddit posts
+    - [ ] Download image(s) for later viewing
+    - [ ] Filtering reddit comments based on score
 - [ ] Toggleable display modes(boxes, tree, cascade)
 - [X] Display comment replies in the info bar at the top of the comment
 - [ ] History Frame
