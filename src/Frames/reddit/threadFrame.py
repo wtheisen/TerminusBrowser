@@ -6,6 +6,8 @@ from customUrwidClasses import QuoteButton
 from Views.treeThreadClasses import CommentNode
 
 class RedditThreadFrame(urwid.WidgetWrap):
+    RedditThreadFrameFactory = lambda x: RedditThreadFrame(*x)
+
     def __init__(self, subString, threadUri, urwidViewManager, uFilter = None):
         self.uvm = urwidViewManager
         self.subString = subString

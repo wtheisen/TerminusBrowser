@@ -3,6 +3,8 @@ from debug import DEBUG
 from customeTypes import STICKIES
 
 class SubredditFrame(urwid.WidgetWrap):
+    SubredditFrameFactory = lambda x: SubredditFrame(*x)
+    
     def __init__(self, boardString, urwidViewManager, uFilter=None, token=''):
         self.uvm = urwidViewManager
         self.boardString = boardString
