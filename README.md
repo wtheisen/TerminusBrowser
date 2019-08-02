@@ -64,8 +64,8 @@ And then run `./commandChanVim.py`
 - [X] Display comment replies in the info bar at the top of the comment
 - [ ] History Frame
 - [ ] Quote button full interaction
-    - [ ] Quotes of OP have the (OP) designator
-    - [ ] Interacting with Quotes displays a preview of said Quote
+    - [X] Quotes of OP have the (OP) designator
+    - [X] Interacting with Quotes displays a preview of said Quote
     - [ ] Size of preview depends on size of quote being previewed
     - [ ] Chain Quote Previews together to view up the quote tree
 - [ ] Split view based on hotkeys
