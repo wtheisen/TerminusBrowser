@@ -24,6 +24,13 @@ from customeTypes import LEVEL, MODE, SITE, STICKIES
 ################################################################################
 
 class urwidView():
+    KEYMAP = {
+        'h': 'left',
+        'j': 'down',
+        'k': 'up',
+        'l': 'right'
+    }
+
     def __init__(self):
         self.mode   = MODE.NORMAL
         self.stickies = STICKIES.HIDE
@@ -123,26 +130,13 @@ class urwidView():
         if self.mode is MODE.NORMAL:
             rows, cols = urwid.raw_display.Screen().get_cols_rows()
             DEBUG(key)
-            if key == 'h':
-                self.body.keypress((rows,cols), 'left')
-            if key == 'j':
-                self.body.keypress((rows,cols), 'down')
-            if key == 'k':
-                self.body.keypress((rows,cols), 'up')
-            if key == 'l':
-                self.body.keypress((rows,cols), 'right')
+            if key.isalpha():
+                key = key.lower()
+            
+            if key not in urwidView.KEYMAP.keys():
+                return
 
-            if key == 'H':
-                self.body.keypress((rows,cols), 'left')
-            if key == 'J':
-                self.body.keypress((rows,cols), 'down')
-            if key == 'K':
-                self.body.keypress((rows,cols), 'up')
-            if key == 'L':
-                self.body.keypress((rows,cols), 'right')
-
-            if key == 'r':
-                pass
+            self.body.keypress((rows, cols), urwidView.KEYMAP[key])
 
 ################################################################################
 
