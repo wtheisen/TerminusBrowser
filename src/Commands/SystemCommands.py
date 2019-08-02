@@ -58,6 +58,7 @@ def systemCommands(cmd, uvm):
         elif cmd[1] in ['reddit', 'Reddit']:
             setattr(uvm.currFocusView, 'site', SITE.REDDIT)
             setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('REDDIT')['boards'])
+            uvm.currFocusView.updateHistory(RedditIndexFrame.IndexFrameFactory, [uvm])
             setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd[0] in ('split'):

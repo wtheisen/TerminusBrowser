@@ -40,5 +40,5 @@ class IndexFrame(urwid.WidgetWrap):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
         ch.routeCommand('board ' + button.get_label())
-        
+
         # commands.board(self.uvm, button.get_label())

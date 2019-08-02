@@ -2,6 +2,8 @@ import urwid, time
 from debug import DEBUG
 
 class RedditIndexFrame(urwid.WidgetWrap):
+    IndexFrameFactory = lambda x: RedditIndexFrame(*x)
+
     def __init__(self, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
         self.uFilter = uFilter
