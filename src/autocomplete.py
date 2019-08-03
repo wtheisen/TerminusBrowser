@@ -1,9 +1,8 @@
+from Commands.SystemCommands import SystemCommandList
 from debug import DEBUG
 commandList = [
-                'search',
                 'thread',
                 'stickies',
-                'history',
                 'board',
                 'post',
                 'reply',
@@ -22,13 +21,13 @@ def autoComplete(editBox):
 
     if len(inputList) == 1: #completing first bit
         currCommand = currText.split()[0]
-        matches = [x for x in commandList if x.startswith(currCommand)]
+        matches = [x for x in (commandList + SystemCommandList) if x.startswith(currCommand)]
         # Check to toggle for previous match
         if not len(matches):
             return
         elif len(matches) == 1:
             currCommand = currCommand[:3]
-            matches = [x for x in commandList if x.startswith(currCommand)]
+            matches = [x for x in (commandList + SystemCommandList) if x.startswith(currCommand)]
         match = min(matches, key=len)
         if currCommand in commandList:
             try:
