@@ -30,7 +30,8 @@ def view():
 def test_init(view):
     assert view.mode   == MODE.NORMAL
     assert view.stickies == STICKIES.HIDE
-    assert view.boardList == view.cfg.get(view.site.name)['boards']
+    assert view.boardList == view.cfg.get('FCHAN')['boards']
+    assert view.subredditList == view.cfg.get('REDDIT')['boards']
 
 def test_buildSetStartView(view):
     pass
