@@ -34,13 +34,14 @@ def systemCommands(cmd, uvm):
         sys.exit()
 
     elif cmd[0] in ('add'):
-        DEBUG(f'Executing add command with args: {cmd[1:]}')
-        if cmd[1] == '4chan':
-            for board in cmd[2:]:
-                uvm.boardList.append(board)
-        elif cmd[1] == 'reddit':
-            for subreddit in cmd[2:]:
-                uvm.subredditList.append(subreddit)
+        if len(cmd) >= 3:
+            DEBUG(f'Executing add command with args: {cmd[1:]}')
+            if cmd[1] == '4chan':
+                for board in cmd[2:]:
+                    uvm.boardList.append(board)
+            elif cmd[1] == 'reddit':
+                for subreddit in cmd[2:]:
+                    uvm.subredditList.append(subreddit)
 
     elif cmd[0] in ('set'):
         pass
@@ -50,7 +51,9 @@ def systemCommands(cmd, uvm):
         try:
             with open(cmd[1], 'r') as rcFile:
                 for command in rcFile:
-                    systemCommands(command, uvm)
+                    command = command.strip()
+                    if command[0] != '#':
+                        systemCommands(command, uvm)
         except:
             DEBUG(f'ERROR: Unable to source {cmd[1]}')
 
