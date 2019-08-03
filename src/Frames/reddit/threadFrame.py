@@ -25,6 +25,8 @@ class RedditThreadFrame(urwid.WidgetWrap):
         self.contents = self.buildFrame()
         urwid.WidgetWrap.__init__(self, self.contents)
         self.endTime = time.time()
+
+        self.headerString = f'commandChan: {self.subString} -- {threadUri.split("/")[-2]}'
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
 

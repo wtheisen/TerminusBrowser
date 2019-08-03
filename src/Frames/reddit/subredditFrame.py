@@ -5,12 +5,12 @@ from customeTypes import STICKIES
 class SubredditFrame(urwid.WidgetWrap):
     SubredditFrameFactory = lambda x: SubredditFrame(*x)
     
-    def __init__(self, boardString, token, urwidViewManager, uFilter=None):
+    def __init__(self, subreddit, token, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
-        self.boardString = boardString
+        self.subreddit = subreddit
         self.uFilter = uFilter
 
-        self.url = 'https://www.reddit.com' + self.boardString + '.json' + '?limit=100'
+        self.url = 'https://www.reddit.com' + self.subreddit + '.json' + '?limit=100'
         self.token = token
         if self.token:
             self.url += '&after=' + self.token
@@ -24,9 +24,11 @@ class SubredditFrame(urwid.WidgetWrap):
         self.startTime = time.time()
 
         self.titles = self.getJSONCatalog(self.url)
-        self.contents = urwid.Pile(self.buildFrame(boardString))
+        self.contents = urwid.Pile(self.buildFrame(subreddit))
         urwid.WidgetWrap.__init__(self, self.contents)
         self.endTime = time.time()
+
+        self.headerString = f'commandChan: {self.subreddit}'
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
     def buildFrame(self, board):
@@ -92,9 +94,9 @@ class SubredditFrame(urwid.WidgetWrap):
     def changeFrameThread(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('post ' + self.boardString + ' ' + button.get_label())
+        ch.routeCommand('post ' + self.subreddit + ' ' + button.get_label())
 
     def changeSubPage(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('sub ' + self.boardString + ' ' + button.get_label())
+        ch.routeCommand('sub ' + self.subreddit + ' ' + button.get_label())

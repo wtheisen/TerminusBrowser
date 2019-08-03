@@ -8,7 +8,7 @@ class RedditIndexFrame(urwid.WidgetWrap):
         self.uvm = urwidViewManager
         self.uFilter = uFilter
 
-        self.headerString = 'CommandChan'
+        self.headerString = 'commandChan'
 
         self.parsedItems = 0
         self.startTime = time.time()
@@ -21,12 +21,12 @@ class RedditIndexFrame(urwid.WidgetWrap):
     def buildFrame(self):
         boardButtons = []
         DEBUG(self.uvm.subredditList)
-        for board in self.uvm.subredditList:
+        for subreddit in self.uvm.subredditList:
             if self.uFilter:
-                if self.uFilter.lower() in board.lower():
-                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + board, self.changeFrameBoard), 'center')))
+                if self.uFilter.lower() in subreddit.lower():
+                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + subreddit, self.changeFrameBoard), 'center')))
             else:
-                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + board, self.changeFrameBoard), 'center')))
+                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + subreddit, self.changeFrameBoard), 'center')))
 
         self.parsedItems = len(boardButtons)
         buttonGrid = urwid.GridFlow(boardButtons, 12, 2, 2, 'center')

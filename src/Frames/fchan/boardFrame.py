@@ -17,6 +17,8 @@ class BoardFrame(urwid.WidgetWrap):
 
         self.titles = self.getJSONCatalog(self.url)
         self.endTime = time.time()
+
+        self.headerString = f'commandChan: {self.boardString}'
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
         self.contents = urwid.Pile(self.buildFrame(boardString))

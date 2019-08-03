@@ -29,6 +29,8 @@ class ThreadFrame(urwid.WidgetWrap):
         urwid.WidgetWrap.__init__(self, self.contents)
 
         self.endTime = time.time()
+
+        self.headerString = f'commandChan: {self.boardString} -- {str(self.threadNumber)}'
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
     def getJSONThread(self):
