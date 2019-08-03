@@ -1,22 +1,19 @@
 import urwid, time
 from debug import DEBUG
 
-class RedditIndexFrame(urwid.WidgetWrap):
-    IndexFrameFactory = lambda x: RedditIndexFrame(*x)
+from Frames.abstractFrame import AbstractFrame
 
+class RedditIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
-        self.uvm = urwidViewManager
-        self.uFilter = uFilter
-
+        super().__init__(urwidViewManager, uFilter)
         self.headerString = 'commandChan'
 
-        self.parsedItems = 0
-        self.startTime = time.time()
-        self.contents = self.buildFrame()
-        self.endTime = time.time()
-
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
+        self.load()
         urwid.WidgetWrap.__init__(self, self.contents)
+    
+    # Overrides super
+    def loader(self):
+        self.contents = self.buildFrame()
 
     def buildFrame(self):
         boardButtons = []

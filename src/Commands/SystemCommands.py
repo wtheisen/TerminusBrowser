@@ -4,6 +4,7 @@ from debug import DEBUG
 from customeTypes import SITE
 from Views.viewClass import View
 
+from Frames.defaultFrame import FrameFactory
 from Frames.historyFrame import HistoryFrame
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.fchan.indexFrame import IndexFrame
@@ -92,12 +93,12 @@ def systemCommands(cmd, uvm):
                 DEBUG('4chan requested')
                 setattr(uvm.currFocusView, 'site', SITE.FCHAN)
                 # setattr(uvm.currFocusView, 'boardList', uvm.boardList)
-                uvm.currFocusView.updateHistory(IndexFrame.IndexFrameFactory, [uvm])
+                uvm.currFocusView.updateHistory(FrameFactory([uvm], IndexFrame))
                 setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
             elif cmd[1] == ['reddit', 'Reddit']:
                 setattr(uvm.currFocusView, 'site', SITE.REDDIT)
                 # setattr(uvm.currFocusView, 'boardList', uvm.subredditList)
-                uvm.currFocusView.updateHistory(RedditIndexFrame.IndexFrameFactory, [uvm])
+                uvm.currFocusView.updateHistory(FrameFactory([uvm], RedditIndexFrame))
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd[0] in ('split'):

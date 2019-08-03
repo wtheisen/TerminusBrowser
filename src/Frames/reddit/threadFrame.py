@@ -4,31 +4,27 @@ from debug import DEBUG
 from postClass import Post
 from customUrwidClasses import QuoteButton
 from Views.treeThreadClasses import CommentNode
+from Frames.abstractFrame import AbstractFrame
 
-class RedditThreadFrame(urwid.WidgetWrap):
-    RedditThreadFrameFactory = lambda x: RedditThreadFrame(*x)
-
+class RedditThreadFrame(AbstractFrame):
     def __init__(self, subString, threadUri, urwidViewManager, uFilter = None):
-        self.uvm = urwidViewManager
+        super().__init__(urwidViewManager, uFilter)
         self.subString = subString
         self.threadUri = threadUri
-        self.uFilter = uFilter
-        self.parsedItems = 0
 
         self.url = 'https://www.reddit.com' + self.threadUri
         self.headers = {
             'user-agent': 'reddit-commandChan'        
         }
 
-        self.startTime = time.time()
+        self.load()
+        self.headerString = f'commandChan: {self.subString} -- {threadUri.split("/")[-2]}'
+
+    # Overrides super
+    def loader(self):
         self.comments = self.getJSONThread()
         self.contents = self.buildFrame()
         urwid.WidgetWrap.__init__(self, self.contents)
-        self.endTime = time.time()
-
-        self.headerString = f'commandChan: {self.subString} -- {threadUri.split("/")[-2]}'
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
-
 
     def getJSONThread(self):
         response = requests.get(self.url + '.json', headers=self.headers)
