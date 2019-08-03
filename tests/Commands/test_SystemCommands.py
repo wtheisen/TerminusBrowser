@@ -35,6 +35,7 @@ def test_addReddit(test_input, expected, view):
     assert result
 
 
+'''
 test_views = [
     ('view reddit', [SITE.REDDIT, RedditIndexFrame]),
     ('view 4chan', [SITE.FCHAN, IndexFrame]),
@@ -45,4 +46,4 @@ def test_view(test_input, expected, view):
     systemCommands(test_input, view)
     assert view.currFocusView.site == expected[0]
     assert type(view.currFocusView.frame) == expected[1]
-
+'''
