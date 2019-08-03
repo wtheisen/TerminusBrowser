@@ -32,7 +32,7 @@ class CommandHandler:
                 self.postCommand()
                 return
 
-        DEBUG(self.uvm.site)
+        # DEBUG(self.uvm.site)
         if self.uvm.currFocusView.site is SITE.FCHAN:
             chanCommands(cmd, self.uvm)
         if self.uvm.currFocusView.site is SITE.REDDIT:

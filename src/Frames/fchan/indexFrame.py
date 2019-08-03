@@ -23,7 +23,7 @@ class IndexFrame(urwid.WidgetWrap):
 
     def buildFrame(self):
         boardButtons = []
-        for board in self.uvm.currFocusView.boardList:
+        for board in self.uvm.boardList:
             if self.uFilter:
                 if self.uFilter.lower() in board.lower():
                     boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.changeFrameBoard), 'center')))

@@ -20,8 +20,11 @@ def chanCommands(cmd, uvm):
 
 def board(uvm, boardString):
     DEBUG('Executing board command')
-    uvm.currFocusView.updateHistory(BoardFrame.BoardFrameFactory, [boardString, uvm])
-    setattr(uvm.currFocusView, 'frame', BoardFrame(boardString, uvm))
+    try:
+        setattr(uvm.currFocusView, 'frame', BoardFrame(boardString, uvm))
+        uvm.currFocusView.updateHistory(BoardFrame.BoardFrameFactory, [boardString, uvm])
+    except:
+        DEBUG(f'Error connecting to board {boardString}, does it exist?')
     # uvm.allViews = View(uvm, BoardFrame(boardString, uvm))
 
 def thread(uvm, boardString, threadNumber):

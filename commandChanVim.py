@@ -35,8 +35,11 @@ class urwidView():
         self.mode   = MODE.NORMAL
         self.stickies = STICKIES.HIDE
         self.cfg    = Config()
-        self.site   = SITE[self.cfg.get('SITE')]
-        self.boardList = self.cfg.get(self.site.name)['boards']
+
+        # self.site   = SITE[self.cfg.get('SITE')]
+        self.boardList = self.cfg.get('FCHAN')['boards']
+        self.subredditList = self.cfg.get('REDDIT')['boards']
+
         self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)

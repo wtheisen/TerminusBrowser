@@ -62,6 +62,7 @@ class SubredditFrame(urwid.WidgetWrap):
 
     def getJSONCatalog(self, url):
         response = requests.get(url, headers=self.headers)
+
         data = response.json()
 
         return self.parseSubreddit(data)

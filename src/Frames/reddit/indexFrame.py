@@ -20,7 +20,8 @@ class RedditIndexFrame(urwid.WidgetWrap):
 
     def buildFrame(self):
         boardButtons = []
-        for board in self.uvm.currFocusView.boardList:
+        DEBUG(self.uvm.subredditList)
+        for board in self.uvm.subredditList:
             if self.uFilter:
                 if self.uFilter.lower() in board.lower():
                     boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.changeFrameBoard), 'center')))

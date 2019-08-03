@@ -12,7 +12,10 @@ from Frames.fchan.threadFrame import ThreadFrame
 from splitTracker import Row, Column
 
 SystemCommandList = [
+    'add',
     's', 'search',
+    'set',
+    'source',
     'r', 'refresh',
     'split',
     'vsplit',
@@ -29,6 +32,27 @@ def systemCommands(cmd, uvm):
     if cmd[0] in ('qa', 'quitall'):
         DEBUG('Executing quit command')
         sys.exit()
+
+    elif cmd[0] in ('add'):
+        DEBUG(f'Executing add command with args: {cmd[1:]}')
+        if cmd[1] == '4chan':
+            for board in cmd[2:]:
+                uvm.boardList.append(board)
+        elif cmd[1] == 'reddit':
+            for subreddit in cmd[2:]:
+                uvm.subredditList.append(subreddit)
+
+    elif cmd[0] in ('set'):
+        pass
+
+    elif cmd[0] in ('source'):
+        pass
+        try:
+            with open(cmd[1], 'r') as rcFile:
+                for command in rcFile:
+                    systemCommands(command, uvm)
+        except:
+            DEBUG(f'ERROR: Unable to source {cmd[1]}')
 
     elif cmd[0] in ('h', 'history'):
         for h in uvm.history[1:]:
@@ -53,12 +77,12 @@ def systemCommands(cmd, uvm):
             if cmd[1] in '4chan':
                 DEBUG('4chan requested')
                 setattr(uvm.currFocusView, 'site', SITE.FCHAN)
-                setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('FCHAN')['boards'])
+                # setattr(uvm.currFocusView, 'boardList', uvm.boardList)
                 uvm.currFocusView.updateHistory(IndexFrame.IndexFrameFactory, [uvm])
                 setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
             elif cmd[1] in ['reddit', 'Reddit']:
                 setattr(uvm.currFocusView, 'site', SITE.REDDIT)
-                setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('REDDIT')['boards'])
+                # setattr(uvm.currFocusView, 'boardList', uvm.subredditList)
                 uvm.currFocusView.updateHistory(RedditIndexFrame.IndexFrameFactory, [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 

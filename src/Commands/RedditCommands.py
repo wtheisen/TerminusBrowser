@@ -16,8 +16,11 @@ def redditCommands(cmd, uvm):
 
 def subreddit(uvm, subString, token):
     DEBUG('Executing subreddit command')
-    uvm.currFocusView.updateHistory(SubredditFrame.SubredditFrameFactory, [subString, token, uvm])
-    setattr(uvm.currFocusView, 'frame', SubredditFrame(subString, token, uvm))
+    try:
+        setattr(uvm.currFocusView, 'frame', SubredditFrame(subString, token, uvm))
+        uvm.currFocusView.updateHistory(SubredditFrame.SubredditFrameFactory, [subString, token, uvm])
+    except:
+        DEBUG(f'Error connecting to subreddit {subString}, does it exist?')
 
 def post(uvm, subString, postNumber):
     DEBUG('Executing post command')
