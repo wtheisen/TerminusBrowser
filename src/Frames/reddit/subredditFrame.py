@@ -5,7 +5,7 @@ from customeTypes import STICKIES
 class SubredditFrame(urwid.WidgetWrap):
     SubredditFrameFactory = lambda x: SubredditFrame(*x)
     
-    def __init__(self, boardString, urwidViewManager, uFilter=None, token=''):
+    def __init__(self, boardString, token, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
         self.boardString = boardString
         self.uFilter = uFilter
@@ -35,9 +35,10 @@ class SubredditFrame(urwid.WidgetWrap):
         threadButtonList = []
 
         for title, threadInfo in self.titles.items():
-            if title in ('Next', 'Prev'):
-                subButton = urwid.Button(str(threadInfo[0]), self.changeSubPage)
-                threadButtonList.append(urwid.LineBox(urwid.Pile([subButton, urwid.Divider('-'), urwid.Text(threadInfo[1])])))
+            if title == 'Next':
+                if not self.uFilter:
+                    subButton = urwid.Button(str(threadInfo[0]), self.changeSubPage)
+                    threadButtonList.append(urwid.LineBox(urwid.Pile([subButton, urwid.Divider('-'), urwid.Text(threadInfo[1])])))
                 continue
             title = title.replace('-', ' ')
             if self.uFilter:
@@ -69,7 +70,7 @@ class SubredditFrame(urwid.WidgetWrap):
         titles = collections.OrderedDict()
         posts = data['data']['children']
 
-        DEBUG(data['data'].get('before'))
+        DEBUG(posts)
 
         for post in posts:
             if self.uvm.stickies == STICKIES.HIDE and post['data']['stickied']:
@@ -95,4 +96,4 @@ class SubredditFrame(urwid.WidgetWrap):
     def changeSubPage(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('subpage ' + self.boardString + ' ' + button.get_label())
+        ch.routeCommand('sub ' + self.boardString + ' ' + button.get_label())
