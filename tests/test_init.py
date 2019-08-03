@@ -33,18 +33,6 @@ def test_init(view):
     assert view.boardList == view.cfg.get('FCHAN')['boards']
     assert view.subredditList == view.cfg.get('REDDIT')['boards']
 
-def test_buildSetStartView(view):
-    pass
-
-def test_buildAddHeaderView():
-    pass
-
-def test_buildAddFooterView():
-    pass
-
-def test_exitCommand():
-    pass
-
 def test_handleKeyCommand(view):
     view.handleKey(':')
     assert view.mode == MODE.COMMAND
