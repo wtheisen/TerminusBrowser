@@ -20,10 +20,10 @@
 	},
 	"REDDIT": {
 		"boards": [
-			"/r/all", "/r/notredame", "/r/askreddit",
-			"/r/okbuddyretard", "/r/gamersriseup",
-			"/r/linux", "/r/pcmasterrace", "/r/gaming",
-			"/r/todayilearned", "/r/bestoflegaladvice"
+			"all", "notredame", "askreddit",
+			"okbuddyretard", "gamersriseup",
+			"linux", "pcmasterrace", "gaming",
+			"todayilearned", "bestoflegaladvice"
 		]
 	}
 }

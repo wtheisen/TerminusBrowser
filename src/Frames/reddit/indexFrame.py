@@ -24,9 +24,9 @@ class RedditIndexFrame(urwid.WidgetWrap):
         for board in self.uvm.subredditList:
             if self.uFilter:
                 if self.uFilter.lower() in board.lower():
-                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.changeFrameBoard), 'center')))
+                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + board, self.changeFrameBoard), 'center')))
             else:
-                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.changeFrameBoard), 'center')))
+                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + board, self.changeFrameBoard), 'center')))
 
         self.parsedItems = len(boardButtons)
         buttonGrid = urwid.GridFlow(boardButtons, 12, 2, 2, 'center')
