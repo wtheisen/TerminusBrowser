@@ -3,7 +3,6 @@
 import urwid, re, collections
 
 from debug import DEBUG
-from autocomplete import autoComplete
 
 
 class QuotePreview(urwid.WidgetWrap):
@@ -41,6 +40,9 @@ class FocusMixin(object):
         if focus and hasattr(self, '_got_focus') and self._got_focus:
             self._got_focus()
         return super(FocusMixin,self).mouse_event(size, event, button, x, y, focus)
+
+# moved b/c of circular import caused with QuoteButton
+from autocomplete import autoComplete
 
 class CommandBar(FocusMixin, urwid.Edit):
     signals=['command_entered', 'exit_command']

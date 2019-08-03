@@ -16,6 +16,7 @@ SystemCommandList = [
     'r', 'refresh',
     'split',
     'vsplit',
+    'unsplit',
     'view',
     'h', 'history',
     'q',
@@ -35,7 +36,6 @@ def systemCommands(cmd, uvm):
                 DEBUG('Executing history command')
                 uvm.history.insert(0, h)
                 setattr(uvm.currFocusView, 'frame', h[1](h[2]))
-                return True
 
     elif cmd[0] in ('s', 'search'):
         h = uvm.history[0]
@@ -45,36 +45,32 @@ def systemCommands(cmd, uvm):
             newArgs.append(cmd[1])
 
         setattr(uvm.currFocusView, 'frame', h[1](newArgs))
-        return True
 
     elif cmd[0] in ('view'):
         DEBUG('executing site command')
         DEBUG(cmd)
-        if cmd[1] in '4chan':
-            DEBUG('4chan requested')
-            setattr(uvm.currFocusView, 'site', SITE.FCHAN)
-            setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('FCHAN')['boards'])
-            uvm.currFocusView.updateHistory(IndexFrame.IndexFrameFactory, [uvm])
-            setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
-            return True
-        elif cmd[1] in ['reddit', 'Reddit']:
-            setattr(uvm.currFocusView, 'site', SITE.REDDIT)
-            setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('REDDIT')['boards'])
-            uvm.currFocusView.updateHistory(RedditIndexFrame.IndexFrameFactory, [uvm])
-            setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
-            return True
+        if len(cmd) == 2:
+            if cmd[1] in '4chan':
+                DEBUG('4chan requested')
+                setattr(uvm.currFocusView, 'site', SITE.FCHAN)
+                setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('FCHAN')['boards'])
+                uvm.currFocusView.updateHistory(IndexFrame.IndexFrameFactory, [uvm])
+                setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
+            elif cmd[1] in ['reddit', 'Reddit']:
+                setattr(uvm.currFocusView, 'site', SITE.REDDIT)
+                setattr(uvm.currFocusView, 'boardList', uvm.cfg.get('REDDIT')['boards'])
+                uvm.currFocusView.updateHistory(RedditIndexFrame.IndexFrameFactory, [uvm])
+                setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd[0] in ('split'):
         if type(uvm.splitTuple) is Row:
             uvm.splitTuple.widgets.append(View(uvm))
-            return True
         else:
             t = uvm.splitTuple
             uvm.splitTuple = Row()
             uvm.splitTuple.widgets.append(t)
             uvm.splitTuple.widgets.append(View(uvm))
-            return True
-        pass
+
     elif cmd[0] in ('vsplit'):
         if type(uvm.splitTuple) is Column:
             uvm.splitTuple.widgets.append(View(uvm))
@@ -82,6 +78,12 @@ def systemCommands(cmd, uvm):
         uvm.splitTuple = Column()
         uvm.splitTuple.widgets.append(t)
         uvm.splitTuple.widgets.append(View(uvm))
-        return True
 
-    return False
+    elif cmd[0] in ('unsplit'):
+        if len(uvm.splitTuple.widgets) > 1:
+            uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
+
+    else:
+        return False
+
+    return True
