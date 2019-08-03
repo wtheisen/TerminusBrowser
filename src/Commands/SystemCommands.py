@@ -63,6 +63,7 @@ def systemCommands(cmd, uvm):
                 DEBUG('Executing history command')
                 uvm.history.insert(0, h)
                 setattr(uvm.currFocusView, 'frame', h[1](h[2]))
+                break
 
     elif cmd[0] in ('s', 'search'):
         h = uvm.history[0]
