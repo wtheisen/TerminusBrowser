@@ -30,22 +30,10 @@ def view():
 def test_init(view):
     assert view.mode   == MODE.NORMAL
     assert view.stickies == STICKIES.HIDE
-    assert view.site   == SITE[view.cfg.get('SITE')]
-    assert view.boardList == view.cfg.get(view.site.name)['boards']
-
-def test_buildSetStartView(view):
-    pass
-
-def test_buildAddHeaderView():
-    pass
-
-def test_buildAddFooterView():
-    pass
-
-def test_exitCommand():
-    pass
+    assert view.boardList == view.cfg.get('FCHAN')['boards']
+    assert view.subredditList == view.cfg.get('REDDIT')['boards']
 
 def test_handleKeyCommand(view):
     view.handleKey(':')
     assert view.mode == MODE.COMMAND
-    
+

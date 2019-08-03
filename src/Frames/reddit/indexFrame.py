@@ -29,7 +29,8 @@ class RedditIndexFrame(urwid.WidgetWrap):
                 boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + subreddit, self.changeFrameBoard), 'center')))
 
         self.parsedItems = len(boardButtons)
-        buttonGrid = urwid.GridFlow(boardButtons, 12, 2, 2, 'center')
+        width = len(max(self.uvm.subredditList, key=len))
+        buttonGrid = urwid.GridFlow(boardButtons, width + 9, 2, 2, 'center') # add 9 to width to account for widget padding
         listbox_content = [buttonGrid]
 
         return urwid.ListBox(urwid.SimpleListWalker(listbox_content))
