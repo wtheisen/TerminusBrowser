@@ -7,7 +7,7 @@ class SubredditFrame(urwid.WidgetWrap):
     
     def __init__(self, subreddit, token, urwidViewManager, uFilter=None):
         self.uvm = urwidViewManager
-        self.subreddit = subreddit
+        self.subreddit = '/r/' + subreddit if '/r/' not in subreddit else subreddit
         self.uFilter = uFilter
 
         self.url = 'https://www.reddit.com' + self.subreddit + '.json' + '?limit=100'
