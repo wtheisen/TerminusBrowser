@@ -30,7 +30,6 @@ def view():
 def test_init(view):
     assert view.mode   == MODE.NORMAL
     assert view.stickies == STICKIES.HIDE
-    assert view.site   == SITE[view.cfg.get('SITE')]
     assert view.boardList == view.cfg.get(view.site.name)['boards']
 
 def test_buildSetStartView(view):
@@ -48,4 +47,4 @@ def test_exitCommand():
 def test_handleKeyCommand(view):
     view.handleKey(':')
     assert view.mode == MODE.COMMAND
-    
+
