@@ -24,6 +24,7 @@ def board(uvm, boardString):
         setattr(uvm.currFocusView, 'frame', BoardFrame(boardString, uvm))
         uvm.currFocusView.updateHistory(BoardFrame.BoardFrameFactory, [boardString, uvm])
     except:
+        uvm.currFocusView.frame.headerString = f'Error connecting to board {boardString}, does it exist?'
         DEBUG(f'Error connecting to board {boardString}, does it exist?')
     # uvm.allViews = View(uvm, BoardFrame(boardString, uvm))
 

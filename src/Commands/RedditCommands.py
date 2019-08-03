@@ -20,6 +20,7 @@ def subreddit(uvm, subString, token):
         setattr(uvm.currFocusView, 'frame', SubredditFrame(subString, token, uvm))
         uvm.currFocusView.updateHistory(SubredditFrame.SubredditFrameFactory, [subString, token, uvm])
     except:
+        uvm.currFocusView.frame.headerString = f'Error connecting to subreddit {subString}, does it exist?'
         DEBUG(f'Error connecting to subreddit {subString}, does it exist?')
 
 def post(uvm, subString, postNumber):
