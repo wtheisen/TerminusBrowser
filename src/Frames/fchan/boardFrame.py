@@ -1,28 +1,26 @@
 import urwid, re, time, collections, requests
 
-class BoardFrame(urwid.WidgetWrap):
-    BoardFrameFactory = lambda x: BoardFrame(*x)
+from Frames.abstractFrame import AbstractFrame
 
+class BoardFrame(AbstractFrame):
     def __init__(self, boardString, urwidViewManager, uFilter=None):
-        self.uvm = urwidViewManager
+        super().__init__(urwidViewManager, uFilter)
         self.boardString = boardString
-        self.uFilter = uFilter
 
         self.url = 'https://a.4cdn.org' + self.boardString + 'catalog.json'
         self.threadNums = []
         self.info_text = 'Replies: {} Images: {}'
-        self.parsedItems = 0
 
-        self.startTime = time.time()
-
-        self.titles = self.getJSONCatalog(self.url)
-        self.endTime = time.time()
-
+        self.load()
         self.headerString = f'commandChan: {self.boardString}'
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
         self.contents = urwid.Pile(self.buildFrame(boardString))
         urwid.WidgetWrap.__init__(self, self.contents)
+    
+    # Overrides super
+    def loader(self):
+        self.titles = self.getJSONCatalog(self.url)
+
     def buildFrame(self, board):
         '''returns the board widget'''
 

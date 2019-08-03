@@ -5,15 +5,14 @@ from html.parser import HTMLParser
 
 from postClass import Post
 from customUrwidClasses import QuoteButton
+from Frames.abstractFrame import AbstractFrame
 
-class ThreadFrame(urwid.WidgetWrap):
-    ThreadFrameFactory = lambda x: ThreadFrame(*x)
-
+class ThreadFrame(AbstractFrame):
     def __init__(self, boardString, threadNumber, urwidViewManager, uFilter = None):
-        self.uvm = urwidViewManager
+        super().__init__(urwidViewManager, uFilter)
+
         self.boardString = boardString
         self.threadNumber = threadNumber
-        self.uFilter = uFilter
 
         self.threadWidgetDict = {}
 
@@ -23,15 +22,14 @@ class ThreadFrame(urwid.WidgetWrap):
 
         self.postReplyDict = {}
 
-        self.startTime = time.time()
+        self.load()
+        self.headerString = f'commandChan: {self.boardString} -- {str(self.threadNumber)}'
+    
+    # Overrides super
+    def loader(self):
         self.comments = self.getJSONThread()
         self.contents = self.buildFrame()
         urwid.WidgetWrap.__init__(self, self.contents)
-
-        self.endTime = time.time()
-
-        self.headerString = f'commandChan: {self.boardString} -- {str(self.threadNumber)}'
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
     def getJSONThread(self):
         response = requests.get(self.url + '.json', headers=self.headers)

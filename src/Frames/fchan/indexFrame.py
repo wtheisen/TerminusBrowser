@@ -2,24 +2,23 @@ import urwid, time
 
 from debug import DEBUG
 
-class IndexFrame(urwid.WidgetWrap):
-    IndexFrameFactory = lambda x: IndexFrame(*x)
+from Frames.abstractFrame import AbstractFrame
 
+class IndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
-        self.uvm = urwidViewManager
-        self.uFilter = uFilter
+        super().__init__(urwidViewManager, uFilter)
+
         self.headerString = 'CommandChan'
 
-        self.parsedItems = 0
-        self.startTime = time.time()
-        self.contents = self.buildFrame()
-        self.endTime = time.time()
-
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
+        self.load()
 
         DEBUG(self.uvm.history)
 
         urwid.WidgetWrap.__init__(self, self.contents)
+
+    # Overrides super
+    def loader(self):
+        self.contents = self.buildFrame()
 
     def buildFrame(self):
         boardButtons = []

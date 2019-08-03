@@ -2,7 +2,7 @@ import urwid, pyfiglet, requests
 
 from debug import DEBUG
 
-class DefaultFrame(urwid.WidgetWrap):
+class DefaultFrame(urwid.WidgetWrap):    
     def __init__(self, welcome=False):
         self.headerString = 'CommandChan'
         self.footerStringRight = f''
@@ -30,3 +30,6 @@ class DefaultFrame(urwid.WidgetWrap):
 
         self.contents = urwid.Filler(self.contents)
         urwid.WidgetWrap.__init__(self, self.contents)
+
+def FrameFactory(args, frameClass):
+    return frameClass(*args)

@@ -1,14 +1,12 @@
 import urwid, re, time, collections, requests
 from debug import DEBUG
 from customeTypes import STICKIES
+from Frames.abstractFrame import AbstractFrame
 
-class SubredditFrame(urwid.WidgetWrap):
-    SubredditFrameFactory = lambda x: SubredditFrame(*x)
-    
+class SubredditFrame(AbstractFrame):    
     def __init__(self, subreddit, token, urwidViewManager, uFilter=None):
-        self.uvm = urwidViewManager
+        super().__init__(urwidViewManager, uFilter)
         self.subreddit = '/r/' + subreddit if '/r/' not in subreddit else subreddit
-        self.uFilter = uFilter
 
         self.url = 'https://www.reddit.com' + self.subreddit + '.json' + '?limit=100'
         self.token = token
@@ -19,17 +17,15 @@ class SubredditFrame(urwid.WidgetWrap):
             'user-agent': 'reddit-commandChan'
         }
         self.info_text = 'Upvotes: {} Comments: {}'
-        self.parsedItems = 0
 
-        self.startTime = time.time()
+        self.load()
+        self.headerString = f'commandChan: {self.subreddit}'
 
+    # Overrides super
+    def loader(self):
         self.titles = self.getJSONCatalog(self.url)
         self.contents = urwid.Pile(self.buildFrame(subreddit))
         urwid.WidgetWrap.__init__(self, self.contents)
-        self.endTime = time.time()
-
-        self.headerString = f'commandChan: {self.subreddit}'
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
     def buildFrame(self, board):
         '''returns the board widget'''
