@@ -1,4 +1,6 @@
-import urwid, pyfiglet
+import urwid, pyfiglet, requests
+
+from debug import DEBUG
 
 class DefaultFrame(urwid.WidgetWrap):
     def __init__(self, welcome=False):
@@ -7,7 +9,22 @@ class DefaultFrame(urwid.WidgetWrap):
         self.url = 'Welcome Screen'
 
         if welcome:
-            self.contents = urwid.Text(pyfiglet.figlet_format('commandChan'), 'center')
+            r = requests.get('https://api.github.com/repos/wtheisen/commandChan/commits')
+            data = r.json()
+
+            welcomeText = pyfiglet.figlet_format('commandChan') + '\nRecent Commits:\n'
+            
+            count = 0
+            for cData in data:
+                commit = cData['commit']
+                welcomeText += f'\n {commit["author"]["name"]}: {commit["message"]}'
+
+                if count < 4:
+                    count += 1
+                else:
+                    break
+
+            self.contents = urwid.Text(welcomeText, 'center')
         else:
             self.contents = urwid.Text('')
 
