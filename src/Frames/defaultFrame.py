@@ -31,5 +31,5 @@ class DefaultFrame(urwid.WidgetWrap):
         self.contents = urwid.Filler(self.contents)
         urwid.WidgetWrap.__init__(self, self.contents)
 
-def FrameFactory(args, frameClass):
-    return frameClass(*args)
+def FrameFactory(frameClass):
+    return lambda x: frameClass(*x)

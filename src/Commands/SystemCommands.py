@@ -93,12 +93,12 @@ def systemCommands(cmd, uvm):
                 DEBUG('4chan requested')
                 setattr(uvm.currFocusView, 'site', SITE.FCHAN)
                 # setattr(uvm.currFocusView, 'boardList', uvm.boardList)
-                uvm.currFocusView.updateHistory(FrameFactory([uvm], IndexFrame))
+                uvm.currFocusView.updateHistory(FrameFactory(IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
             elif cmd[1] == ['reddit', 'Reddit']:
                 setattr(uvm.currFocusView, 'site', SITE.REDDIT)
                 # setattr(uvm.currFocusView, 'boardList', uvm.subredditList)
-                uvm.currFocusView.updateHistory(FrameFactory([uvm], RedditIndexFrame))
+                uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd[0] in ('split'):
