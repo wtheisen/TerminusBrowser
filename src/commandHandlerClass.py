@@ -31,9 +31,9 @@ class CommandHandler:
             return
         elif cmd.split()[0] in SystemCommandList:
             systemCommands(cmd, self.uvm)
-        elif self.uvm.currFocusView.site is SITE.FCHAN and cmd.split()[0] in ChanCommandList:
+        elif cmd.split()[0] in ChanCommandList:
             chanCommands(cmd, self.uvm)
-        elif self.uvm.currFocusView.site is SITE.REDDIT and cmd.split()[0] in RedditCommandList:
+        elif cmd.split()[0] in RedditCommandList:
             redditCommands(cmd, self.uvm)
 
         self.postCommand()
