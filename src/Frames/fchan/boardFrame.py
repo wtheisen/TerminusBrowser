@@ -13,13 +13,11 @@ class BoardFrame(AbstractFrame):
 
         self.load()
         self.headerString = f'commandChan: {self.boardString}'
-
-        self.contents = urwid.Pile(self.buildFrame(boardString))
-        urwid.WidgetWrap.__init__(self, self.contents)
     
     # Overrides super
     def loader(self):
         self.titles = self.getJSONCatalog(self.url)
+        self.contents = urwid.Pile(self.buildFrame(boardString))
 
     def buildFrame(self, board):
         '''returns the board widget'''

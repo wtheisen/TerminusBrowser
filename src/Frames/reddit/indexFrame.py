@@ -9,7 +9,6 @@ class RedditIndexFrame(AbstractFrame):
         self.headerString = 'commandChan'
 
         self.load()
-        urwid.WidgetWrap.__init__(self, self.contents)
     
     # Overrides super
     def loader(self):

@@ -24,7 +24,6 @@ class RedditThreadFrame(AbstractFrame):
     def loader(self):
         self.comments = self.getJSONThread()
         self.contents = self.buildFrame()
-        urwid.WidgetWrap.__init__(self, self.contents)
 
     def getJSONThread(self):
         response = requests.get(self.url + '.json', headers=self.headers)

@@ -3,30 +3,22 @@ import urwid, time, re
 from functools import partial
 
 from debug import DEBUG
+from abstractFrame import AbstractFrame
 
-class HistoryFrame(urwid.WidgetWrap):
-    HistoryFrameFactory = lambda x: HistoryFrame(*x)
-
+class HistoryFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter = None):
-        self.uvm = urwidViewManager
-        self.uFilter = uFilter
-
-
-        self.startTime = time.time()
-        self.contents = self.buildFrame()
-        urwid.WidgetWrap.__init__(self, self.contents)
-
-        self.endTime = time.time()
-
+        super().__init__(urwidViewManager, uFilter)
+        self.load()
         self.headerString = f'commandChan: History'
-        self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
+    def loader(self):
+        self.contents = self.buildFrame()
+        
     def buildFrame(self):
         listbox = self.buildThread()
         return urwid.Pile([listbox])
 
     def buildThread(self):
-
         historyWidgetList = []
         for h in self.uvm.history:
             frame = h[0]
@@ -42,9 +34,6 @@ class HistoryFrame(urwid.WidgetWrap):
                 hInfo = urwid.Text(f'Frame: {frame}, Info: {args}')
                 hButton = urwid.Button(f'{self.uvm.history.index(h)}: Restore', self.restore)
                 historyWidgetList.append(urwid.LineBox(urwid.Pile([hInfo, urwid.Divider('-'), hButton])))
-
-
-
 
         self.parsedItems = len(historyWidgetList)
 
