@@ -9,7 +9,7 @@ import pytest
 
 @pytest.fixture
 def view():
-    view = urwidView()
+    view = urwidView(True)
     return view
 
 test_boards = [
