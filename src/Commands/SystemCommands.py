@@ -95,7 +95,7 @@ def systemCommands(cmd, uvm):
                 # setattr(uvm.currFocusView, 'boardList', uvm.boardList)
                 uvm.currFocusView.updateHistory(FrameFactory([uvm], IndexFrame))
                 setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
-            elif cmd[1] == ['reddit', 'Reddit']:
+            elif cmd[1] in ['reddit', 'Reddit']:
                 setattr(uvm.currFocusView, 'site', SITE.REDDIT)
                 # setattr(uvm.currFocusView, 'boardList', uvm.subredditList)
                 uvm.currFocusView.updateHistory(FrameFactory([uvm], RedditIndexFrame))
