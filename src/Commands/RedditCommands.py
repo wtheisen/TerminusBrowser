@@ -5,6 +5,11 @@ from Frames.defaultFrame import FrameFactory
 from Frames.reddit.subredditFrame import SubredditFrame
 from Frames.reddit.threadFrame import RedditThreadFrame
 
+RedditCommandList = [
+    'sub', 'subreddit',
+    'p', 'post'
+]
+
 def redditCommands(cmd, uvm):
     cmd = cmd.split()
 

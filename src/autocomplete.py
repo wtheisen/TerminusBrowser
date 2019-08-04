@@ -1,16 +1,8 @@
 from Commands.SystemCommands import SystemCommandList
+from Commands.ChanCommands import ChanCommandList
+from Commands.RedditCommands import RedditCommandList
 from debug import DEBUG
-commandList = [
-                'thread',
-                'stickies',
-                'board',
-                'post',
-                'reply',
-                'threadStyle',
-                'boardStyle',
-                'reddit',
-                '4chan'
-            ]
+
 
 def autoComplete(editBox):
     currText = editBox.get_edit_text()
@@ -19,15 +11,17 @@ def autoComplete(editBox):
     except IndexError:
         return
 
+    commandList = (SystemCommandList + ChanCommandList + RedditCommandList)
+
     if len(inputList) == 1: #completing first bit
         currCommand = currText.split()[0]
-        matches = [x for x in (commandList + SystemCommandList) if x.startswith(currCommand)]
+        matches = [x for x in commandList if x.startswith(currCommand)]
         # Check to toggle for previous match
         if not len(matches):
             return
         elif len(matches) == 1:
-            currCommand = currCommand[:3]
-            matches = [x for x in (commandList + SystemCommandList) if x.startswith(currCommand)]
+            currCommand = currCommand[:2]
+            matches = [x for x in commandList if x.startswith(currCommand)]
         match = min(matches, key=len)
         if currCommand in commandList:
             try:

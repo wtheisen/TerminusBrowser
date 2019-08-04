@@ -1,8 +1,8 @@
 import urwid, sys
 
-from Commands.SystemCommands import SystemCommandList, systemCommands
-from Commands.ChanCommands import chanCommands
-from Commands.RedditCommands import redditCommands
+from Commands.SystemCommands import systemCommands, SystemCommandList
+from Commands.ChanCommands import chanCommands, ChanCommandList
+from Commands.RedditCommands import redditCommands, RedditCommandList
 
 from debug import DEBUG
 from customeTypes import SITE, MODE
@@ -26,16 +26,14 @@ class CommandHandler:
         self.preCommand()
 
         DEBUG(cmd)
-        if cmd.split()[0] in SystemCommandList:
-            # if matched return
-            if systemCommands(cmd, self.uvm):
-                self.postCommand()
-                return
 
-        # DEBUG(self.uvm.site)
-        if self.uvm.currFocusView.site is SITE.FCHAN:
+        if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList):
+            return
+        elif cmd.split()[0] in SystemCommandList:
+            systemCommands(cmd, self.uvm)
+        elif self.uvm.currFocusView.site is SITE.FCHAN and cmd.split()[0] in ChanCommandList:
             chanCommands(cmd, self.uvm)
-        if self.uvm.currFocusView.site is SITE.REDDIT:
+        elif self.uvm.currFocusView.site is SITE.REDDIT and cmd.split()[0] in RedditCommandList:
             redditCommands(cmd, self.uvm)
 
         self.postCommand()

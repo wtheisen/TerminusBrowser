@@ -5,6 +5,11 @@ from Frames.defaultFrame import FrameFactory
 from Frames.fchan.boardFrame import BoardFrame
 from Frames.fchan.threadFrame import ThreadFrame
 
+ChanCommandList = [
+    'b', 'board',
+    't', 'thread'
+]
+
 def chanCommands(cmd, uvm):
     cmd = cmd.split()
 

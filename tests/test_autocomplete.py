@@ -10,10 +10,10 @@ import pytest
 
 test_list = [
     ('too long command', 'too long command'),
-    ('sti', 'stickies'), # input len 3
+    ('thr', 'thread'), # input len 3
     ('po', 'post'), # input len 2
-    ('re', 'reply'), # 2 cmds start with re
-    ('threadStyle', 'thread'), # toggle check
+    ('re', 'refresh'), # 2 cmds start with re
+    ('subreddit', 'sub'), # toggle check
     ('qsuaik', 'qsuaik') # gibberish
 ]
 
