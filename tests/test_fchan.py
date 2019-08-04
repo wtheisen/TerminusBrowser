@@ -3,7 +3,6 @@
 import sys
 
 from commandChanVim import urwidView
-from commandHandlerClass import CommandHandler
 
 from Frames.fchan.indexFrame import IndexFrame
 from Frames.fchan.boardFrame import BoardFrame
