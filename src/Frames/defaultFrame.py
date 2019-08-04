@@ -19,7 +19,8 @@ class DefaultFrame(urwid.WidgetWrap):
                 count = 0
                 for cData in data:
                     commit = cData['commit']
-                    welcomeText += f'\n {commit["author"]["name"]}: {commit["message"]}'
+                    cleanMessage = commit['message'].replace('\r', '').replace('\n\n', '\n')
+                    welcomeText += f'\n {commit["author"]["name"]}: {cleanMessage}'
 
                     if count < 4:
                         count += 1
