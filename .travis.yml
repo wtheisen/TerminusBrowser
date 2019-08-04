@@ -1,14 +1,9 @@
+dist: xenial
 language: python
+python:
+  - "3.6"
+  - "3.7"
 
-matrix:
-  allow_failures:
-    - os: osx
-  include:
-    - os: linux
-      name: "Linux"
-      python: 3.7
-    - os: osx
-      language: minimal
 install:
   - pip3 install -r requirements.txt
   - pip3 install pytest==5.0.1
