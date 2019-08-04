@@ -24,7 +24,7 @@ class SubredditFrame(AbstractFrame):
     # Overrides super
     def loader(self):
         self.titles = self.getJSONCatalog(self.url)
-        self.contents = urwid.Pile(self.buildFrame(subreddit))
+        self.contents = urwid.Pile(self.buildFrame(self.subreddit))
 
     def buildFrame(self, board):
         '''returns the board widget'''

@@ -3,7 +3,7 @@ import urwid, time, re
 from functools import partial
 
 from debug import DEBUG
-from abstractFrame import AbstractFrame
+from Frames.abstractFrame import AbstractFrame
 
 class HistoryFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter = None):

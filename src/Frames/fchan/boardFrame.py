@@ -17,7 +17,7 @@ class BoardFrame(AbstractFrame):
     # Overrides super
     def loader(self):
         self.titles = self.getJSONCatalog(self.url)
-        self.contents = urwid.Pile(self.buildFrame(boardString))
+        self.contents = urwid.Pile(self.buildFrame(self.boardString))
 
     def buildFrame(self, board):
         '''returns the board widget'''
