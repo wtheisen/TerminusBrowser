@@ -35,7 +35,7 @@ def systemCommands(cmd, uvm):
         DEBUG('Executing quit command')
         sys.exit()
 
-    elif cmd[0] in ('add'):
+    elif cmd[0] == ('add'):
         if len(cmd) >= 3:
             DEBUG(f'Executing add command with args: {cmd[1:]}')
             if cmd[1] == '4chan':
@@ -45,10 +45,10 @@ def systemCommands(cmd, uvm):
                 for subreddit in cmd[2:]:
                     uvm.subredditList.append(subreddit)
 
-    elif cmd[0] in ('set'):
+    elif cmd[0] == ('set'):
         pass
 
-    elif cmd[0] in ('source'):
+    elif cmd[0] == ('source'):
         pass
         try:
             with open(cmd[1], 'r') as rcFile:
@@ -73,14 +73,13 @@ def systemCommands(cmd, uvm):
 
     elif cmd[0] in ('s', 'search'):
         h = uvm.history[0]
-        DEBUG(uvm.history)
         newArgs = h[2].copy()
         if len(cmd) is 2:
             newArgs.append(cmd[1])
 
         setattr(uvm.currFocusView, 'frame', h[1](newArgs))
 
-    elif cmd[0] in ('view'):
+    elif cmd[0] == ('view'):
         DEBUG('executing site command')
         DEBUG(cmd)
         if len(cmd) == 2:
@@ -101,7 +100,7 @@ def systemCommands(cmd, uvm):
                 uvm.currFocusView.updateHistory(FrameFactory([uvm], RedditIndexFrame))
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
-    elif cmd[0] in ('split'):
+    elif cmd[0] == ('split'):
         if type(uvm.splitTuple) is Row:
             uvm.splitTuple.widgets.append(View(uvm))
         else:
@@ -110,7 +109,7 @@ def systemCommands(cmd, uvm):
             uvm.splitTuple.widgets.append(t)
             uvm.splitTuple.widgets.append(View(uvm))
 
-    elif cmd[0] in ('vsplit'):
+    elif cmd[0] == ('vsplit'):
         if type(uvm.splitTuple) is Column:
             uvm.splitTuple.widgets.append(View(uvm))
         t = uvm.splitTuple
@@ -118,7 +117,7 @@ def systemCommands(cmd, uvm):
         uvm.splitTuple.widgets.append(t)
         uvm.splitTuple.widgets.append(View(uvm))
 
-    elif cmd[0] in ('unsplit'):
+    elif cmd[0] == ('unsplit'):
         if len(uvm.splitTuple.widgets) > 1:
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
 
