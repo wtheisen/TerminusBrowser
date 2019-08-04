@@ -16,6 +16,6 @@ test_list = [
 
 @pytest.mark.parametrize('test_input, expected', test_list)
 def test_fchan(test_input, expected):
-    uvm = urwidView()
+    uvm = urwidView(True)
     uvm.commandHandler.routeCommand(test_input)
     assert type(uvm.currFocusView.frame) == expected

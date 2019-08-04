@@ -31,10 +31,11 @@ class urwidView():
         'l': 'right'
     }
 
-    def __init__(self):
+    def __init__(self, test=False):
         self.mode   = MODE.NORMAL
         self.stickies = STICKIES.HIDE
         self.cfg    = Config()
+        self.test = test
 
         # self.site   = SITE[self.cfg.get('SITE')]
         self.boardList = self.cfg.get('FCHAN')['boards']
@@ -112,7 +113,7 @@ class urwidView():
         self.body.footer = footerWidget
 
     def buildSetStartView(self):
-        self.currFocusView = View(self, DefaultFrame(True))
+        self.currFocusView = View(self, DefaultFrame(True, self.test))
         # self.currFocusView = View(self)
 
     def renderScreen(self):

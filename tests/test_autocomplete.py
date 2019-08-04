@@ -19,7 +19,7 @@ test_list = [
 
 @pytest.mark.parametrize("test_input, expected", test_list)
 def test_CommandBar(test_input, expected):
-    uvm = urwidView()
+    uvm = urwidView(True)
     cb = CommandBar(lambda: uvm._update_focus(True), uvm)
     cb.set_edit_text(test_input)
     autoComplete(cb)

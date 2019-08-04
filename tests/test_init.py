@@ -24,7 +24,7 @@ import pytest
 
 @pytest.fixture
 def view():
-    view = urwidView()
+    view = urwidView(True)
     return view
 
 def test_init(view):
