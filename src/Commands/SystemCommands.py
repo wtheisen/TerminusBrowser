@@ -122,7 +122,3 @@ def systemCommands(cmd, uvm):
         if len(uvm.splitTuple.widgets) > 1:
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
 
-    else:
-        return False
-
-    return True
