@@ -7,6 +7,7 @@ class AbstractFrame(urwid.WidgetWrap):
         self.uFilter = uFilter
         
         self.footerStringRight = None
+        self.contents = None
 
         # To measure how fast we load in the data
         self.startTime = None
@@ -22,3 +23,8 @@ class AbstractFrame(urwid.WidgetWrap):
         self.endTime = time.time()
         self.footerStringRight = f'Parsed {self.parsedItems} items in {(self.endTime - self.startTime):.4f}s'
 
+        # self.contents MUST BE SET in self.loader()
+        if self.contents == None:
+            raise ValueError(object)
+        
+        urwid.WidgetWrap.__init__(self, self.contents)

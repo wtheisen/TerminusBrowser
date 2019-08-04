@@ -14,8 +14,6 @@ class IndexFrame(AbstractFrame):
 
         DEBUG(self.uvm.history)
 
-        urwid.WidgetWrap.__init__(self, self.contents)
-
     # Overrides super
     def loader(self):
         self.contents = self.buildFrame()

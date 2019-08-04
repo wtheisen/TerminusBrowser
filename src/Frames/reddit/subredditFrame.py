@@ -25,7 +25,6 @@ class SubredditFrame(AbstractFrame):
     def loader(self):
         self.titles = self.getJSONCatalog(self.url)
         self.contents = urwid.Pile(self.buildFrame(subreddit))
-        urwid.WidgetWrap.__init__(self, self.contents)
 
     def buildFrame(self, board):
         '''returns the board widget'''
