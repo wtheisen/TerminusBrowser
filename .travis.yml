@@ -2,7 +2,7 @@ language: python
 
 matrix:
   allow_failures:
-    - osx
+    - os: osx
   include:
     - os: linux
       name: "Linux"
