@@ -4,14 +4,14 @@ import sys
 
 from commandChanVim import urwidView
 
-from Frames.reddit.indexFrame import IndexFrame
+from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.reddit.subredditFrame import SubredditFrame
 from Frames.reddit.threadFrame import ThreadFrame
 
 import pytest
 
 test_list = [
-    ('view reddit', IndexFrame),
+    ('view reddit', RedditIndexFrame),
     ('sub /r/all', SubredditFrame),
 ]
 
