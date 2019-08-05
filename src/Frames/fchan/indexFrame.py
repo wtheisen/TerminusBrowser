@@ -1,6 +1,7 @@
 import urwid, time
 
 from debug import DEBUG
+from customeTypes import SITE
 
 from Frames.abstractFrame import AbstractFrame
 
@@ -9,6 +10,8 @@ class IndexFrame(AbstractFrame):
         super().__init__(urwidViewManager, uFilter)
 
         self.headerString = 'CommandChan'
+
+        self.boardList = self.uvm.cfg.deep_get(SITE.FCHAN, 'boards')
 
         self.load()
 
@@ -20,7 +23,7 @@ class IndexFrame(AbstractFrame):
 
     def buildFrame(self):
         boardButtons = []
-        for board in self.uvm.boardList:
+        for board in self.boardList:
             if self.uFilter:
                 if self.uFilter.lower() in board.lower():
                     boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(board, self.changeFrameBoard), 'center')))

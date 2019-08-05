@@ -32,14 +32,10 @@ class urwidView():
     }
 
     def __init__(self, test=False):
-        self.mode   = MODE.NORMAL
+        self.mode = MODE.NORMAL
         self.stickies = STICKIES.HIDE
-        self.cfg    = Config()
+        self.cfg = Config()
         self.test = test
-
-        # self.site   = SITE[self.cfg.get('SITE')]
-        self.boardList = self.cfg.get('FCHAN')['boards']
-        self.subredditList = self.cfg.get('REDDIT')['boards']
 
         self.commandHandler = CommandHandler(self)
 

@@ -2,6 +2,7 @@
 
 import json, os
 
+from customeTypes import SITE
 from debug import DEBUG
 
 class Config():
@@ -20,16 +21,61 @@ class Config():
         self.config = self._load(self.location)
         if not self.config:
             self.config = self.defaults
-            self.write(self.defaults)
+            self._write(self.defaults)
+
+        self.dirty = False
+
+    def add_topic(self, key, topic):
+        if isinstance(key, SITE):
+            key = key.name
+
+        self.config.get(key, {}).get('boards',[]).append(topic)
+        self.dirty = True
 
     def get(self, key):
+        ''' get value from config, falling back to defaults if needed '''
         if self.config.get(key, None):
             return self.config.get(key)
         else:
-            try:
-                return self.defaults[key]
-            except:
-                DEBUG('Error: No key {} in default config'.format(key))
+            DEBUG('Key {} not found, trying defaults'.format(key))
+            return self.defaults.get(key, None)
+
+    def deep_get(self, key, inner_key):
+        ''' deep get from config, falling back to defaults if needed '''
+        if isinstance(key, SITE):
+            key = key.name
+
+        if self.config.get(key, {}).get(inner_key, None):
+            return self.config.get(key).get(inner_key)
+        else:
+            DEBUG('Key {}:{} not found, trying defaults'.format(key, inner_key))
+            return self.defaults.get(key, {}).get(inner_key, None)
+
+    def set(self, key, value):
+        ''' set value in config, setting dirty bit if value is changed '''
+        if self.config.get(key) == value:
+            return
+        self.config[key] = value
+        self.dirty = True
+
+    def deep_set(self, key, inner_key, value):
+        ''' deep set value in config '''
+        if isinstance(key, SITE):
+            key = key.name
+
+        if self.config.get(key, {}).get(inner_key) == value:
+            return
+        self.config.get(key, {})[inner_key] = value
+        self.dirty = True
+
+    def update_file(self):
+        ''' Updates config file if dirty, returns True if updated '''
+        if not self.dirty:
+            return False
+
+        self._write(self.config)
+        self.dirty = False
+        return True
 
     def _load(self, location):
         ''' load json from config file '''
@@ -41,8 +87,8 @@ class Config():
             DEBUG('File {} does not exist'.format(location))
             return None
 
-    def write(self, data):
+    def _write(self, data):
         ''' overwrites config file with data '''
         os.makedirs(os.path.dirname(self.location), exist_ok=True)
         with open(self.location, 'w') as cfg:
-            json.dump(data, cfg, indent=4)
+            json.dump(data, cfg, indent=4) 
