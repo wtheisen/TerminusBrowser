@@ -1,5 +1,6 @@
 import urwid, time
 from debug import DEBUG
+from customeTypes import SITE
 
 from Frames.abstractFrame import AbstractFrame
 
@@ -7,6 +8,8 @@ class RedditIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
         self.headerString = 'commandChan'
+
+        self.subredditList = self.uvm.cfg.deep_get(SITE.REDDIT, 'boards')
 
         self.load()
     
@@ -16,16 +19,16 @@ class RedditIndexFrame(AbstractFrame):
 
     def buildFrame(self):
         boardButtons = []
-        DEBUG(self.uvm.subredditList)
-        for subreddit in self.uvm.subredditList:
+        for subreddit in self.subredditList:
+            subreddit = '/r/' + subreddit if not subreddit.startswith('/r/') else subreddit
             if self.uFilter:
                 if self.uFilter.lower() in subreddit.lower():
-                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + subreddit, self.changeFrameBoard), 'center')))
+                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(subreddit, self.changeFrameBoard), 'center')))
             else:
-                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button('/r/' + subreddit, self.changeFrameBoard), 'center')))
+                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(subreddit, self.changeFrameBoard), 'center')))
 
         self.parsedItems = len(boardButtons)
-        width = len(max(self.uvm.subredditList, key=len))
+        width = len(max(self.subredditList, key=len))
         buttonGrid = urwid.GridFlow(boardButtons, width + 9, 2, 2, 'center') # add 9 to width to account for widget padding
         listbox_content = [buttonGrid]
 

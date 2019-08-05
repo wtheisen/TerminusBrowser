@@ -6,7 +6,7 @@ from Frames.abstractFrame import AbstractFrame
 class SubredditFrame(AbstractFrame):    
     def __init__(self, subreddit, token, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
-        self.subreddit = '/r/' + subreddit if '/r/' not in subreddit else subreddit
+        self.subreddit = '/r/' + subreddit if not subreddit.startswith('/r/') else subreddit
 
         self.url = 'https://www.reddit.com' + self.subreddit + '.json' + '?limit=100'
         self.token = token

@@ -22,6 +22,7 @@ def redditCommands(cmd, uvm):
 
 def subreddit(uvm, subString, token):
     DEBUG('Executing subreddit command')
+    subString = '/r/' + subString if not subString.startswith('/r/') else subString
     try:
         setattr(uvm.currFocusView, 'frame', SubredditFrame(subString, token, uvm))
         uvm.currFocusView.updateHistory(FrameFactory(SubredditFrame), [subString, token, uvm])

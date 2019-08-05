@@ -33,6 +33,8 @@ def systemCommands(cmd, uvm):
 
     if cmd[0] in ('qa', 'quitall'):
         DEBUG('Executing quit command')
+        if uvm.cfg.update_file():
+            DEBUG('updated config')
         sys.exit()
 
     elif cmd[0] == ('add'):
@@ -40,10 +42,12 @@ def systemCommands(cmd, uvm):
             DEBUG(f'Executing add command with args: {cmd[1:]}')
             if cmd[1] == '4chan':
                 for board in cmd[2:]:
-                    uvm.boardList.append(board)
+                    uvm.cfg.add_topic(SITE.FCHAN, board)
+                    setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
             elif cmd[1] == 'reddit':
                 for subreddit in cmd[2:]:
-                    uvm.subredditList.append(subreddit)
+                    uvm.cfg.add_topic(SITE.REDDIT, subreddit)
+                    setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd[0] == ('set'):
         pass
@@ -61,7 +65,6 @@ def systemCommands(cmd, uvm):
 
     elif cmd[0] in ('h', 'history'):
         if len(cmd) is 2:
-            h = uvm.history[int(cmd[1])]
             setattr(uvm.currFocusView, 'frame', h[1](h[2]))
         else:
             for h in uvm.history[1:]:
@@ -84,19 +87,13 @@ def systemCommands(cmd, uvm):
         DEBUG(cmd)
         if len(cmd) == 2:
             if cmd[1] in 'history':
-                # setattr(uvm.currFocusView, 'site', SITE.FCHAN)
-                # setattr(uvm.currFocusView, 'boardList', uvm.boardList)
-                # uvm.currFocusView.updateHistory(IndexFrame.IndexFrameFactory, [uvm])
                 setattr(uvm.currFocusView, 'frame', HistoryFrame(uvm))
             elif cmd[1] == '4chan':
                 DEBUG('4chan requested')
-                setattr(uvm.currFocusView, 'site', SITE.FCHAN)
-                # setattr(uvm.currFocusView, 'boardList', uvm.boardList)
                 uvm.currFocusView.updateHistory(FrameFactory(IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
             elif cmd[1] in ['reddit', 'Reddit']:
-                setattr(uvm.currFocusView, 'site', SITE.REDDIT)
-                # setattr(uvm.currFocusView, 'boardList', uvm.subredditList)
+                DEBUG('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
