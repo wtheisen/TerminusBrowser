@@ -65,6 +65,7 @@ def systemCommands(cmd, uvm):
 
     elif cmd[0] in ('h', 'history'):
         if len(cmd) is 2:
+            h = uvm.history[int(cmd[1])]
             setattr(uvm.currFocusView, 'frame', h[1](h[2]))
         else:
             for h in uvm.history[1:]:
