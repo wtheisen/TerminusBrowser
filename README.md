@@ -6,7 +6,8 @@
 2. [Screenshots](#screenshots)
 3. [Hotkeys](#hotkeys)
 4. [Configuration](#config)
-5. [TODO List](#todoList)
+5. [Contributing](#contrib)
+6. [TODO List](#todoList)
 
 ## Introduction <a name="introduction"></a>
 
@@ -26,11 +27,21 @@ And then run `./commandChanVim.py`
 
 ## Screenshots <a name="screenshots"></a>
 
+### 4chan
+
 ![Board Index](./screenshots/boardIndex.png?raw=true "Board Index")
 
 ![Board View](./screenshots/boardView.png?raw=true "Board View")
 
 ![Thread View](./screenshots/threadView.png?raw=true "Thread View")
+
+### Reddit
+
+![Subreddit Index](./screenshots/subredditIndex.png?raw=true "Subreddit Index")
+
+![Subreddit View](./screenshots/subredditView.png?raw=true "Subreddit View")
+
+![Post View](./screenshots/redditPost.png?raw=true "Reddit Post")
 
 ## Hotkeys <a name="hotkeys"></a>
 
@@ -49,6 +60,12 @@ And then run `./commandChanVim.py`
 
 - To change the default site you can modify the config.json file [FCHAN/REDDIT]
 - The config.json file also contains the boards list and the subreddit list
+
+## Contributing <a name="contrib"></a>
+
+Development on commandChan is active and on-going. If there are any features
+you want or you're just interested in joining in the discussion the dev team
+is most active on [#commandChan on the Freenode IRC server](ircs://irc.freenode.net:6697/#commandChan)
 
 ## TODO List <a name="todoList"></a>
 
