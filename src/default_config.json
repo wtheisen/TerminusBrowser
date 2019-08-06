@@ -18,6 +18,8 @@
 			"/trv/", "/vp/", "/wsg/", "/wsr/", "/x/"
 		]
 	},
+    "SITE":
+        "REDDIT",
 	"REDDIT": {
 		"boards": [
 			"all", "notredame", "askreddit",
@@ -25,5 +27,15 @@
 			"linux", "pcmasterrace", "gaming",
 			"todayilearned", "bestoflegaladvice"
 		]
-	}
+	},
+	"SITE":
+		"LCHAN",
+	"LCHAN": {
+		"boards": [
+			"/λ/", "/diy/", "/sec/", "/tech/", "/inter/", "/lit/",
+            "/music/", "/vis/", "/hum/", "/drg/", "/zzz/",
+            "/layer/", "/q/", "/r/", "/cult/", "/psy/", "/mega/",
+            "/random/"
+		]
+    }
 }

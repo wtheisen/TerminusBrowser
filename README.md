@@ -52,7 +52,7 @@ And then run `./commandChanVim.py`
 
 - (q)uit(a)ll - Close the program
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
-- view [PATTERN] - [PATTERN] being either 4chan or reddit currently it will open that site in the current view
+- view [PATTERN] - [PATTERN] being [4chan/reddit/lainchan] currently it will open that site in the current view
 - (h)istory - will go back one level in the history list
 - (s)earch [PATTERN] - will search the current view for the pattern, if pattern is blank it will reset the current view
 - add [reddit/4chan] [PATTERN] - will add the subreddit or board [PATTERN] to the site index specified, may have to reload

@@ -7,9 +7,9 @@ from Views.viewClass import View
 from Frames.defaultFrame import FrameFactory
 from Frames.historyFrame import HistoryFrame
 from Frames.reddit.indexFrame import RedditIndexFrame
-from Frames.fchan.indexFrame import IndexFrame
-from Frames.fchan.boardFrame import BoardFrame
-from Frames.fchan.threadFrame import ThreadFrame
+
+import Frames.fchan.indexFrame as fIndex
+import Frames.lchan.indexFrame as lIndex
 
 from splitTracker import Row, Column
 
@@ -43,7 +43,7 @@ def systemCommands(cmd, uvm):
             if cmd[1] == '4chan':
                 for board in cmd[2:]:
                     uvm.cfg.add_topic(SITE.FCHAN, board)
-                    setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
+                    setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
             elif cmd[1] == 'reddit':
                 for subreddit in cmd[2:]:
                     uvm.cfg.add_topic(SITE.REDDIT, subreddit)
@@ -91,8 +91,12 @@ def systemCommands(cmd, uvm):
                 setattr(uvm.currFocusView, 'frame', HistoryFrame(uvm))
             elif cmd[1] == '4chan':
                 DEBUG('4chan requested')
-                uvm.currFocusView.updateHistory(FrameFactory(IndexFrame), [uvm])
-                setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
+                uvm.currFocusView.updateHistory(FrameFactory(fIndex.IndexFrame), [uvm])
+                setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
+            elif cmd[1] == 'lainchan' or cmd[1] == 'lchan':
+                DEBUG('lainchan requested')
+                uvm.currFocusView.updateHistory(FrameFactory(lIndex.IndexFrame), [uvm])
+                setattr(uvm.currFocusView, 'frame', lIndex.IndexFrame(uvm))
             elif cmd[1] in ['reddit', 'Reddit']:
                 DEBUG('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])

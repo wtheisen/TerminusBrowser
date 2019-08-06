@@ -18,6 +18,7 @@ class MODE(Enum):
 class SITE(Enum):
     FCHAN  = 0
     REDDIT = 1
+    LCHAN = 2
 
 class STICKIES(Enum):
     SHOW = 0

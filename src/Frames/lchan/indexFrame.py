@@ -9,11 +9,11 @@ class IndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
 
-        self.uvm.currFocusView.site = SITE.FCHAN
+        self.uvm.currFocusView.site = SITE.LCHAN
 
         self.headerString = 'CommandChan'
 
-        self.boardList = self.uvm.cfg.deep_get(SITE.FCHAN, 'boards')
+        self.boardList = self.uvm.cfg.deep_get(SITE.LCHAN, 'boards')
 
         self.load()
 
