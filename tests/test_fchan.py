@@ -3,6 +3,7 @@
 import sys
 
 from commandChanVim import urwidView
+from customeTypes import SITE
 
 from Frames.fchan.indexFrame import IndexFrame
 from Frames.fchan.boardFrame import BoardFrame
@@ -19,5 +20,7 @@ test_list = [
 @pytest.mark.parametrize('test_input, expected', test_list)
 def test_fchan(test_input, expected):
     uvm = urwidView(True)
+    uvm.currFocusView.site = SITE.FCHAN
+    print(str(uvm.currFocusView.site))
     uvm.commandHandler.routeCommand(test_input)
     assert type(uvm.currFocusView.frame) == expected
