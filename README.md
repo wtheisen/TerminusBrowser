@@ -55,6 +55,7 @@ And then run `./commandChanVim.py`
 - view [PATTERN] - [PATTERN] being either 4chan or reddit currently it will open that site in the current view
 - (h)istory - will go back one level in the history list
 - (s)earch [PATTERN] - will search the current view for the pattern, if pattern is blank it will reset the current view
+- add [reddit/4chan] [PATTERN] - will add the subreddit or board [PATTERN] to the site index specified, may have to reload
 
 ## Configuration <a name="config"></a>
 
@@ -65,7 +66,7 @@ And then run `./commandChanVim.py`
 
 Development on commandChan is active and on-going. If there are any features
 you want or you're just interested in joining in the discussion the dev team
-is most active on [#commandChan on the Freenode IRC server](ircs://irc.freenode.net:6697/#commandChan)
+is most active on #commandChan on the Freenode IRC server: ircs://irc.freenode.net:6697/#commandChan
 
 ## TODO List <a name="todoList"></a>
 
