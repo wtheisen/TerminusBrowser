@@ -3,6 +3,7 @@ import urwid, sys
 from Commands.SystemCommands import systemCommands, SystemCommandList
 from Commands.ChanCommands import chanCommands, ChanCommandList
 from Commands.RedditCommands import redditCommands, RedditCommandList
+from Commands.HNCommands import hnCommands, HNCommandList
 
 from debug import DEBUG
 from customeTypes import SITE, MODE
@@ -27,7 +28,7 @@ class CommandHandler:
 
         DEBUG(cmd)
 
-        if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList):
+        if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList + HNCommandList):
             return
         elif cmd.split()[0] in SystemCommandList:
             systemCommands(cmd, self.uvm)
@@ -35,5 +36,7 @@ class CommandHandler:
             chanCommands(cmd, self.uvm)
         elif cmd.split()[0] in RedditCommandList:
             redditCommands(cmd, self.uvm)
+        elif cmd.split()[0] in HNCommandList:
+            hnCommands(cmd, self.uvm)
 
         self.postCommand()
