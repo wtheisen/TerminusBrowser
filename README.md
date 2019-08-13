@@ -13,7 +13,7 @@
 
 Previously known as commandChan.
 
-Created out of a desire to browse 4chan at work, TermiusBrowse is turning into a general framework for browsing
+Created out of a desire to browse 4chan at work, TerminusBrowse is turning into a general framework for browsing
 sites in the terminal using a unified program.
 This is currently a terminal browsing application for [4chan](https://www.4chan.org/), and now [Reddit](https://www.reddit.com/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python.
