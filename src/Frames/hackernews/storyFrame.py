@@ -3,7 +3,7 @@ from debug import DEBUG
 from customeTypes import STICKIES
 from Frames.abstractFrame import AbstractFrame
 
-class StoryFrame(AbstractFrame):    
+class StoryFrame(AbstractFrame):
     def __init__(self, story, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
         self.story = story
@@ -12,12 +12,12 @@ class StoryFrame(AbstractFrame):
         self.url = self.base + self.story + '.json'
 
         self.headers = {
-            'user-agent': 'hackernews-commandChan'
+            'user-agent': 'hackernews-TerminusBrowse'
         }
         self.info_text = 'Score: {} Comments: {}'
 
         self.load()
-        self.headerString = f'commandChan: {self.story}'
+        self.headerString = f'TerminusBrowse: {self.story}'
 
     # Overrides super
     def loader(self):
@@ -70,7 +70,7 @@ class StoryFrame(AbstractFrame):
             except:
                 pass
 
-            
+
         return titles
 
     def changeFrameThread(self, button):

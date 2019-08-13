@@ -16,11 +16,11 @@ class HackerNewsThreadFrame(AbstractFrame):
         # unofficial HN api, more dev friendly json response
         self.url = 'https://hn.algolia.com/api/v1/items/' + str(threadUri)
         self.headers = {
-            'user-agent': 'hackernews-commandChan'
+            'user-agent': 'hackernews-TerminusBrowse'
         }
 
         self.load()
-        self.headerString = f'commandChan: {self.story} -- {threadUri}'
+        self.headerString = f'TerminusBrowse: {self.story} -- {threadUri}'
 
     # Overrides super
     def loader(self):

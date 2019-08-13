@@ -7,12 +7,12 @@ from Frames.abstractFrame import AbstractFrame
 class HackerNewsIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
-        self.headerString = 'commandChan'
+        self.headerString = 'TerminusBrowse'
 
         self.storyList = self.uvm.cfg.deep_get(SITE.HACKERNEWS, 'stories')
 
         self.load()
-    
+
     # Overrides super
     def loader(self):
         self.contents = self.buildFrame()
