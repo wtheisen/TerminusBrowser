@@ -14,11 +14,11 @@ class RedditThreadFrame(AbstractFrame):
 
         self.url = 'https://www.reddit.com' + self.threadUri
         self.headers = {
-            'user-agent': 'reddit-commandChan'        
+            'user-agent': 'reddit-TerminusBrowse'        
         }
 
         self.load()
-        self.headerString = f'commandChan: {self.subString} -- {threadUri.split("/")[-2]}'
+        self.headerString = f'TerminusBrowse: {self.subString} -- {threadUri.split("/")[-2]}'
 
     # Overrides super
     def loader(self):

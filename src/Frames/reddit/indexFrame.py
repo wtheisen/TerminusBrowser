@@ -7,7 +7,7 @@ from Frames.abstractFrame import AbstractFrame
 class RedditIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
-        self.headerString = 'commandChan'
+        self.headerString = 'TerminusBrowse'
 
         self.subredditList = self.uvm.cfg.deep_get(SITE.REDDIT, 'boards')
 
