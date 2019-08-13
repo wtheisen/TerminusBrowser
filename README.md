@@ -66,7 +66,7 @@ And then run `./commandChanVim.py`
 
 Development on commandChan is active and on-going. If there are any features
 you want or you're just interested in joining in the discussion the dev team
-is most active on [#commandChan on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#commandChan)
+is most active on [#TerminusBrowse on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowse)
 
 ## TODO List <a name="todoList"></a>
 
