@@ -18,7 +18,7 @@ class ThreadFrame(AbstractFrame, ChanThreadBuilder):
         self.postReplyDict = {}
 
         self.load()
-        self.headerString = f'commandChan: {self.boardString} -- {str(self.threadNumber)}'
+        self.headerString = f'TerminusBrowse: {self.boardString} -- {str(self.threadNumber)}'
 
     # Overrides super
     def loader(self):
