@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/wtheisen/commandChan.svg?branch=master)](https://travis-ci.com/wtheisen/commandChan)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# commandChan - a terminal 4chan/Reddit browser
+# TerminusBrowse - a terminal 4chan/Reddit browser
 1. [Introduction](#introduction)
 2. [Screenshots](#screenshots)
 3. [Hotkeys](#hotkeys)
@@ -11,7 +11,9 @@
 
 ## Introduction <a name="introduction"></a>
 
-Created out of a desire to browse 4chan at work, commandChan is turning into a general framework for browsing
+Previously known as commandChan.
+
+Created out of a desire to browse 4chan at work, TerminusBrowse is turning into a general framework for browsing
 sites in the terminal using a unified program.
 This is currently a terminal browsing application for [4chan](https://www.4chan.org/), and now [Reddit](https://www.reddit.com/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python.
@@ -64,9 +66,9 @@ And then run `./commandChanVim.py`
 
 ## Contributing <a name="contrib"></a>
 
-Development on commandChan is active and on-going. If there are any features
+Development on TerminusBrowse is active and on-going. If there are any features
 you want or you're just interested in joining in the discussion the dev team
-is most active on [#commandChan on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#commandChan)
+is most active on [#TerminusBrowse on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowse)
 
 ## TODO List <a name="todoList"></a>
 
