@@ -19,6 +19,7 @@ class SITE(Enum):
     FCHAN  = 0
     REDDIT = 1
     LCHAN = 2
+    HACKERNEWS = 3
 
 class STICKIES(Enum):
     SHOW = 0

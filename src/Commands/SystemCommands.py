@@ -7,6 +7,7 @@ from Views.viewClass import View
 from Frames.defaultFrame import FrameFactory
 from Frames.historyFrame import HistoryFrame
 from Frames.reddit.indexFrame import RedditIndexFrame
+from Frames.hackernews.indexFrame import HackerNewsIndexFrame
 
 import Frames.fchan.indexFrame as fIndex
 import Frames.lchan.indexFrame as lIndex
@@ -101,6 +102,10 @@ def systemCommands(cmd, uvm):
                 DEBUG('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
+            elif cmd[1].lower() in ['hn', 'hackernews']:
+                DEBUG('HN requested')
+                uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
+                setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
 
     elif cmd[0] == ('split'):
         if type(uvm.splitTuple) is Row:
