@@ -14,12 +14,12 @@ class SubredditFrame(AbstractFrame):
             self.url += '&after=' + self.token
 
         self.headers = {
-            'user-agent': 'reddit-TerminusBrowse'
+            'user-agent': 'reddit-TerminusBrowser'
         }
         self.info_text = 'Upvotes: {} Comments: {}'
 
         self.load()
-        self.headerString = f'TerminusBrowse: {self.subreddit}'
+        self.headerString = f'TerminusBrowser: {self.subreddit}'
 
     # Overrides super
     def loader(self):

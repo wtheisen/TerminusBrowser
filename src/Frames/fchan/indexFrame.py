@@ -11,7 +11,7 @@ class IndexFrame(AbstractFrame):
 
         self.uvm.currFocusView.site = SITE.FCHAN
 
-        self.headerString = 'TerminusBrowse'
+        self.headerString = 'TerminusBrowser'
 
         self.boardList = self.uvm.cfg.deep_get(SITE.FCHAN, 'boards')
 

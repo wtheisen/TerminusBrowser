@@ -4,15 +4,15 @@ from debug import DEBUG
 
 class DefaultFrame(urwid.WidgetWrap):
     def __init__(self, welcome=False, test=False):
-        self.headerString = 'TerminusBrowse'
+        self.headerString = 'TerminusBrowser'
         self.footerStringRight = f''
         self.url = 'Welcome Screen'
 
         if welcome:
-            welcomeText = pyfiglet.figlet_format('TerminusBrowse') + '\nRecent Commits:\n'
+            welcomeText = pyfiglet.figlet_format('TerminusBrowser') + '\nRecent Commits:\n'
 
             if not test:
-                r = requests.get('https://api.github.com/repos/wtheisen/TerminusBrowse/commits')
+                r = requests.get('https://api.github.com/repos/wtheisen/TerminusBrowser/commits')
                 data = r.json()
 
                 count = 0
