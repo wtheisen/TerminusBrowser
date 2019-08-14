@@ -47,9 +47,9 @@ And then run `./commandChanVim.py`
 
 ## Hotkeys <a name="hotkeys"></a>
 
-- ':'   - puts you in command mode where you can type full commands
-- 'esc' - puts you in normal mode where the usual hotkeys will work
-
+- ':'   - Puts you in command mode where you can type full commands
+- 'esc' - Puts you in normal mode where the usual hotkeys will work
+- HJKL  - Normal vim like navigation for selectable objects
 ## Commands <a name="commands"></a>
 
 - (q)uit(a)ll - Close the program
