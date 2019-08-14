@@ -36,4 +36,4 @@ class HackerNewsIndexFrame(AbstractFrame):
     def changeFrameBoard(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('story ' + button.get_label())
+        ch.routeCommand('story ' + button.get_label() + ' ' +  '0')
