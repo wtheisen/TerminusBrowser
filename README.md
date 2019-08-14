@@ -13,11 +13,11 @@
 
 Previously known as commandChan.
 
-Created out of a desire to browse 4chan at work, TerminusBrowse is turning into a general framework for browsing
-sites in the terminal using a unified program.
-This is currently a terminal browsing application for [4chan](https://www.4chan.org/), and now [Reddit](https://www.reddit.com/).
+Created out of a desire to browse 4chan at work, TerminusBrowser is turning into a general framework for browsing
+sites in the terminal using a single program.
+This is currently a terminal browsing application for [4chan](https://www.4chan.org/), [Reddit](https://www.reddit.com/), [Hacker News](https://news.ycombinator.com/), and [lainchan](https://www.lainchan.org/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python.
-It also makes use of the [4chan API](https://github.com/4chan/4chan-API) and the [Reddit API](https://www.reddit.com/dev/api/)
+It also makes use of the [4chan API](https://github.com/4chan/4chan-API), the [Reddit API](https://www.reddit.com/dev/api/), a third-party [Hacker News API](https://hn.algolia.com/api), and the [lainchan API](https://github.com/vichan-devel/vichan-API/). Development for all sites are still on-going so while basic browsing will work there may be smaller bugs or features than you may notice. Please feel free to notify the dev team by opening an issue, or PRs are always welcome!
 
 To run, first install the dependencies in requirements.txt
 
@@ -54,10 +54,10 @@ And then run `./commandChanVim.py`
 
 - (q)uit(a)ll - Close the program
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
-- view [PATTERN] - [PATTERN] being [4chan/reddit/lainchan] currently it will open that site in the current view
+- view [PATTERN] - [PATTERN] being [4chan/reddit/hackernews/lainchan/history] currently it will open that site in the current view
 - (h)istory - will go back one level in the history list
 - (s)earch [PATTERN] - will search the current view for the pattern, if pattern is blank it will reset the current view
-- add [reddit/4chan] [PATTERN] - will add the subreddit or board [PATTERN] to the site index specified, may have to reload
+- add [reddit/4chan] [PATTERN] - will add the subreddit or board [PATTERN] to the site index specified.
 
 ## Configuration <a name="config"></a>
 
