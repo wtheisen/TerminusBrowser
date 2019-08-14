@@ -1,7 +1,9 @@
 import urwid
 
-from debug import DEBUG
 from Views.viewClass import View
+
+import logging
+log = logging.getLogger(__name__)
 
 class Column():
     def __init__(self):
@@ -12,7 +14,7 @@ class Row():
         self.widgets = []
 
 def buildUrwidFromSplits(splitList):
-    DEBUG(type(splitList) is View)
+    log.debug(type(splitList) is View)
 
     if type(splitList) is Column: 
         return urwid.Columns([buildUrwidFromSplits(x) for x in splitList.widgets])

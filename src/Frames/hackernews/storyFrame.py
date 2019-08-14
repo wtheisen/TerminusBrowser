@@ -1,8 +1,10 @@
 import urwid, re, time, collections, requests
-from debug import DEBUG
 from customeTypes import STICKIES
 from Frames.abstractFrame import AbstractFrame
 import time
+
+import logging
+log = logging.getLogger(__name__)
 
 class StoryFrame(AbstractFrame):
     def __init__(self, story, page, urwidViewManager, uFilter=None):

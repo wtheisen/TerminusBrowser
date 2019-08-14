@@ -1,11 +1,13 @@
 import urwid, time, requests, re
 from html2text import html2text
 
-from debug import DEBUG
 from postClass import Post
 from customUrwidClasses import QuoteButton
 from Views.treeThreadClasses import CommentNode
 from Frames.abstractFrame import AbstractFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 class HackerNewsThreadFrame(AbstractFrame):
     def __init__(self, story, threadUri, urwidViewManager, uFilter = None):

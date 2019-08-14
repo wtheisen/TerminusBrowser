@@ -1,8 +1,10 @@
 import urwid, time
-from debug import DEBUG
 from customeTypes import SITE
 
 from Frames.abstractFrame import AbstractFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 class RedditIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):

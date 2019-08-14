@@ -5,8 +5,10 @@ from Commands.ChanCommands import chanCommands, ChanCommandList
 from Commands.RedditCommands import redditCommands, RedditCommandList
 from Commands.HNCommands import hnCommands, HNCommandList
 
-from debug import DEBUG
 from customeTypes import SITE, MODE
+
+import logging
+log = logging.getLogger(__name__)
 
 class CommandHandler:
     def __init__(self, uvm):
@@ -26,7 +28,7 @@ class CommandHandler:
     def routeCommand(self, cmd):
         self.preCommand()
 
-        DEBUG(cmd)
+        log.warning(cmd)
 
         if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList + HNCommandList):
             return

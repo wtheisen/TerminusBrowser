@@ -7,7 +7,9 @@ from Frames.boardFrame import BoardFrame
 from Frames.threadFrame import ThreadFrame
 
 from customeTypes import LEVEL, MODE, SITE
-from debug import DEBUG
+
+import logging
+log = logging.getLogger(__name__)
 
 def preCommand(uvm):
     uvm.commandBar.set_caption('')
@@ -30,7 +32,7 @@ def thread(uvm, boardString, threadNumber):
 
 def board(uvm, boardString):
     preCommand(uvm)
-    DEBUG('executing board command')
+    log.debug('executing board command')
     # uvm.allViews.contents[uvm.allViews.focus_position] = (View(uvm, BoardFrame(boardString, uvm)), uvm.allViews.options())
     uvm.allViews = View(uvm, BoardFrame(boardString, uvm))
     postCommand(uvm)
@@ -38,7 +40,7 @@ def board(uvm, boardString):
 def site(uvm):
     preCommand(uvm)
     if uvm.site is SITE.FCHAN:
-        DEBUG(uvm.allViews.focus)
+        log.debug(uvm.allViews.focus)
         uvm.allViews = View(uvm, IndexFrame(uvm))
         # uvm.currFocusView.setFrame(IndexFrame(uvm))
         # setattr(uvm.currFocusView, 'frame', IndexFrame(uvm))
@@ -51,18 +53,18 @@ def history(uvm):
     # uvm.currFocusView.setFrame(HistoryFrame(uvm))
 
 def split(uvm, splitType, splitView):
-    DEBUG(type(uvm.allViews))
-    DEBUG(uvm.allViews.focus)
+    log.debug(type(uvm.allViews))
+    log.debug(uvm.allViews.focus)
     if splitType == 0:
         if type(uvm.allViews) is urwid.Pile:
-            DEBUG('Pile supertype')
+            log.debug('Pile supertype')
             uvm.allViews.contents.append((View(uvm), uvm.allViews.options()))
         else:
-            DEBUG(uvm.allViews.contents)
+            log.debug(uvm.allViews.contents)
             uvm.allViews.focus = urwid.Pile([uvm.currFocusView, View(uvm)])
     elif splitType == 1:
         if type(uvm.allViews) is urwid.Columns:
-            DEBUG('Columns supertype')
+            log.debug('Columns supertype')
             uvm.allViews.contents.append((View(uvm), uvm.allViews.options()))
         else:
             uvm.allViews.focus = urwid.Columns([uvm.currFocusView, View(uvm)])

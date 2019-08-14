@@ -1,8 +1,9 @@
 from Commands.SystemCommands import SystemCommandList
 from Commands.ChanCommands import ChanCommandList
 from Commands.RedditCommands import RedditCommandList
-from debug import DEBUG
 
+import logging
+log = logging.getLogger(__name__)
 
 def autoComplete(editBox):
     currText = editBox.get_edit_text()
