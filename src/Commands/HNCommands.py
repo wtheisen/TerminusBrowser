@@ -17,18 +17,18 @@ def hnCommands(cmd, uvm):
     log.debug(cmd)
 
     if cmd[0] == 'story':
+
         log.debug('executing story command')
         log.debug(cmd[0] + cmd[1])
-        story(uvm, cmd[1])
-    elif cmd[0] in ('hnp'):
+        story(uvm, cmd[1], cmd[2] if len(cmd) == 3 else "")
+    elif cmd[0] == 'hnp':
         log.debug('executing post command')
         hnpost(uvm, cmd[1], cmd[2])
 
-def story(uvm, story):
-    story += 'stories' 
+def story(uvm, story, page):
     try:
-        setattr(uvm.currFocusView, 'frame', StoryFrame(story, uvm))
-        uvm.currFocusView.updateHistory(FrameFactory(StoryFrame), [story, uvm])
+        setattr(uvm.currFocusView, 'frame', StoryFrame(story, page, uvm))
+        uvm.currFocusView.updateHistory(FrameFactory(StoryFrame), [story, page, uvm])
     except:
         uvm.currFocusView.frame.headerString = f'Error connecting to story {story}, does it exist?'
         log.debug(f'Error connecting to story {story}, does it exist?')

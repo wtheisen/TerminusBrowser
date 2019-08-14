@@ -1,17 +1,30 @@
 import urwid, re, time, collections, requests
 from customeTypes import STICKIES
 from Frames.abstractFrame import AbstractFrame
+import time
 
 import logging
 log = logging.getLogger(__name__)
 
 class StoryFrame(AbstractFrame):
-    def __init__(self, story, urwidViewManager, uFilter=None):
+    def __init__(self, story, page, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
         self.story = story
+        self.page = page
 
-        self.base = 'https://hacker-news.firebaseio.com/v0/'
-        self.url = self.base + self.story + '.json'
+        storyDict = {
+            'top': 'front_page',
+            'new': 'story',
+            'ask': 'ask_hn',
+            'show': 'show_hn',
+            'jobs' : 'job'
+        }
+
+        # 'search' will search by relevancy and score
+        # this only works well w this api for front page posts
+        # using 'search' for say, 'job' will return posts from too long ago
+        search = 'search' if self.story == 'top' else 'search_by_date'
+        self.url = f'https://hn.algolia.com/api/v1/{search}?tags=' + storyDict[self.story] + f'&page={self.page}'
 
         self.headers = {
             'user-agent': 'hackernews-TerminusBrowse'
@@ -32,6 +45,11 @@ class StoryFrame(AbstractFrame):
         threadButtonList = []
 
         for title, threadInfo in self.titles.items():
+            if title == 'Next':
+                if not self.uFilter:
+                    subButton = urwid.Button(str(threadInfo[0]), self.changeStoryPage)
+                    threadButtonList.append(urwid.LineBox(urwid.Pile([subButton, urwid.Divider('-'), urwid.Text(threadInfo[1])])))
+                continue
             if self.uFilter:
                 if re.search(self.uFilter.lower(), title.lower()):
                     threadButton = urwid.Button(str(threadInfo[0]), self.changeFrameThread)
@@ -61,17 +79,15 @@ class StoryFrame(AbstractFrame):
     def parseStoryBoard(self, data):
         titles = collections.OrderedDict()
 
-        for story in data[1:10]:
-            storyData = requests.get(self.base + 'item/' + str(story) + '.json').json()
-            # Need to research this
-            # inconsistent returned data - sometimes throws a key error
-            try:
-                titles[storyData['title']] = (  storyData['id'],
-                                                storyData['score'],
-                                                storyData['descendants'])
-            except:
-                pass
+        for i in range(len(data['hits'])):
+            titles[data['hits'][i]['title']] = (data['hits'][i]['objectID'],
+                                            data['hits'][i]['points'],
+                                            data['hits'][i]['num_comments'])
 
+        if int(self.page) < data['nbPages'] - 1:
+            titles['Next'] = (int(self.page) + 1,
+                            'Next',
+                            '')
 
         return titles
 
@@ -80,7 +96,7 @@ class StoryFrame(AbstractFrame):
         ch = CommandHandler(self.uvm)
         ch.routeCommand('hnp ' + self.story + ' ' + button.get_label())
 
-    def changeSubPage(self, button):
+    def changeStoryPage(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
         ch.routeCommand('story ' + self.story + ' ' + button.get_label())

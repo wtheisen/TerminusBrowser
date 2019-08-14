@@ -66,9 +66,9 @@ And then run `./commandChanVim.py`
 
 ## Contributing <a name="contrib"></a>
 
-Development on TerminusBrowse is active and on-going. If there are any features
+Development on TerminusBrowser is active and on-going. If there are any features
 you want or you're just interested in joining in the discussion the dev team
-is most active on [#TerminusBrowse on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowse)
+is most active on [#TerminusBrowser on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowser)
 
 ## TODO List <a name="todoList"></a>
 
