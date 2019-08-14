@@ -90,10 +90,9 @@
         "stories": [
             "top",
             "new",
-            "best",
             "ask",
             "show",
-            "job"
+            "jobs"
         ]
     }
 }
