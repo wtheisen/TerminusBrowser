@@ -1,9 +1,11 @@
 import urwid, time
 
-from debug import DEBUG
 from customeTypes import SITE
 
 from Frames.abstractFrame import AbstractFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 class IndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
@@ -17,7 +19,7 @@ class IndexFrame(AbstractFrame):
 
         self.load()
 
-        DEBUG(self.uvm.history)
+        log.debug(self.uvm.history)
 
     # Overrides super
     def loader(self):

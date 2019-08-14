@@ -1,6 +1,7 @@
 import urwid, pyfiglet, requests
 
-from debug import DEBUG
+import logging
+log = logging.getLogger(__name__)
 
 class DefaultFrame(urwid.WidgetWrap):
     def __init__(self, welcome=False, test=False):

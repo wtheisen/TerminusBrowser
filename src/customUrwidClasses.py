@@ -2,8 +2,8 @@
 
 import urwid, re, collections
 
-from debug import DEBUG
-
+import logging
+log = logging.getLogger(__name__)
 
 class QuotePreview(urwid.WidgetWrap):
     signals = ['close']
@@ -15,7 +15,7 @@ class QuotePreview(urwid.WidgetWrap):
         cleanQuoteNumber = re.sub("[^0-9]", "", str(quoteNumber))
         widgetList = currViewThreadWidgets[cleanQuoteNumber]
         widgetList.append(close_button)
-        DEBUG(widgetList)
+        log.debug(widgetList)
         fill = urwid.Filler(urwid.LineBox(urwid.Pile(widgetList)))
         self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
 

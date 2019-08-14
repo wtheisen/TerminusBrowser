@@ -1,10 +1,12 @@
 import urwid, time, requests, re
 
-from debug import DEBUG
 from postClass import Post
 from customUrwidClasses import QuoteButton
 from Views.treeThreadClasses import CommentNode
 from Frames.abstractFrame import AbstractFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 class RedditThreadFrame(AbstractFrame):
     def __init__(self, subString, threadUri, urwidViewManager, uFilter = None):

@@ -1,6 +1,5 @@
 import sys
 
-from debug import DEBUG
 from customeTypes import SITE
 from Views.viewClass import View
 
@@ -13,6 +12,9 @@ import Frames.fchan.indexFrame as fIndex
 import Frames.lchan.indexFrame as lIndex
 
 from splitTracker import Row, Column
+
+import logging
+log = logging.getLogger(__name__)
 
 SystemCommandList = [
     'add',
@@ -33,14 +35,14 @@ def systemCommands(cmd, uvm):
     cmd = cmd.split()
 
     if cmd[0] in ('qa', 'quitall'):
-        DEBUG('Executing quit command')
+        log.debug('Executing quit command')
         if uvm.cfg.update_file():
-            DEBUG('updated config')
+            log.debug('updated config')
         sys.exit()
 
     elif cmd[0] == ('add'):
         if len(cmd) >= 3:
-            DEBUG(f'Executing add command with args: {cmd[1:]}')
+            log.debug(f'Executing add command with args: {cmd[1:]}')
             if cmd[1] == '4chan':
                 for board in cmd[2:]:
                     uvm.cfg.add_topic(SITE.FCHAN, board)
@@ -62,7 +64,7 @@ def systemCommands(cmd, uvm):
                     if command[0] != '#':
                         systemCommands(command, uvm)
         except:
-            DEBUG(f'ERROR: Unable to source {cmd[1]}')
+            log.debug(f'ERROR: Unable to source {cmd[1]}')
 
     elif cmd[0] in ('h', 'history'):
         if len(cmd) is 2:
@@ -71,7 +73,7 @@ def systemCommands(cmd, uvm):
         else:
             for h in uvm.history[1:]:
                 if h[0] is uvm.currFocusView.id:
-                    DEBUG('Executing history command')
+                    log.debug('Executing history command')
                     uvm.history.insert(0, h)
                     setattr(uvm.currFocusView, 'frame', h[1](h[2]))
                     break
@@ -85,25 +87,25 @@ def systemCommands(cmd, uvm):
         setattr(uvm.currFocusView, 'frame', h[1](newArgs))
 
     elif cmd[0] == ('view'):
-        DEBUG('executing site command')
-        DEBUG(cmd)
+        log.debug('executing site command')
+        log.debug(cmd)
         if len(cmd) == 2:
             if cmd[1] in 'history':
                 setattr(uvm.currFocusView, 'frame', HistoryFrame(uvm))
             elif cmd[1] == '4chan':
-                DEBUG('4chan requested')
+                log.debug('4chan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(fIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
             elif cmd[1] == 'lainchan' or cmd[1] == 'lchan':
-                DEBUG('lainchan requested')
+                log.debug('lainchan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(lIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', lIndex.IndexFrame(uvm))
             elif cmd[1] in ['reddit', 'Reddit']:
-                DEBUG('reddit requested')
+                log.debug('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
             elif cmd[1].lower() in ['hn', 'hackernews']:
-                DEBUG('HN requested')
+                log.debug('HN requested')
                 uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
 

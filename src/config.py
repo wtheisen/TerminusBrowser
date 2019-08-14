@@ -3,7 +3,9 @@
 import json, os
 
 from customeTypes import SITE
-from debug import DEBUG
+
+import logging
+log = logging.getLogger(__name__)
 
 class Config():
     def __init__(self, location=None):
@@ -15,7 +17,7 @@ class Config():
         # load default config
         self.defaults = self._load('./src/default_config.json')
         if not self.defaults:
-            DEBUG('ERROR: No default file')
+            log.debug('ERROR: No default file')
 
         # load user config
         self.config = self._load(self.location)
@@ -37,7 +39,7 @@ class Config():
         if self.config.get(key, None):
             return self.config.get(key)
         else:
-            DEBUG('Key {} not found, trying defaults'.format(key))
+            log.debug('Key {} not found, trying defaults'.format(key))
             return self.defaults.get(key, None)
 
     def deep_get(self, key, inner_key):
@@ -48,7 +50,7 @@ class Config():
         if self.config.get(key, {}).get(inner_key, None):
             return self.config.get(key).get(inner_key)
         else:
-            DEBUG('Key {}:{} not found, trying defaults'.format(key, inner_key))
+            log.debug('Key {}:{} not found, trying defaults'.format(key, inner_key))
             return self.defaults.get(key, {}).get(inner_key, None)
 
     def set(self, key, value):
@@ -84,7 +86,7 @@ class Config():
                 return json.load(cfg)
         except:
             # add default config to location
-            DEBUG('File {} does not exist'.format(location))
+            log.debug('File {} does not exist'.format(location))
             return None
 
     def _write(self, data):

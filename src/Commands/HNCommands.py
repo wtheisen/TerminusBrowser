@@ -1,9 +1,11 @@
-from debug import DEBUG
 from Views.viewClass import View
 
 from Frames.defaultFrame import FrameFactory
 from Frames.hackernews.storyFrame import StoryFrame
 from Frames.hackernews.threadFrame import HackerNewsThreadFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 HNCommandList = [
     'story',
@@ -12,14 +14,14 @@ HNCommandList = [
 
 def hnCommands(cmd, uvm):
     cmd = cmd.split()
-    DEBUG(cmd)
+    log.debug(cmd)
 
     if cmd[0] == 'story':
-        DEBUG('executing story command')
-        DEBUG(cmd[0] + cmd[1])
+        log.debug('executing story command')
+        log.debug(cmd[0] + cmd[1])
         story(uvm, cmd[1])
     elif cmd[0] in ('hnp'):
-        DEBUG('executing post command')
+        log.debug('executing post command')
         hnpost(uvm, cmd[1], cmd[2])
 
 def story(uvm, story):
@@ -29,9 +31,9 @@ def story(uvm, story):
         uvm.currFocusView.updateHistory(FrameFactory(StoryFrame), [story, uvm])
     except:
         uvm.currFocusView.frame.headerString = f'Error connecting to story {story}, does it exist?'
-        DEBUG(f'Error connecting to story {story}, does it exist?')
+        log.debug(f'Error connecting to story {story}, does it exist?')
 
 def hnpost(uvm, story, postID):
-    DEBUG('Executing HN post command')
+    log.debug('Executing HN post command')
     uvm.currFocusView.updateHistory(FrameFactory(HackerNewsThreadFrame), [story, postID, uvm])
     setattr(uvm.currFocusView, 'frame', HackerNewsThreadFrame(story, postID, uvm))

@@ -1,7 +1,9 @@
 import urwid, re, time, collections, requests
-from debug import DEBUG
 from customeTypes import STICKIES
 from Frames.abstractFrame import AbstractFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 class SubredditFrame(AbstractFrame):    
     def __init__(self, subreddit, token, urwidViewManager, uFilter=None):
@@ -68,7 +70,7 @@ class SubredditFrame(AbstractFrame):
         titles = collections.OrderedDict()
         posts = data['data']['children']
 
-        DEBUG(posts)
+        log.debug(posts)
 
         for post in posts:
             if self.uvm.stickies == STICKIES.HIDE and post['data']['stickied']:

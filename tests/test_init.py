@@ -10,7 +10,6 @@ from enum import Enum
 from config import Config
 from Views.viewClass import View
 from Frames.defaultFrame import DefaultFrame
-from debug import INITDEBUG, DEBUG
 
 from splitTracker import Column, Row, buildUrwidFromSplits
 
@@ -21,6 +20,9 @@ from customeTypes import LEVEL, MODE, SITE, STICKIES
 from commandChanVim import urwidView
 
 import pytest
+
+import logging
+log = logging.getLogger(__name__)
 
 @pytest.fixture
 def view():
