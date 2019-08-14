@@ -24,6 +24,21 @@ def test_addChan(test_input, expected, view):
     result = all(ex in view.cfg.deep_get(SITE.FCHAN, 'boards') for ex in expected)
     assert result
 
+test_set = [
+    ('set test ahoy'),
+    ('set REDDIT username test')
+]
+@pytest.mark.parametrize("test_input", test_set)
+def test_setCommand(test_input, view):
+    systemCommands(test_input, view)
+    
+    cmd = test_input.split()
+    if len(cmd) == 3:
+        assert view.cfg.get(cmd[1]) == cmd[2]
+    else:
+        assert view.cfg.deep_get(cmd[1], cmd[2]) == cmd[3]
+
+
 test_subs = [
     ('add reddit linuxgaming', ['linuxgaming']),
     ('add reddit linuxgaming sysadmin', ['linuxgaming', 'sysadmin'])

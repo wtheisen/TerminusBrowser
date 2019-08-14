@@ -4,7 +4,7 @@ from config import Config
 
 import pytest
 
-DEFAULT = os.path.expanduser('~') + '/.config/commandChan/config.json'
+DEFAULT = os.path.expanduser('~') + '/.config/TerminusBrowser/config.json'
 test_list = [
     ('', DEFAULT),
     ('/tmp/', DEFAULT),
