@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 class RedditIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
-        self.headerString = 'commandChan'
+        self.headerString = 'TerminusBrowser - Reddit'
 
         self.subredditList = self.uvm.cfg.deep_get(SITE.REDDIT, 'boards')
 
