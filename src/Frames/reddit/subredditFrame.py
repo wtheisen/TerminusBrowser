@@ -19,7 +19,7 @@ class SubredditFrame(AbstractFrame):
         self.info_text = 'Upvotes: {} Comments: {}'
 
         self.load()
-        self.headerString = f'TerminusBrowser: {self.subreddit}'
+        self.headerString = f'TerminusBrowser - Reddit: {self.subreddit}'
 
     # Overrides super
     def loader(self):

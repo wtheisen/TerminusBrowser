@@ -11,7 +11,7 @@ class IndexFrame(AbstractFrame):
 
         self.uvm.currFocusView.site = SITE.FCHAN
 
-        self.headerString = 'TerminusBrowser'
+        self.headerString = 'TerminusBrowser - 4chan'
 
         self.boardList = self.uvm.cfg.deep_get(SITE.FCHAN, 'boards')
 

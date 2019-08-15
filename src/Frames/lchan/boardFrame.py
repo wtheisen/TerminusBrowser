@@ -11,7 +11,7 @@ class BoardFrame(AbstractFrame, ChanBoardBuilder):
         self.info_text = 'Replies: {} Images: {}'
 
         self.load()
-        self.headerString = f'TerminusBrowser: {self.boardString}'
+        self.headerString = f'TerminusBrowser - lainchan: {self.boardString}'
 
     # Overrides super
     def loader(self):

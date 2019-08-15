@@ -18,7 +18,7 @@ class RedditThreadFrame(AbstractFrame):
         }
 
         self.load()
-        self.headerString = f'TerminusBrowser: {self.subString} -- {threadUri.split("/")[-2]}'
+        self.headerString = f'TerminusBrowser - Reddit: {self.subString} -- {threadUri.split("/")[-2]}'
 
     # Overrides super
     def loader(self):
