@@ -16,12 +16,12 @@ class SubredditFrame(AbstractFrame):
             self.url += '&after=' + self.token
 
         self.headers = {
-            'user-agent': 'reddit-commandChan'
+            'user-agent': 'reddit-TerminusBrowser'
         }
         self.info_text = 'Upvotes: {} Comments: {}'
 
         self.load()
-        self.headerString = f'commandChan: {self.subreddit}'
+        self.headerString = f'TerminusBrowser - Reddit: {self.subreddit}'
 
     # Overrides super
     def loader(self):

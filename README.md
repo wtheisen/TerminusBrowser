@@ -25,25 +25,29 @@ To run, first install the dependencies in requirements.txt
 pip3 install -r requirements.txt
 ```
 
-And then run `./commandChanVim.py`
+And then run `./TerminusBrowser.py`
 
 ## Screenshots <a name="screenshots"></a>
 
+Click on photo for more detail
+
 ### 4chan
 
-![Board Index](./screenshots/boardIndex.png?raw=true "Board Index")
+|      Board Index   |  Board View         | Thread view   |
+| ------------- |-------------| -----|
+|![](./screenshots/fchan_boards.png?raw=true) | ![](./screenshots/fchan_threads.png?raw=true) |![](./screenshots/fchan_post.png?raw=true)  |
 
-![Board View](./screenshots/boardView.png?raw=true "Board View")
-
-![Thread View](./screenshots/threadView.png?raw=true "Thread View")
 
 ### Reddit
 
-![Subreddit Index](./screenshots/subredditIndex.png?raw=true "Subreddit Index")
+| Subreddit Index | Subreddit View | Post View |
+| ------- | ---------- | -------|
+|![](./screenshots/reddit_subs.png?raw=true) | ![](./screenshots/reddit_threads.png?raw=true)| ![](./screenshots/reddit_comments.png?raw=true)
 
-![Subreddit View](./screenshots/subredditView.png?raw=true "Subreddit View")
-
-![Post View](./screenshots/redditPost.png?raw=true "Reddit Post")
+### Lainchan
+| Board Index | Board view | Thread View |
+| ------- | ------ | ------- |
+| ![](./screenshots/lchan_boards.png?raw=true) | ![](./screenshots/lchan_threads.png?raw=true) | ![](./screenshots/lchan_post.png?raw=true) | 
 
 ## Hotkeys <a name="hotkeys"></a>
 

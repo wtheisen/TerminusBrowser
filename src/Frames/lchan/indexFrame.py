@@ -13,7 +13,7 @@ class IndexFrame(AbstractFrame):
 
         self.uvm.currFocusView.site = SITE.LCHAN
 
-        self.headerString = 'CommandChan'
+        self.headerString = 'TerminusBrowser - lainchan'
 
         self.boardList = self.uvm.cfg.deep_get(SITE.LCHAN, 'boards')
 

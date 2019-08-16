@@ -12,7 +12,7 @@ class Config():
         if location and not os.path.isdir(location):
             self.location = location
         else:
-            self.location = os.path.expanduser('~') + '/.config/commandChan/config.json'
+            self.location = os.path.expanduser('~') + '/.config/TerminusBrowser/config.json'
 
         # load default config
         self.defaults = self._load('./src/default_config.json')
