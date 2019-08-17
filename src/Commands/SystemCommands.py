@@ -53,7 +53,12 @@ def systemCommands(cmd, uvm):
                     setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd[0] == ('set'):
-        pass
+        # :set key value
+        if len(cmd) == 3:
+            uvm.cfg.set(cmd[1], cmd[2])
+        # :set SITE key value
+        elif len(cmd) == 4:
+            uvm.cfg.deep_set(cmd[1], cmd[2], cmd[3])
 
     elif cmd[0] == ('source'):
         pass
