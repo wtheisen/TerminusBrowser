@@ -5,6 +5,7 @@ from Frames.fchan.indexFrame import IndexFrame
 from Frames.defaultFrame import DefaultFrame
 from customeTypes import SITE
 
+import unittest
 import pytest
 
 @pytest.fixture
@@ -60,3 +61,36 @@ test_views = [
 def test_view(test_input, expected, view):
     systemCommands(test_input, view)
     assert type(view.currFocusView.frame) == expected[1]
+
+test_subs = [
+    ('qa'),
+    ('quitall')]
+
+@pytest.mark.parametrize("test_input", test_subs)
+def test_quit(test_input, view):
+    with pytest.raises(SystemExit) as wrapped_e:
+        systemCommands(test_input, view)
+    assert wrapped_e.type == SystemExit
+
+test_src = [
+    ('source tests/Commands/input_source_hash.txt', [None, DefaultFrame]),
+    ('source tests/Commands/input_source_vr.txt', [SITE.REDDIT, RedditIndexFrame]),
+    ('source imaginary-file', [None, DefaultFrame])]
+
+@pytest.mark.parametrize("source, expected", test_src)
+def test_source(source, expected, view):
+    systemCommands(source, view)
+    assert type(view.currFocusView.frame) == expected[1]
+    
+test_history = [
+        (['view reddit', 'view 4chan'], 'h', [SITE.REDDIT, RedditIndexFrame]),
+        (['view 4chan', 'view reddit'], 'history', [SITE.FCHAN, IndexFrame]),
+        (['view reddit', 'view 4chan'], 'h 1', [SITE.REDDIT, RedditIndexFrame])]
+
+@pytest.mark.parametrize("cmd, history, expected", test_history)
+def test_hist(cmd, history, expected, view):
+    systemCommands(cmd[0], view)
+    systemCommands(cmd[1], view)
+    systemCommands(history, view)
+    assert type(view.currFocusView.frame) == expected[1]
+    

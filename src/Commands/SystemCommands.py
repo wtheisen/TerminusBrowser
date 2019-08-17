@@ -61,7 +61,6 @@ def systemCommands(cmd, uvm):
             uvm.cfg.deep_set(cmd[1], cmd[2], cmd[3])
 
     elif cmd[0] == ('source'):
-        pass
         try:
             with open(cmd[1], 'r') as rcFile:
                 for command in rcFile:
