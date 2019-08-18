@@ -12,9 +12,7 @@ HNCommandList = [
     'hnp'
 ]
 
-def hnCommands(cmd, uvm):
-    cmd = cmd.split()
-    log.debug(cmd)
+def hnCommands(cmd, args, uvm):
 
     if cmd[0] == 'story':
 
