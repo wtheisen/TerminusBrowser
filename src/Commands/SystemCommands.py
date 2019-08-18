@@ -32,9 +32,10 @@ SystemCommandList = [
 ]
 
 def systemCommands(cmd, uvm):
-    cmd, *args = cmd.lower().split()
-
-
+    log.debug(cmd)
+    cmd, *args = cmd.split()
+    
+    
     if cmd in ('q', 'qa', 'quitall'):
         log.debug('Executing quit command')
         if uvm.cfg.update_file():

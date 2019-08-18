@@ -17,7 +17,8 @@ ChanCommandList = [
     't', 'thread'
 ]
 
-def chanCommands(cmd, args, uvm):
+def chanCommands(cmd, uvm):
+    cmd = cmd.split()
 
     if cmd[0] in ('b', 'board'):
         log.debug('executing board command')

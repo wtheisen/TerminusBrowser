@@ -12,7 +12,8 @@ RedditCommandList = [
     'p', 'post'
 ]
 
-def redditCommands(cmd, args, uvm):
+def redditCommands(cmd, uvm):
+    cmd = cmd.split()
 
     if cmd[0] in ('sub', 'subreddit'):
         log.debug('executing subreddit command')

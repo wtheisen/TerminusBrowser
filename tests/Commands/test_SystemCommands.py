@@ -70,11 +70,12 @@ def test_view(test_input, expected, view):
     systemCommands(test_input, view)
     assert type(view.currFocusView.frame) == expected[1]
 
-test_subs = [
+test_quit = [
+    ('q'),
     ('qa'),
     ('quitall')]
 
-@pytest.mark.parametrize("test_input", test_subs)
+@pytest.mark.parametrize("test_input", test_quit)
 def test_quit(test_input, view):
     with pytest.raises(SystemExit) as wrapped_e:
         systemCommands(test_input, view)
