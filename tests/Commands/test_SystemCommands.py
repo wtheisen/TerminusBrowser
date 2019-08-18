@@ -94,7 +94,9 @@ def test_source(source, expected, view):
 test_history = [
         (['view reddit', 'view 4chan'], 'h', [SITE.REDDIT, RedditIndexFrame]),
         (['view 4chan', 'view reddit'], 'history', [SITE.FCHAN, fchanIndexFrame]),
-        (['view reddit', 'view 4chan'], 'h 1', [SITE.REDDIT, RedditIndexFrame])]
+        (['view reddit', 'view 4chan'], 'h 1', [SITE.REDDIT, RedditIndexFrame]),
+        (['view reddit', 'view 4chan'], 'h z', [SITE.FCHAN, fchanIndexFrame])
+]
 
 @pytest.mark.parametrize("cmd, history, expected", test_history)
 def test_hist(cmd, history, expected, view):
