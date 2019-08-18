@@ -94,21 +94,22 @@ def systemCommands(cmd, uvm):
         log.debug('executing site command')
         log.debug(cmd)
         if len(cmd) == 2:
-            if cmd[1] in 'history':
+            if cmd[1].lower() in ('h', 'history'):
+                log.debug('history requested')
                 setattr(uvm.currFocusView, 'frame', HistoryFrame(uvm))
-            elif cmd[1] == '4chan':
+            elif cmd[1].lower() in '4chan':
                 log.debug('4chan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(fIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
-            elif cmd[1] == 'lainchan' or cmd[1] == 'lchan':
+            elif cmd[1].lower() in ('lchan', 'lainchan'):
                 log.debug('lainchan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(lIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', lIndex.IndexFrame(uvm))
-            elif cmd[1] in ['reddit', 'Reddit']:
+            elif cmd[1].lower() in 'reddit':
                 log.debug('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
-            elif cmd[1].lower() in ['hn', 'hackernews']:
+            elif cmd[1].lower() in ('hn', 'hackernews'):
                 log.debug('HN requested')
                 uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))

@@ -1,8 +1,14 @@
 from commandChanVim import urwidView
 from Commands.SystemCommands import systemCommands
 from Frames.reddit.indexFrame import RedditIndexFrame
-from Frames.fchan.indexFrame import IndexFrame
+from Frames.fchan.indexFrame import IndexFrame as fchanIndexFrame
+from Frames.lchan.indexFrame import IndexFrame as lchanIndexFrame
+from Frames.hackernews.indexFrame import HackerNewsIndexFrame
+
 from Frames.defaultFrame import DefaultFrame
+from Frames.historyFrame import HistoryFrame
+import Frames.lchan.indexFrame as lIndex
+
 from customeTypes import SITE
 
 import unittest
@@ -52,9 +58,11 @@ def test_addReddit(test_input, expected, view):
 
 
 test_views = [
-    ('view reddit', [SITE.REDDIT, RedditIndexFrame]),
-        ('view 4chan', [SITE.FCHAN, IndexFrame]),
-            ('view too long', [None, DefaultFrame])
+    ('view rEdDiT', [SITE.REDDIT, RedditIndexFrame]),
+    ('view 4ChaN', [SITE.FCHAN, fchanIndexFrame]),
+    ('view hisTORy', [None, HistoryFrame]),
+    ('view H', [None, HistoryFrame]),
+    ('view too long', [None, DefaultFrame])
 
 ]
 @pytest.mark.parametrize("test_input, expected", test_views)
@@ -84,7 +92,7 @@ def test_source(source, expected, view):
     
 test_history = [
         (['view reddit', 'view 4chan'], 'h', [SITE.REDDIT, RedditIndexFrame]),
-        (['view 4chan', 'view reddit'], 'history', [SITE.FCHAN, IndexFrame]),
+        (['view 4chan', 'view reddit'], 'history', [SITE.FCHAN, fchanIndexFrame]),
         (['view reddit', 'view 4chan'], 'h 1', [SITE.REDDIT, RedditIndexFrame])]
 
 @pytest.mark.parametrize("cmd, history, expected", test_history)
@@ -93,4 +101,3 @@ def test_hist(cmd, history, expected, view):
     systemCommands(cmd[1], view)
     systemCommands(history, view)
     assert type(view.currFocusView.frame) == expected[1]
-    
