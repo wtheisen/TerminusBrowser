@@ -18,16 +18,17 @@ ChanCommandList = [
 ]
 
 def chanCommands(cmd, uvm):
-    cmd = cmd.split()
+    log.debug(cmd)
+    cmd, *args = cmd.split()
 
-    if cmd[0] in ('b', 'board'):
+    if cmd in ('b', 'board'):
         log.debug('executing board command')
-        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", BoardFrame("{cmd[1]}", uvm))')
-        board(uvm, cmd[1])
-    if cmd[0] in ('t', 'thread'):
+        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", BoardFrame("{args[0]}", uvm))')
+        board(uvm, args[0])
+    if cmd in ('t', 'thread'):
         log.debug('executing thread command')
-        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", ThreadFrame("{cmd[1]}", "{cmd[2]}", uvm))')
-        thread(uvm, cmd[1], cmd[2])
+        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", ThreadFrame("{args[0]}", "{cmd[2]}", uvm))')
+        thread(uvm, args[0], args[1])
 
     log.debug(uvm.history)
 
