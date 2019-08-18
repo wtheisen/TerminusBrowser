@@ -21,11 +21,11 @@ def chanCommands(cmd, uvm):
     log.debug(cmd)
     cmd, *args = cmd.split()
 
-    if cmd in ('b', 'board'):
+    if cmd in ('b', 'board') and len(args) == 1:
         log.debug('executing board command')
         # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", BoardFrame("{args[0]}", uvm))')
         board(uvm, args[0])
-    if cmd in ('t', 'thread'):
+    if cmd in ('t', 'thread') and len(args) == 2:
         log.debug('executing thread command')
         # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", ThreadFrame("{args[0]}", "{cmd[2]}", uvm))')
         thread(uvm, args[0], args[1])

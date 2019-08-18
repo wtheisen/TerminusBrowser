@@ -16,12 +16,12 @@ def hnCommands(cmd, uvm):
     log.debug(cmd)
     cmd, *args = cmd.split()
 
-    if cmd == 'story':
+    if cmd == 'story' and len(args) >= 2:
 
         log.debug('executing story command')
         log.debug(cmd + args[0])
         story(uvm, args[0], args[1] if len(args) == 2 else "")
-    elif cmd == 'hnp':
+    elif cmd == 'hnp' and len(args) == 2:
         log.debug('executing post command')
         hnpost(uvm, args[0], args[1])
 

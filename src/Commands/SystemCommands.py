@@ -63,7 +63,7 @@ def systemCommands(cmd, uvm):
         elif len(args) == 3:
             uvm.cfg.deep_set(args[0], args[1], args[2])
 
-    elif cmd == ('source'):
+    elif cmd == ('source') and len(args) == 1:
         try:
             with open(args[0], 'r') as rcFile:
                 for command in rcFile:
@@ -75,8 +75,13 @@ def systemCommands(cmd, uvm):
 
     elif cmd in ('h', 'history'):
         if len(args) is 1:
-            h = uvm.history[int(args[0])]
-            setattr(uvm.currFocusView, 'frame', h[1](h[2]))
+            try:
+                val = int(args[0])
+                h = uvm.history[val]
+                setattr(uvm.currFocusView, 'frame', h[1](h[2]))
+            except ValueError:
+                log.error('tried feeding string, instead of int to history')
+                
         else:
             for h in uvm.history[1:]:
                 if h[0] is uvm.currFocusView.id:

@@ -16,10 +16,10 @@ def redditCommands(cmd, uvm):
     log.debug(cmd)
     cmd, *args = cmd.split()
 
-    if cmd in ('sub', 'subreddit'):
+    if cmd in ('sub', 'subreddit') and len(args) >= 1:
         log.debug('executing subreddit command')
         subreddit(uvm, args[0], args[1] if len(args) == 2 else "")
-    elif cmd in ('p', 'post'):
+    elif cmd in ('p', 'post') and len(args) == 2:
         log.debug('executing post command')
         post(uvm, args[0], args[1])
 
