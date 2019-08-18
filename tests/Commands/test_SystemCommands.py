@@ -101,3 +101,15 @@ def test_hist(cmd, history, expected, view):
     systemCommands(cmd[1], view)
     systemCommands(history, view)
     assert type(view.currFocusView.frame) == expected[1]
+
+test_srch = [
+    (['view reddit', 'view 4chan'], 's 4chan', [SITE.FCHAN, fchanIndexFrame]),
+        (['view reddit', 'view 4chan'], 's reddit', [SITE.FCHAN, fchanIndexFrame]),
+        (['view reddit', 'view 4chan'], 's hn', [SITE.FCHAN, fchanIndexFrame])]    
+
+@pytest.mark.parametrize("cmd, search, expected", test_srch)
+def test_search(cmd, search, expected, view):
+    systemCommands(cmd[0], view)
+    systemCommands(cmd[1], view)
+    systemCommands(search, view)
+    assert type(view.currFocusView.frame) == expected[1]
