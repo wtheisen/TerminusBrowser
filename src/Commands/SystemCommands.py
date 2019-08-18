@@ -34,7 +34,7 @@ SystemCommandList = [
 def systemCommands(cmd, uvm):
     cmd = cmd.split()
 
-    if cmd[0] in ('qa', 'quitall'):
+    if cmd[0] in ('q', 'qa', 'quitall'):
         log.debug('Executing quit command')
         if uvm.cfg.update_file():
             log.debug('updated config')
