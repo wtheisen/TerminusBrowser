@@ -13,14 +13,15 @@ RedditCommandList = [
 ]
 
 def redditCommands(cmd, uvm):
-    cmd = cmd.split()
+    log.debug(cmd)
+    cmd, *args = cmd.split()
 
-    if cmd[0] in ('sub', 'subreddit'):
+    if cmd in ('sub', 'subreddit') and len(args) >= 1:
         log.debug('executing subreddit command')
-        subreddit(uvm, cmd[1], cmd[2] if len(cmd) == 3 else "")
-    elif cmd[0] in ('p', 'post'):
+        subreddit(uvm, args[0], args[1] if len(args) == 2 else "")
+    elif cmd in ('p', 'post') and len(args) == 2:
         log.debug('executing post command')
-        post(uvm, cmd[1], cmd[2])
+        post(uvm, args[0], args[1])
 
 def subreddit(uvm, subString, token):
     log.debug('Executing subreddit command')
