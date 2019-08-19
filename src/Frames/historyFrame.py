@@ -2,8 +2,10 @@ import urwid, time, re
 
 from functools import partial
 
-from debug import DEBUG
 from Frames.abstractFrame import AbstractFrame
+
+import logging
+log = logging.getLogger(__name__)
 
 class HistoryFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter = None):

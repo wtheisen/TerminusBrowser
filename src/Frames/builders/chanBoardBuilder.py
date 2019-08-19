@@ -1,6 +1,7 @@
 import urwid, re, time, collections, requests
 
-from debug import DEBUG
+import logging
+log = logging.getLogger(__name__)
 
 class ChanBoardBuilder():
 
@@ -39,13 +40,13 @@ class ChanBoardBuilder():
     def parseFourCatalog(self, data):
         threadsDict = collections.OrderedDict()
         # for i in range(0, 10):
-        # DEBUG(data)
+        # log.debug(data)
         for page in data:
             for k, v in page.items():
-                DEBUG(k)
+                log.debug(k)
                 if k == "threads":
                     threadsList = v
-                    DEBUG(len(threadsList))
+                    log.debug(len(threadsList))
                     for thread in threadsList:
                         threadsDict[thread["no"]] = (thread["semantic_url"] if "semantic_url" in thread else thread["sub"] if "sub" in thread else "",
                                                     thread["replies"], thread["images"])

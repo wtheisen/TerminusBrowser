@@ -1,18 +1,19 @@
 import urwid, pyfiglet, requests
 
-from debug import DEBUG
+import logging
+log = logging.getLogger(__name__)
 
 class DefaultFrame(urwid.WidgetWrap):
     def __init__(self, welcome=False, test=False):
-        self.headerString = 'CommandChan'
+        self.headerString = 'TerminusBrowser'
         self.footerStringRight = f''
         self.url = 'Welcome Screen'
 
         if welcome:
-            welcomeText = pyfiglet.figlet_format('commandChan') + '\nRecent Commits:\n'
+            welcomeText = pyfiglet.figlet_format('TerminusBrowser') + '\nRecent Commits:\n'
 
             if not test:
-                r = requests.get('https://api.github.com/repos/wtheisen/commandChan/commits')
+                r = requests.get('https://api.github.com/repos/wtheisen/TerminusBrowser/commits')
                 data = r.json()
 
                 count = 0

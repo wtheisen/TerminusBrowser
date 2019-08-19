@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.com/wtheisen/commandChan.svg?branch=master)](https://travis-ci.com/wtheisen/commandChan)
+[![Build Status](https://api.travis-ci.com/wtheisen/TerminusBrowse.svg?branch=master)](https://travis-ci.com/wtheisen/commandChan)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# TerminusBrowse - a terminal 4chan/Reddit browser
+# TerminusBrowser - a terminal 4chan/Reddit browser
 1. [Introduction](#introduction)
 2. [Screenshots](#screenshots)
 3. [Hotkeys](#hotkeys)
@@ -13,11 +13,11 @@
 
 Previously known as commandChan.
 
-Created out of a desire to browse 4chan at work, TerminusBrowse is turning into a general framework for browsing
-sites in the terminal using a unified program.
-This is currently a terminal browsing application for [4chan](https://www.4chan.org/), and now [Reddit](https://www.reddit.com/).
+Created out of a desire to browse 4chan at work, TerminusBrowser is turning into a general framework for browsing
+sites in the terminal using a single program.
+This is currently a terminal browsing application for [4chan](https://www.4chan.org/), [Reddit](https://www.reddit.com/), [Hacker News](https://news.ycombinator.com/), and [lainchan](https://www.lainchan.org/).
 Built using the [urwid](https://github.com/urwid/urwid/) library for python.
-It also makes use of the [4chan API](https://github.com/4chan/4chan-API) and the [Reddit API](https://www.reddit.com/dev/api/)
+It also makes use of the [4chan API](https://github.com/4chan/4chan-API), the [Reddit API](https://www.reddit.com/dev/api/), a third-party [Hacker News API](https://hn.algolia.com/api), and the [lainchan API](https://github.com/vichan-devel/vichan-API/). Development for all sites are still on-going so while basic browsing will work there may be smaller bugs or features than you may notice. Please feel free to notify the dev team by opening an issue, or PRs are always welcome!
 
 To run, first install the dependencies in requirements.txt
 
@@ -25,39 +25,43 @@ To run, first install the dependencies in requirements.txt
 pip3 install -r requirements.txt
 ```
 
-And then run `./commandChanVim.py`
+And then run `./TerminusBrowser.py`
 
 ## Screenshots <a name="screenshots"></a>
 
+Click on photo for more detail
+
 ### 4chan
 
-![Board Index](./screenshots/boardIndex.png?raw=true "Board Index")
+|      Board Index   |  Board View         | Thread view   |
+| ------------- |-------------| -----|
+|![](./screenshots/fchan_boards.png?raw=true) | ![](./screenshots/fchan_threads.png?raw=true) |![](./screenshots/fchan_post.png?raw=true)  |
 
-![Board View](./screenshots/boardView.png?raw=true "Board View")
-
-![Thread View](./screenshots/threadView.png?raw=true "Thread View")
 
 ### Reddit
 
-![Subreddit Index](./screenshots/subredditIndex.png?raw=true "Subreddit Index")
+| Subreddit Index | Subreddit View | Post View |
+| ------- | ---------- | -------|
+|![](./screenshots/reddit_subs.png?raw=true) | ![](./screenshots/reddit_threads.png?raw=true)| ![](./screenshots/reddit_comments.png?raw=true)
 
-![Subreddit View](./screenshots/subredditView.png?raw=true "Subreddit View")
-
-![Post View](./screenshots/redditPost.png?raw=true "Reddit Post")
+### Lainchan
+| Board Index | Board view | Thread View |
+| ------- | ------ | ------- |
+| ![](./screenshots/lchan_boards.png?raw=true) | ![](./screenshots/lchan_threads.png?raw=true) | ![](./screenshots/lchan_post.png?raw=true) | 
 
 ## Hotkeys <a name="hotkeys"></a>
 
-- ':'   - puts you in command mode where you can type full commands
-- 'esc' - puts you in normal mode where the usual hotkeys will work
-
+- ':'   - Puts you in command mode where you can type full commands
+- 'esc' - Puts you in normal mode where the usual hotkeys will work
+- HJKL  - Normal vim like navigation for selectable objects
 ## Commands <a name="commands"></a>
 
 - (q)uit(a)ll - Close the program
 - (t)hread [THREAD NUMBER] - open the thread on the current board with the specified number
-- view [PATTERN] - [PATTERN] being [4chan/reddit/lainchan] currently it will open that site in the current view
+- view [PATTERN] - [PATTERN] being [4chan/reddit/hackernews/lainchan/history] currently it will open that site in the current view
 - (h)istory - will go back one level in the history list
 - (s)earch [PATTERN] - will search the current view for the pattern, if pattern is blank it will reset the current view
-- add [reddit/4chan] [PATTERN] - will add the subreddit or board [PATTERN] to the site index specified, may have to reload
+- add [reddit/4chan] [PATTERN] - will add the subreddit or board [PATTERN] to the site index specified.
 
 ## Configuration <a name="config"></a>
 
@@ -66,9 +70,9 @@ And then run `./commandChanVim.py`
 
 ## Contributing <a name="contrib"></a>
 
-Development on TerminusBrowse is active and on-going. If there are any features
+Development on TerminusBrowser is active and on-going. If there are any features
 you want or you're just interested in joining in the discussion the dev team
-is most active on [#TerminusBrowse on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowse)
+is most active on [#TerminusBrowser on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowser)
 
 ## TODO List <a name="todoList"></a>
 

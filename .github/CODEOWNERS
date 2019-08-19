@@ -4,4 +4,7 @@ src/Commands/RedditCommands.py @sambattalio
 src/Frames/reddit/* @sambattalio
 src/Views/treeThreadClasses.py @sambattalio
 
+src/Commands/HNCommands.py @ginglis13
+src/Frames/hackernews/* @ginglis13
+
 tests/* @ginglis13

@@ -1,4 +1,3 @@
-from debug import DEBUG
 from Views.viewClass import View
 from customeTypes import SITE
 
@@ -10,27 +9,31 @@ import Frames.fchan.threadFrame as fchanThread
 import Frames.lchan.boardFrame as lchanBoard
 import Frames.lchan.threadFrame as lchanThread
 
+import logging
+log = logging.getLogger(__name__)
+
 ChanCommandList = [
     'b', 'board',
     't', 'thread'
 ]
 
 def chanCommands(cmd, uvm):
-    cmd = cmd.split()
+    log.debug(cmd)
+    cmd, *args = cmd.split()
 
-    if cmd[0] in ('b', 'board'):
-        DEBUG('executing board command')
-        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", BoardFrame("{cmd[1]}", uvm))')
-        board(uvm, cmd[1])
-    if cmd[0] in ('t', 'thread'):
-        DEBUG('executing thread command')
-        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", ThreadFrame("{cmd[1]}", "{cmd[2]}", uvm))')
-        thread(uvm, cmd[1], cmd[2])
+    if cmd in ('b', 'board') and len(args) == 1:
+        log.debug('executing board command')
+        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", BoardFrame("{args[0]}", uvm))')
+        board(uvm, args[0])
+    if cmd in ('t', 'thread') and len(args) == 2:
+        log.debug('executing thread command')
+        # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", ThreadFrame("{args[0]}", "{cmd[2]}", uvm))')
+        thread(uvm, args[0], args[1])
 
-    DEBUG(uvm.history)
+    log.debug(uvm.history)
 
 def board(uvm, boardString):
-    DEBUG('Executing board command')
+    log.debug('Executing board command')
     try:
         if uvm.currFocusView.site == SITE.FCHAN:
             setattr(uvm.currFocusView, 'frame', fchanBoard.BoardFrame(boardString, uvm))
@@ -40,10 +43,10 @@ def board(uvm, boardString):
             uvm.currFocusView.updateHistory(FrameFactory(lchanBoard.BoardFrame), [boardString, uvm])
     except:
         uvm.currFocusView.frame.headerString = f'Error connecting to board {boardString}, does it exist?'
-        DEBUG(f'Error connecting to board {boardString}, does it exist?')
+        log.debug(f'Error connecting to board {boardString}, does it exist?')
 
 def thread(uvm, boardString, threadNumber):
-    DEBUG('Executing thread command')
+    log.debug('Executing thread command')
     if uvm.currFocusView.site is SITE.FCHAN:
         uvm.currFocusView.updateHistory(FrameFactory(fchanThread.ThreadFrame), [boardString, threadNumber, uvm])
         setattr(uvm.currFocusView, 'frame', fchanThread.ThreadFrame(boardString, threadNumber, uvm))

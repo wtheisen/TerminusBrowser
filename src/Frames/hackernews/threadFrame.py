@@ -1,4 +1,5 @@
 import urwid, time, requests, re
+from html2text import html2text
 
 from postClass import Post
 from customUrwidClasses import QuoteButton
@@ -8,19 +9,20 @@ from Frames.abstractFrame import AbstractFrame
 import logging
 log = logging.getLogger(__name__)
 
-class RedditThreadFrame(AbstractFrame):
-    def __init__(self, subString, threadUri, urwidViewManager, uFilter = None):
+class HackerNewsThreadFrame(AbstractFrame):
+    def __init__(self, story, threadUri, urwidViewManager, uFilter = None):
         super().__init__(urwidViewManager, uFilter)
-        self.subString = subString
+        self.story = story
         self.threadUri = threadUri
 
-        self.url = 'https://www.reddit.com' + self.threadUri
+        # unofficial HN api, more dev friendly json response
+        self.url = 'https://hn.algolia.com/api/v1/items/' + str(threadUri)
         self.headers = {
-            'user-agent': 'reddit-TerminusBrowser'        
+            'user-agent': 'hackernews-TerminusBrowse'
         }
 
         self.load()
-        self.headerString = f'TerminusBrowser - Reddit: {self.subString} -- {threadUri.split("/")[-2]}'
+        self.headerString = f'TerminusBrowse: {self.story} -- {threadUri}'
 
     # Overrides super
     def loader(self):
@@ -30,33 +32,34 @@ class RedditThreadFrame(AbstractFrame):
     def getJSONThread(self):
         response = requests.get(self.url + '.json', headers=self.headers)
         data = response.json()
-        return self.parseRedditThread(data)
+        return self.parseHNThread(data)
 
-    def parseRedditThread(self, data):
-        post     = data[0]['data']['children'][0]
-        comments = data[1]['data']['children']
+    def parseHNThread(self, data):
+        post     = data
+        comments = data['children']
         children  = []
         # b/c the way posts are "different" than comments
         # have to load replies for each top level comment
         # then add as child to post
         for item in comments:
-            if not item['data'].get('body'):
+            if not item['text']:
                 continue
-            
+
             children.append(Post(
-                item['data'].get('author'),
-                item['data'].get('body'),
-                item['data'].get('created'),
-                score=item['data'].get('score'),
+                item['author'],
+                # text is returned as raw html
+                html2text(item['text']).replace('\n', ' '),
+                item['created_at'],
+                score=0, # HN hides comment scores
                 replies=self.get_replies(item)
             ))
             self.parsedItems += 1
-        
+
         tree = Post(
-            post['data'].get('author'),
+            data['author'], # author
             self.get_post(post),
-            post['data'].get('created'),
-            score=post['data'].get('score'),
+            post['created_at'],
+            score=post['points'],
             replies=children
         )
         return tree
@@ -66,22 +69,21 @@ class RedditThreadFrame(AbstractFrame):
         return urwid.TreeListBox(urwid.TreeWalker(topnode))
 
     def get_post(self, post):
-        return "{}\n{}".format(post['data']['title'], 
-                               post['data']['selftext'] if post['data']['selftext']
-                                                        else post['data']['url'])
+        return "{}\n{}".format(post['title'],
+                               post['url'])
 
     def get_replies(self, comment):
         my_children = []
 
-        replies = comment['data'].get('replies', None)
+        replies = comment['children']
         if replies:
-            for item in replies['data']['children']:
-                if item['data'].get('body'):
+            for item in replies:
+                if item['text']:
                     my_children.append(Post(
-                        item['data'].get('author'),
-                        item['data'].get('body'),
-                        item['data'].get('created'),
-                        score=item['data'].get('score'),
+                        item['author'],
+                        html2text(item['text']).replace('\n', ' '),
+                        item['created_at'],
+                        score=0, # HN hides comment scores
                         replies=self.get_replies(item)
                     ))
                     self.parsedItems += 1

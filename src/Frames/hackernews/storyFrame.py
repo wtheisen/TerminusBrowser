@@ -1,32 +1,43 @@
 import urwid, re, time, collections, requests
 from customeTypes import STICKIES
 from Frames.abstractFrame import AbstractFrame
+import time
 
 import logging
 log = logging.getLogger(__name__)
 
-class SubredditFrame(AbstractFrame):    
-    def __init__(self, subreddit, token, urwidViewManager, uFilter=None):
+class StoryFrame(AbstractFrame):
+    def __init__(self, story, page, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
-        self.subreddit = '/r/' + subreddit if not subreddit.startswith('/r/') else subreddit
+        self.story = story
+        self.page = page
 
-        self.url = 'https://www.reddit.com' + self.subreddit + '.json' + '?limit=100'
-        self.token = token
-        if self.token:
-            self.url += '&after=' + self.token
+        storyDict = {
+            'top': 'front_page',
+            'new': 'story',
+            'ask': 'ask_hn',
+            'show': 'show_hn',
+            'jobs' : 'job'
+        }
+
+        # 'search' will search by relevancy and score
+        # this only works well w this api for front page posts
+        # using 'search' for say, 'job' will return posts from too long ago
+        search = 'search' if self.story == 'top' else 'search_by_date'
+        self.url = f'https://hn.algolia.com/api/v1/{search}?tags=' + storyDict[self.story] + f'&page={self.page}'
 
         self.headers = {
-            'user-agent': 'reddit-TerminusBrowser'
+            'user-agent': 'hackernews-TerminusBrowse'
         }
-        self.info_text = 'Upvotes: {} Comments: {}'
+        self.info_text = 'Score: {} Comments: {}'
 
         self.load()
-        self.headerString = f'TerminusBrowser - Reddit: {self.subreddit}'
+        self.headerString = f'TerminusBrowse: {self.story}'
 
     # Overrides super
     def loader(self):
         self.titles = self.getJSONCatalog(self.url)
-        self.contents = urwid.Pile(self.buildFrame(self.subreddit))
+        self.contents = urwid.Pile(self.buildFrame(self.story))
 
     def buildFrame(self, board):
         '''returns the board widget'''
@@ -36,10 +47,9 @@ class SubredditFrame(AbstractFrame):
         for title, threadInfo in self.titles.items():
             if title == 'Next':
                 if not self.uFilter:
-                    subButton = urwid.Button(str(threadInfo[0]), self.changeSubPage)
+                    subButton = urwid.Button(str(threadInfo[0]), self.changeStoryPage)
                     threadButtonList.append(urwid.LineBox(urwid.Pile([subButton, urwid.Divider('-'), urwid.Text(threadInfo[1])])))
                 continue
-            title = title.replace('-', ' ')
             if self.uFilter:
                 if re.search(self.uFilter.lower(), title.lower()):
                     threadButton = urwid.Button(str(threadInfo[0]), self.changeFrameThread)
@@ -64,36 +74,29 @@ class SubredditFrame(AbstractFrame):
 
         data = response.json()
 
-        return self.parseSubreddit(data)
+        return self.parseStoryBoard(data)
 
-    def parseSubreddit(self, data):
+    def parseStoryBoard(self, data):
         titles = collections.OrderedDict()
-        posts = data['data']['children']
 
-        log.debug(posts)
+        for i in range(len(data['hits'])):
+            titles[data['hits'][i]['title']] = (data['hits'][i]['objectID'],
+                                            data['hits'][i]['points'],
+                                            data['hits'][i]['num_comments'])
 
-        for post in posts:
-            if self.uvm.stickies == STICKIES.HIDE and post['data']['stickied']:
-                continue
-
-            titles[post['data']['title']] = (post['data']['permalink'],
-                                             post['data']['score'],
-                                             post['data']['num_comments'])
-
-        # parse next key
-        if data['data']['after']:
-            titles['Next'] = (data['data']['after'],
-                             'Next',
-                             '')
+        if int(self.page) < data['nbPages'] - 1:
+            titles['Next'] = (int(self.page) + 1,
+                            'Next',
+                            '')
 
         return titles
 
     def changeFrameThread(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('post ' + self.subreddit + ' ' + button.get_label())
+        ch.routeCommand('hnp ' + self.story + ' ' + button.get_label())
 
-    def changeSubPage(self, button):
+    def changeStoryPage(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('sub ' + self.subreddit + ' ' + button.get_label())
+        ch.routeCommand('story ' + self.story + ' ' + button.get_label())

@@ -6,31 +6,30 @@ from Frames.abstractFrame import AbstractFrame
 import logging
 log = logging.getLogger(__name__)
 
-class RedditIndexFrame(AbstractFrame):
+class HackerNewsIndexFrame(AbstractFrame):
     def __init__(self, urwidViewManager, uFilter=None):
         super().__init__(urwidViewManager, uFilter)
-        self.headerString = 'TerminusBrowser - Reddit'
+        self.headerString = 'TerminusBrowse'
 
-        self.subredditList = self.uvm.cfg.deep_get(SITE.REDDIT, 'boards')
+        self.storyList = self.uvm.cfg.deep_get(SITE.HACKERNEWS, 'stories')
 
         self.load()
-    
+
     # Overrides super
     def loader(self):
         self.contents = self.buildFrame()
 
     def buildFrame(self):
         boardButtons = []
-        for subreddit in self.subredditList:
-            subreddit = '/r/' + subreddit if not subreddit.startswith('/r/') else subreddit
+        for story in self.storyList:
             if self.uFilter:
-                if self.uFilter.lower() in subreddit.lower():
-                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(subreddit, self.changeFrameBoard), 'center')))
+                if self.uFilter.lower() in story.lower():
+                    boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(story, self.changeFrameBoard), 'center')))
             else:
-                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(subreddit, self.changeFrameBoard), 'center')))
+                boardButtons.append(urwid.LineBox(urwid.AttrWrap(urwid.Button(story, self.changeFrameBoard), 'center')))
 
         self.parsedItems = len(boardButtons)
-        width = len(max(self.subredditList, key=len))
+        width = len(max(self.storyList, key=len))
         buttonGrid = urwid.GridFlow(boardButtons, width + 9, 2, 2, 'center') # add 9 to width to account for widget padding
         listbox_content = [buttonGrid]
 
@@ -39,4 +38,4 @@ class RedditIndexFrame(AbstractFrame):
     def changeFrameBoard(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('subreddit ' + button.get_label())
+        ch.routeCommand('story ' + button.get_label() + ' ' +  '0')
