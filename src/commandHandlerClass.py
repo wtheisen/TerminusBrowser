@@ -28,7 +28,7 @@ class CommandHandler:
     def routeCommand(self, cmd):
         self.preCommand()
 
-        log.warning(cmd)
+        log.debug(cmd)
 
         if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList + HNCommandList):
             return

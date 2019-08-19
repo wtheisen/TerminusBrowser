@@ -13,17 +13,17 @@ HNCommandList = [
 ]
 
 def hnCommands(cmd, uvm):
-    cmd = cmd.split()
     log.debug(cmd)
+    cmd, *args = cmd.split()
 
-    if cmd[0] == 'story':
+    if cmd == 'story' and len(args) >= 2:
 
         log.debug('executing story command')
-        log.debug(cmd[0] + cmd[1])
-        story(uvm, cmd[1], cmd[2] if len(cmd) == 3 else "")
-    elif cmd[0] == 'hnp':
+        log.debug(cmd + args[0])
+        story(uvm, args[0], args[1] if len(args) == 2 else "")
+    elif cmd == 'hnp' and len(args) == 2:
         log.debug('executing post command')
-        hnpost(uvm, cmd[1], cmd[2])
+        hnpost(uvm, args[0], args[1])
 
 def story(uvm, story, page):
     try:

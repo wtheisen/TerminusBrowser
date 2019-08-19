@@ -32,49 +32,56 @@ SystemCommandList = [
 ]
 
 def systemCommands(cmd, uvm):
-    cmd = cmd.split()
-
-    if cmd[0] in ('qa', 'quitall'):
+    log.debug(cmd)
+    cmd, *args = cmd.split()
+    
+    
+    if cmd in ('q', 'qa', 'quitall'):
         log.debug('Executing quit command')
         if uvm.cfg.update_file():
             log.debug('updated config')
         sys.exit()
 
-    elif cmd[0] == ('add'):
-        if len(cmd) >= 3:
-            log.debug(f'Executing add command with args: {cmd[1:]}')
-            if cmd[1] == '4chan':
-                for board in cmd[2:]:
+    elif cmd == ('add'):
+        if len(args) >= 2:
+            log.debug(f'Executing add command with args: {args[:]}')
+            if args[0] == '4chan':
+                for board in args[1:]:
                     uvm.cfg.add_topic(SITE.FCHAN, board)
                     setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
-            elif cmd[1] == 'reddit':
-                for subreddit in cmd[2:]:
+            elif args[0] == 'reddit':
+                for subreddit in args[1:]:
                     uvm.cfg.add_topic(SITE.REDDIT, subreddit)
                     setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
-    elif cmd[0] == ('set'):
+    elif cmd == ('set'):
         # :set key value
-        if len(cmd) == 3:
-            uvm.cfg.set(cmd[1], cmd[2])
+        log.debug('set called')
+        if len(args) == 2:
+            uvm.cfg.set(args[0], args[1])
         # :set SITE key value
-        elif len(cmd) == 4:
-            uvm.cfg.deep_set(cmd[1], cmd[2], cmd[3])
+        elif len(args) == 3:
+            uvm.cfg.deep_set(args[0], args[1], args[2])
 
-    elif cmd[0] == ('source'):
-        pass
+    elif cmd == ('source') and len(args) == 1:
         try:
-            with open(cmd[1], 'r') as rcFile:
+            with open(args[0], 'r') as rcFile:
                 for command in rcFile:
                     command = command.strip()
                     if command[0] != '#':
                         systemCommands(command, uvm)
         except:
-            log.debug(f'ERROR: Unable to source {cmd[1]}')
+            log.debug(f'ERROR: Unable to source {args[0]}')
 
-    elif cmd[0] in ('h', 'history'):
-        if len(cmd) is 2:
-            h = uvm.history[int(cmd[1])]
-            setattr(uvm.currFocusView, 'frame', h[1](h[2]))
+    elif cmd in ('h', 'history'):
+        if len(args) is 1:
+            try:
+                val = int(args[0])
+                h = uvm.history[val]
+                setattr(uvm.currFocusView, 'frame', h[1](h[2]))
+            except ValueError:
+                log.error('tried feeding string, instead of int to history')
+                
         else:
             for h in uvm.history[1:]:
                 if h[0] is uvm.currFocusView.id:
@@ -83,38 +90,39 @@ def systemCommands(cmd, uvm):
                     setattr(uvm.currFocusView, 'frame', h[1](h[2]))
                     break
 
-    elif cmd[0] in ('s', 'search'):
+    elif cmd in ('s', 'search'):
         h = uvm.history[0]
         newArgs = h[2].copy()
-        if len(cmd) is 2:
-            newArgs.append(cmd[1])
+        if len(args) is 1:
+            newArgs.append(args[0])
 
         setattr(uvm.currFocusView, 'frame', h[1](newArgs))
 
-    elif cmd[0] == ('view'):
+    elif cmd == ('view'):
         log.debug('executing site command')
         log.debug(cmd)
-        if len(cmd) == 2:
-            if cmd[1] in 'history':
+        if len(args) == 1:
+            if args[0].lower() in ('h', 'history'):
+                log.debug('history requested')
                 setattr(uvm.currFocusView, 'frame', HistoryFrame(uvm))
-            elif cmd[1] == '4chan':
+            elif args[0].lower() in '4chan':
                 log.debug('4chan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(fIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
-            elif cmd[1] == 'lainchan' or cmd[1] == 'lchan':
+            elif args[0].lower() in ('lchan', 'lainchan'):
                 log.debug('lainchan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(lIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', lIndex.IndexFrame(uvm))
-            elif cmd[1] in ['reddit', 'Reddit']:
+            elif args[0].lower() in 'reddit':
                 log.debug('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
-            elif cmd[1].lower() in ['hn', 'hackernews']:
+            elif args[0].lower() in ('hn', 'hackernews'):
                 log.debug('HN requested')
                 uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
 
-    elif cmd[0] == ('split'):
+    elif cmd == ('split'):
         if type(uvm.splitTuple) is Row:
             uvm.splitTuple.widgets.append(View(uvm))
         else:
@@ -123,7 +131,7 @@ def systemCommands(cmd, uvm):
             uvm.splitTuple.widgets.append(t)
             uvm.splitTuple.widgets.append(View(uvm))
 
-    elif cmd[0] == ('vsplit'):
+    elif cmd == ('vsplit'):
         if type(uvm.splitTuple) is Column:
             uvm.splitTuple.widgets.append(View(uvm))
         t = uvm.splitTuple
@@ -131,7 +139,6 @@ def systemCommands(cmd, uvm):
         uvm.splitTuple.widgets.append(t)
         uvm.splitTuple.widgets.append(View(uvm))
 
-    elif cmd[0] == ('unsplit'):
+    elif cmd == ('unsplit'):
         if len(uvm.splitTuple.widgets) > 1:
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
-
