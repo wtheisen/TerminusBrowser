@@ -19,6 +19,18 @@ def view():
     view = urwidView(True)
     return view
 
+@pytest.fixture()
+def write_source_files(tmpdir):
+    with tmpdir.as_cwd() as dir:
+        source_hash = dir.join("hash.txt")
+        source_hash.write("# I like bananies")
+
+        print(source_hash.read())
+
+        source_vr = dir.join("vr.txt")
+        source_vr.write("view reddit")
+
+
 test_boards = [
       ('add 4chan /r9k/', ['/r9k/']),
           ('add 4chan /r9k/ /s4s/', ['/r9k/', '/s4s/'])
@@ -82,14 +94,16 @@ def test_quit(test_input, view):
     assert wrapped_e.type == SystemExit
 
 test_src = [
-    ('source tests/Commands/input_source_hash.txt', [None, DefaultFrame]),
-    ('source tests/Commands/input_source_vr.txt', [SITE.REDDIT, RedditIndexFrame]),
-    ('source imaginary-file', [None, DefaultFrame])]
+    ('source hash.txt', [None, DefaultFrame]),
+    ('source vr.txt', [SITE.REDDIT, RedditIndexFrame]),
+    ('source imaginary-file', [None, DefaultFrame])
+]
 
 @pytest.mark.parametrize("source, expected", test_src)
-def test_source(source, expected, view):
+def test_source(source, expected, view, write_source_files):
     systemCommands(source, view)
     assert type(view.currFocusView.frame) == expected[1]
+
     
 test_history = [
         (['view reddit', 'view 4chan'], 'h', [SITE.REDDIT, RedditIndexFrame]),

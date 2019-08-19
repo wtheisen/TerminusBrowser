@@ -1,4 +1,5 @@
 import sys
+import os
 
 from customeTypes import SITE
 from Views.viewClass import View
@@ -65,11 +66,12 @@ def systemCommands(cmd, uvm):
 
     elif cmd == ('source') and len(args) == 1:
         try:
-            with open(args[0], 'r') as rcFile:
-                for command in rcFile:
-                    command = command.strip()
-                    if command[0] != '#':
-                        systemCommands(command, uvm)
+            if(os.path.exists(args[0])):
+                with open(args[0], 'r') as rcFile:
+                    for command in rcFile:
+                        command = command.strip()
+                        if command[0] != '#':
+                            systemCommands(command, uvm)
         except:
             log.debug(f'ERROR: Unable to source {args[0]}')
 
