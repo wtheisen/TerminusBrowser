@@ -6,7 +6,7 @@ class BoardFrame(AbstractFrame, ChanBoardBuilder):
         super().__init__(urwidViewManager, uFilter)
         self.boardString = boardString
 
-        self.url = 'https://www.lainchan.org' + self.boardString + 'catalog.json'
+        self.url = 'https://www.lainchan.org/' + self.boardString + '/catalog.json'
         self.threadNums = []
         self.info_text = 'Replies: {} Images: {}'
 

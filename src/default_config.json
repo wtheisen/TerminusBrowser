@@ -94,5 +94,27 @@
             "show",
             "jobs"
         ]
+    },
+    "LCHAN": {
+        "boards": [
+            "λ",
+            "Δ",
+            "sec",
+            "Ω",
+            "inter",
+            "lit",
+            "music",
+            "vis",
+            "hum",
+            "drug",
+            "zzz",
+            "layer",
+            "q",
+            "r",
+            "culture",
+            "psy",
+            "mega",
+            "random"
+        ]
     }
 }
