@@ -13,13 +13,16 @@ sys.path.append('src')
 from config import Config
 from Views.viewClass import View
 from Frames.defaultFrame import DefaultFrame
-from debug import INITDEBUG, DEBUG
+from debug import setupLogger
 
 from splitTracker import Column, Row, buildUrwidFromSplits
 
 from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
 from customeTypes import LEVEL, MODE, SITE, STICKIES
+
+import logging
+log = logging.getLogger(__name__)
 
 ################################################################################
 
@@ -92,7 +95,7 @@ class urwidView():
             headerWidget = urwid.AttrWrap(urwid.Text(''), 'header')
 
         builtUrwidSplits = buildUrwidFromSplits(self.splitTuple)
-        DEBUG(type(builtUrwidSplits))
+        log.debug(type(builtUrwidSplits))
         self.body = urwid.Frame(urwid.AttrWrap(builtUrwidSplits, 'body'))
         self.body.header = headerWidget
 
@@ -154,5 +157,5 @@ def setup():
     main()
 
 if __name__ == '__main__' or urwid.web_display.is_web_request():
-    INITDEBUG()
+    setupLogger()
     setup()
