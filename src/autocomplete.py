@@ -20,13 +20,14 @@ def autoComplete(editBox):
         # Check to toggle for previous match
         if not len(matches):
             return
-        elif len(matches) == 1:
+        elif len(matches) != 1:
             currCommand = currCommand[:2]
             matches = [x for x in commandList if x.startswith(currCommand)]
+
         match = min(matches, key=len)
         if currCommand in commandList:
             try:
-                match = matches[1]
+                match = matches[0]
             except IndexError:
                 pass
         editBox.set_edit_text(match)

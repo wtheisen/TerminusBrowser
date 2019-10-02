@@ -12,8 +12,8 @@ test_list = [
     ('too long command', 'too long command'),
     ('thr', 'thread'), # input len 3
     ('po', 'post'), # input len 2
-    ('re', 'refresh'), # 2 cmds start with re
-    ('subreddit', 'sub'), # toggle check
+    ('refr', 'refresh'), # 2 cmds start with re
+    ('sub', 'sub'), # toggle check
     ('qsuaik', 'qsuaik') # gibberish
 ]
 
