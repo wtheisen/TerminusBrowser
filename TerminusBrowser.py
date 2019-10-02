@@ -156,6 +156,11 @@ def setup():
 
     main()
 
+def refresh_log():
+    if os.path.exists("debug.log"):
+        os.remove("debug.log")
+
 if __name__ == '__main__' or urwid.web_display.is_web_request():
+    refresh_log()
     setupLogger()
     setup()
