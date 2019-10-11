@@ -12,7 +12,7 @@ class ThreadFrame(AbstractFrame, ChanThreadBuilder):
 
         self.url = 'https://a.4cdn.org' + self.boardString + 'thread/' + str(self.threadNumber) + '.json'
         # self.imageUrl = 'http://boards.4chan.org' + self.boardString + 'thread/' + str(self.threadNumber)
-        self.imgPrefix = 'https://a.4cdn.org/'
+        self.imgPrefix = 'https://i.4cdn.org'
         self.headers = {}
 
         self.postReplyDict = {}
