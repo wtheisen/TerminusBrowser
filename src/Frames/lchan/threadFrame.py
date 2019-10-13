@@ -10,8 +10,8 @@ class ThreadFrame(AbstractFrame, ChanThreadBuilder):
 
         self.threadWidgetDict = {}
 
-        self.url = 'https://www.lainchan.org/' + self.boardString + '/res/' + str(self.threadNumber) + '.json'
-        self.imgPrefix = 'https://www.YEET.com/'
+        self.url = 'https://www.lainchan.org' + self.boardString + '/res/' + str(self.threadNumber) + '.json'
+        self.imgPrefix = 'https://www.lainchan.org'
 
         self.headers = {}
 

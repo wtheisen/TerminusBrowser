@@ -25,7 +25,7 @@ class ChanThreadBuilder():
                 str(post['no']),
                 post['com'] if 'com' in post else "",
                 post['now'] if 'now' in post else post['time'],
-                self.imgPrefix + self.boardString + str(post["tim"]) + post["ext"] if 'ext' in post else ''
+                self.imgPrefix + self.boardString + 'src/' + str(post["tim"]) + post["ext"] if 'ext' in post else ''
             )
 
             commentObjList.append(p)
