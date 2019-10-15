@@ -34,6 +34,15 @@ class Config():
         self.config.get(key, {}).get('boards',[]).append(topic)
         self.dirty = True
 
+    def remove_topic(self, key, topic):
+        if isinstance(key, SITE):
+            key = key.name
+
+        boards = self.config.get(key, {}).get('boards',[])
+        if topic in boards:
+            boards.remove(topic)
+        self.dirty = True
+
     def get(self, key):
         ''' get value from config, falling back to defaults if needed '''
         if self.config.get(key, None):

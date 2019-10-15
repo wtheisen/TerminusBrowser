@@ -29,7 +29,8 @@ SystemCommandList = [
     'view',
     'h', 'history',
     'q',
-    'qa', 'quitall'
+    'qa', 'quitall',
+    'rm', 'remove'
 ]
 
 def systemCommands(cmd, uvm):
@@ -144,3 +145,15 @@ def systemCommands(cmd, uvm):
     elif cmd == ('unsplit'):
         if len(uvm.splitTuple.widgets) > 1:
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
+
+    elif cmd in ('rm', 'remove'):
+        if len(args) >= 2:
+            log.debug(f'Executing remove command with args: {args[:]}')
+            if args[0] == '4chan':
+                for board in args[1:]:
+                    uvm.cfg.remove_topic(SITE.FCHAN, board)
+                    setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
+            elif args[0] == 'reddit':
+                for subreddit in args[1:]:
+                    uvm.cfg.remove_topic(SITE.REDDIT, subreddit)
+                    setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
