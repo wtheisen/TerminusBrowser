@@ -53,7 +53,10 @@ class ChanThreadBuilder():
         postWidgetList = []
         for pNum, pWidget in self.postWidgetDict.items():
             if pNum in self.postReplyDict:
-                pWidget.append(urwid.Text('Replies: ' + str(self.postReplyDict[pNum])))
+                buttonReplyList = [urwid.AttrWrap(QuoteButton(str(r), self.uvm), 'quote') for r in self.postReplyDict[pNum]]
+                pWidget.append(urwid.Text('Replies: '))
+                pWidget.append(urwid.Columns(buttonReplyList))
+                # pWidget.append(urwid.Text('Replies: ' + str(self.postReplyDict[pNum])))
             postWidgetList.append(urwid.LineBox(urwid.Pile(pWidget)))
 
         self.parsedItems = len(self.comments)
