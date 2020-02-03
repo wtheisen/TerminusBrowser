@@ -14,7 +14,10 @@ class QuotePreview(urwid.WidgetWrap):
         urwid.connect_signal(close_button, 'click', lambda button:self._emit("close"))
         cleanQuoteNumber = re.sub("[^0-9]", "", str(quoteNumber))
         widgetList = currViewThreadWidgets[cleanQuoteNumber]
-        widgetList.append(close_button)
+
+        if type(widgetList[-1]) != type(close_button):
+            widgetList.append(close_button)
+
         log.debug(widgetList)
         fill = urwid.Filler(urwid.LineBox(urwid.Pile(widgetList)))
         self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
