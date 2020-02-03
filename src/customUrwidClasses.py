@@ -25,7 +25,19 @@ class QuoteButton(urwid.PopUpLauncher):
         self.uvm = urwidViewManager
 
         self.__super.__init__(urwid.Button(str(quoteNumber)))
+        # self.render((len(str(quoteNumber)) + 5,))
         urwid.connect_signal(self.original_widget, 'click', lambda button: self.open_pop_up())
+
+    def rows(self, *args, **kw):
+        return 1
+
+    def render(self, size, *args, **kw):
+        cols = size[0]
+        maxsize = cols + 4
+        if len(self.original_widget.label) > maxsize:
+            new_label = self.original_widget.label[:maxsize - 3] + '...'
+            self.original_widget.set_label(new_label)
+        return super(QuoteButton, self).render(size, *args, **kw)
 
     def create_pop_up(self):
         pop_up = QuotePreview(self.quoteNumber, self.uvm)

@@ -55,7 +55,7 @@ class ChanThreadBuilder():
             if pNum in self.postReplyDict:
                 buttonReplyList = [urwid.AttrWrap(QuoteButton(str(r), self.uvm), 'quote') for r in self.postReplyDict[pNum]]
                 pWidget.append(urwid.Text('Replies: '))
-                pWidget.append(urwid.Columns(buttonReplyList))
+                pWidget.append(urwid.GridFlow(buttonReplyList, len(str(pNum)) + 4, 0, 0, 'left'))
                 # pWidget.append(urwid.Text('Replies: ' + str(self.postReplyDict[pNum])))
             postWidgetList.append(urwid.LineBox(urwid.Pile(pWidget)))
 
