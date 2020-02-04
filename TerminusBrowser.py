@@ -21,6 +21,9 @@ from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
 from customeTypes import LEVEL, MODE, SITE, STICKIES
 
+import asyncio
+loop = asyncio.get_event_loop()
+
 import logging
 log = logging.getLogger(__name__)
 
@@ -49,6 +52,7 @@ class urwidView():
 
         self.idList = []
         self.history = []
+        self.watched = set()
 
         self.palette = [
         ('body', 'light gray', 'black', 'standout'),
@@ -115,13 +119,20 @@ class urwidView():
         self.currFocusView = View(self, DefaultFrame(True, self.test))
         # self.currFocusView = View(self)
 
+    def watcherCheck(self, something, somethingElse):
+        log.debug('alarm triggered, watcher checked')
+
     def renderScreen(self):
         if __name__ == '__main__': # for testing purposes don't render outside file
-            urwid.MainLoop(self.body,
+            mL = urwid.MainLoop(self.body,
                         self.palette,
                         self.screen,
+                        # event_loop=urwid.AsyncioEventLoop(loop=loop),
                         unhandled_input=self.handleKey,
-                        pop_ups=True).run()
+                        pop_ups=True)
+
+            mL.set_alarm_in(30, self.watcherCheck)
+            mL.run()
 
     def handleKey(self, key):
         if not isinstance(key, tuple): # avoid mouse click event tuples

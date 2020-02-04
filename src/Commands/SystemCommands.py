@@ -101,7 +101,7 @@ def systemCommands(cmd, uvm):
         setattr(uvm.currFocusView, 'frame', h[1](newArgs))
 
     elif cmd == ('view'):
-        log.debug('executing site command')
+        log.debug('executing view command')
         log.debug(cmd)
         if len(args) == 1:
             if args[0].lower() in ('h', 'history'):
@@ -123,6 +123,9 @@ def systemCommands(cmd, uvm):
                 log.debug('HN requested')
                 uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
+            elif args[0].lower() in 'watcher':
+                log.debug('wather requested')
+                # setattr(uvm.currFocusView, 'frame', WatcherFrame(uvm))
 
     elif cmd == ('split'):
         if type(uvm.splitTuple) is Row:
@@ -144,3 +147,6 @@ def systemCommands(cmd, uvm):
     elif cmd == ('unsplit'):
         if len(uvm.splitTuple.widgets) > 1:
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
+
+    elif cmd == ('watch'):
+        uvm.watched.add(uvm.currFocusView.threadNumber)
