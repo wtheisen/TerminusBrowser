@@ -1,5 +1,7 @@
-[![Build Status](https://api.travis-ci.com/wtheisen/TerminusBrowse.svg?branch=master)](https://travis-ci.com/wtheisen/commandChan)
+![Actions Status](https://github.com/wtheisen/TerminusBrowser/workflows/Python%20application/badge.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+
 
 # TerminusBrowser - a terminal 4chan/Reddit browser
 1. [Introduction](#introduction)
