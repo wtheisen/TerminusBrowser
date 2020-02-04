@@ -76,7 +76,7 @@ def systemCommands(cmd, uvm):
             log.debug(f'ERROR: Unable to source {args[0]}')
 
     elif cmd in ('h', 'history'):
-        if len(args) is 1:
+        if len(args) == 1:
             try:
                 val = int(args[0])
                 h = uvm.history[val]
@@ -95,7 +95,7 @@ def systemCommands(cmd, uvm):
     elif cmd in ('s', 'search'):
         h = uvm.history[0]
         newArgs = h[2].copy()
-        if len(args) is 1:
+        if len(args) == 1:
             newArgs.append(args[0])
 
         setattr(uvm.currFocusView, 'frame', h[1](newArgs))
