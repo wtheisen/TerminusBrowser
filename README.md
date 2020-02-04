@@ -1,5 +1,5 @@
-[![Actions Status](https://github.com/wtheisen/TerminusBrowser/workflows/Python%20application/badge.svg)]
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+![Actions Status](https://github.com/wtheisen/TerminusBrowser/workflows/Python%20application/badge.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
 
