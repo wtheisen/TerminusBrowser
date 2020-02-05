@@ -43,6 +43,8 @@ class urwidView():
         self.cfg = Config()
         self.test = test
 
+        self.mL = None
+
         self.commandHandler = CommandHandler(self)
 
         self.commandBar = CommandBar(lambda: self._update_focus(True), self)
@@ -53,6 +55,7 @@ class urwidView():
         self.idList = []
         self.history = []
         self.watched = {}
+        self.totalNewPosts = 0
 
         self.palette = [
         ('body', 'light gray', 'black', 'standout'),
@@ -94,13 +97,20 @@ class urwidView():
 
     def buildAddHeaderView(self, focusView):
         try:
-            headerWidget = urwid.AttrWrap(urwid.Text(focusView.frame.headerString), 'header')
+            headerStringLeft = urwid.AttrWrap(urwid.Text(focusView.frame.headerString), 'header')
         except:
-            headerWidget = urwid.AttrWrap(urwid.Text(''), 'header')
+            headerStringLeft = urwid.AttrWrap(urwid.Text(''), 'header')
+
+        if len(self.watched) > 0:
+            headerStringRight = urwid.AttrWrap(urwid.Text(str(self.totalNewPosts) + ' new posts in ' + str(len(self.watched)) + ' watched thread(s)', 'right'), 'header')
+        else:
+            headerStringRight = urwid.AttrWrap(urwid.Text(''), 'header')
 
         builtUrwidSplits = buildUrwidFromSplits(self.splitTuple)
         log.debug(type(builtUrwidSplits))
         self.body = urwid.Frame(urwid.AttrWrap(builtUrwidSplits, 'body'))
+
+        headerWidget = urwid.Columns([headerStringLeft, headerStringRight])
         self.body.header = headerWidget
 
     def buildAddFooterView(self, focusView):
@@ -129,20 +139,29 @@ class urwidView():
             tS = getThreadSize(url)
             if tS > tDict['numReplies']:
                 tDict['numReplies'] = tS - tDict['numReplies']
-                
-        log.debug('alarm triggered, watcher updated')
+                self.totalNewPosts += tS - tDict['numReplies']
+
+        self.buildAddHeaderView(self.currFocusView)
+        self.buildAddFooterView(self.currFocusView)
+        self.renderScreen()
+        self.mL.set_alarm_in(30, self.watcherUpdate)
+        log.debug(f'alarm triggered, watcher updated, {str(self.totalNewPosts)} new posts')
 
     def renderScreen(self):
         if __name__ == '__main__': # for testing purposes don't render outside file
-            mL = urwid.MainLoop(self.body,
-                        self.palette,
-                        self.screen,
-                        # event_loop=urwid.AsyncioEventLoop(loop=loop),
-                        unhandled_input=self.handleKey,
-                        pop_ups=True)
+            if self.mL == None:
+                self.mL = urwid.MainLoop(self.body,
+                            self.palette,
+                            screen=self.screen,
+                            # event_loop=urwid.AsyncioEventLoop(loop=loop),
+                            unhandled_input=self.handleKey,
+                            pop_ups=True)
 
-            mL.set_alarm_in(30, self.watcherUpdate)
-            mL.run()
+                self.mL.set_alarm_in(30, self.watcherUpdate)
+                self.mL.run()
+            else:
+                self.mL.widget = self.body
+                # self.mL.draw_screen()
 
     def handleKey(self, key):
         if not isinstance(key, tuple): # avoid mouse click event tuples
