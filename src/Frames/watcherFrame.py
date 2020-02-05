@@ -26,7 +26,7 @@ class WatcherFrame(AbstractFrame):
         self.uvm.watcherUpdate(None, None)
         for wT, wTDict in self.uvm.watched.items():
             wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | Unread: {wTDict['numReplies']}")
-            wButton = urwid.Button(f'{wT}: View Thread', self.viewThread)
+            wButton = urwid.Button(f'View thread: {wT}', self.viewThread)
             watcherWidgetList.append(urwid.LineBox(urwid.Pile([wInfo, urwid.Divider('-'), wButton])))
 
         self.parsedItems = len(watcherWidgetList)
@@ -39,4 +39,9 @@ class WatcherFrame(AbstractFrame):
     def viewThread(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
-        ch.routeCommand('thread ' + button.get_label()[0])
+
+        url = button.get_label().split(':')[2]
+        items = url.split('/')
+        log.debug(items)
+
+        ch.routeCommand('thread' + ' /' + items[3] + '/ ' + items[5].split('.')[0])
