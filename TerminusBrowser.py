@@ -135,10 +135,10 @@ class urwidView():
             data = response.json()
             return len(data["posts"])
 
+        self.totalNewPosts = 0
         for url, tDict in self.watched.items():
             tS = getThreadSize(url)
             if tS > tDict['numReplies']:
-                tDict['numReplies'] = tS - tDict['numReplies']
                 self.totalNewPosts += tS - tDict['numReplies']
 
         self.buildAddHeaderView(self.currFocusView)

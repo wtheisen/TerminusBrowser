@@ -156,6 +156,6 @@ def systemCommands(cmd, uvm):
         if url not in uvm.watched.keys():
             wT['board'] = uvm.currFocusView.frame.boardString
             wT['op'] = uvm.currFocusView.frame.comments[0].content
-            wT['numReplies'] = len(uvm.currFocusView.frame.threadWidgetDict)
+            wT['numReplies'] = len(uvm.currFocusView.frame.comments)
             uvm.watched[url] = wT
                         
