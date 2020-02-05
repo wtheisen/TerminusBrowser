@@ -52,7 +52,7 @@ class urwidView():
 
         self.idList = []
         self.history = []
-        self.watched = set()
+        self.watched = {}
 
         self.palette = [
         ('body', 'light gray', 'black', 'standout'),
@@ -119,8 +119,18 @@ class urwidView():
         self.currFocusView = View(self, DefaultFrame(True, self.test))
         # self.currFocusView = View(self)
 
-    def watcherCheck(self, something, somethingElse):
-        log.debug('alarm triggered, watcher checked')
+    def watcherUpdate(self, something, somethingElse):
+        def getThreadSize(url):
+            response = requests.get(url, headers=None)
+            data = response.json()
+            return len(data["posts"])
+
+        for url, tDict in self.watched.items():
+            tS = getThreadSize(url)
+            if tS > tDict['numReplies']:
+                tDict['numReplies'] = tS - tDict['numReplies']
+                
+        log.debug('alarm triggered, watcher updated')
 
     def renderScreen(self):
         if __name__ == '__main__': # for testing purposes don't render outside file
@@ -131,7 +141,7 @@ class urwidView():
                         unhandled_input=self.handleKey,
                         pop_ups=True)
 
-            mL.set_alarm_in(30, self.watcherCheck)
+            mL.set_alarm_in(30, self.watcherUpdate)
             mL.run()
 
     def handleKey(self, key):

@@ -6,6 +6,7 @@ from Views.viewClass import View
 
 from Frames.defaultFrame import FrameFactory
 from Frames.historyFrame import HistoryFrame
+from Frames.watcherFrame import WatcherFrame
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.hackernews.indexFrame import HackerNewsIndexFrame
 
@@ -29,7 +30,8 @@ SystemCommandList = [
     'view',
     'h', 'history',
     'q',
-    'qa', 'quitall'
+    'qa', 'quitall',
+    'w', 'watch'
 ]
 
 def systemCommands(cmd, uvm):
@@ -125,7 +127,7 @@ def systemCommands(cmd, uvm):
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
             elif args[0].lower() in 'watcher':
                 log.debug('wather requested')
-                # setattr(uvm.currFocusView, 'frame', WatcherFrame(uvm))
+                setattr(uvm.currFocusView, 'frame', WatcherFrame(uvm))
 
     elif cmd == ('split'):
         if type(uvm.splitTuple) is Row:
@@ -148,5 +150,12 @@ def systemCommands(cmd, uvm):
         if len(uvm.splitTuple.widgets) > 1:
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
 
-    elif cmd == ('watch'):
-        uvm.watched.add(uvm.currFocusView.threadNumber)
+    elif cmd in ('w', 'watch'):
+        wT = {}
+        url = uvm.currFocusView.frame.url
+        if url not in uvm.watched.keys():
+            wT['board'] = uvm.currFocusView.frame.boardString
+            wT['op'] = uvm.currFocusView.frame.comments[0].content
+            wT['numReplies'] = len(uvm.currFocusView.frame.threadWidgetDict)
+            uvm.watched[url] = wT
+                        
