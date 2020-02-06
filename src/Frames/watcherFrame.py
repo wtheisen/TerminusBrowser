@@ -25,7 +25,11 @@ class WatcherFrame(AbstractFrame):
         watcherWidgetList = []
         self.uvm.watcherUpdate(None, None)
         for wT, wTDict in self.uvm.watched.items():
-            wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | Unread: {wTDict['numReplies']}")
+            if 'isArchived' in wTDict.keys():
+                wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | THREAD ARCHIVED")
+            else:
+                wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | Unread: {wTDict['numReplies']}")
+
             wButton = urwid.Button(f'View thread: {wT}', self.viewThread)
             watcherWidgetList.append(urwid.LineBox(urwid.Pile([wInfo, urwid.Divider('-'), wButton])))
 

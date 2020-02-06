@@ -133,11 +133,18 @@ class urwidView():
         def getThreadSize(url):
             response = requests.get(url, headers=None)
             data = response.json()
-            return len(data["posts"])
+            try:
+                return len(data["posts"])
+            except:
+                return None
 
         self.totalNewPosts = 0
         for url, tDict in self.watched.items():
             tS = getThreadSize(url)
+            if not tS:
+                tDict['isArchived'] = None
+                continue
+
             if tS > tDict['numReplies']:
                 self.totalNewPosts += tS - tDict['numReplies']
 
