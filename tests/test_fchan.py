@@ -2,7 +2,7 @@
 
 import sys
 
-from commandChanVim import urwidView
+from TerminusBrowser import urwidView
 from customeTypes import SITE
 
 from Frames.fchan.indexFrame import IndexFrame
