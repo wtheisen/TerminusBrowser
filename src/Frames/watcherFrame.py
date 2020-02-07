@@ -49,6 +49,12 @@ class WatcherFrame(AbstractFrame):
                 del self.uvm.watched[u]
                 break
 
+        from commandHandlerClass import CommandHandler
+        ch = CommandHandler(self.uvm)
+
+        ch.routeCommand('view watcher')
+
+
     def viewThread(self, button):
         from commandHandlerClass import CommandHandler
         ch = CommandHandler(self.uvm)
