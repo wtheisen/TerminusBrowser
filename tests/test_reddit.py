@@ -2,7 +2,8 @@
 
 import sys
 
-from commandChanVim import urwidView
+# from commandChanVim import urwidView
+from TerminusBrowser import urwidView
 
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.reddit.subredditFrame import SubredditFrame

@@ -1,4 +1,5 @@
-from commandChanVim import urwidView
+# from commandChanVim import urwidView
+from TerminusBrowser import urwidView
 from Commands.SystemCommands import systemCommands
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.fchan.indexFrame import IndexFrame as fchanIndexFrame

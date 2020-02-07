@@ -17,7 +17,8 @@ from customUrwidClasses import CommandBar, HistoryButton
 from commandHandlerClass import CommandHandler
 from customeTypes import LEVEL, MODE, SITE, STICKIES
 
-from commandChanVim import urwidView
+# from commandChanVim import urwidView
+from TerminusBrowser import urwidView
 
 import pytest
 
