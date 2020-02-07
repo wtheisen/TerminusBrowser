@@ -9,6 +9,7 @@ from Frames.historyFrame import HistoryFrame
 from Frames.watcherFrame import WatcherFrame
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.hackernews.indexFrame import HackerNewsIndexFrame
+from Frames.fchan.threadFrame import ThreadFrame
 
 import Frames.fchan.indexFrame as fIndex
 import Frames.lchan.indexFrame as lIndex
@@ -151,11 +152,12 @@ def systemCommands(cmd, uvm):
             uvm.splitTuple.widgets.pop() # doesn't work for mix of split and vsplit
 
     elif cmd in ('w', 'watch'):
-        wT = {}
-        url = uvm.currFocusView.frame.url
-        if url not in uvm.watched.keys():
-            wT['board'] = uvm.currFocusView.frame.boardString
-            wT['op'] = uvm.currFocusView.frame.comments[0].content
-            wT['numReplies'] = len(uvm.currFocusView.frame.comments)
-            uvm.watched[url] = wT
+        if type(uvm.currFocusView.frame) == ThreadFrame:
+            wT = {}
+            url = uvm.currFocusView.frame.url
+            if url not in uvm.watched.keys():
+                wT['board'] = uvm.currFocusView.frame.boardString
+                wT['op'] = uvm.currFocusView.frame.comments[0].content
+                wT['numReplies'] = len(uvm.currFocusView.frame.comments)
+                uvm.watched[url] = wT
                         
