@@ -31,7 +31,8 @@ class WatcherFrame(AbstractFrame):
                 wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | Unread: {wTDict['numReplies']}")
 
             wButton = urwid.Button(f'View thread: {wT}', self.viewThread)
-            watcherWidgetList.append(urwid.LineBox(urwid.Pile([wInfo, urwid.Divider('-'), wButton])))
+            dButton = urwid.Button(f'Unwatch thread: {wT}', self.unwatchThread)
+            watcherWidgetList.append(urwid.LineBox(urwid.Pile([wInfo, urwid.Divider('-'), wButton, dButton])))
 
         self.parsedItems = len(watcherWidgetList)
 
@@ -39,6 +40,14 @@ class WatcherFrame(AbstractFrame):
         listbox = urwid.ListBox(urwid.SimpleListWalker(listbox_content))
 
         return listbox
+
+    def unwatchThread(self, button):
+        url = button.get_label().split(':')[2]
+        
+        for u in self.uvm.watched.keys():
+            if url in u:
+                del self.uvm.watched[u]
+                break
 
     def viewThread(self, button):
         from commandHandlerClass import CommandHandler
