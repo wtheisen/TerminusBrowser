@@ -1,7 +1,7 @@
 ![Actions Status](https://github.com/wtheisen/TerminusBrowser/workflows/Python%20application/badge.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-
+test
 
 # TerminusBrowser - a terminal 4chan/Reddit browser
 1. [Introduction](#introduction)
