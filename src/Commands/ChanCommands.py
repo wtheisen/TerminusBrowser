@@ -9,12 +9,15 @@ import Frames.fchan.threadFrame as fchanThread
 import Frames.lchan.boardFrame as lchanBoard
 import Frames.lchan.threadFrame as lchanThread
 
+from helperFunctions import downloadThreadImages
+
 import logging
 log = logging.getLogger(__name__)
 
 ChanCommandList = [
     'b', 'board',
-    't', 'thread'
+    't', 'thread',
+    'd', 'download'
 ]
 
 def chanCommands(cmd, uvm):
@@ -29,6 +32,11 @@ def chanCommands(cmd, uvm):
         log.debug('executing thread command')
         # uvm.currFocusView.updateHistory(f'setattr(uvm.currFocusView, "frame", ThreadFrame("{args[0]}", "{cmd[2]}", uvm))')
         thread(uvm, args[0], args[1])
+    if cmd in ('d', 'download'):
+        log.debug('executing download command')
+        t = uvm.currFocusView.frame
+        downloadThreadImages(t.comments,
+                             f'./Pictures/{t.boardString.strip("/")}/{str(t.threadNumber)}')
 
     log.debug(uvm.history)
 
