@@ -36,6 +36,7 @@ def chanCommands(cmd, uvm):
         log.debug('executing download command')
         t = uvm.currFocusView.frame
         downloadThreadImages(t.comments,
+                             uvm,
                              f'./Pictures/{t.boardString.strip("/")}/{str(t.threadNumber)}')
 
     log.debug(uvm.history)
