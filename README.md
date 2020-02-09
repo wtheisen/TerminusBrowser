@@ -78,17 +78,17 @@ is most active on [#TerminusBrowser on the Freenode IRC server](https://kiwiirc.
 
 - [X] Display images links on posts
 - [X] Board and Thread fetch information in the footer
-- [ ] Filtering options on all pages with information in the footer
+- [X] Filtering options on all pages with information in the footer
 - [X] HJKL movement
 - [ ] Full suite of commands
     - [X] Search command for current view
     - [X] Thread command to view thread by number
     - [X] Toggle to show or hide stickied reddit posts
-    - [ ] Download image(s) for later viewing
+    - [X] Download image(s) for later viewing
     - [ ] Filtering reddit comments based on score
 - [ ] Toggleable display modes(boxes, tree, cascade)
 - [X] Display comment replies in the info bar at the top of the comment
-- [ ] History Frame
+- [X] History Frame
 - [ ] Quote button full interaction
     - [X] Quotes of OP have the (OP) designator
     - [X] Interacting with Quotes displays a preview of said Quote
