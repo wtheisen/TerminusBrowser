@@ -9,18 +9,23 @@ import Frames.fchan.threadFrame as fchanThread
 import Frames.lchan.boardFrame as lchanBoard
 import Frames.lchan.threadFrame as lchanThread
 
-from helperFunctions import downloadThreadImages
+from helperFunctions import downloadThreadImages, PostReply
 
 import logging
 log = logging.getLogger(__name__)
 
+post = None
+
 ChanCommandList = [
     'b', 'board',
     't', 'thread',
-    'd', 'download'
+    'd', 'download',
+    'p', 'post',
+    'c', 'captcha'
 ]
 
 def chanCommands(cmd, uvm):
+    global post
     log.debug(cmd)
     cmd, *args = cmd.split()
 
@@ -38,6 +43,15 @@ def chanCommands(cmd, uvm):
         downloadThreadImages(t.comments,
                              uvm,
                              f'./Pictures/{t.boardString.strip("/")}/{str(t.threadNumber)}')
+    if cmd in ('p', 'post') and len(args) >= 2:
+        log.debug('executing post command')
+        t = uvm.currFocusView.frame
+        post = uploadPost(uvm, t.boardString.strip('/'), str(t.threadNumber), args[0], ' '.join(args[1:]))
+        post.startChanPost()
+
+    if cmd in ('c', 'captcha'):
+        log.debug('Captcha answered')
+        post.endChanPost(args)
 
     log.debug(uvm.history)
 
@@ -62,3 +76,21 @@ def thread(uvm, boardString, threadNumber):
     elif uvm.currFocusView.site is SITE.LCHAN:
         uvm.currFocusView.updateHistory(FrameFactory(lchanThread.ThreadFrame), [boardString, threadNumber, uvm])
         setattr(uvm.currFocusView, 'frame', lchanThread.ThreadFrame(boardString, threadNumber, uvm))
+
+class uploadPost():
+    def __init__(self, uvm, boardString, threadNumber, fullFilePath, comment):
+        self.uvm = uvm
+        self.boardString = boardString
+        self.threadNumber = threadNumber
+        self.fullFilePath = fullFilePath
+        self.comment = comment
+
+        self.p = PostReply(self.boardString, self.threadNumber)
+
+    def startChanPost(self):
+        self.p.get_captcha_challenge()
+        self.p.display_captcha()
+
+    def endChanPost(self, answers):
+        self.p.set_captcha2_solution(''.join(answers))
+        self.p.post(comment=self.comment, file_attach=self.fullFilePath)

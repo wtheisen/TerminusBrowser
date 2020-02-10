@@ -1,40 +1,28 @@
-import os
-import urllib.request
+'''
+Created on May 15, 2017
 
-def downloadThreadImages(postList, uvm, folderPath='./Pictures'):
-    def downloadImg(imgUrl, path):
-        urllib.request.urlretrieve(imgUrl, os.path.join(path, imgUrl.split('/')[-1]))
-
-    def checkCreatePath(path):
-        if not os.path.exists(path):
-            os.makedirs(path)
-
-    checkCreatePath(folderPath)
-    i = 0
-    # imgList = [p for p in postList if p.image != '']
-    for p in postList:
-        uvm.currFocusView.frame.footerStringRight = f'{i} images downloaded...'
-        if p.image != '': 
-            downloadImg(p.image, folderPath)
-            i += 1
-            uvm.buildAddFooterView(uvm.currFocusView)
-            uvm.renderScreen()
+@author: yottudev@gmail.com
+This class is used to handle posting replies including retrieving and displaying the captcha.
+2018-03-17: removed v1 support and replaced it with v2 fallback
+'''
 
 import mimetypes
 import os.path
 import re
-# import Thread
+import thread
 import time
 import warnings
-import librecaptcha
 
 import requests
 from bs4 import BeautifulSoup
 try:
     from cStringIO import StringIO
 except:
-    from io import StringIO
-from TermImage import TermImage   
+    from StringIO import StringIO
+from DebugLog import DebugLog
+from TermImage import TermImage
+
+warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
 
 class PostReply(object):
     '''
@@ -50,7 +38,7 @@ class PostReply(object):
         self.captcha2_url = "https://www.google.com/recaptcha/api/fallback?k=" + self.sitekey
         self.captcha2_payload_url = "https://www.google.com/recaptcha/api2/payload"
         self.captcha2_image_base_url = ""
-        self.site_ref = "https://sys.4channel.org"
+        self.site_ref = "https://boards.4chan.org/"
         self.user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:58.0) Gecko/20100101 Firefox/58.0'
         
         self.captcha2_challenge_text = None # "Select all images with ducks."
@@ -62,13 +50,19 @@ class PostReply(object):
         self.captcha2_solution = None # Array of integers associated to the captcha checkboxes, usually 0-8
         self.captcha2_response = None # Response the Reply post form wants (the actual solution)
         
-        # self.lock = thread.allocate_lock()
+        self.lock = thread.allocate_lock()
         self.dictOutput = None
         self.bp = None 
+        
+        self.dlog = DebugLog()
         
     class PostError(Exception):
         def __init__(self,*args,**kwargs):
             Exception.__init__(self,*args,**kwargs)
+
+#    def get_captcha_solution(self):
+#        return self.__captcha_solution
+
 
     def set_captcha2_solution(self, value):
         # Append checkbox integer values to response array
@@ -95,40 +89,31 @@ class PostReply(object):
             3. Query payload url with site key and cid and get
                 c) the captcha image
         """
-        headers = {'Referer': self.site_ref, 'User-Agent': self.user_agent}
-        r = requests.get(self.captcha2_url, headers=headers)
-        
-        # r.raise_for_status()
-
-        # html_content = r.content
-        html_content = r.text
-        print(html_content)
-
-        print(librecaptcha.get_token(
-            self.sitekey,
-            self.site_ref,
-            librecaptcha.random_user_agent()
-        ))
-
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
         try:
-            self.captcha2_challenge_text = soup.find("div", {'class': 'rc-imageselect-desc-no-canonical'}).text
-        except:
-            self.captcha2_challenge_text = soup.find("div", {'class': 'rc-imageselect-desc'}).text
+            headers = {'Referer': self.site_ref, 'User-Agent': self.user_agent}
+            r = requests.get(self.captcha2_url, headers=headers)
             
-        self.captcha2_challenge_id = soup.find("div", {'class': 'fbc-imageselect-challenge'}).find('input')['value']
-        
-        # Get captcha image
-        headers = {'Referer': self.captcha2_url, 'User-Agent': self.user_agent}
-        r = requests.get(self.captcha2_payload_url + '?c=' + self.captcha2_challenge_id + '&k=' + self.sitekey, headers=headers)
-        self.captcha2_image = r.content
-        #self.save_image(self.captcha2_image_filename)
+            r.raise_for_status()
+
+            html_content = r.content
+            soup = BeautifulSoup(html_content, 'html.parser')
             
-        # except Exception as err:
-        #     pass
-            # self.dlog.excpt(err, msg=">>>in PostReply.get_captcha_challenge()", cn=self.__class__.__name__)
-            # raise
+            try:
+                self.captcha2_challenge_text = soup.find("div", {'class': 'rc-imageselect-desc-no-canonical'}).text
+            except:
+                self.captcha2_challenge_text = soup.find("div", {'class': 'rc-imageselect-desc'}).text
+                
+            self.captcha2_challenge_id = soup.find("div", {'class': 'fbc-imageselect-challenge'}).find('input')['value']
+            
+            # Get captcha image
+            headers = {'Referer': self.captcha2_url, 'User-Agent': self.user_agent}
+            r = requests.get(self.captcha2_payload_url + '?c=' + self.captcha2_challenge_id + '&k=' + self.sitekey, headers=headers)
+            self.captcha2_image = r.content
+            #self.save_image(self.captcha2_image_filename)
+            
+        except Exception as err:
+            self.dlog.excpt(err, msg=">>>in PostReply.get_captcha_challenge()", cn=self.__class__.__name__)
+            raise
         
     def save_image(self, filename):
         """save image to file system"""
@@ -241,8 +226,8 @@ class PostReply(object):
             self.bp.cfg.set('user.pass.cookie', res.cookies['pass_id'])
 
             if self.bp.cfg.get('config.autosave'):
-                self.dlog.msg("Autosaving user.pass.cookie ..")
-                self.bp.cfg.writeConfig()
+				self.dlog.msg("Autosaving user.pass.cookie ..")
+				self.bp.cfg.writeConfig()
 
         except KeyError as err:
             self.dlog.excpt(err, msg=">>>in PostReply.auth()", cn=self.__class__.__name__)
@@ -279,6 +264,7 @@ class PostReply(object):
             # Read file / get mime type
             try:
                 if file_attach:
+                    
                     # extract file path from ranger file and re-assign it
                     if ranger:
                         with open(file_attach, "r") as f:
@@ -350,5 +336,3 @@ class PostReply(object):
         except Exception as err:
             self.dlog.excpt(err, msg=">>>in PostReply.post()", cn=self.__class__.__name__)
             raise
-
-    
