@@ -21,7 +21,7 @@ log = logging.getLogger(__name__)
 
 SystemCommandList = [
     'add',
-    'remove'
+    'remove',
     's', 'search',
     'set',
     'source',
