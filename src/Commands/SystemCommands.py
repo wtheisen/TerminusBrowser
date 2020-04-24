@@ -21,6 +21,7 @@ log = logging.getLogger(__name__)
 
 SystemCommandList = [
     'add',
+    'remove'
     's', 'search',
     'set',
     'source',
@@ -38,8 +39,8 @@ SystemCommandList = [
 def systemCommands(cmd, uvm):
     log.debug(cmd)
     cmd, *args = cmd.split()
-    
-    
+
+
     if cmd in ('q', 'qa', 'quitall'):
         log.debug('Executing quit command')
         if uvm.cfg.update_file():
@@ -56,6 +57,18 @@ def systemCommands(cmd, uvm):
             elif args[0] == 'reddit':
                 for subreddit in args[1:]:
                     uvm.cfg.add_topic(SITE.REDDIT, subreddit)
+                    setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
+
+    elif cmd == ('remove'):
+        if len(args) >= 2:
+            log.debug(f'Executing remove command with args: {args[:]}')
+            if args[0] == '4chan':
+                for board in args[1:]:
+                    uvm.cfg.remove_topic(SITE.FCHAN, board)
+                    setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
+            elif args[0] == 'reddit':
+                for subreddit in args[1:]:
+                    uvm.cfg.remove_topic(SITE.REDDIT, subreddit)
                     setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
 
     elif cmd == ('set'):
@@ -86,7 +99,7 @@ def systemCommands(cmd, uvm):
                 setattr(uvm.currFocusView, 'frame', h[1](h[2]))
             except ValueError:
                 log.error('tried feeding string, instead of int to history')
-                
+
         else:
             for h in uvm.history[1:]:
                 if h[0] is uvm.currFocusView.id:
@@ -160,4 +173,3 @@ def systemCommands(cmd, uvm):
                 wT['op'] = uvm.currFocusView.frame.comments[0].content
                 wT['numReplies'] = len(uvm.currFocusView.frame.comments)
                 uvm.watched[url] = wT
-                        
