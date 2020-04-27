@@ -2,3 +2,5 @@ urwid==2.0.1
 requests==2.22.0
 pyfiglet==0.8.post1
 html2text==2019.8.11
+librecaptcha==0.6.2
+pillow==7.1.1
