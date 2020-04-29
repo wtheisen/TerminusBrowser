@@ -34,5 +34,5 @@ def story(uvm, story, page):
 
 def hnpost(uvm, story, postID):
     log.debug('Executing HN post command')
-    uvm.currFocusView.updateHistory(FrameFactory(HackerNewsThreadFrame), [story, postID, uvm])
-    setattr(uvm.currFocusView, 'frame', HackerNewsThreadFrame(story, postID, uvm))
+    uvm.currFocusView.updateHistory(FrameFactory(LobsterThreadFrame), [story, postID, uvm])
+    setattr(uvm.currFocusView, 'frame', LobsterThreadFrame(story, postID, uvm))
