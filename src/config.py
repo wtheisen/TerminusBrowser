@@ -34,6 +34,13 @@ class Config():
         self.config.get(key, {}).get('boards',[]).append(topic)
         self.dirty = True
 
+    def remove_topic(self, key, topic):
+        if isinstance(key, SITE):
+            key = key.name
+
+        self.config.get(key, {}).get('boards',[]).remove(topic)
+        self.dirty = True
+
     def get(self, key):
         ''' get value from config, falling back to defaults if needed '''
         if self.config.get(key, None):
@@ -93,4 +100,4 @@ class Config():
         ''' overwrites config file with data '''
         os.makedirs(os.path.dirname(self.location), exist_ok=True)
         with open(self.location, 'w') as cfg:
-            json.dump(data, cfg, indent=4) 
+            json.dump(data, cfg, indent=4)
