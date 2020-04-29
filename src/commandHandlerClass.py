@@ -4,6 +4,7 @@ from Commands.SystemCommands import systemCommands, SystemCommandList
 from Commands.ChanCommands import chanCommands, ChanCommandList
 from Commands.RedditCommands import redditCommands, RedditCommandList
 from Commands.HNCommands import hnCommands, HNCommandList
+from Commands.LobsterCommands import lobsterCommands, LobsterCommandList
 
 from customeTypes import SITE, MODE
 
@@ -30,7 +31,7 @@ class CommandHandler:
 
         log.debug(cmd)
 
-        if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList + HNCommandList):
+        if cmd.split()[0] not in (SystemCommandList + ChanCommandList + RedditCommandList + HNCommandList + LobsterCommandList):
             return
         elif cmd.split()[0] in SystemCommandList:
             systemCommands(cmd, self.uvm)
@@ -40,5 +41,7 @@ class CommandHandler:
             redditCommands(cmd, self.uvm)
         elif cmd.split()[0] in HNCommandList:
             hnCommands(cmd, self.uvm)
+        elif cmd.split()[0] in LobsterCommandList:
+            lobsterCommands(cmd, self.uvm)
 
         self.postCommand()

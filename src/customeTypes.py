@@ -20,6 +20,7 @@ class SITE(Enum):
     REDDIT = 1
     LCHAN = 2
     HACKERNEWS = 3
+    LOBSTERS = 4
 
 class STICKIES(Enum):
     SHOW = 0

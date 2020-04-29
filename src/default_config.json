@@ -95,6 +95,11 @@
             "jobs"
         ]
     },
+    "LOBSTERS": {
+        "stories": [
+            "hottest"
+        ]
+    },
     "LCHAN": {
         "boards": [
             "/λ/",

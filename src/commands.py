@@ -71,7 +71,6 @@ def split(uvm, splitType, splitView):
 
     postCommand(uvm)
 
-
 # For toggling stickies, auto refresh. Could use this func in other places if wish to rebase a lil
 def refresh(uvm):
     uvm.mode = MODE.NORMAL

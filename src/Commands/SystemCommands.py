@@ -9,6 +9,7 @@ from Frames.historyFrame import HistoryFrame
 from Frames.watcherFrame import WatcherFrame
 from Frames.reddit.indexFrame import RedditIndexFrame
 from Frames.hackernews.indexFrame import HackerNewsIndexFrame
+from Frames.lobster.indexFrame import LobsterIndexFrame
 from Frames.fchan.threadFrame import ThreadFrame
 
 import Frames.fchan.indexFrame as fIndex
@@ -139,6 +140,10 @@ def systemCommands(cmd, uvm):
                 log.debug('HN requested')
                 uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
+            elif args[0].lower() in ('ls', 'lobsters'):
+                log.debug('lobster requested')
+                uvm.currFocusView.updateHistory(FrameFactory(LobsterIndexFrame), [uvm])
+                setattr(uvm.currFocusView, 'frame', LobsterIndexFrame(uvm))
             elif args[0].lower() in 'watcher':
                 log.debug('wather requested')
                 setattr(uvm.currFocusView, 'frame', WatcherFrame(uvm))
