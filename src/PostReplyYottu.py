@@ -226,8 +226,8 @@ class PostReply(object):
             self.bp.cfg.set('user.pass.cookie', res.cookies['pass_id'])
 
             if self.bp.cfg.get('config.autosave'):
-				self.dlog.msg("Autosaving user.pass.cookie ..")
-				self.bp.cfg.writeConfig()
+                                self.dlog.msg("Autosaving user.pass.cookie ..")
+                                self.bp.cfg.writeConfig()
 
         except KeyError as err:
             self.dlog.excpt(err, msg=">>>in PostReply.auth()", cn=self.__class__.__name__)
