@@ -173,7 +173,7 @@ def systemCommands(cmd, uvm):
         if type(uvm.currFocusView.frame) == ThreadFrame:
             wT = {}
             url = uvm.currFocusView.frame.url
-            if url not in uvm.watched.keys():
+            if url not in uvm.watched:
                 wT['board'] = uvm.currFocusView.frame.boardString
                 wT['op'] = uvm.currFocusView.frame.comments[0].content
                 wT['numReplies'] = len(uvm.currFocusView.frame.comments)

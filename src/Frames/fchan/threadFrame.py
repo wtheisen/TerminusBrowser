@@ -20,7 +20,7 @@ class ThreadFrame(AbstractFrame, ChanThreadBuilder):
         self.load()
         self.headerString = f'TerminusBrowser - 4chan: {self.boardString} -- {str(self.threadNumber)}'
 
-        if self.url in self.uvm.watched.keys():
+        if self.url in self.uvm.watched:
             self.uvm.watched[self.url]['numReplies'] = len(self.comments)
 
     # Overrides super

@@ -183,7 +183,7 @@ class urwidView():
                 if key.isalpha():
                     key = key.lower()
 
-                if key not in urwidView.KEYMAP.keys():
+                if key not in urwidView.KEYMAP:
                     return
 
                 rows, cols = urwid.raw_display.Screen().get_cols_rows()

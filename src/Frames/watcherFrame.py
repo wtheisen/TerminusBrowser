@@ -25,7 +25,7 @@ class WatcherFrame(AbstractFrame):
         watcherWidgetList = []
         self.uvm.watcherUpdate(None, None)
         for wT, wTDict in self.uvm.watched.items():
-            if 'isArchived' in wTDict.keys():
+            if 'isArchived' in wTDict:
                 wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | THREAD ARCHIVED")
             else:
                 wInfo = urwid.Text(f"Board: {wTDict['board']} -- {wTDict['op']} | Unread: {wTDict['numReplies']}")
@@ -44,7 +44,7 @@ class WatcherFrame(AbstractFrame):
     def unwatchThread(self, button):
         url = button.get_label().split(':')[2]
         
-        for u in self.uvm.watched.keys():
+        for u in self.uvm.watched:
             if url in u:
                 del self.uvm.watched[u]
                 break
