@@ -14,7 +14,7 @@ import pytest
 test_list = [
     ('view 4chan', IndexFrame),
     ('board /g/', BoardFrame),
-    ('thread /g/ 51971506', ThreadFrame) #This is the /g/ sticky so this number is always valid
+    ('thread /g/ 76759434', ThreadFrame) #This is the /g/ sticky so this number is always valid
 ]
 
 @pytest.mark.parametrize('test_input, expected', test_list)
