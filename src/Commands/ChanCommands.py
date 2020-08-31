@@ -20,7 +20,6 @@ ChanCommandList = [
     'b', 'board',
     't', 'thread',
     'd', 'download',
-    'p', 'post',
     'c', 'captcha'
 ]
 
