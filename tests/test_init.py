@@ -8,17 +8,17 @@ import urwid.web_display
 from enum import Enum
 
 from config import Config
-from Views.viewClass import View
-from Frames.defaultFrame import DefaultFrame
+from views.view_class import View
+from frames.default_frame import DefaultFrame
 
-from splitTracker import Column, Row, buildUrwidFromSplits
+from split_tracker import Column, Row, buildUrwidFromSplits
 
-from customUrwidClasses import CommandBar, HistoryButton
-from commandHandlerClass import CommandHandler
-from customeTypes import LEVEL, MODE, SITE, STICKIES
+from custom_urwid_classes import CommandBar, HistoryButton
+from command_handler_class import CommandHandler
+from customer_types import LEVEL, MODE, SITE, STICKIES
 
 # from commandChanVim import urwidView
-from TerminusBrowser import urwidView
+from terminus_browser import urwidView
 
 import pytest
 
@@ -37,4 +37,3 @@ def test_init(view):
 def test_handleKeyCommand(view):
     view.handleKey(':')
     assert view.mode == MODE.COMMAND
-

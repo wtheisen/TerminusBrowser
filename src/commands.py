@@ -1,12 +1,12 @@
 import urwid
 
-from viewClass import View
+from view_class import View
 
-from Frames.indexFrame import IndexFrame
-from Frames.boardFrame import BoardFrame
-from Frames.threadFrame import ThreadFrame
+from frames.index_frame import IndexFrame
+from frames.board_frame import BoardFrame
+from frames.thread_frame import ThreadFrame
 
-from customeTypes import LEVEL, MODE, SITE
+from customer_types import LEVEL, MODE, SITE
 
 import logging
 log = logging.getLogger(__name__)

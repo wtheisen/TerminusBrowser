@@ -2,12 +2,12 @@
 
 import sys
 
-from TerminusBrowser import urwidView
-from customeTypes import SITE
+from terminus_browser import urwidView
+from customer_types import SITE
 
-from Frames.fchan.indexFrame import IndexFrame
-from Frames.fchan.boardFrame import BoardFrame
-from Frames.fchan.threadFrame import ThreadFrame
+from frames.fchan.index_frame import IndexFrame
+from frames.fchan.board_frame import BoardFrame
+from frames.fchan.thread_frame import ThreadFrame
 
 import pytest
 

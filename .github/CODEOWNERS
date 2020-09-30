@@ -1,10 +1,10 @@
 *   @wtheisen
 
-src/Commands/RedditCommands.py @sambattalio
-src/Frames/reddit/* @sambattalio
-src/Views/treeThreadClasses.py @sambattalio
+src/commands/reddit_commands.py @sambattalio
+src/frames/reddit/* @sambattalio
+src/Views/tree_thread_classes.py @sambattalio
 
-src/Commands/HNCommands.py @ginglis13
-src/Frames/hackernews/* @ginglis13
+src/commands/hn_commands.py @ginglis13
+src/frames/hackernews/* @ginglis13
 
 tests/* @ginglis13
