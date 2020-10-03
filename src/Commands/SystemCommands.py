@@ -120,6 +120,9 @@ def systemCommands(cmd, uvm):
     elif cmd == ('view'):
         log.debug('executing view command')
         log.debug(cmd)
+
+        site = None
+
         if len(args) == 1:
             if args[0].lower() in ('h', 'history'):
                 log.debug('history requested')
@@ -128,25 +131,37 @@ def systemCommands(cmd, uvm):
                 log.debug('4chan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(fIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', fIndex.IndexFrame(uvm))
+
+                site = SITE.FCHAN
             elif args[0].lower() in ('lchan', 'lainchan'):
                 log.debug('lainchan requested')
                 uvm.currFocusView.updateHistory(FrameFactory(lIndex.IndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', lIndex.IndexFrame(uvm))
+
+                site = SITE.LCHAN
             elif args[0].lower() in 'reddit':
                 log.debug('reddit requested')
                 uvm.currFocusView.updateHistory(FrameFactory(RedditIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', RedditIndexFrame(uvm))
+
+                site = SITE.REDDIT
             elif args[0].lower() in ('hn', 'hackernews'):
                 log.debug('HN requested')
                 uvm.currFocusView.updateHistory(FrameFactory(HackerNewsIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', HackerNewsIndexFrame(uvm))
+
+                site = SITE.HACKERNEWS
             elif args[0].lower() in ('ls', 'lobsters'):
                 log.debug('lobster requested')
                 uvm.currFocusView.updateHistory(FrameFactory(LobsterIndexFrame), [uvm])
                 setattr(uvm.currFocusView, 'frame', LobsterIndexFrame(uvm))
+
+                site = SITE.LOBSTERS
             elif args[0].lower() in 'watcher':
                 log.debug('wather requested')
                 setattr(uvm.currFocusView, 'frame', WatcherFrame(uvm))
+
+        uvm.currFocusView.site = site
 
     elif cmd == ('split'):
         if type(uvm.splitTuple) is Row:
