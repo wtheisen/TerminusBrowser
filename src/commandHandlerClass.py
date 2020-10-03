@@ -50,7 +50,7 @@ class CommandHandler:
             try:
                 command_scope = self.command_map[str(self.uvm.currFocusView.site)]
             except KeyError as e:
-                log.debug("command does not exist {e}")
+                log.debug(f"command does not exist {e}")
             else:
                 command_scope(cmd, self.uvm)
 
