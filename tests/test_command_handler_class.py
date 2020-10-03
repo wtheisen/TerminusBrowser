@@ -57,3 +57,35 @@ def test_route_command_command_does_not_exist(command_handler, command_function_
     assert command_handler.preCommand.called
     assert not command_function_mock.called
     assert not command_handler.postCommand.called
+
+
+def test_route_command_collision_avoided_site_1(command_handler, command_function_mock):
+    site_1_mock = command_function_mock
+    site_2_mock = MagicMock()
+
+    command_handler.command_set = {'test', 'test'}
+    command_handler.uvm.currFocusView.site = '1'
+    command_handler.command_map = {
+        '1': site_1_mock,
+        '2': site_2_mock,
+    }
+
+    command_handler.routeCommand('test routeCommand')
+
+    assert site_1_mock.called
+
+
+def test_route_command_collision_avoided_site_2(command_handler, command_function_mock):
+    site_1_mock = command_function_mock
+    site_2_mock = MagicMock()
+
+    command_handler.command_set = {'test', 'test'}
+    command_handler.uvm.currFocusView.site = '2'
+    command_handler.command_map = {
+        '1': site_1_mock,
+        '2': site_2_mock,
+    }
+
+    command_handler.routeCommand('test routeCommand')
+
+    assert site_2_mock.called
