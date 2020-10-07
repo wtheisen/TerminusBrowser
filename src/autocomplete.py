@@ -1,6 +1,6 @@
-from Commands.SystemCommands import SystemCommandList
-from Commands.ChanCommands import ChanCommandList
-from Commands.RedditCommands import RedditCommandList
+from commands.system_commands import SystemCommandList
+from commands.chan_commands import ChanCommandList
+from commands.reddit_commands import RedditCommandList
 
 import logging
 log = logging.getLogger(__name__)

@@ -3,10 +3,10 @@
 import sys
 
 # from commandChanVim import urwidView
-from TerminusBrowser import urwidView
+from terminus_browser import urwidView
 
-from Frames.reddit.indexFrame import RedditIndexFrame
-from Frames.reddit.subredditFrame import SubredditFrame
+from frames.reddit.index_frame import RedditIndexFrame
+from frames.reddit.subreddit_frame import SubredditFrame
 
 import pytest
 
