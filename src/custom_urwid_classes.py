@@ -57,7 +57,6 @@ class FocusMixin(object):
         return super(FocusMixin,self).mouse_event(size, event, button, x, y, focus)
 
 # moved b/c of circular import caused with QuoteButton
-from autocomplete import autoComplete
 
 class CommandBar(FocusMixin, urwid.Edit):
     signals=['command_entered', 'exit_command']
@@ -74,6 +73,8 @@ class CommandBar(FocusMixin, urwid.Edit):
             urwid.emit_signal(self, 'exit_command')
 
         if key == 'tab':
+            from autocomplete import autoComplete
+
             autoComplete(self)
 
         if key == 'enter':
