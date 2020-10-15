@@ -2,7 +2,7 @@
 
 import json, os
 
-from customeTypes import SITE
+from customer_types import SITE
 
 import logging
 log = logging.getLogger(__name__)
