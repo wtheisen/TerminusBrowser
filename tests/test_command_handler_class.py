@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from src.commandHandlerClass import CommandHandler
+from src.command_handler_class import CommandHandler
 
 
 @pytest.fixture()

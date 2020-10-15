@@ -8,7 +8,7 @@ from terminus_browser import urwidView
 from frames.reddit.index_frame import RedditIndexFrame
 from frames.reddit.subreddit_frame import SubredditFrame
 
-from src.customeTypes import SITE
+from src.customer_types import SITE
 
 import pytest
 
