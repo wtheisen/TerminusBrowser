@@ -13,19 +13,22 @@ class DefaultFrame(urwid.WidgetWrap):
             welcomeText = pyfiglet.figlet_format('TerminusBrowser') + '\nRecent Commits:\n'
 
             if not test:
-                r = requests.get('https://api.github.com/repos/wtheisen/TerminusBrowser/commits')
-                data = r.json()
+                try:
+                    r = requests.get('https://api.github.com/repos/wtheisen/TerminusBrowser/commits')
+                    data = r.json()
 
-                count = 0
-                for cData in data:
-                    commit = cData['commit']
-                    cleanMessage = commit['message'].replace('\r', '').replace('\n\n', '\n')
-                    welcomeText += f'\n {commit["author"]["name"]}: {cleanMessage}'
+                    count = 0
+                    for cData in data:
+                        commit = cData['commit']
+                        cleanMessage = commit['message'].replace('\r', '').replace('\n\n', '\n')
+                        welcomeText += f'\n {commit["author"]["name"]}: {cleanMessage}'
 
-                    if count < 4:
-                        count += 1
-                    else:
-                        break
+                        if count < 4:
+                            count += 1
+                        else:
+                            break
+                except:
+                    welcomeText += '\n Error retrieving new commits from Github'
 
             self.contents = urwid.Text(welcomeText, 'center')
         else:
