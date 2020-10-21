@@ -25,7 +25,7 @@ To run, first install the dependencies in requirements.txt
 pip3 install -r requirements.txt
 ```
 
-And then run `./TerminusBrowser.py`
+And then run `./terminus_browser.py`
 
 ## Screenshots <a name="screenshots"></a>
 
@@ -47,7 +47,7 @@ Click on photo for more detail
 ### Lainchan
 | Board Index | Board view | Thread View |
 | ------- | ------ | ------- |
-| ![](./screenshots/lchan_boards.png?raw=true) | ![](./screenshots/lchan_threads.png?raw=true) | ![](./screenshots/lchan_post.png?raw=true) | 
+| ![](./screenshots/lchan_boards.png?raw=true) | ![](./screenshots/lchan_threads.png?raw=true) | ![](./screenshots/lchan_post.png?raw=true) |
 
 ## Hotkeys <a name="hotkeys"></a>
 

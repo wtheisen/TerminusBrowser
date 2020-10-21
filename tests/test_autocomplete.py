@@ -2,9 +2,9 @@
 
 import sys
 
-from customUrwidClasses import CommandBar
+from custom_urwid_classes import CommandBar
 # from commandChanVim import urwidView
-from TerminusBrowser import urwidView
+from terminus_browser import urwidView
 from autocomplete import autoComplete
 
 import pytest
