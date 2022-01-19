@@ -70,9 +70,8 @@ Click on photo for more detail
 
 ## Contributing <a name="contrib"></a>
 
-Development on TerminusBrowser is active and on-going. If there are any features
-you want or you're just interested in joining in the discussion the dev team
-is most active on [#TerminusBrowser on the Freenode IRC server](https://kiwiirc.com/nextclient/chat.freenode.org/#TerminusBrowser)
+Development on TerminusBrowser is not active per-say, however I am still very much online
+so if you post an issue or feature request you will get a response.
 
 ## TODO List <a name="todoList"></a>
 
