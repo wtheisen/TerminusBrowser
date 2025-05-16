@@ -20,14 +20,14 @@ class QuotePreview(urwid.WidgetWrap):
 
         log.debug(widgetList)
         fill = urwid.Filler(urwid.LineBox(urwid.Pile(widgetList)))
-        self.__super.__init__(urwid.AttrWrap(fill, 'quotePreview'))
+        super().__init__(urwid.AttrWrap(fill, 'quotePreview'))
 
 class QuoteButton(urwid.PopUpLauncher):
     def __init__(self, quoteNumber, urwidViewManager):
         self.quoteNumber = quoteNumber
         self.uvm = urwidViewManager
 
-        self.__super.__init__(urwid.Button(str(quoteNumber)))
+        super().__init__(urwid.Button(str(quoteNumber)))
         # self.render((len(str(quoteNumber)) + 5,))
         urwid.connect_signal(self.original_widget, 'click', lambda button: self.open_pop_up())
 
@@ -123,14 +123,14 @@ class HistoryMenu(urwid.WidgetWrap):
         #     "^^  I'm attached to the widget that opened me. "
         #     "Try resizing the window!\n"), close_button])
         fill = urwid.Filler(pile)
-        self.__super.__init__(urwid.AttrWrap(fill, 'popbg'))
+        super().__init__(urwid.AttrWrap(fill, 'popbg'))
 
 class HistoryButton(urwid.PopUpLauncher):
     def __init__(self, urwidViewManager):
         self.uvm = urwidViewManager
         hButton = urwid.Button('History')
         hButton._label.align = 'right'
-        self.__super.__init__(hButton)
+        super().__init__(hButton)
         urwid.connect_signal(self.original_widget, 'click',
             lambda button: self.open_pop_up())
 

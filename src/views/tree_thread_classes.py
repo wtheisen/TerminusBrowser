@@ -10,7 +10,7 @@ class CommentWidget(urwid.TreeWidget):
         self._innerwidget = None
         self.info_text = 'score: {} user: {}'
 
-        self.__super.__init__(node)
+        super().__init__(node)
         
         self._has_child = self.get_node().get_value().replies != []
         self.expanded = (self.get_node().get_depth() < 3 or
@@ -33,7 +33,7 @@ class CommentWidget(urwid.TreeWidget):
             self.expanded = not self.expanded
             self.update_expanded_icon()
         else:
-            key = self.__super.keypress(size, key)
+            key = super().keypress(size, key)
         return key
 
     def get_display_text(self):
